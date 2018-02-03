@@ -43,7 +43,7 @@
     
     <title>
         
-            归档: 2017/10 | 
+            计算属性和观察者 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the compoter.">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",vue">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -81,6 +81,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -212,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/2017/10/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2017/10/08/vue-3/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -227,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/2017/10/">
+    <meta property="og:url" content="http://yoursite.com/2017/10/08/vue-3/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/10 | Husbin">
+    <meta property="og:title" content="计算属性和观察者 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the compoter.">
-    
+    <meta property="og:article:tag" content="vue"> 
 
+    
+        <meta property="article:published_time" content="Sun Oct 08 2017 18:00:40 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 03 2018 20:43:10 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -241,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/10/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/10/08/vue-3/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2017/10/08/vue-3/index.html",
+    "headline": "计算属性和观察者",
+    "datePublished": "Sun Oct 08 2017 18:00:40 GMT+0800",
+    "dateModified": "Sat Feb 03 2018 20:43:10 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Husbin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/touxiang.png"
+        },
+        "description": "I can not repair the compoter."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Husbin",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",vue",
+    "description": "I can not repair the compoter.",
+}
+</script>
 
 
     
@@ -281,479 +317,324 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算属性"><span class="post-toc-number">1.</span> <span class="post-toc-text">计算属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#观察者"><span class="post-toc-number">3.</span> <span class="post-toc-text">观察者</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#番外：什么是-axios"><span class="post-toc-number">4.</span> <span class="post-toc-text">番外：什么是 axios</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/28/this-two-months/">总结下最近（2017年暑假）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-难得有得闲，做一下最近两三个月的总结吧。
-
-
-其实我也很意外，自己打算做web，其实从大二开始对web就有点抵触，总觉得太简单了，没意思。但是经过这两三个月的折磨，还是决定入坑了。目前打算学好基础先，什么js，html，css之类的，然后顺便学下nodejs，以及其他与网站开发有关的知识。
-最近3个月，做了2个学校的项目...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/28/this-two-months/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 28, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/琐言碎语/">琐言碎语</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/21/css-1/">基础知识--css</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            目录
-选择器
-在html引入css的方式
-css盒子模型
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/21/css-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/css/">css</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/10/vue-4/">条件渲染与列表渲染</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            条件渲染v-if指令
-​    利用v-if...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/10/vue-4/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 10, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/08/vue-3/">计算属性和观察者</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            计算属性​    直接在模板内的嵌入表达式是非常便利的，但他们实际上是用于简单运算的，在实际开发中很少使用，因为在模板中嵌入太多逻辑会让模板过重且难以维护。例如：
-&lt;div id=&q...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/08/vue-3/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/07/js-1/">ES6 let，const关键字</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            起因Error：let definitions are not supported by current javascript version
-在webstrom内，写简单的js文件，想用let定义变量，但是出现了这个...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/07/js-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/javascript/">javascript</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/06/vue-2/">Vue实例与模板语法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Vue实例新建一个Vue实例
-每个Vue应用都是通过...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/06/vue-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 06, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/05/vue_1/">初识vue.js</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            什么是vue.js
-vue.js是一套构建用户界面的渐进式框架。个人观点，目前大型项目前后端分离已成为趋势，vue采用自底向上增量开发设计，核心库只关注视图层，易于上手，还便于与第三方库或既有项目整合。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/05/vue_1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                计算属性和观察者
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/touxiang.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Husbin</strong>
+        <span>10月 08, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/vue/">vue</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><p>​    直接在模板内的嵌入表达式是非常便利的，但他们实际上是用于简单运算的，在实际开发中很少使用，因为在模板中嵌入太多逻辑会让模板过重且难以维护。例如：</p>
+<pre><code class="html">&lt;div id=&quot;example&quot;&gt;
+  {{ message.split('').reverse().join('') }}
+&lt;/div&gt;
+</code></pre>
+<p>​    在这里，模板不再简单和清晰，并且如果要在多处地方重复使用此处的翻转字符串时，会更加难以处理。 <strong>因此，对于复杂逻辑，vue引入了计算属性（computed） </strong>。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>​    我们可能<strong>将同计算属性相同的函数定义为一个方法</strong>，一般情况下，2种方法的作用效果是相同的。然而，不同的是计算属性是基于他们的依赖进行缓存的，计算属性只有在他的相关依赖发生改变时才会重新求值，而方法不同，每当触发重新渲染时，方法的调用方式总是再次执行函数。</p>
+<ul>
+<li>举个简单的例子：假设B依赖与A，要获取B的值，只要A的值不发生改变，每次访问B，计算属性都会立即返回之前的计算结果，而不会再次执行函数。如果是方法的话，只要页面一刷新，便会再次执行函数。</li>
+<li><strong>为什么需要缓存？ </strong>假设我们有一个性能开销比较大的的计算属性 <strong>A</strong>，它需要遍历一个极大的数组和做大量的计算。然后我们可能有其他的计算属性依赖于 <strong>A</strong> 。如果没有缓存，我们将不可避免的多次执行 <strong>A</strong> 的 getter！如果你不希望有缓存，请用方法来替代。</li>
+</ul>
+<pre><code class="html">&lt;div id=&quot;example&quot;&gt;
+    &lt;p&gt;Original message: &quot;{{ message }}&quot;&lt;/p&gt;
+    &lt;!--计算属性实现翻转字符串--&gt;
+    &lt;p&gt;Computed reversed message:&quot;{{ reversedMessage_1 }}&quot;&lt;/p&gt;
+      &lt;!--方法实现翻转字符串--&gt;
+    &lt;p&gt;Revered message: &quot;{{ reversedMessage_2() }}&quot;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="javascript">let vm = new Vue({
+    el:&#39;#example&#39;,
+    data:{
+        message:&#39;hello&#39;,
+    },
+    computed:{ 
+      //此函数相当于 vm.reversedMessage属性的getter函数
+        reversedMessage_1: function () {
+            return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;);
+        },
+    },
+    methods:{
+        reversedMessage_2: function () {
+            return this.message.split(&#39;&#39;).reverse().join(&#39;&#39;);
+        },
+    }
+});
+</code></pre>
+<p>因为 <code>Date.now()</code> 不是响应式依赖，下面再举个简单的栗子：</p>
+<pre><code class="html">&lt;div id=&quot;example&quot;&gt;
+    &lt;p&gt;Time:&quot;{{ now_1 }}&quot;&lt;/p&gt;
+    &lt;p&gt;Time:&quot;{{ now_2() }}&quot;&lt;/p&gt;
+
+&lt;/div&gt;
+</code></pre>
+<pre><code class="javascript">let vm = new Vue({
+    el:&#39;#example&#39;,
+    data:{
+        message:&#39;hello&#39;,
+    },
+    computed:{
+        now_1: function () {
+            return new Date().toLocaleString();
+        }
+    },
+    methods:{
+        now_2: function () {
+            return new Date().toLocaleString();
+        },
+    }
+});
+</code></pre>
+<p>打开控制台（console），分别调用方法<code>vm.now_2()</code>和计算属性<code>vm.now_1</code>，查看输出状态如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-47a4c175d3e76690.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>​    可以看出，调用方法，获取到的是更新后的值，调用计算属性，获取到的是缓存的值。</p>
+<h2 id="观察者"><a href="#观察者" class="headerlink" title="观察者"></a>观察者</h2><ul>
+<li>虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的 watcher。这是为什么 Vue 通过 <code>watch</code> 选项提供一个更通用的方法，来响应数据的变化。当你想要在数据变化响应时，<strong>执行异步操作或开销较大的操作</strong>，这是很有用的。demo如下：</li>
+</ul>
+<pre><code class="html"> &lt;script src=&quot;https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js&quot;&gt;&lt;/script&gt;
+ &lt;script src=&quot;https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js&quot;&gt;&lt;/script&gt;
+&lt;div id=&quot;watch-example&quot;&gt;
+    &lt;p&gt;
+        Ask a yes/no question:
+        &lt;input v-model=&quot;question&quot;&gt;
+    &lt;/p&gt;
+    &lt;p&gt;{{ answer }}&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="javascript">let watchVM = new Vue({
+    el:&#39;#watch-example&#39;,
+    data:{
+        question:&#39;&#39;,
+        answer:&#39;I can not give you an answer untile you ask a question!&#39;
+    },
+    watch:{
+        //如果question发生改变，这个函数就会执行
+        question: function () {
+            this.answer = &#39;waitting for you to stop typing...&#39;;
+            this.getAnswer();
+        }
+    },
+    methods:{
+        // _.debounce 是一个通过 lodash 限制操作频率的函数。
+        // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+        // ajax 请求直到用户输入完毕才会发出
+        // 学习更多关于 _.debounce function (and its cousin
+        // _.throttle)，参考：https://lodash.com/docs#debounce
+        getAnswer: _.debounce(
+            function () {
+                if(this.question.indexOf(&#39;?&#39;) === -1){
+                    this.answer = &#39;Questions usually contain a question mark .:-)&#39;;
+                    return;
+                }
+                this.answer = &#39;Thinking...&#39;;
+                let vm = this;
+                axios.get(&#39;https://yesno.wtf/api&#39;)
+                    .then(function (response) {
+                        vm.answer = _.capitalize(response.data.answer);
+                    })
+                    .catch(function (err) {
+                        vm.answer = &#39;Error!could not reach the API&#39; + err;
+                    })
+            },
+            //这是为用户停止输入等待的毫秒数
+            500
+        )}
+});
+</code></pre>
+<ul>
+<li>​    在这个示例中，使用 <code>watch</code> 选项允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这是计算属性无法做到的。</li>
+</ul>
+<h2 id="番外：什么是-axios"><a href="#番外：什么是-axios" class="headerlink" title="番外：什么是 axios"></a>番外：什么是 axios</h2><p>​    axios 是一个基于 Promise 的，为浏览器和 Node.js 设计的 HTTP 客户端。它尽可能简化封装了 HTTP 相关的各种操作，在 Web App 中使用非常方便。Vue 2 官方建议在由 Vue 构建的 SPA 中使用 axios 进行 HTTP 操作。</p>
+<p>​    传送门：<a href="https://github.com/mzabriskie/axios" target="_blank" rel="noopener">mzabriskie/axios</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/10/10/vue-4/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/10/07/js-1/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1055,6 +936,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1067,6 +952,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

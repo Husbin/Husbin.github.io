@@ -43,7 +43,7 @@
     
     <title>
         
-            搭建的第一天 | 
+            Angular2-仿照微信UI实现9张图片上传和预览 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the compoter.">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",Angular2">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/02/02/the-first-day/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/10/18/ng2-1/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/02/02/the-first-day/">
+    <meta property="og:url" content="http://yoursite.com/2018/10/18/ng2-1/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="搭建的第一天 | Husbin">
+    <meta property="og:title" content="Angular2-仿照微信UI实现9张图片上传和预览 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the compoter.">
-    
+    <meta property="og:article:tag" content="Angular2"> 
 
     
-        <meta property="article:published_time" content="Fri Feb 02 2018 15:22:02 GMT+0800">
-        <meta property="article:modified_time" content="Sat Feb 03 2018 20:34:55 GMT+0800">
+        <meta property="article:published_time" content="Thu Oct 18 2018 20:14:22 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 03 2018 20:51:14 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/02/02/the-first-day/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/10/18/ng2-1/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/02/02/the-first-day/index.html",
-    "headline": "搭建的第一天",
-    "datePublished": "Fri Feb 02 2018 15:22:02 GMT+0800",
-    "dateModified": "Sat Feb 03 2018 20:34:55 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/10/18/ng2-1/index.html",
+    "headline": "Angular2-仿照微信UI实现9张图片上传和预览",
+    "datePublished": "Thu Oct 18 2018 20:14:22 GMT+0800",
+    "dateModified": "Sat Feb 03 2018 20:51:14 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": "",
+    "keywords": ",Angular2",
     "description": "I can not repair the compoter.",
 }
 </script>
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#笔记历程"><span class="post-toc-number">1.</span> <span class="post-toc-text">笔记历程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#csdn"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">csdn</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简书"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">简书</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于迁移"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">关于迁移</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#样式–weui-css"><span class="post-toc-number">1.</span> <span class="post-toc-text">样式–weui.css</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#样例–weui-io"><span class="post-toc-number">2.</span> <span class="post-toc-text">样例–weui.io</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要步骤"><span class="post-toc-number">3.</span> <span class="post-toc-text">主要步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#官方ui显示如下，图片上传的ui在Uploader中。"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">官方ui显示如下，图片上传的ui在Uploader中。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#图片上传的源码从审查元素中可获取，如下所示："><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">图片上传的源码从审查元素中可获取，如下所示：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-图片缩略图显示"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1. 图片缩略图显示</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-图片预览显示与消失"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2. 图片预览显示与消失</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-图片删除"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3. 图片删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#效果如下："><span class="post-toc-number">3.4.</span> <span class="post-toc-text">效果如下：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#显示缩略图："><span class="post-toc-number">3.4.1.</span> <span class="post-toc-text">显示缩略图：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#显示预览："><span class="post-toc-number">3.4.2.</span> <span class="post-toc-text">显示预览：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#点击下面的删除栏："><span class="post-toc-number">3.5.</span> <span class="post-toc-text">点击下面的删除栏：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2017-12-02-更正"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">2017-12-02 更正</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                搭建的第一天
+                Angular2-仿照微信UI实现9张图片上传和预览
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Husbin</strong>
-        <span>2月 02, 2018</span>
+        <span>10月 18, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,6 +414,15 @@
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Angular2/">Angular2</a>
+    </ul>
     
 
     <!-- Share -->
@@ -457,16 +466,199 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>看到朋友的<code>Material</code>主题的个人博客，有点羡慕，就自己动手搭了个。本来以前也有做笔记的习惯，有道云笔记，csdn博客，还有现在在写的简书，简书还是挺好用的 。 但是想想身为一个打算走前端的人，有个个人博客才显得专业一点。</p>
-<h2 id="笔记历程"><a href="#笔记历程" class="headerlink" title="笔记历程"></a>笔记历程</h2><h3 id="csdn"><a href="#csdn" class="headerlink" title="csdn"></a>csdn</h3><ul>
-<li>主要是大一写的，现在想想写得都有点幼稚。<a href="http://blog.csdn.net/qq_34174814" target="_blank" rel="noopener">csdn</a>               逃）</li>
+        <ul>
+<li>本来在看vue.js没多久，最近在赶一个项目用回了angular2，还是先把ng2搞定吧，毕竟还不怎么懂。这两天我做的是用户表单数据的提交，大部分很简单，双向绑定就完事了，主要还是沟通的问题哈哈哈哈，虽然沟通的时候有点暴躁想甩锅，不过出了门还是高高兴兴吃饭高高兴兴回去。</li>
+<li>好了切入问题。这几天做得最久的是仿照微信UI做的图片上传/显示缩略图/预览/删除功能，要求图片1–9张。下面来记录下如何实现微信的图片预览/删除功能。</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-8938bc2440abfbc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h3><ul>
-<li>简书是我打算开始做前端之后开始写的，但是因为很长一段时间在做项目，所以总结得不多。以后这个博客和简书会同步更新。<a href="https://www.jianshu.com/u/8dad13d2b0fb" target="_blank" rel="noopener">前往简书</a></li>
+<h2 id="样式–weui-css"><a href="#样式–weui-css" class="headerlink" title="样式–weui.css"></a>样式–weui.css</h2><ul>
+<li>样式用的是微信官方ui，weui.min.css（生产环境下建议使用此压缩版）。</li>
+<li>下载地址<a href="https://github.com/Tencent/weui/releases" target="_blank" rel="noopener">weui.css/weui.min.css</a>。</li>
 </ul>
-<h3 id="关于迁移"><a href="#关于迁移" class="headerlink" title="关于迁移"></a>关于迁移</h3><ul>
-<li>我会把简书上的笔记总结按照时间顺序搬到这边。</li>
+<h2 id="样例–weui-io"><a href="#样例–weui-io" class="headerlink" title="样例–weui.io"></a>样例–weui.io</h2><ul>
+<li>微信官方自带了demo: <a href="https://weui.io/" target="_blank" rel="noopener">weui.io</a>。</li>
+</ul>
+<h2 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h2><ul>
+<li>在正式进入各个小功能的解说前，先上官方demo-&gt;<a href="https://weui.io/" target="_blank" rel="noopener">weui.io</a>查看图片上传组件的样式以及源代码。</li>
+</ul>
+<h4 id="官方ui显示如下，图片上传的ui在Uploader中。"><a href="#官方ui显示如下，图片上传的ui在Uploader中。" class="headerlink" title="官方ui显示如下，图片上传的ui在Uploader中。"></a>官方ui显示如下，图片上传的ui在Uploader中。</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-1f0bd973c370959a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="图片上传的源码从审查元素中可获取，如下所示："><a href="#图片上传的源码从审查元素中可获取，如下所示：" class="headerlink" title="图片上传的源码从审查元素中可获取，如下所示："></a>图片上传的源码从审查元素中可获取，如下所示：</h4><pre><code class="html">&lt;div class=&quot;page uploader js_show&quot;&gt;
+    &lt;div class=&quot;page__hd&quot;&gt;
+        &lt;h1 class=&quot;page__title&quot;&gt;Uploader&lt;/h1&gt;
+        &lt;p class=&quot;page__desc&quot;&gt;上传组件，一般配合&lt;a class=&quot;link&quot; href=&quot; &quot;&gt;组件Gallery&lt;/a &gt;来使用。&lt;/p &gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;page__bd&quot;&gt;
+        &lt;div class=&quot;weui-gallery&quot; id=&quot;gallery&quot; style=&quot;opacity: 0; display: none;&quot;&gt;
+            &lt;span class=&quot;weui-gallery__img&quot; id=&quot;galleryImg&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/span&gt;
+            &lt;div class=&quot;weui-gallery__opr&quot;&gt;
+                &lt;a href=&quot;javascript:&quot; class=&quot;weui-gallery__del&quot;&gt;
+                    &lt;i class=&quot;weui-icon-delete weui-icon_gallery-delete&quot;&gt;&lt;/i&gt;
+                &lt;/a &gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;weui-cells weui-cells_form&quot;&gt;
+            &lt;div class=&quot;weui-cell&quot;&gt;
+                &lt;div class=&quot;weui-cell__bd&quot;&gt;
+                    &lt;div class=&quot;weui-uploader&quot;&gt;
+                        &lt;div class=&quot;weui-uploader__hd&quot;&gt;
+                            &lt;p class=&quot;weui-uploader__title&quot;&gt;图片上传&lt;/p &gt;
+                            &lt;div class=&quot;weui-uploader__info&quot;&gt;0/2&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;weui-uploader__bd&quot;&gt;
+                            &lt;ul class=&quot;weui-uploader__files&quot; id=&quot;uploaderFiles&quot;&gt;
+                                &lt;li class=&quot;weui-uploader__file&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/li&gt;
+                                &lt;li class=&quot;weui-uploader__file&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/li&gt;
+                                &lt;li class=&quot;weui-uploader__file&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/li&gt;
+                                &lt;li class=&quot;weui-uploader__file weui-uploader__file_status&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;
+                                    &lt;div class=&quot;weui-uploader__file-content&quot;&gt;
+                                        &lt;i class=&quot;weui-icon-warn&quot;&gt;&lt;/i&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;weui-uploader__file weui-uploader__file_status&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;
+                                    &lt;div class=&quot;weui-uploader__file-content&quot;&gt;50%&lt;/div&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;div class=&quot;weui-uploader__input-box&quot;&gt;
+                                &lt;input id=&quot;uploaderInput&quot; class=&quot;weui-uploader__input&quot; type=&quot;file&quot; accept=&quot;image/*&quot; multiple=&quot;&quot;&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;page__ft j_bottom&quot;&gt;
+        &lt;a href=&quot;javascript:home()&quot;&gt;&lt; img src=&quot;./images/icon_footer_link.png&quot;&gt;&lt;/a &gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>观察上面的代码，外层样式直接套用，核心功能块如下：</li>
+</ul>
+<ol>
+<li><strong>图片预览/删除部分：</strong></li>
+</ol>
+<pre><code class="html">&lt;div class=&quot;weui-gallery&quot; id=&quot;gallery&quot;&gt;
+  &lt;!--显示预览--&gt;
+  &lt;span class=&quot;weui-gallery__img&quot; id=&quot;galleryImg&quot;&gt;&lt;/span&gt;
+  &lt;!--删除按钮--&gt;
+  &lt;div class=&quot;weui-gallery__opr&quot;&gt;
+    &lt;a href=&quot;javascript:&quot; class=&quot;weui-gallery__del&quot;&gt;
+      &lt;i class=&quot;weui-icon-delete weui-icon_gallery-delete&quot;&gt;&lt;/i&gt;&lt;/a &gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ol>
+<li><strong>图片缩略图列表部分：</strong></li>
+</ol>
+<pre><code class="html"> &lt;ul class=&quot;weui-uploader__files&quot; id=&quot;uploaderFiles&quot;&gt;
+   &lt;!--每张图片是一个&lt;li&gt;标签--&gt;
+   &lt;li class=&quot;weui-uploader__file&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<ul>
+<li>有了上面的准备，下载就可以对功能进行实现了:</li>
+</ul>
+<h3 id="1-图片缩略图显示"><a href="#1-图片缩略图显示" class="headerlink" title="1. 图片缩略图显示"></a>1. 图片缩略图显示</h3><ul>
+<li>观察源码可知，每张图片的缩略图的代码结构如下：</li>
+</ul>
+<p><code>&lt;li class=&quot;weui-uploader__file&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/li&gt;</code></p>
+<ul>
+<li>他将图片的url直接放到了<code>background-img:url()</code>属性中，样式直接使用微信的官方ui的class。因此，我们可以做这样操作：<strong>创建一个数组存<code>picturesUrl</code>放图片的url，用angular2的指令<code>*ngFor</code>根据数组中的内容动态生成缩略图列表（注意picturesUrl中元素的格式为：<code>url(图片的url)）</code>：</strong>，图片url数组中的每个元素依次存进中间变量<code>img</code>中，<strong>然后使用angular2指令<code>[ngStyle]</code>根据img的值生成预览图</strong>，主要代码如下：</li>
+</ul>
+<pre><code class="html">&lt;ul class=&quot;weui-uploader__files picture-preview&quot; id=&quot;uploaderFiles&quot; &gt;
+                                &lt;li *ngFor=&quot;let img of picturesUrl&quot;
+                                    class=&quot;weui-uploader__file&quot;
+                                    [ngStyle]=&quot;{&#39;background-image&#39;:img}&quot;&gt;
+                                &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--img实例--&gt;
+&lt;!--&#39;url(http://upload-images.jianshu.io/upload_images/7166236-ed8a621900728c39.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)&#39;--&gt;
+</code></pre>
+<ul>
+<li>在ts文件中定义图片数组并且给一定的模拟数据：</li>
+</ul>
+<pre><code class="typescript">picturesUrl = [
+    &#39;url(http://upload-images.jianshu.io/upload_images/7166236-40ed406c30ef20a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)&#39;,
+    &#39;url(http://upload-images.jianshu.io/upload_images/7166236-d79762ed654342bf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)&#39;,
+    &#39;url(http://upload-images.jianshu.io/upload_images/7166236-64e1a458e5e29d59.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)&#39;,
+    &#39;url(http://upload-images.jianshu.io/upload_images/7166236-9a267a540acb8688.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)&#39;,
+    &#39;url(http://upload-images.jianshu.io/upload_images/7166236-283f5687cb73eea8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)&#39;,
+  ]; //存储图片Url
+  title = &#39;app&#39;;
+  shown = false;    //是否显示预览，初始化为否
+  selectImageUrl: string; //用于存放选中图片的url
+</code></pre>
+<h3 id="2-图片预览显示与消失"><a href="#2-图片预览显示与消失" class="headerlink" title="2. 图片预览显示与消失"></a>2. 图片预览显示与消失</h3><ul>
+<li>此处图片预览使用原生自带的方法，微信的做法应该是通过<code>[ngStyle]</code>来控制整个<code>&lt;div&gt;</code>样式，而我采用了与生成缩略图相同的方法，<strong>用<code>[ngStyle]</code>指令以及<code>*ngIf</code>指令控制预览图的显示</strong>，然后在预览图的范围上绑定一个点击事件<code>(click)=&quot;touchEvent()&quot;</code>，用于监听用户的点击，实现<strong>点击退出预览</strong>的功能。主要代码如下：</li>
+<li>微信的做法（根据点击页面获取到的代码）：</li>
+</ul>
+<pre><code class="html">&lt;!--预览隐藏的样式--&gt;
+&lt;div class=&quot;weui-gallery&quot; id=&quot;gallery&quot; style=&quot;opacity: 0; display: none;&quot;&gt;
+
+&lt;/div&gt;
+
+&lt;!--预览显示的样式--&gt;
+&lt;div class=&quot;weui-gallery&quot; id=&quot;gallery&quot; style=&quot;display: block; opacity: 1;&quot;&gt;
+
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li><strong>我采用的做法：</strong></li>
+</ul>
+<pre><code class="html">&lt;div  class=&quot;weui-gallery&quot; id=&quot;gallery&quot; style=&quot;display: block&quot;
+             *ngIf=&quot;shown&quot;&gt;
+            &lt;span class=&quot;weui-gallery__img&quot; (click)=&quot;touchEvent()&quot; [ngStyle]=&quot;{&#39;background-image&#39;:selectImageUrl}&quot;&gt;&lt;/span&gt;
+            &lt;div class=&quot;weui-gallery__opr&quot;&gt;
+                &lt;a href=&quot;javascript:&quot; (click)=&quot;onDelete()&quot; class=&quot;weui-gallery__del&quot;&gt;
+                    &lt;i class=&quot;weui-icon-delete weui-icon_gallery-delete&quot;&gt;&lt;/i&gt;
+                &lt;/a &gt;
+            &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="typescript">//点击缩略图显示预览
+  showPicture($event){
+    console.log(&quot;$event.target.backgroundImage：&quot; + $event.target.style.backgroundImage);
+    this.selectImageUrl = $event.target.style.backgroundImage;
+    this.shown = true;
+  }
+
+//点击屏幕退出预览
+touchEvent(){
+    this.shown = false;
+  }
+</code></pre>
+<h3 id="3-图片删除"><a href="#3-图片删除" class="headerlink" title="3. 图片删除"></a>3. 图片删除</h3><ul>
+<li>图片删除的主要代码嵌套在图片预览的代码块中，只要为删除部分绑定一个点击事件（<code>(click)=&quot;onDelete()&quot;</code>），点击时出发删除并且退出预览即可。</li>
+</ul>
+<pre><code class="typescript">onDelete(){
+    if(isUndefined(this.selectImageUrl)){
+      console.log(&quot;查看图片预览，图片url未定义，this.selectImageUrl：&quot; + this.selectImageUrl);
+      return;
+    }
+  //正则去除URL中的双引号
+    this.selectImageUrl = this.selectImageUrl.replace(/&quot;/g,&quot;&quot;);
+    console.log(&quot;(this.picturesUrl.indexOf(this.selectImageUrl):&quot;+this.picturesUrl.indexOf(this.selectImageUrl));
+    //判断图片URL是否存在
+    if(this.picturesUrl.indexOf(this.selectImageUrl)!== -1){
+      this.picturesUrl.splice(this.picturesUrl.indexOf(this.selectImageUrl) , 1);
+      setTimeout(()=&gt;{
+          this.shown = false;
+        },
+        20);
+    }else{
+      console.log(&quot;删除图片出错，获取URL或URL格式出错出错：&quot; + this.selectImageUrl )
+    }
+  }
+</code></pre>
+<h3 id="效果如下："><a href="#效果如下：" class="headerlink" title="效果如下："></a>效果如下：</h3><h4 id="显示缩略图："><a href="#显示缩略图：" class="headerlink" title="显示缩略图："></a>显示缩略图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-572b424232ae8766.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="显示预览："><a href="#显示预览：" class="headerlink" title="显示预览："></a>显示预览：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-063b0ebd764dfc06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="点击下面的删除栏："><a href="#点击下面的删除栏：" class="headerlink" title="点击下面的删除栏："></a>点击下面的删除栏：</h3><p><img src="http://upload-images.jianshu.io/upload_images/7166236-e59903dc3138c278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="2017-12-02-更正"><a href="#2017-12-02-更正" class="headerlink" title="2017-12-02 更正"></a>2017-12-02 更正</h3><ul>
+<li>其实获取图片应该异步加载的，这个问题很严重，正常大小的图片在显示之前应该保证在显示之前已经下载好了或者，在加载的时候做缓冲显示，不然如果图片一大或者网络一卡，加载的时候就很诡异，用户体验不是很好。</li>
+<li>源码戳-&gt;<a href="https://github.com/Husbin/web/tree/master/wechat-picture" target="_blank" rel="noopener">demo源码</a></li>
+<li>在线demo-&gt;<a href="http://119.23.214.114:8888/" target="_blank" rel="noopener">戳你狗头</a></li>
 </ul>
 
         
@@ -488,7 +680,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/10/18/ng2-1/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/11/17/nodejs-1/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -502,7 +694,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/02/02/js-4/" id="post_nav-older" class="next-content">
+        <a href="/2018/02/02/the-first-day/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

@@ -43,7 +43,7 @@
     
     <title>
         
-            搭建的第一天 | 
+            Angular2 父子组件通信方式 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the compoter.">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",Angular2">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/02/02/the-first-day/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/01/28/ng2-3/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/02/02/the-first-day/">
+    <meta property="og:url" content="http://yoursite.com/2018/01/28/ng2-3/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="搭建的第一天 | Husbin">
+    <meta property="og:title" content="Angular2 父子组件通信方式 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the compoter.">
-    
+    <meta property="og:article:tag" content="Angular2"> 
 
     
-        <meta property="article:published_time" content="Fri Feb 02 2018 15:22:02 GMT+0800">
-        <meta property="article:modified_time" content="Sat Feb 03 2018 20:34:55 GMT+0800">
+        <meta property="article:published_time" content="Sun Jan 28 2018 14:47:40 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 03 2018 21:14:34 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/02/02/the-first-day/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/01/28/ng2-3/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/02/02/the-first-day/index.html",
-    "headline": "搭建的第一天",
-    "datePublished": "Fri Feb 02 2018 15:22:02 GMT+0800",
-    "dateModified": "Sat Feb 03 2018 20:34:55 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/01/28/ng2-3/index.html",
+    "headline": "Angular2 父子组件通信方式",
+    "datePublished": "Sun Jan 28 2018 14:47:40 GMT+0800",
+    "dateModified": "Sat Feb 03 2018 21:14:34 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": "",
+    "keywords": ",Angular2",
     "description": "I can not repair the compoter.",
 }
 </script>
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#笔记历程"><span class="post-toc-number">1.</span> <span class="post-toc-text">笔记历程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#csdn"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">csdn</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简书"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">简书</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于迁移"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">关于迁移</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过-Input、-Output装饰器进行父、子组件间的通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">通过@Input、@Output装饰器进行父、子组件间的通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父组件通过调用-ViewChild-来获取子组件的数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">父组件通过调用@ViewChild()来获取子组件的数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父组件和子组件通过服务来通讯"><span class="post-toc-number">3.</span> <span class="post-toc-text">父组件和子组件通过服务来通讯</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#"><span class="post-toc-number">4.</span> <span class="post-toc-text"> </span></a></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                搭建的第一天
+                Angular2 父子组件通信方式
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Husbin</strong>
-        <span>2月 02, 2018</span>
+        <span>1月 28, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -414,6 +414,15 @@
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Angular2/">Angular2</a>
+    </ul>
     
 
     <!-- Share -->
@@ -457,17 +466,332 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>看到朋友的<code>Material</code>主题的个人博客，有点羡慕，就自己动手搭了个。本来以前也有做笔记的习惯，有道云笔记，csdn博客，还有现在在写的简书，简书还是挺好用的 。 但是想想身为一个打算走前端的人，有个个人博客才显得专业一点。</p>
-<h2 id="笔记历程"><a href="#笔记历程" class="headerlink" title="笔记历程"></a>笔记历程</h2><h3 id="csdn"><a href="#csdn" class="headerlink" title="csdn"></a>csdn</h3><ul>
-<li>主要是大一写的，现在想想写得都有点幼稚。<a href="http://blog.csdn.net/qq_34174814" target="_blank" rel="noopener">csdn</a>               逃）</li>
+        <ul>
+<li>Angular2官方文档对组件交互这块有详细的介绍–&gt;<a href="https://angular.cn/guide/component-interaction" target="_blank" rel="noopener">文档–组件之间的交互</a>。按文档介绍，组件间交互的方式一共有4种，包括：</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-8938bc2440abfbc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h3><ul>
-<li>简书是我打算开始做前端之后开始写的，但是因为很长一段时间在做项目，所以总结得不多。以后这个博客和简书会同步更新。<a href="https://www.jianshu.com/u/8dad13d2b0fb" target="_blank" rel="noopener">前往简书</a></li>
+<blockquote>
+<ol>
+<li>通过输入型绑定把数据从父组件传到子组件（<code>@Input decoration</code>）；子组件暴露一个<code>EventEmitter</code>属性（<code>@Output decoration</code>），当事件发生时，利用该属性<code>emits</code>向父组件发射事件。</li>
+<li>父组件与子组件通过本地变量互动。（<code># var</code>）</li>
+<li>父组件调用<code>@ViewChild</code>。</li>
+<li>父组件和子组件通过服务来通讯。</li>
+</ol>
+</blockquote>
+<ul>
+<li>我在这里只总结、详细介绍3种我在项目中使用过的方法，看完本文大概能做到如下的效果：</li>
 </ul>
-<h3 id="关于迁移"><a href="#关于迁移" class="headerlink" title="关于迁移"></a>关于迁移</h3><ul>
-<li>我会把简书上的笔记总结按照时间顺序搬到这边。</li>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-0719c2871bece58f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>创建项目，项目结构如下：</li>
 </ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-ff5638347a8e81a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="通过-Input、-Output装饰器进行父、子组件间的通信"><a href="#通过-Input、-Output装饰器进行父、子组件间的通信" class="headerlink" title="通过@Input、@Output装饰器进行父、子组件间的通信"></a>通过<code>@Input</code>、<code>@Output</code>装饰器进行父、子组件间的通信</h3><ul>
+<li><code>@Input</code>：该属性绑定用于父组件向子组件传递数据。子组件可以通过以下两种方法截取属性的变更：<ul>
+<li>使用一个输入属性的setter，以拦截父组件中值得变化。</li>
+<li>通过<code>ngOnchanges()</code>来截听输入属性值的变化。</li>
+</ul>
+</li>
+<li><code>@Output</code>：该数据绑定用于子组件向父组件传递数据和事件。</li>
+</ul>
+<pre><code class="html">&lt;!--parent.component.html--&gt;
+&lt;div style=&quot;width: 1000px;margin: auto&quot;&gt;
+&lt;div class=&quot;card&quot; style=&quot;width: 500px;float: left&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    父组件
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;父组件&lt;/h5&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;input&quot;&gt;父组件输入：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;input&quot;
+             placeholder=&quot;Input something&quot;
+             [(ngModel)]=&quot;parentPrint&quot;  
+      &gt;
+      &lt;label for=&quot;output&quot;&gt;父组件输出：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;output&quot;
+             placeholder=&quot;Output something&quot;
+             [(ngModel)]=&quot;contentFromChild&quot;
+      &gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;app-child
+  [fromParent]=&quot;parentPrint&quot;
+  (fromChild)=&quot;fromChild($event)&quot;
+&gt;&lt;/app-child&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="html">&lt;!--child.component.html--&gt;
+&lt;div class=&quot;card&quot; style=&quot;width: 500px;&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    子组件
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;子组件&lt;/h5&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;input&quot;&gt;子组件输入：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;input&quot;
+             placeholder=&quot;Input something&quot;
+             [(ngModel)]=&quot;contentFromChild&quot;
+      &gt;
+      &lt;label for=&quot;output&quot;&gt;子组件输出：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;output&quot;
+             placeholder=&quot;Output something&quot;
+             [(ngModel)]=&quot;fromParent&quot;
+      &gt;
+    &lt;/div&gt;
+    &lt;button  class=&quot;btn btn-primary&quot; (click)=&quot;clickChild()&quot;&gt;Output方式&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>效果如下：（1、父组件输入，子组件可同步输出；2、子组件输入需要（3、）点击按钮触发发射事件，将数据传送给父组件。）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-34dc99ad8b400f46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li><strong><code>@Input:</code></strong>父组件输入的同时，子组件能同步获取数据进行显示。核心代码如下：</li>
+</ul>
+<pre><code class="typescript">//父组件
+parentPrint: any;            //ts中，声明一个变量
+[(ngModel)]=&quot;parentPrint&quot;    //html中，绑定变量，获取用户输入
+//html中，将数据传给子组件
+&lt;app-child [fromParent]=&quot;parentPrint&quot;&gt;&lt;/app-child&gt; 
+//子组件
+@Input() fromParent;         //ts中，用于直接接收从父组件获取的数据
+[(ngModel)]=&quot;fromParent&quot;    //html中，用于显示数据
+</code></pre>
+<ul>
+<li>通过<code>setter</code>截听输入属性值的变化，在子组件中声明一个私有变量来获取父组件传递过来的数据，从而屏蔽上层获取下层信息。（简单一点就是不让父组件知道子组件用什么东西去接收传过来的数据）通过这种方法也可以获得同样的效果。</li>
+</ul>
+<pre><code class="typescript">//子组件
+ private _fromParent: any;         //私有变量，通过setter获取父组件的数据
+@Input()                          //通过setter获取父组件的数据
+  set fromParent(fromParent: any) {
+    this._fromParent = fromParent;
+  }
+  get fromParent(): any {
+    return this._fromParent;
+  }
+</code></pre>
+<ul>
+<li><strong><code>@Output:</code></strong>父组件接收子组件的数据时，子组件暴露一个<code>EventEmitter</code>属性，当事件发生时，子组件利用该属性<code>emits</code>(向上弹射)事件。父组件绑定到这个事件属性，并在事件发生时作出回应。核心代码如下：</li>
+</ul>
+<pre><code class="typescript">//子组件
+@Output() fromChild = new EventEmitter&lt;any&gt;();    //暴露一个输出属性
+
+&lt;button  class=&quot;btn btn-primary&quot; (click)=&quot;clickChild()&quot;&gt;Output方式&lt;/button&gt; 
+ //触发发射函数，将数据发送给父组件
+  clickChild() {
+    console.log(&#39;click child&#39; , this.contentFromChild);
+    this.fromChild.emit(this.contentFromChild);
+  }
+</code></pre>
+<pre><code class="typescript">//父组件
+[(ngModel)]=&quot;contentFromChild&quot;  //绑定输出子组件的数据
+//使用子组件，绑定事件属性
+&lt;app-child
+  [fromParent]=&quot;parentPrint&quot;
+  (fromChild)=&quot;fromChild($event)&quot;
+&gt;&lt;/app-child&gt;
+//事件处理函数
+ fromChild(event) {
+   console.log(event);
+   this.contentFromChild = event;
+ }
+</code></pre>
+<h3 id="父组件通过调用-ViewChild-来获取子组件的数据"><a href="#父组件通过调用-ViewChild-来获取子组件的数据" class="headerlink" title="父组件通过调用@ViewChild()来获取子组件的数据"></a>父组件通过调用<code>@ViewChild()</code>来获取子组件的数据</h3><ul>
+<li>如果父组件的类需要读取子组件的属性和值或调用子组件的方法时，就可以把子组件作为<code>ViewChild</code>，注入到父组件里面。<code>ViewChild</code>顾名思义就是可以看见子组件里面的属性和方法。</li>
+</ul>
+<pre><code class="html">&lt;!--parent.component.html--&gt;
+&lt;div style=&quot;width: 1000px;margin: auto&quot;&gt;
+&lt;div class=&quot;card&quot; style=&quot;width: 500px;float: left&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    父组件
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;父组件&lt;/h5&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;viewoutput&quot;&gt;ViewChild父组件输出：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;viewoutput&quot;
+             placeholder=&quot;ViewChild父组件输出&quot;
+             [(ngModel)]=&quot;viewOutput&quot;
+      &gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickView()&quot;&gt;ViewChild方式&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;app-child&gt;&lt;/app-child&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="html">&lt;!--child.component.html--&gt;
+&lt;div class=&quot;card&quot; style=&quot;width: 500px;&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    子组件
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;子组件&lt;/h5&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;input&quot;&gt;子组件输入：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;input&quot;
+             placeholder=&quot;Input something&quot;
+             [(ngModel)]=&quot;contentFromChild&quot;
+      &gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>效果如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7bb37d5459bdd836.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>父组件核心代码：</li>
+</ul>
+<pre><code class="typescript">//ts
+@ViewChild(ChildComponent)                   // 使用viewChild导入引用
+private childComponent: ChildComponent;     // 将子组件注入到私有属性
+//获取子组件数据并显示
+clickView() {
+      //直接获取子组件的属性
+    this.viewOutput = this.childComponent.contentFromChild;
+  }
+
+//html
+[(ngModel)]=&quot;viewOutput&quot;
+ &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickView()&quot;&gt;ViewChild方式&lt;/button&gt;
+</code></pre>
+<h3 id="父组件和子组件通过服务来通讯"><a href="#父组件和子组件通过服务来通讯" class="headerlink" title="父组件和子组件通过服务来通讯"></a>父组件和子组件通过服务来通讯</h3><ul>
+<li>父组件和它的子组件共享同一个服务，利用该服务在家庭内部实现双向通讯。</li>
+</ul>
+<pre><code class="html">&lt;!--parent.component.html--&gt;
+&lt;div style=&quot;width: 1000px;margin: auto&quot;&gt;
+&lt;div class=&quot;card&quot; style=&quot;width: 500px;float: left&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    父组件
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;父组件&lt;/h5&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;serviceoutput&quot;&gt;父组件服务输入：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;serviceoutput&quot;
+             placeholder=&quot;服务输入&quot;
+             [(ngModel)]=&quot;serviceInput&quot;
+      &gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickService()&quot;&gt;Service方式&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;app-child&gt;&lt;/app-child&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="html">&lt;!--child.component.html--&gt;
+&lt;div class=&quot;card&quot; style=&quot;width: 500px;&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    子组件
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;子组件&lt;/h5&gt;
+    &lt;div class=&quot;form-group&quot;&gt;
+      &lt;label for=&quot;serviceoutput&quot;&gt;子组件服务输入：&lt;/label&gt;
+      &lt;input type=&quot;text&quot;
+             class=&quot;form-control&quot;
+             id=&quot;serviceoutput&quot;
+             placeholder=&quot;服务输入&quot;
+             [(ngModel)]=&quot;serviceInput&quot;
+      &gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickService()&quot;&gt;Service方式&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="typescript">//服务
+//meditor.service.ts
+import {Injectable} from &#39;@angular/core&#39;;
+import {Subject} from &#39;rxjs/Subject&#39;;
+import {Observable} from &#39;rxjs/Observable&#39;;
+
+@Injectable()
+export class MeditorService {
+  private subject = new Subject&lt;MeditorMsg&gt;();
+  constructor() {}
+  // 获取订阅者
+  public getObservable(): Observable&lt;MeditorMsg&gt; {
+    return this.subject.asObservable();
+  }
+  // 推送信息
+  public push(msg: MeditorMsg) {
+    this.subject.next(msg);
+  }
+}
+// 中间者信息
+export interface MeditorMsg {
+  id: string;
+  body: any;
+}
+</code></pre>
+<ul>
+<li>效果如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-03056b04144101fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><ul>
+<li>父子组件的核心代码类似，在构造函数中将该服务实例注入到自身，父子组件都有一个唯一的<code>id</code>。无论是父组件还是子组件调用<code>push()</code>方法推送数据，双方都能接收到数据，这时候就要根据<code>id</code>来判断是要父组件使用数据还是子组件使用数据。核心代码如下：</li>
+</ul>
+<pre><code class="typescript">subscription: Subscription = null;  //初始化一个订阅对象
+//子组件构造函数，用于监听数据推送
+constructor(
+    private meditor: MeditorService
+  ) {
+    this.subscription = meditor.getObservable().subscribe(
+      msg =&gt; {
+        console.log(msg);
+        if (msg.id === &#39;parent&#39;) {        //id为parent，获取父组件数据
+          this.serviceInput = msg.body;
+        }
+      }
+    );
+  }
+// 子组件将数据推送到中间着，给订阅者
+clickService() {
+    this.meditor.push({id: &#39;parent&#39;, body: this.serviceInput});
+  }
+//父组件构造函数，用于监听数据推送
+constructor(
+    private meditor: MeditorService
+  ) {
+    this.subscription = meditor.getObservable().subscribe(
+      msg =&gt; {
+        console.log(msg);
+        if (msg.id === &#39;child&#39;) {        //id为child，获取子组件数据
+          this.serviceInput = msg.body;
+        }
+      }
+    );
+  }
+// 父组件将数据推送到中间着，给订阅者
+clickService() {
+    this.meditor.push({id: &#39;parent&#39;, body: this.serviceInput});
+  }
+</code></pre>
+<ul>
+<li>我上面写的还不是很完善，就是在生命周期结束前，也就是在<code>onDestroy</code>周期中，要<strong>取消订阅</strong>。</li>
+</ul>
+<p>​       以上，就是最近在使用的组件交互的总结。个人觉得通过服务来交互的可扩展性更强。例如，我们项目中用到了一个动态显示的侧栏，不同时期点击显示侧栏要显示不同的东西。这个时候把侧栏作为父组件，子组件作为消息的一部分传递给父组件，父组件根据子组件名动态生成模板，显示在侧栏上面。说了这么多废话大概就是下图的意思：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-6408a8fa3ab28f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后附上demo源码：<a href="https://github.com/Husbin/web/tree/master/ComponentCommunication" target="_blank" rel="noopener">父子组件交互demo</a></p>
 
         
     
@@ -488,7 +812,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/10/18/ng2-1/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/02/01/js-3/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -502,7 +826,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2018/02/02/js-4/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/22/js-2/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

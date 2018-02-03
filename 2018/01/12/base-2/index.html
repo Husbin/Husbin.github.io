@@ -43,7 +43,7 @@
     
     <title>
         
-            归档: 2017/10 | 
+            web开发必备常识 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the compoter.">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",web基础知识">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -81,6 +81,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -212,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/2017/10/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/01/12/base-2/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -227,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/2017/10/">
+    <meta property="og:url" content="http://yoursite.com/2018/01/12/base-2/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/10 | Husbin">
+    <meta property="og:title" content="web开发必备常识 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the compoter.">
-    
+    <meta property="og:article:tag" content="web基础知识"> 
 
+    
+        <meta property="article:published_time" content="Fri Jan 12 2018 22:04:09 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 03 2018 21:10:39 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -241,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/10/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/01/12/base-2/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/01/12/base-2/index.html",
+    "headline": "web开发必备常识",
+    "datePublished": "Fri Jan 12 2018 22:04:09 GMT+0800",
+    "dateModified": "Sat Feb 03 2018 21:10:39 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Husbin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/touxiang.png"
+        },
+        "description": "I can not repair the compoter."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Husbin",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",web基础知识",
+    "description": "I can not repair the compoter.",
+}
+</script>
 
 
     
@@ -281,479 +317,246 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#W3C标准"><span class="post-toc-number">1.</span> <span class="post-toc-text">W3C标准</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#w3c标准是一系列标准的集合。包括以下几个部分："><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">w3c标准是一系列标准的集合。包括以下几个部分：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#结构标准语言（Structure）："><span class="post-toc-number">1.0.1.0.1.</span> <span class="post-toc-text">结构标准语言（Structure）：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#表现标准语言（Presentation）："><span class="post-toc-number">1.0.1.0.2.</span> <span class="post-toc-text">表现标准语言（Presentation）：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#行为标准（Behavior）："><span class="post-toc-number">1.0.1.0.3.</span> <span class="post-toc-text">行为标准（Behavior）：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#思维导图："><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">思维导图：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#浏览器内核"><span class="post-toc-number">2.</span> <span class="post-toc-text">浏览器内核</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览器内核主要分成两部分：渲染引擎-layout-engineer或Rendering-Engine-和JS引擎："><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">浏览器内核主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#渲染引擎："><span class="post-toc-number">2.0.1.0.1.</span> <span class="post-toc-text">渲染引擎：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#JS引擎："><span class="post-toc-number">2.0.1.0.2.</span> <span class="post-toc-text">JS引擎：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#市场上主流浏览器的内核："><span class="post-toc-number">2.0.1.0.3.</span> <span class="post-toc-text">市场上主流浏览器的内核：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/28/this-two-months/">总结下最近（2017年暑假）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-难得有得闲，做一下最近两三个月的总结吧。
-
-
-其实我也很意外，自己打算做web，其实从大二开始对web就有点抵触，总觉得太简单了，没意思。但是经过这两三个月的折磨，还是决定入坑了。目前打算学好基础先，什么js，html，css之类的，然后顺便学下nodejs，以及其他与网站开发有关的知识。
-最近3个月，做了2个学校的项目...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/28/this-two-months/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 28, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/琐言碎语/">琐言碎语</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/21/css-1/">基础知识--css</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            目录
-选择器
-在html引入css的方式
-css盒子模型
-
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/21/css-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/css/">css</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/10/vue-4/">条件渲染与列表渲染</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            条件渲染v-if指令
-​    利用v-if...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/10/vue-4/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 10, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/08/vue-3/">计算属性和观察者</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            计算属性​    直接在模板内的嵌入表达式是非常便利的，但他们实际上是用于简单运算的，在实际开发中很少使用，因为在模板中嵌入太多逻辑会让模板过重且难以维护。例如：
-&lt;div id=&q...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/08/vue-3/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/07/js-1/">ES6 let，const关键字</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            起因Error：let definitions are not supported by current javascript version
-在webstrom内，写简单的js文件，想用let定义变量，但是出现了这个...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/07/js-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 07, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/javascript/">javascript</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/06/vue-2/">Vue实例与模板语法</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Vue实例新建一个Vue实例
-每个Vue应用都是通过...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/06/vue-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 06, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/10/05/vue_1/">初识vue.js</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            什么是vue.js
-vue.js是一套构建用户界面的渐进式框架。个人观点，目前大型项目前后端分离已成为趋势，vue采用自底向上增量开发设计，核心库只关注视图层，易于上手，还便于与第三方库或既有项目整合。
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/10/05/vue_1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>10月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/vue/">vue</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                web开发必备常识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/touxiang.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Husbin</strong>
+        <span>1月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/web基础知识/">web基础知识</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="W3C标准"><a href="#W3C标准" class="headerlink" title="W3C标准"></a>W3C标准</h1><h3 id="w3c标准是一系列标准的集合。包括以下几个部分："><a href="#w3c标准是一系列标准的集合。包括以下几个部分：" class="headerlink" title="w3c标准是一系列标准的集合。包括以下几个部分："></a>w3c标准是一系列标准的集合。包括以下几个部分：</h3><ul>
+<li><h5 id="结构标准语言（Structure）："><a href="#结构标准语言（Structure）：" class="headerlink" title="结构标准语言（Structure）："></a>结构标准语言（Structure）：</h5></li>
+</ul>
+<blockquote>
+<p>可扩展标记语言（XML）</p>
+<p>可扩展超文本标记语言（XHTML/HTML）</p>
+</blockquote>
+<ul>
+<li><h5 id="表现标准语言（Presentation）："><a href="#表现标准语言（Presentation）：" class="headerlink" title="表现标准语言（Presentation）："></a>表现标准语言（Presentation）：</h5></li>
+</ul>
+<blockquote>
+<p>层叠样式表（CSS）</p>
+</blockquote>
+<ul>
+<li><h5 id="行为标准（Behavior）："><a href="#行为标准（Behavior）：" class="headerlink" title="行为标准（Behavior）："></a>行为标准（Behavior）：</h5></li>
+</ul>
+<blockquote>
+<p>文档对象类型（DOM）</p>
+<p>ECMAScript</p>
+</blockquote>
+<h4 id="思维导图："><a href="#思维导图：" class="headerlink" title="思维导图："></a>思维导图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-88a64d4a03a65289.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="W3C标准 .png"></p>
+<h1 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h1><h3 id="浏览器内核主要分成两部分：渲染引擎-layout-engineer或Rendering-Engine-和JS引擎："><a href="#浏览器内核主要分成两部分：渲染引擎-layout-engineer或Rendering-Engine-和JS引擎：" class="headerlink" title="浏览器内核主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎："></a>浏览器内核主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎：</h3><ul>
+<li><h5 id="渲染引擎："><a href="#渲染引擎：" class="headerlink" title="渲染引擎："></a>渲染引擎：</h5></li>
+</ul>
+<blockquote>
+<p>也称排版引擎，解释引擎。负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
+</blockquote>
+<ul>
+<li><h5 id="JS引擎："><a href="#JS引擎：" class="headerlink" title="JS引擎："></a>JS引擎：</h5></li>
+</ul>
+<blockquote>
+<p>解析和执行javascript来实现网页的动态效果。</p>
+<p>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，<strong>内核就倾向于只指渲染引擎</strong>。</p>
+</blockquote>
+<ul>
+<li><h5 id="市场上主流浏览器的内核："><a href="#市场上主流浏览器的内核：" class="headerlink" title="市场上主流浏览器的内核："></a>市场上主流浏览器的内核：</h5><ol>
+<li>Trident内核：IE , MaxThon , 腾讯TT , The World , 360 , 搜狗浏览器等。</li>
+<li>Gecko内核：Netscape6及以上版本 , MozillaSuite/SeaMonkey等</li>
+<li>WebKit内核：Safari，Chrome , Chrome的：Blink（WebKit的分支）（微信内置浏览器内核 X5 blink）</li>
+<li>Presto内核：Opera7及以上。</li>
+</ol>
+<p><a href="http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html" target="_blank" rel="noopener">Reference-浏览器内核的解析和对比</a></p>
+</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/01/13/base-3/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/11/base-1/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -1055,6 +858,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -1067,6 +874,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

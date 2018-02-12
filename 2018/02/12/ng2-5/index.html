@@ -43,7 +43,7 @@
     
     <title>
         
-            web开发必备常识 | 
+            总结几个Angular2与ios wechat的问题 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the compoter.">
-    <meta name="keywords" content=",web基础知识">
+    <meta name="keywords" content=",Angular2">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/01/12/base-2/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/02/12/ng2-5/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/01/12/base-2/">
+    <meta property="og:url" content="http://yoursite.com/2018/02/12/ng2-5/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="web开发必备常识 | Husbin">
+    <meta property="og:title" content="总结几个Angular2与ios wechat的问题 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the compoter.">
-    <meta property="og:article:tag" content="web基础知识"> 
+    <meta property="og:article:tag" content="Angular2"> 
 
     
-        <meta property="article:published_time" content="Fri Jan 12 2018 22:04:09 GMT+0800">
-        <meta property="article:modified_time" content="Sat Feb 03 2018 21:10:39 GMT+0800">
+        <meta property="article:published_time" content="Mon Feb 12 2018 21:34:43 GMT+0800">
+        <meta property="article:modified_time" content="Mon Feb 12 2018 21:35:44 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/01/12/base-2/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/02/12/ng2-5/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/01/12/base-2/index.html",
-    "headline": "web开发必备常识",
-    "datePublished": "Fri Jan 12 2018 22:04:09 GMT+0800",
-    "dateModified": "Sat Feb 03 2018 21:10:39 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/02/12/ng2-5/index.html",
+    "headline": "总结几个Angular2与ios wechat的问题",
+    "datePublished": "Mon Feb 12 2018 21:34:43 GMT+0800",
+    "dateModified": "Mon Feb 12 2018 21:35:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",web基础知识",
+    "keywords": ",Angular2",
     "description": "I can not repair the compoter.",
 }
 </script>
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#W3C标准"><span class="post-toc-number">1.</span> <span class="post-toc-text">W3C标准</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#w3c标准是一系列标准的集合。包括以下几个部分："><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">w3c标准是一系列标准的集合。包括以下几个部分：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#结构标准语言（Structure）："><span class="post-toc-number">1.0.1.0.1.</span> <span class="post-toc-text">结构标准语言（Structure）：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#表现标准语言（Presentation）："><span class="post-toc-number">1.0.1.0.2.</span> <span class="post-toc-text">表现标准语言（Presentation）：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#行为标准（Behavior）："><span class="post-toc-number">1.0.1.0.3.</span> <span class="post-toc-text">行为标准（Behavior）：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#思维导图："><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">思维导图：</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#浏览器内核"><span class="post-toc-number">2.</span> <span class="post-toc-text">浏览器内核</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览器内核主要分成两部分：渲染引擎-layout-engineer或Rendering-Engine-和JS引擎："><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">浏览器内核主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#渲染引擎："><span class="post-toc-number">2.0.1.0.1.</span> <span class="post-toc-text">渲染引擎：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#JS引擎："><span class="post-toc-number">2.0.1.0.2.</span> <span class="post-toc-text">JS引擎：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#市场上主流浏览器的内核："><span class="post-toc-number">2.0.1.0.3.</span> <span class="post-toc-text">市场上主流浏览器的内核：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题一："><span class="post-toc-number">1.</span> <span class="post-toc-text">问题一：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题二："><span class="post-toc-number">2.</span> <span class="post-toc-text">问题二：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题三："><span class="post-toc-number">3.</span> <span class="post-toc-text">问题三：</span></a></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                web开发必备常识
+                总结几个Angular2与ios wechat的问题
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Husbin</strong>
-        <span>1月 12, 2018</span>
+        <span>2月 12, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -421,7 +421,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/web基础知识/">web基础知识</a>
+        <a class="post_tag-link" href="/tags/Angular2/">Angular2</a>
     </ul>
     
 
@@ -466,50 +466,47 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="W3C标准"><a href="#W3C标准" class="headerlink" title="W3C标准"></a>W3C标准</h1><h3 id="w3c标准是一系列标准的集合。包括以下几个部分："><a href="#w3c标准是一系列标准的集合。包括以下几个部分：" class="headerlink" title="w3c标准是一系列标准的集合。包括以下几个部分："></a>w3c标准是一系列标准的集合。包括以下几个部分：</h3><ul>
-<li><h5 id="结构标准语言（Structure）："><a href="#结构标准语言（Structure）：" class="headerlink" title="结构标准语言（Structure）："></a>结构标准语言（Structure）：</h5></li>
-</ul>
-<blockquote>
-<p>可扩展标记语言（XML）</p>
-<p>可扩展超文本标记语言（XHTML/HTML）</p>
-</blockquote>
+        <h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><p>ios微信表单填写时，点击之后表单被放大：</p>
+<p><strong>解决：在<code>&lt;meta&gt;</code>增加user-scalable：允许使用者缩放，1 or 0 (yes or no)</strong></p>
+<pre><code class="html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt;
+</code></pre>
+<h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3><p>ios微信返回时，会从缓存直接加载旧页面，有些事件不会再触发，旧页面一些标志也没有重置，会出现几个组件重叠。</p>
 <ul>
-<li><h5 id="表现标准语言（Presentation）："><a href="#表现标准语言（Presentation）：" class="headerlink" title="表现标准语言（Presentation）："></a>表现标准语言（Presentation）：</h5></li>
+<li><strong>解决：在二级页面的生命周期的<code>destroy</code>周期，放一个键值对到<code>sessionstroage</code>，返回是从<code>sessionstroage</code>中拿出这个值，如果这个值存在，执行<code>reload()</code>函数。</strong></li>
+<li>另一种思路：</li>
 </ul>
-<blockquote>
-<p>层叠样式表（CSS）</p>
-</blockquote>
-<ul>
-<li><h5 id="行为标准（Behavior）："><a href="#行为标准（Behavior）：" class="headerlink" title="行为标准（Behavior）："></a>行为标准（Behavior）：</h5></li>
-</ul>
-<blockquote>
-<p>文档对象类型（DOM）</p>
-<p>ECMAScript</p>
-</blockquote>
-<h4 id="思维导图："><a href="#思维导图：" class="headerlink" title="思维导图："></a>思维导图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-88a64d4a03a65289.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="W3C标准 .png"></p>
-<h1 id="浏览器内核"><a href="#浏览器内核" class="headerlink" title="浏览器内核"></a>浏览器内核</h1><h3 id="浏览器内核主要分成两部分：渲染引擎-layout-engineer或Rendering-Engine-和JS引擎："><a href="#浏览器内核主要分成两部分：渲染引擎-layout-engineer或Rendering-Engine-和JS引擎：" class="headerlink" title="浏览器内核主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎："></a>浏览器内核主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎：</h3><ul>
-<li><h5 id="渲染引擎："><a href="#渲染引擎：" class="headerlink" title="渲染引擎："></a>渲染引擎：</h5></li>
-</ul>
-<blockquote>
-<p>也称排版引擎，解释引擎。负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。</p>
-</blockquote>
-<ul>
-<li><h5 id="JS引擎："><a href="#JS引擎：" class="headerlink" title="JS引擎："></a>JS引擎：</h5></li>
-</ul>
-<blockquote>
-<p>解析和执行javascript来实现网页的动态效果。</p>
-<p>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，<strong>内核就倾向于只指渲染引擎</strong>。</p>
-</blockquote>
-<ul>
-<li><h5 id="市场上主流浏览器的内核："><a href="#市场上主流浏览器的内核：" class="headerlink" title="市场上主流浏览器的内核："></a>市场上主流浏览器的内核：</h5><ol>
-<li>Trident内核：IE , MaxThon , 腾讯TT , The World , 360 , 搜狗浏览器等。</li>
-<li>Gecko内核：Netscape6及以上版本 , MozillaSuite/SeaMonkey等</li>
-<li>WebKit内核：Safari，Chrome , Chrome的：Blink（WebKit的分支）（微信内置浏览器内核 X5 blink）</li>
-<li>Presto内核：Opera7及以上。</li>
+<pre><code class="javascript">//通过pageshow事件决定是否需要刷新页面
+window.addEventListener(&#39;pageshow&#39;, function(e) {
+    // 通过persisted属性判断是否存在 BF Cache
+    if (e.persisted) {
+        location.reload();
+    }
+});
+</code></pre>
+<h3 id="问题三："><a href="#问题三：" class="headerlink" title="问题三："></a>问题三：</h3><p>Angular-cli搭建种子工程无法在微信浏览器中打开。</p>
+<p><strong>解决：</strong>查看polyfills.ts文件，解注释：</p>
+<pre><code class="js">/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+import &#39;core-js/es6/symbol&#39;;
+import &#39;core-js/es6/object&#39;;
+import &#39;core-js/es6/function&#39;;
+import &#39;core-js/es6/parse-int&#39;;
+import &#39;core-js/es6/parse-float&#39;;
+import &#39;core-js/es6/number&#39;;
+import &#39;core-js/es6/math&#39;;
+import &#39;core-js/es6/string&#39;;
+import &#39;core-js/es6/date&#39;;
+import &#39;core-js/es6/array&#39;;
+import &#39;core-js/es6/regexp&#39;;
+import &#39;core-js/es6/map&#39;;
+import &#39;core-js/es6/weak-map&#39;;
+import &#39;core-js/es6/set&#39;;
+</code></pre>
+<p>在说这个问题之前要先搞清楚2件事，一是微信浏览器的内核究竟是什么，二是polyfills.ts这个文件有什么用。</p>
+<ol>
+<li>关于浏览器内核，一个腾讯内部人员说微信6.1版本以上的android用户，都是使用的QQ浏览器的X5内核。5.4-6.1之间的版本，若用户安装了QQ浏览器就是使用的X5内核，若用户未安装浏览器，使用的是系统内核（<a href="https://www.zhihu.com/question/22082084" target="_blank" rel="noopener">微信浏览器到底是什么内核？</a>）。X5内核在今年4月份，(Android)已经全面升级为<a href="https://zh.wikipedia.org/wiki/Blink" target="_blank" rel="noopener">Blink内核</a>（Blink引擎基于WebKit2——苹果公司于2010年推出的新的WebKit引擎）。而ios版本一直使用的是safari的内核，也就是webkit。所以现在微信内置的浏览器的内核整体来说是比较统一的，但是微信魔改之后的Blink内核与chrome内核有所差异，所以在chrome调试之后放到微信还是会出现一些问题，就例如上面那个问题，Angular项目跑不动。</li>
+<li>关于<a href="https://angular.cn/guide/browser-support" target="_blank" rel="noopener">polyfills.ts</a>，文档中有详细介绍。由于各个浏览器的javascript引擎有所差异，可以polyfills中导入一些兼容的包，实现浏览器缺失的某些javascript特性。</li>
 </ol>
-<p><a href="http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html" target="_blank" rel="noopener">Reference-浏览器内核的解析和对比</a></p>
-</li>
-</ul>
+<p><strong>结论：</strong>微信浏览器内核可能不支持es6的新特新或者不支持其中的某个特性，把相应的包填充进去之后就能正常运行了。（感觉脱去了IE6的帽子之后又扣上了IE9的帽子。。）</p>
 
         
     
@@ -530,21 +527,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/13/base-3/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/01/11/base-1/" id="post_nav-older" class="next-content">
+        <a href="/2018/02/09/base-4/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

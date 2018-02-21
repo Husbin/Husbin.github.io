@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/02/09/base-4/</loc>
+    <lastmod>2018-02-21T14:25:49.337Z</lastmod>
+    <data>
+        <display>
+        <title>前端一定要会的算法--排序</title>
+        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
+        
+        <tag>web基础知识</tag>
+         
+         
+           
+             
+              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/02/18/js-5/</loc>
-    <lastmod>2018-02-20T13:28:44.409Z</lastmod>
+    <lastmod>2018-02-21T14:25:31.510Z</lastmod>
     <data>
         <display>
         <title>javascript中的this指向</title>
@@ -23,6 +42,47 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
+    <lastmod>2018-02-21T14:25:20.066Z</lastmod>
+    <data>
+        <display>
+        <title>interview-1</title>
+        <pubTime>2018-02-21T13:44:36.000Z</pubTime>
+        
+        <tag>琐言碎语</tag>
+         
+         
+           
+             
+              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2017/10/28/this-two-months/</loc>
+    <lastmod>2018-02-21T13:45:18.545Z</lastmod>
+    <data>
+        <display>
+        <title>总结下最近（2017年暑假）</title>
+        <pubTime>2017-10-27T16:36:00.000Z</pubTime>
+        
+        <tag>琐言碎语</tag>
+         
+         
+           
+             
+              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://easywork.xin/2018/02/02/js-4/</loc>
@@ -98,26 +158,6 @@
            
              
               <breadCrumb title="Angular2" url="http://easywork.xin/categories/Angular2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/09/base-4/</loc>
-    <lastmod>2018-02-09T05:35:43.514Z</lastmod>
-    <data>
-        <display>
-        <title>前端一定要会的算法--排序</title>
-        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
-        
-        <tag>web基础知识</tag>
-         
-         
-           
-             
-              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
           
         </display>
     </data>
@@ -318,24 +358,6 @@
            
              
               <breadCrumb title="Angular2" url="http://easywork.xin/categories/Angular2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2017/10/28/this-two-months/</loc>
-    <lastmod>2018-02-03T13:01:22.665Z</lastmod>
-    <data>
-        <display>
-        <title>总结下最近（2017年暑假）</title>
-        <pubTime>2017-10-27T16:36:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
           
         </display>
     </data>

@@ -43,7 +43,7 @@
     
     <title>
         
-            Angular2 父子组件通信方式 | 
+            interview-1 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the compoter.">
-    <meta name="keywords" content=",Angular2">
+    <meta name="keywords" content=",琐言碎语">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://easywork.xin/2018/01/28/ng2-3/">
+    <meta name="msapplication-starturl" content="http://easywork.xin/2018/02/21/interview-1/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://easywork.xin/2018/01/28/ng2-3/">
+    <meta property="og:url" content="http://easywork.xin/2018/02/21/interview-1/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Angular2 父子组件通信方式 | Husbin">
+    <meta property="og:title" content="interview-1 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the compoter.">
-    <meta property="og:article:tag" content="Angular2"> 
+    <meta property="og:article:tag" content="琐言碎语"> 
 
     
-        <meta property="article:published_time" content="Sun Jan 28 2018 14:47:40 GMT+0800">
-        <meta property="article:modified_time" content="Sat Feb 03 2018 21:14:34 GMT+0800">
+        <meta property="article:published_time" content="Wed Feb 21 2018 21:44:36 GMT+0800">
+        <meta property="article:modified_time" content="Wed Feb 21 2018 22:25:20 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://easywork.xin/2018/01/28/ng2-3/index.html" />
+        <link rel="canonical" href="http://easywork.xin/2018/02/21/interview-1/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://easywork.xin/2018/01/28/ng2-3/index.html",
-    "headline": "Angular2 父子组件通信方式",
-    "datePublished": "Sun Jan 28 2018 14:47:40 GMT+0800",
-    "dateModified": "Sat Feb 03 2018 21:14:34 GMT+0800",
+    "mainEntityOfPage": "http://easywork.xin/2018/02/21/interview-1/index.html",
+    "headline": "interview-1",
+    "datePublished": "Wed Feb 21 2018 21:44:36 GMT+0800",
+    "dateModified": "Wed Feb 21 2018 22:25:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",Angular2",
+    "keywords": ",琐言碎语",
     "description": "I can not repair the compoter.",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过-Input、-Output装饰器进行父、子组件间的通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">通过@Input、@Output装饰器进行父、子组件间的通信</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父组件通过调用-ViewChild-来获取子组件的数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">父组件通过调用@ViewChild()来获取子组件的数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父组件和子组件通过服务来通讯"><span class="post-toc-number">3.</span> <span class="post-toc-text">父组件和子组件通过服务来通讯</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#"><span class="post-toc-number">4.</span> <span class="post-toc-text"> </span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#html"><span class="post-toc-number">1.</span> <span class="post-toc-text">html</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在网页上通过链接直接打开邮件客户端发送邮件"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">在网页上通过链接直接打开邮件客户端发送邮件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#当表单中包含文件上传控件时，需要将enctype设置为"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">当表单中包含文件上传控件时，需要将enctype设置为</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#javascript"><span class="post-toc-number">2.</span> <span class="post-toc-text">javascript</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CSS"><span class="post-toc-number">3.</span> <span class="post-toc-text">CSS</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CSS中设置border属性为0与none的区别："><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">CSS中设置border属性为0与none的区别：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#设置文字颜色应使用属性"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">设置文字颜色应使用属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浏览器兼容问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">浏览器兼容问题</span></a></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                Angular2 父子组件通信方式
+                interview-1
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Husbin</strong>
-        <span>1月 28, 2018</span>
+        <span>2月 21, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -424,7 +424,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Angular2/">Angular2</a>
+        <a class="post_tag-link" href="/tags/琐言碎语/">琐言碎语</a>
     </ul>
     
 
@@ -441,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Angular2 父子组件通信方式&url=http://easywork.xin/2018/01/28/ng2-3/index.html&pic=http://easywork.xin/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=interview-1&url=http://easywork.xin/2018/02/21/interview-1/index.html&pic=http://easywork.xin/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Angular2 父子组件通信方式&url=http://easywork.xin/2018/01/28/ng2-3/index.html&via=Husbin" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=interview-1&url=http://easywork.xin/2018/02/21/interview-1/index.html&via=Husbin" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://easywork.xin/2018/01/28/ng2-3/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://easywork.xin/2018/02/21/interview-1/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -468,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://easywork.xin/2018/01/28/ng2-3/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://easywork.xin/2018/02/21/interview-1/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -480,7 +480,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Husbin&title=Angular2 父子组件通信方式&summary=I can not repair the compoter.&pics=http://easywork.xin/img/favicon.jpg&url=http://easywork.xin/2018/01/28/ng2-3/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Husbin&title=interview-1&summary=I can not repair the compoter.&pics=http://easywork.xin/img/favicon.jpg&url=http://easywork.xin/2018/02/21/interview-1/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -499,332 +499,43 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <ul>
-<li>Angular2官方文档对组件交互这块有详细的介绍–&gt;<a href="https://angular.cn/guide/component-interaction" target="_blank" rel="noopener">文档–组件之间的交互</a>。按文档介绍，组件间交互的方式一共有4种，包括：</li>
-</ul>
-<blockquote>
-<ol>
-<li>通过输入型绑定把数据从父组件传到子组件（<code>@Input decoration</code>）；子组件暴露一个<code>EventEmitter</code>属性（<code>@Output decoration</code>），当事件发生时，利用该属性<code>emits</code>向父组件发射事件。</li>
-<li>父组件与子组件通过本地变量互动。（<code># var</code>）</li>
-<li>父组件调用<code>@ViewChild</code>。</li>
-<li>父组件和子组件通过服务来通讯。</li>
-</ol>
+        <blockquote>
+<p>他山之石，可为己用。</p>
+<p>刷刷基础题，做做记录而已，这里的内容基本来自网上。</p>
 </blockquote>
-<ul>
-<li>我在这里只总结、详细介绍3种我在项目中使用过的方法，看完本文大概能做到如下的效果：</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-0719c2871bece58f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<ul>
-<li>创建项目，项目结构如下：</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-ff5638347a8e81a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id="通过-Input、-Output装饰器进行父、子组件间的通信"><a href="#通过-Input、-Output装饰器进行父、子组件间的通信" class="headerlink" title="通过@Input、@Output装饰器进行父、子组件间的通信"></a>通过<code>@Input</code>、<code>@Output</code>装饰器进行父、子组件间的通信</h3><ul>
-<li><code>@Input</code>：该属性绑定用于父组件向子组件传递数据。子组件可以通过以下两种方法截取属性的变更：<ul>
-<li>使用一个输入属性的setter，以拦截父组件中值得变化。</li>
-<li>通过<code>ngOnchanges()</code>来截听输入属性值的变化。</li>
-</ul>
-</li>
-<li><code>@Output</code>：该数据绑定用于子组件向父组件传递数据和事件。</li>
-</ul>
-<pre><code class="html">&lt;!--parent.component.html--&gt;
-&lt;div style=&quot;width: 1000px;margin: auto&quot;&gt;
-&lt;div class=&quot;card&quot; style=&quot;width: 500px;float: left&quot;&gt;
-  &lt;div class=&quot;card-header&quot;&gt;
-    父组件
-  &lt;/div&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;h5 class=&quot;card-title&quot;&gt;父组件&lt;/h5&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;input&quot;&gt;父组件输入：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;input&quot;
-             placeholder=&quot;Input something&quot;
-             [(ngModel)]=&quot;parentPrint&quot;  
-      &gt;
-      &lt;label for=&quot;output&quot;&gt;父组件输出：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;output&quot;
-             placeholder=&quot;Output something&quot;
-             [(ngModel)]=&quot;contentFromChild&quot;
-      &gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;app-child
-  [fromParent]=&quot;parentPrint&quot;
-  (fromChild)=&quot;fromChild($event)&quot;
-&gt;&lt;/app-child&gt;
-&lt;/div&gt;
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><h4 id="在网页上通过链接直接打开邮件客户端发送邮件"><a href="#在网页上通过链接直接打开邮件客户端发送邮件" class="headerlink" title="在网页上通过链接直接打开邮件客户端发送邮件"></a>在网页上通过链接直接打开邮件客户端发送邮件</h4><pre><code class="html">&lt;a href=”mailto:ming.zhou@nowcoder.com”&gt;发送邮件&lt;/a&gt;
+&lt;!--mailto 后面加发送邮件地址--&gt;
 </code></pre>
-<pre><code class="html">&lt;!--child.component.html--&gt;
-&lt;div class=&quot;card&quot; style=&quot;width: 500px;&quot;&gt;
-  &lt;div class=&quot;card-header&quot;&gt;
-    子组件
-  &lt;/div&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;h5 class=&quot;card-title&quot;&gt;子组件&lt;/h5&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;input&quot;&gt;子组件输入：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;input&quot;
-             placeholder=&quot;Input something&quot;
-             [(ngModel)]=&quot;contentFromChild&quot;
-      &gt;
-      &lt;label for=&quot;output&quot;&gt;子组件输出：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;output&quot;
-             placeholder=&quot;Output something&quot;
-             [(ngModel)]=&quot;fromParent&quot;
-      &gt;
-    &lt;/div&gt;
-    &lt;button  class=&quot;btn btn-primary&quot; (click)=&quot;clickChild()&quot;&gt;Output方式&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<ul>
-<li>效果如下：（1、父组件输入，子组件可同步输出；2、子组件输入需要（3、）点击按钮触发发射事件，将数据传送给父组件。）</li>
+<h4 id="当表单中包含文件上传控件时，需要将enctype设置为"><a href="#当表单中包含文件上传控件时，需要将enctype设置为" class="headerlink" title="当表单中包含文件上传控件时，需要将enctype设置为"></a>当表单中包含文件上传控件时，需要将enctype设置为</h4><p>enctype 属性规定在发送到服务器之前应该如何对表单数据进行编码。</p>
+<p>属性值:</p>
+<p>application/x-www-form-urlencoded  在发送前编码所有字符（默认） </p>
+<p>multipart/form-data  不对字符编码。 在使用包含文件上传控件的表单时，必须使用该值。</p>
+<p>text/plain  空格转换为 “+” 加号，但不对特殊字符编码。</p>
+<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h4 id="CSS中设置border属性为0与none的区别："><a href="#CSS中设置border属性为0与none的区别：" class="headerlink" title="CSS中设置border属性为0与none的区别："></a><a href="http://blog.csdn.net/qq_37787456/article/details/71702961" target="_blank" rel="noopener">CSS中设置border属性为0与none的区别：</a></h4><p>在我们设置CSS的时候，对标签元素不设置边框属性或者取消边框属性一般设置为：border:none;或border:0;两种方法均可。</p>
+<p>border:none;与border:0;的区别体现有两点：一是理论上的性能差异；二是浏览器兼容性的差异。</p>
+<p><strong>1.性能差异</strong></p>
+<p>【border:0;】把border设为“0”像素虽然在页面上看不见，但按border默认值理解，浏览器依然对border-width/border-color进行了渲染，即已经占用了内存值。<br>【border:none;】把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。</p>
+<p><strong>2.兼容性差异</strong></p>
+<p>兼容性差异只针对浏览器IE6、IE7与标签button、input而言，在win、win7、vista 的XP主题下均会出现此情况。</p>
+<p>【border:none;】当border为“none”时似乎对IE6/7无效边框依然存在，如下例</p>
+<p><img src="http://img.blog.csdn.net/20170512082111272" alt="img"></p>
+<p>【border:0;】当border为“0”时，感觉比“none”更有效，所有浏览器都一致把边框隐藏</p>
+<p><img src="http://img.blog.csdn.net/20170512082145566" alt="img"></p>
+<p>总结：</p>
+<ol>
+<li>对比border:0;与border:none;之间的区别在于有渲染和没渲染，感觉他们和display:none;与 visibility:hidden;的关系类似，而对于border属性的渲染性能对比暂时没找测试的方法，虽然认为他们存在渲染性能上的差异但也只能 说是理论上。</li>
+<li>如何让border:none;实现全兼容？只需要在同一选择符上添加背景属性即可</li>
+</ol>
+<p><img src="http://img.blog.csdn.net/20170512082234113" alt="img"></p>
+<p>对于border:0;与border:none;个人更向于使用,border:none;，因为border:none;毕竟在性能消耗没有争议，而且兼容性可用背景属性解决不足以成为障碍。</p>
+<h4 id="设置文字颜色应使用属性"><a href="#设置文字颜色应使用属性" class="headerlink" title="设置文字颜色应使用属性"></a>设置文字颜色应使用属性</h4><ul>
+<li>color。</li>
 </ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-34dc99ad8b400f46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<ul>
-<li><strong><code>@Input:</code></strong>父组件输入的同时，子组件能同步获取数据进行显示。核心代码如下：</li>
-</ul>
-<pre><code class="typescript">//父组件
-parentPrint: any;            //ts中，声明一个变量
-[(ngModel)]=&quot;parentPrint&quot;    //html中，绑定变量，获取用户输入
-//html中，将数据传给子组件
-&lt;app-child [fromParent]=&quot;parentPrint&quot;&gt;&lt;/app-child&gt; 
-//子组件
-@Input() fromParent;         //ts中，用于直接接收从父组件获取的数据
-[(ngModel)]=&quot;fromParent&quot;    //html中，用于显示数据
-</code></pre>
-<ul>
-<li>通过<code>setter</code>截听输入属性值的变化，在子组件中声明一个私有变量来获取父组件传递过来的数据，从而屏蔽上层获取下层信息。（简单一点就是不让父组件知道子组件用什么东西去接收传过来的数据）通过这种方法也可以获得同样的效果。</li>
-</ul>
-<pre><code class="typescript">//子组件
- private _fromParent: any;         //私有变量，通过setter获取父组件的数据
-@Input()                          //通过setter获取父组件的数据
-  set fromParent(fromParent: any) {
-    this._fromParent = fromParent;
-  }
-  get fromParent(): any {
-    return this._fromParent;
-  }
-</code></pre>
-<ul>
-<li><strong><code>@Output:</code></strong>父组件接收子组件的数据时，子组件暴露一个<code>EventEmitter</code>属性，当事件发生时，子组件利用该属性<code>emits</code>(向上弹射)事件。父组件绑定到这个事件属性，并在事件发生时作出回应。核心代码如下：</li>
-</ul>
-<pre><code class="typescript">//子组件
-@Output() fromChild = new EventEmitter&lt;any&gt;();    //暴露一个输出属性
-
-&lt;button  class=&quot;btn btn-primary&quot; (click)=&quot;clickChild()&quot;&gt;Output方式&lt;/button&gt; 
- //触发发射函数，将数据发送给父组件
-  clickChild() {
-    console.log(&#39;click child&#39; , this.contentFromChild);
-    this.fromChild.emit(this.contentFromChild);
-  }
-</code></pre>
-<pre><code class="typescript">//父组件
-[(ngModel)]=&quot;contentFromChild&quot;  //绑定输出子组件的数据
-//使用子组件，绑定事件属性
-&lt;app-child
-  [fromParent]=&quot;parentPrint&quot;
-  (fromChild)=&quot;fromChild($event)&quot;
-&gt;&lt;/app-child&gt;
-//事件处理函数
- fromChild(event) {
-   console.log(event);
-   this.contentFromChild = event;
- }
-</code></pre>
-<h3 id="父组件通过调用-ViewChild-来获取子组件的数据"><a href="#父组件通过调用-ViewChild-来获取子组件的数据" class="headerlink" title="父组件通过调用@ViewChild()来获取子组件的数据"></a>父组件通过调用<code>@ViewChild()</code>来获取子组件的数据</h3><ul>
-<li>如果父组件的类需要读取子组件的属性和值或调用子组件的方法时，就可以把子组件作为<code>ViewChild</code>，注入到父组件里面。<code>ViewChild</code>顾名思义就是可以看见子组件里面的属性和方法。</li>
-</ul>
-<pre><code class="html">&lt;!--parent.component.html--&gt;
-&lt;div style=&quot;width: 1000px;margin: auto&quot;&gt;
-&lt;div class=&quot;card&quot; style=&quot;width: 500px;float: left&quot;&gt;
-  &lt;div class=&quot;card-header&quot;&gt;
-    父组件
-  &lt;/div&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;h5 class=&quot;card-title&quot;&gt;父组件&lt;/h5&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;viewoutput&quot;&gt;ViewChild父组件输出：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;viewoutput&quot;
-             placeholder=&quot;ViewChild父组件输出&quot;
-             [(ngModel)]=&quot;viewOutput&quot;
-      &gt;
-    &lt;/div&gt;
-    &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickView()&quot;&gt;ViewChild方式&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;app-child&gt;&lt;/app-child&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="html">&lt;!--child.component.html--&gt;
-&lt;div class=&quot;card&quot; style=&quot;width: 500px;&quot;&gt;
-  &lt;div class=&quot;card-header&quot;&gt;
-    子组件
-  &lt;/div&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;h5 class=&quot;card-title&quot;&gt;子组件&lt;/h5&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;input&quot;&gt;子组件输入：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;input&quot;
-             placeholder=&quot;Input something&quot;
-             [(ngModel)]=&quot;contentFromChild&quot;
-      &gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<ul>
-<li>效果如下：</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7bb37d5459bdd836.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<ul>
-<li>父组件核心代码：</li>
-</ul>
-<pre><code class="typescript">//ts
-@ViewChild(ChildComponent)                   // 使用viewChild导入引用
-private childComponent: ChildComponent;     // 将子组件注入到私有属性
-//获取子组件数据并显示
-clickView() {
-      //直接获取子组件的属性
-    this.viewOutput = this.childComponent.contentFromChild;
-  }
-
-//html
-[(ngModel)]=&quot;viewOutput&quot;
- &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickView()&quot;&gt;ViewChild方式&lt;/button&gt;
-</code></pre>
-<h3 id="父组件和子组件通过服务来通讯"><a href="#父组件和子组件通过服务来通讯" class="headerlink" title="父组件和子组件通过服务来通讯"></a>父组件和子组件通过服务来通讯</h3><ul>
-<li>父组件和它的子组件共享同一个服务，利用该服务在家庭内部实现双向通讯。</li>
-</ul>
-<pre><code class="html">&lt;!--parent.component.html--&gt;
-&lt;div style=&quot;width: 1000px;margin: auto&quot;&gt;
-&lt;div class=&quot;card&quot; style=&quot;width: 500px;float: left&quot;&gt;
-  &lt;div class=&quot;card-header&quot;&gt;
-    父组件
-  &lt;/div&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;h5 class=&quot;card-title&quot;&gt;父组件&lt;/h5&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;serviceoutput&quot;&gt;父组件服务输入：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;serviceoutput&quot;
-             placeholder=&quot;服务输入&quot;
-             [(ngModel)]=&quot;serviceInput&quot;
-      &gt;
-    &lt;/div&gt;
-    &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickService()&quot;&gt;Service方式&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;app-child&gt;&lt;/app-child&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="html">&lt;!--child.component.html--&gt;
-&lt;div class=&quot;card&quot; style=&quot;width: 500px;&quot;&gt;
-  &lt;div class=&quot;card-header&quot;&gt;
-    子组件
-  &lt;/div&gt;
-  &lt;div class=&quot;card-body&quot;&gt;
-    &lt;h5 class=&quot;card-title&quot;&gt;子组件&lt;/h5&gt;
-    &lt;div class=&quot;form-group&quot;&gt;
-      &lt;label for=&quot;serviceoutput&quot;&gt;子组件服务输入：&lt;/label&gt;
-      &lt;input type=&quot;text&quot;
-             class=&quot;form-control&quot;
-             id=&quot;serviceoutput&quot;
-             placeholder=&quot;服务输入&quot;
-             [(ngModel)]=&quot;serviceInput&quot;
-      &gt;
-    &lt;/div&gt;
-    &lt;button class=&quot;btn btn-primary&quot; (click)=&quot;clickService()&quot;&gt;Service方式&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="typescript">//服务
-//meditor.service.ts
-import {Injectable} from &#39;@angular/core&#39;;
-import {Subject} from &#39;rxjs/Subject&#39;;
-import {Observable} from &#39;rxjs/Observable&#39;;
-
-@Injectable()
-export class MeditorService {
-  private subject = new Subject&lt;MeditorMsg&gt;();
-  constructor() {}
-  // 获取订阅者
-  public getObservable(): Observable&lt;MeditorMsg&gt; {
-    return this.subject.asObservable();
-  }
-  // 推送信息
-  public push(msg: MeditorMsg) {
-    this.subject.next(msg);
-  }
-}
-// 中间者信息
-export interface MeditorMsg {
-  id: string;
-  body: any;
-}
-</code></pre>
-<ul>
-<li>效果如下：</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-03056b04144101fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><ul>
-<li>父子组件的核心代码类似，在构造函数中将该服务实例注入到自身，父子组件都有一个唯一的<code>id</code>。无论是父组件还是子组件调用<code>push()</code>方法推送数据，双方都能接收到数据，这时候就要根据<code>id</code>来判断是要父组件使用数据还是子组件使用数据。核心代码如下：</li>
-</ul>
-<pre><code class="typescript">subscription: Subscription = null;  //初始化一个订阅对象
-//子组件构造函数，用于监听数据推送
-constructor(
-    private meditor: MeditorService
-  ) {
-    this.subscription = meditor.getObservable().subscribe(
-      msg =&gt; {
-        console.log(msg);
-        if (msg.id === &#39;parent&#39;) {        //id为parent，获取父组件数据
-          this.serviceInput = msg.body;
-        }
-      }
-    );
-  }
-// 子组件将数据推送到中间着，给订阅者
-clickService() {
-    this.meditor.push({id: &#39;parent&#39;, body: this.serviceInput});
-  }
-//父组件构造函数，用于监听数据推送
-constructor(
-    private meditor: MeditorService
-  ) {
-    this.subscription = meditor.getObservable().subscribe(
-      msg =&gt; {
-        console.log(msg);
-        if (msg.id === &#39;child&#39;) {        //id为child，获取子组件数据
-          this.serviceInput = msg.body;
-        }
-      }
-    );
-  }
-// 父组件将数据推送到中间着，给订阅者
-clickService() {
-    this.meditor.push({id: &#39;parent&#39;, body: this.serviceInput});
-  }
-</code></pre>
-<ul>
-<li>我上面写的还不是很完善，就是在生命周期结束前，也就是在<code>onDestroy</code>周期中，要<strong>取消订阅</strong>。</li>
-</ul>
-<p>​       以上，就是最近在使用的组件交互的总结。个人觉得通过服务来交互的可扩展性更强。例如，我们项目中用到了一个动态显示的侧栏，不同时期点击显示侧栏要显示不同的东西。这个时候把侧栏作为父组件，子组件作为消息的一部分传递给父组件，父组件根据子组件名动态生成模板，显示在侧栏上面。说了这么多废话大概就是下图的意思：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-6408a8fa3ab28f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>最后附上demo源码：<a href="https://github.com/Husbin/web/tree/master/ComponentCommunication" target="_blank" rel="noopener">父子组件交互demo</a></p>
+<h2 id="浏览器兼容问题"><a href="#浏览器兼容问题" class="headerlink" title="浏览器兼容问题"></a>浏览器兼容问题</h2><ol>
+<li>border</li>
+</ol>
+<p>IE6、IE7-不支持border:none;</p>
+<p>W3C提示：请始终把border-style属性声明到border-color属性之前，元素必须在改变颜色之前获得边框。</p>
 
         
     
@@ -845,21 +556,13 @@ clickService() {
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/02/01/js-3/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/01/22/js-2/" id="post_nav-older" class="next-content">
+        <a href="/2018/02/18/js-5/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

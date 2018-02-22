@@ -2,16 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://easywork.xin/about.html</loc>
+    <loc>http://easywork.xin/2018/02/22/design-1/</loc>
     
-    <lastmod>2018-02-21T14:30:26.753Z</lastmod>
+    <lastmod>2018-02-22T14:12:12.086Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/10/21/css-1/</loc>
+    
+    <lastmod>2018-02-22T07:05:46.058Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/06/html-1/</loc>
+    
+    <lastmod>2018-02-22T07:05:29.069Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/02/the-first-day/</loc>
+    
+    <lastmod>2018-02-22T07:01:31.366Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/10/10/vue-4/</loc>
+    
+    <lastmod>2018-02-22T06:43:02.250Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/10/08/vue-3/</loc>
+    
+    <lastmod>2018-02-22T06:42:59.420Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/10/06/vue-2/</loc>
+    
+    <lastmod>2018-02-22T06:42:56.532Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
+    
+    <lastmod>2018-02-22T06:42:53.851Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/11/17/nodejs-1/</loc>
+    
+    <lastmod>2018-02-22T06:42:49.236Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
+    
+    <lastmod>2018-02-22T06:42:46.096Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/05/ng2-4/</loc>
+    
+    <lastmod>2018-02-22T06:42:42.225Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/01/28/ng2-3/</loc>
+    
+    <lastmod>2018-02-22T06:42:39.179Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/11/05/ng2-2/</loc>
+    
+    <lastmod>2018-02-22T06:42:36.331Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2017/10/18/ng2-1/</loc>
+    
+    <lastmod>2018-02-22T06:42:33.313Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
     
-    <lastmod>2018-02-21T14:29:27.141Z</lastmod>
+    <lastmod>2018-02-22T06:34:43.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/about.html</loc>
+    
+    <lastmod>2018-02-21T14:30:26.753Z</lastmod>
     
   </url>
   
@@ -44,34 +142,6 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
-    
-    <lastmod>2018-02-12T13:40:13.426Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/02/06/html-1/</loc>
-    
-    <lastmod>2018-02-09T06:12:02.653Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/02/05/ng2-4/</loc>
-    
-    <lastmod>2018-02-09T05:49:38.010Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2017/10/21/css-1/</loc>
-    
-    <lastmod>2018-02-05T12:01:04.488Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2018/02/01/js-3/</loc>
     
     <lastmod>2018-02-03T13:23:57.740Z</lastmod>
@@ -79,30 +149,9 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/2017/10/18/ng2-1/</loc>
-    
-    <lastmod>2018-02-03T13:21:59.816Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2017/11/17/nodejs-1/</loc>
-    
-    <lastmod>2018-02-03T13:21:28.777Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2017/10/07/js-1/</loc>
     
     <lastmod>2018-02-03T13:17:39.407Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/01/28/ng2-3/</loc>
-    
-    <lastmod>2018-02-03T13:14:34.291Z</lastmod>
     
   </url>
   
@@ -128,51 +177,9 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/2017/11/05/ng2-2/</loc>
-    
-    <lastmod>2018-02-03T13:03:47.056Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2017/10/10/vue-4/</loc>
-    
-    <lastmod>2018-02-03T12:43:29.172Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2017/10/08/vue-3/</loc>
-    
-    <lastmod>2018-02-03T12:43:10.460Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
-    
-    <lastmod>2018-02-03T12:35:41.117Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/02/02/the-first-day/</loc>
-    
-    <lastmod>2018-02-03T12:34:55.249Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2018/01/22/js-2/</loc>
     
     <lastmod>2018-02-03T11:54:34.101Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2017/10/06/vue-2/</loc>
-    
-    <lastmod>2018-02-03T11:54:07.206Z</lastmod>
     
   </url>
   

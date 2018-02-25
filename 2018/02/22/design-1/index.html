@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Thu Feb 22 2018 15:04:23 GMT+0800">
-        <meta property="article:modified_time" content="Thu Feb 22 2018 22:12:12 GMT+0800">
+        <meta property="article:modified_time" content="Sun Feb 25 2018 08:39:25 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://easywork.xin/2018/02/22/design-1/index.html",
     "headline": "MVC、MVP、MVVM",
     "datePublished": "Thu Feb 22 2018 15:04:23 GMT+0800",
-    "dateModified": "Thu Feb 22 2018 22:12:12 GMT+0800",
+    "dateModified": "Sun Feb 25 2018 08:39:25 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -499,8 +499,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>前后端分离之前的架构存在一定的问题–前端缺乏一种可行的开发模式。整体的内容都杂糅在一起，一旦应用增大，就会导致难以维护。因此前后端分离式大型应用程序的必选架构。出现前后端分离的架构之后，前端开发业务逐渐增多，责任也更加巨大，开发者急需一种较好的框架来规范整个应用。因此，前段MVC随之而来。</p>
-<h2 id="前后端分离的架构演变——MVC、MVP和MVVM"><a href="#前后端分离的架构演变——MVC、MVP和MVVM" class="headerlink" title="前后端分离的架构演变——MVC、MVP和MVVM"></a>前后端分离的架构演变——MVC、MVP和MVVM</h2><h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>前端MVC应该与后端类似，具备<code>view</code>,<code>Controller</code>和<code>Model</code>。</p>
+        <h2 id="前后端分离的架构演变——MVC、MVP和MVVM"><a href="#前后端分离的架构演变——MVC、MVP和MVVM" class="headerlink" title="前后端分离的架构演变——MVC、MVP和MVVM"></a>前后端分离的架构演变——MVC、MVP和MVVM</h2><p>前后端分离之前的架构存在一定的问题–前端缺乏一种可行的开发模式。整体的内容都杂糅在一起，一旦应用增大，就会导致难以维护。因此前后端分离式大型应用程序的必选架构。出现前后端分离的架构之后，前端开发业务逐渐增多，责任也更加巨大，开发者急需一种较好的框架来规范整个应用。因此，前段MVC随之而来。</p>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>前端MVC应该与后端类似，具备<code>view</code>,<code>Controller</code>和<code>Model</code>。</p>
 <ul>
 <li><strong>Model：</strong>负责保存应用数据，与后端数据进行同步。</li>
 <li><strong>Controller：</strong>负责业务逻辑，根据用户行为对Model数据进行修改。</li>
@@ -521,7 +521,7 @@
 <p>我们可以看到，presenter负责和model进行双向交互，还和view进行双向交互。这种交互方式，相对于MVC来说少了一些灵活，View变成了被动视图，并且本身变得很小。他虽然分离了View和Model，但是应用逐渐变大之后，缺陷也会随之暴露：由于大部分逻辑都需要presenter去进行管理，从而导致presenter体积增大，难以维护，如果需要去解决这个问题，或许可以从MVVM的思想中找到答案。</p>
 <h3 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h3><p>所谓MVVM，可以分解为Model - View - ViewModel。ViewModel可以理解为在presenter基础上的进阶版。图示如下：</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/7166236-c3e45f40c1cbe2f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>在这里View是ViewModel的外在显示，和ViewModel的数据是同步的，一旦View中数据发生变化，会自动同步到ViewModel。然后ViewModel可以将变化的数据传给Model；反过来也一样，Model中的数据一旦发生改变，就会将值传给ViewModel，而ViewModel会同步更新到View中，现在的框架实现这样的形式，各有各的不同。只要的三个框架Angular2，Vue，React都是实现了这样子的模式。</p>
+<p>在这里View是ViewModel的外在显示，和ViewModel的数据是同步的，一旦View中数据发生变化，会自动同步到ViewModel。然后ViewModel可以将变化的数据传给Model；反过来也一样，Model中的数据一旦发生改变，就会将值传给ViewModel，而ViewModel会同步更新到View中，现在的框架实现这样的形式，各有各的不同。主要的三个框架Angular2，Vue，React都是实现了这样子的模式。</p>
 <p>这种的好处就是View和Model之间被分离开来。View不知道Model的存在。这是一个非常松耦合的设计。</p>
 <h3 id="Flux或者Redux"><a href="#Flux或者Redux" class="headerlink" title="Flux或者Redux"></a>Flux或者Redux</h3><p>讨论完上面的三种框架，我们再来看一下Flux。之前，我们在讨论MVC的时候，提及过MVC最主要的缺点就是数据流混乱，难以管理。但是，Facebook却在这个基础上对MVC做出了改变，那就是——单向数据流。只要将数据流进行规范，那么原来的模式还是大有可为的。</p>
 <p>我们可以来看一下，Flux框架的图示：</p>
@@ -547,6 +547,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/02/24/ng2-6/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -646,7 +654,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -664,7 +672,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -688,7 +696,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">25</span>
+                <span class="sidebar-badge">26</span>
             </a>
         </li>
         

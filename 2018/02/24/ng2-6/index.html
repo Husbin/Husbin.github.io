@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Sat Feb 24 2018 17:58:21 GMT+0800">
-        <meta property="article:modified_time" content="Sun Feb 25 2018 09:57:35 GMT+0800">
+        <meta property="article:modified_time" content="Mon Feb 26 2018 09:16:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://easywork.xin/2018/02/24/ng2-6/index.html",
     "headline": "Angular2双向绑定及变化检测",
     "datePublished": "Sat Feb 24 2018 17:58:21 GMT+0800",
-    "dateModified": "Sun Feb 25 2018 09:57:35 GMT+0800",
+    "dateModified": "Mon Feb 26 2018 09:16:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -541,7 +541,7 @@
 <h5 id="变化检测原理-–-脏检查"><a href="#变化检测原理-–-脏检查" class="headerlink" title="变化检测原理 – 脏检查"></a>变化检测原理 – 脏检查</h5><p>所谓脏检查就是存储所有变量的值，每当可能有变量发生变化需要检查时，就将所有变量的旧值跟新值进行比较，不相等就说明检测到变化，需要更新对应的视图。</p>
 <h3 id="AngularJS与Angular2变化检测的区别"><a href="#AngularJS与Angular2变化检测的区别" class="headerlink" title="AngularJS与Angular2变化检测的区别"></a>AngularJS与Angular2变化检测的区别</h3><p>Angularjs的变化检测机制也是脏检查，而Angular2的变化检测性能比Angularjs提升了很多。</p>
 <h4 id="Angular2"><a href="#Angular2" class="headerlink" title="Angular2"></a>Angular2</h4><p>Angular的核心是组件化，组件的嵌套会使得最终形成一棵组件树。Angular的变化检测可以分组件进行，每个组件都有对应的变化检测器<code>ChangeDetector</code>。可想而知，这些变化检测器也会构成一棵树。</p>
-<p>另外，Angular的数据流是自顶而下的，从父组件到子组件单向流动。单向数据流向保证了高效、可预测的变化检测，尽管检查了负组件之后，自组件可能会改变父组件的数据使得父组件需要再次被检查，这是不被推荐的数据处理方式。在开发模式下，Angular会进行二次检查，如果出现上述情况，二次检查就会报错：<code>ExpressionChangedAfterItHasBeenCheckedError</code>（关于这个问题的答案，可以在参考资料中找到）。而在生产环境中，脏检查只会执行一次。</p>
+<p>另外，Angular的数据流是自顶而下的，从父组件到子组件单向流动。单向数据流向保证了高效、可预测的变化检测，尽管检查了父组件之后，自组件可能会改变父组件的数据使得父组件需要再次被检查，这是不被推荐的数据处理方式。在开发模式下，Angular会进行二次检查，如果出现上述情况，二次检查就会报错：<code>ExpressionChangedAfterItHasBeenCheckedError</code>（关于这个问题的答案，可以在参考资料中找到）。而在生产环境中，脏检查只会执行一次。</p>
 <h4 id="Angularjs"><a href="#Angularjs" class="headerlink" title="Angularjs"></a>Angularjs</h4><p>相比之下，Angularjs采用的是双向数据流，错综复杂的数据流使得他不得不多次检查，使得数据最终趋向稳定。理论上，数据永远不可能稳定，Angularjs的策略是，脏检查超过10次就认定程序有问题。</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/7166236-4cd8b9089c4fe160.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="angular2-change-detection-moscowjs-31-9-638.jpg"></p>
 <h3 id="变化检测优化"><a href="#变化检测优化" class="headerlink" title="变化检测优化"></a>变化检测优化</h3><h4 id="优化策略"><a href="#优化策略" class="headerlink" title="优化策略"></a>优化策略</h4><p>有2个思路：</p>
@@ -626,7 +626,7 @@ class CartBadgeCmp {
 </code></pre>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Angular与Angularjs都采用变化检测机制，前者优于后者主要体现在：</p>
 <ul>
-<li>单项数据流动</li>
+<li>单向数据流动</li>
 <li>以组件为单位维度独立进行检测</li>
 <li>生产环境只进行一次检查</li>
 <li>可自定义的变化检测策略：<code>Default</code>和<code>onPush</code></li>
@@ -763,7 +763,7 @@ class CartBadgeCmp {
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">14</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -781,7 +781,7 @@ class CartBadgeCmp {
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试奇谈/">面试奇谈<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -805,7 +805,7 @@ class CartBadgeCmp {
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">27</span>
+                <span class="sidebar-badge">29</span>
             </a>
         </li>
         

@@ -4,6 +4,127 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/02/26/interview-2/</loc>
+    <lastmod>2018-02-26T14:57:20.130Z</lastmod>
+    <data>
+        <display>
+        <title>面试奇谈</title>
+        <pubTime>2018-02-26T13:51:01.000Z</pubTime>
+        
+        <tag>面试奇谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="面试奇谈" url="http://easywork.xin/categories/%E9%9D%A2%E8%AF%95%E5%A5%87%E8%B0%88/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2017/10/21/css-1/</loc>
+    <lastmod>2018-02-26T11:28:45.603Z</lastmod>
+    <data>
+        <display>
+        <title>基础知识--css</title>
+        <pubTime>2017-10-21T05:21:30.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/24/ng2-6/</loc>
+    <lastmod>2018-02-26T01:16:27.108Z</lastmod>
+    <data>
+        <display>
+        <title>Angular2双向绑定及变化检测</title>
+        <pubTime>2018-02-24T09:58:21.000Z</pubTime>
+        
+        <tag>Angular2</tag>
+         
+         
+           
+             
+              <breadCrumb title="web框架" url="http://easywork.xin/categories/web%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/06/html-1/</loc>
+    <lastmod>2018-02-26T01:15:11.094Z</lastmod>
+    <data>
+        <display>
+        <title>HTML标签分类总结</title>
+        <pubTime>2018-02-06T08:51:42.000Z</pubTime>
+        
+        <tag>html</tag>
+         
+         
+           
+             
+              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/09/base-4/</loc>
+    <lastmod>2018-02-25T13:37:00.150Z</lastmod>
+    <data>
+        <display>
+        <title>前端一定要会的算法--排序</title>
+        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
+        
+        <tag>web基础知识</tag>
+         
+         
+           
+             
+              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/25/js-6/</loc>
+    <lastmod>2018-02-25T11:38:16.644Z</lastmod>
+    <data>
+        <display>
+        <title>js-6</title>
+        <pubTime>2018-02-25T11:23:15.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://easywork.xin/2018/02/25/network-1/</loc>
     <lastmod>2018-02-25T07:57:28.474Z</lastmod>
     <data>
@@ -17,27 +138,6 @@
            
              
               <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/24/ng2-6/</loc>
-    <lastmod>2018-02-25T01:57:35.027Z</lastmod>
-    <data>
-        <display>
-        <title>Angular2双向绑定及变化检测</title>
-        <pubTime>2018-02-24T09:58:21.000Z</pubTime>
-        
-        <tag>Angular2</tag>
-         
-         
-           
-             
-              <breadCrumb title="web框架" url="http://easywork.xin/categories/web%E6%A1%86%E6%9E%B6/"/>
           
         </display>
     </data>
@@ -58,46 +158,6 @@
            
              
               <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2017/10/21/css-1/</loc>
-    <lastmod>2018-02-22T07:05:46.058Z</lastmod>
-    <data>
-        <display>
-        <title>基础知识--css</title>
-        <pubTime>2017-10-21T05:21:30.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-         
-           
-             
-              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/06/html-1/</loc>
-    <lastmod>2018-02-22T07:05:29.069Z</lastmod>
-    <data>
-        <display>
-        <title>HTML标签分类总结</title>
-        <pubTime>2018-02-06T08:51:42.000Z</pubTime>
-        
-        <tag>html</tag>
-         
-         
-           
-             
-              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
           
         </display>
     </data>
@@ -338,26 +398,6 @@
            
              
               <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/09/base-4/</loc>
-    <lastmod>2018-02-21T14:25:49.337Z</lastmod>
-    <data>
-        <display>
-        <title>前端一定要会的算法--排序</title>
-        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
-        
-        <tag>web基础知识</tag>
-         
-         
-           
-             
-              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
           
         </display>
     </data>

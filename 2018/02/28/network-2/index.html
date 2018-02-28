@@ -43,7 +43,7 @@
     
     <title>
         
-            面试奇谈 | 
+            TCP三次握手、四次挥手 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="I can not repair the computer.">
-    <meta name="keywords" content=",面试奇谈">
+    <meta name="keywords" content=",计算机网络">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://easywork.xin/2018/02/26/interview-2/">
+    <meta name="msapplication-starturl" content="http://easywork.xin/2018/02/28/network-2/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://easywork.xin/2018/02/26/interview-2/">
+    <meta property="og:url" content="http://easywork.xin/2018/02/28/network-2/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="面试奇谈 | Husbin">
+    <meta property="og:title" content="TCP三次握手、四次挥手 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="I can not repair the computer.">
-    <meta property="og:article:tag" content="面试奇谈"> 
+    <meta property="og:article:tag" content="计算机网络"> 
 
     
-        <meta property="article:published_time" content="Mon Feb 26 2018 21:51:01 GMT+0800">
-        <meta property="article:modified_time" content="Tue Feb 27 2018 20:36:21 GMT+0800">
+        <meta property="article:published_time" content="Wed Feb 28 2018 15:05:40 GMT+0800">
+        <meta property="article:modified_time" content="Wed Feb 28 2018 18:05:44 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://easywork.xin/2018/02/26/interview-2/index.html" />
+        <link rel="canonical" href="http://easywork.xin/2018/02/28/network-2/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://easywork.xin/2018/02/26/interview-2/index.html",
-    "headline": "面试奇谈",
-    "datePublished": "Mon Feb 26 2018 21:51:01 GMT+0800",
-    "dateModified": "Tue Feb 27 2018 20:36:21 GMT+0800",
+    "mainEntityOfPage": "http://easywork.xin/2018/02/28/network-2/index.html",
+    "headline": "TCP三次握手、四次挥手",
+    "datePublished": "Wed Feb 28 2018 15:05:40 GMT+0800",
+    "dateModified": "Wed Feb 28 2018 18:05:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.jpg"
         }
     },
-    "keywords": ",面试奇谈",
+    "keywords": ",计算机网络",
     "description": "I can not repair the computer.",
 }
 </script>
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于本文"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于本文</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2018-02-26-——-美的面试"><span class="post-toc-number">2.</span> <span class="post-toc-text">2018-02-26 —— 美的面试</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写在前面"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">写在前面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hr电话面（02-25）"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">hr电话面（02-25）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#技术面（02-26）"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">技术面（02-26）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#笔试题（题真的很多，css我都没写）"><span class="post-toc-number">2.0.3.1.</span> <span class="post-toc-text">笔试题（题真的很多，css我都没写）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#面试官提问"><span class="post-toc-number">2.0.3.2.</span> <span class="post-toc-text">面试官提问</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#晚上hr再面（02-26）"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">晚上hr再面（02-26）</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#TCP首部格式"><span class="post-toc-number">2.</span> <span class="post-toc-text">TCP首部格式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#序号"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">序号</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#确认号"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">确认号</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下面是6个控制位"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">下面是6个控制位</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#紧急URG（URGent）"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">紧急URG（URGent）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#确认ACK（ACKnowledgment）"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">确认ACK（ACKnowledgment）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#同步SYN（SYNchronization）"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">同步SYN（SYNchronization）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#终止FIN（FINis）"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">终止FIN（FINis）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#推送-PSH（PuSH）"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">推送 PSH（PuSH）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#复位RST（ReSeT）"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">复位RST（ReSeT）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三次握手"><span class="post-toc-number">3.</span> <span class="post-toc-text">三次握手</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三次握手示意图："><span class="post-toc-number">3.1.</span> <span class="post-toc-text">三次握手示意图：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三次握手过程："><span class="post-toc-number">3.2.</span> <span class="post-toc-text">三次握手过程：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四次挥手"><span class="post-toc-number">4.</span> <span class="post-toc-text">四次挥手</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四次挥手过程图："><span class="post-toc-number">4.1.</span> <span class="post-toc-text">四次挥手过程图：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四次挥手过程："><span class="post-toc-number">4.2.</span> <span class="post-toc-text">四次挥手过程：</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                面试奇谈
+                TCP三次握手、四次挥手
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Husbin</strong>
-        <span>2月 26, 2018</span>
+        <span>2月 28, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -424,7 +424,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/面试奇谈/">面试奇谈</a>
+        <a class="post_tag-link" href="/tags/计算机网络/">计算机网络</a>
     </ul>
     
 
@@ -441,7 +441,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=面试奇谈&url=http://easywork.xin/2018/02/26/interview-2/index.html&pic=http://easywork.xin/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=TCP三次握手、四次挥手&url=http://easywork.xin/2018/02/28/network-2/index.html&pic=http://easywork.xin/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=面试奇谈&url=http://easywork.xin/2018/02/26/interview-2/index.html&via=Husbin" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=TCP三次握手、四次挥手&url=http://easywork.xin/2018/02/28/network-2/index.html&via=Husbin" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://easywork.xin/2018/02/26/interview-2/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://easywork.xin/2018/02/28/network-2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -468,7 +468,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://easywork.xin/2018/02/26/interview-2/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://easywork.xin/2018/02/28/network-2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -480,7 +480,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Husbin&title=面试奇谈&summary=I can not repair the computer.&pics=http://easywork.xin/img/favicon.jpg&url=http://easywork.xin/2018/02/26/interview-2/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Husbin&title=TCP三次握手、四次挥手&summary=I can not repair the computer.&pics=http://easywork.xin/img/favicon.jpg&url=http://easywork.xin/2018/02/28/network-2/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -499,46 +499,51 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="关于本文"><a href="#关于本文" class="headerlink" title="关于本文"></a>关于本文</h1><p>本文只做问题记录及部分解答，另外部分解答移步另一篇博客 <a href="">面试奇谈-解答篇</a>。</p>
-<h1 id="2018-02-26-——-美的面试"><a href="#2018-02-26-——-美的面试" class="headerlink" title="2018-02-26 —— 美的面试"></a>2018-02-26 —— 美的面试</h1><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>今天一切还算顺利，就是过去的时候被黑车坑了90块车费很心疼。</p>
-<p>第一次面试，拿到offer记录一下。</p>
-<h3 id="hr电话面（02-25）"><a href="#hr电话面（02-25）" class="headerlink" title="hr电话面（02-25）"></a>hr电话面（02-25）</h3><p>问了下日常，还有能全勤吗，然后问了2个基本的问题，<a href="http://easywork.xin/2018/02/01/js-3/">js基本数据类型</a>，<a href="http://easywork.xin/2018/02/27/js-6/">apply，call，bind</a>。第一次接电话，很紧张，答得不是很好，然后通知我去佛山面试。</p>
-<h3 id="技术面（02-26）"><a href="#技术面（02-26）" class="headerlink" title="技术面（02-26）"></a>技术面（02-26）</h3><h4 id="笔试题（题真的很多，css我都没写）"><a href="#笔试题（题真的很多，css我都没写）" class="headerlink" title="笔试题（题真的很多，css我都没写）"></a>笔试题（题真的很多，css我都没写）</h4><ul>
-<li>正则-选择题</li>
-<li>关于日期的-选择题（month是从0开始的）</li>
-<li>window、location-选择题</li>
-<li>h5增加了2个本地存储-填空题(sessionStroage、localStroage)</li>
-<li><a href="http://easywork.xin/2018/02/01/js-3/">变量作用域，变量提升，函数提升</a>，后面追问let有没有提升（答案是没有）</li>
-<li><a href="http://easywork.xin/2018/02/02/js-4/">闭包会导致什么问题</a> - 问答题(答案是内存泄漏)</li>
-<li>!!typeof “111”===”string” 的boolean值 -选择（后续问了执行顺序）</li>
-<li>原型链 - 问答题</li>
-<li><a href="http://easywork.xin/2018/01/22/js-2/">事件委托，事件冒泡，事件捕获，事件的函数</a>- 问答题</li>
-<li>关于优化 - 问答题</li>
-<li>关于浏览器兼容 - 问答题（回答了项目中遇到的几个问题）</li>
-<li><a href="http://easywork.xin/2017/10/21/css-1/">什么是盒子模型</a> - 问答题</li>
-<li>字符串反转（想到了很蠢的方法，然后没写，写了思路。面试官说是数组反转）</li>
-<li>ul和li列表的默认样式</li>
-<li>暂时想到这么多（css都没做所以不记得了，印象中有一道居中，一道flex）。。</li>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>想要彻底理解TCP三次握手，四次挥手，一定要认识TCP的首部以及各个字段的意义。主要是序号（seq）、确认号（ack）和控制号。这里我只介绍前面那几个字段的意义，其他的看书（谢希仁的计算机网络课本）。</p>
+<h3 id="TCP首部格式"><a href="#TCP首部格式" class="headerlink" title="TCP首部格式"></a>TCP首部格式</h3><p><img src="http://upload-images.jianshu.io/upload_images/7166236-98eac31fcea79185.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP首部"></p>
+<h4 id="序号"><a href="#序号" class="headerlink" title="序号"></a>序号</h4><p>占4个字节，序号范围是<code>[0 , 2^32-1]</code>，共<code>2^32（即4294967296）</code>个序号。序号增加到<code>2^32-1</code>后，下一个序号又回到0。也就是说序号使用<code>mod 2^32-1</code>。<strong>TCP是面向字节流的，在一个TCP连接中传送的字节流中的每一个字节都是按顺序编号的。</strong>整个要传送的字节流的起始序号必须在建立连接时设置。<strong>首部中的序号字段值则指的是本报文段所发送的数据的第一个字节的序号。</strong>例如，一报文的序号字段值是301，而携带的数据共有100字节。这就表明：本报文段的数据的第一个字节序号是301，最后一个字节序号是400。显然，下一个报文段的数据序号应该从401开始，即下一个报文段的序号字段值应该是401.这个字段的名臣也叫做“报文段序号”。</p>
+<h4 id="确认号"><a href="#确认号" class="headerlink" title="确认号"></a>确认号</h4><p>占4个字节，是<strong>期望收到对方下一个报文段的第一个数据字节的序号</strong>。</p>
+<pre><code>若确认号 = N ， 则表明：到序号N-1为止的所有数据都已经正确收到了。
+</code></pre><h4 id="下面是6个控制位"><a href="#下面是6个控制位" class="headerlink" title="下面是6个控制位"></a>下面是6个控制位</h4><h4 id="紧急URG（URGent）"><a href="#紧急URG（URGent）" class="headerlink" title="紧急URG（URGent）"></a>紧急URG（URGent）</h4><p>当URG = 1时，表明紧急指针字段有效。他告诉系统此报文中有紧急数据，应尽快传送（相当于高优先级的数据），而不要按原来的排队顺序要传送。当URG置1时，发送应用进程就告诉对方的TCP有紧急数据要传送。于是发送方TCP就把紧急数据插入到本报文段数据的最前面，而在紧急数据后面的数据仍是普通数据。这时就要与首部中的紧急指针（urgent pointer）字段配合使用。</p>
+<h4 id="确认ACK（ACKnowledgment）"><a href="#确认ACK（ACKnowledgment）" class="headerlink" title="确认ACK（ACKnowledgment）"></a>确认ACK（ACKnowledgment）</h4><p>仅当ACK=1时，确认号（ack）字段才有效。当ACK=1时，确认号无效。TCP规定，<strong>在连接建立后所有传送的报文段都必须把ACK置1。</strong></p>
+<h4 id="同步SYN（SYNchronization）"><a href="#同步SYN（SYNchronization）" class="headerlink" title="同步SYN（SYNchronization）"></a>同步SYN（SYNchronization）</h4><p><strong>在建立连接时用来同步序号。</strong></p>
+<pre><code>SYN=1
+ACK=0
+表明这是一个连接请求报文段
+</code></pre><pre><code>若同意建立连接，则应在相应的报文段中使：
+SYN = 1
+ACK = 1
+</code></pre><p><strong>因此，SYN置为1就表示这是一个连接请求或连接接受报文。</strong></p>
+<h4 id="终止FIN（FINis）"><a href="#终止FIN（FINis）" class="headerlink" title="终止FIN（FINis）"></a>终止FIN（FINis）</h4><p>用来释放一个连接，当FIN=1时，表明次保温段的发送方数据已经发送完毕，并要求释放运输连接。</p>
+<h4 id="推送-PSH（PuSH）"><a href="#推送-PSH（PuSH）" class="headerlink" title="推送 PSH（PuSH）"></a>推送 PSH（PuSH）</h4><p>当两个应用进行交互式的通信时，有时在一端的应用进程希望在键入一个命令后立即就能收到对方的相应。在这种情况下，TCP就可以使用推送（push）操作。这是，发送方TCP把PSH置1，并立即创建一个报文段发送出去。接收方TCP收到PSH=1的报文段，就尽快地交付接受应用进程，而不再等到整个缓存都填满了再向上交付。</p>
+<h4 id="复位RST（ReSeT）"><a href="#复位RST（ReSeT）" class="headerlink" title="复位RST（ReSeT）"></a>复位RST（ReSeT）</h4><p>当RST=1时，表明TCP连接中出现严重错误，必须释放连接，然后再重新建立运输连接。RST置1还用来拒绝一个非法的报文段或者拒绝一个连接。RST也可称为重建位或重置位。</p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>TCP建立连接的过程叫做握手，握手需要在客户端和服务器之间交换三个TCP报文段。</p>
+<h4 id="三次握手示意图："><a href="#三次握手示意图：" class="headerlink" title="三次握手示意图："></a>三次握手示意图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-beadee991d69f4ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP三次握手"></p>
+<h4 id="三次握手过程："><a href="#三次握手过程：" class="headerlink" title="三次握手过程："></a>三次握手过程：</h4><pre><code>//服务器处于监听状态，当客户端想与服务器建立连接时，操作流程如下：
+客户端-&gt;服务端    SYN = 1              客户端进入同步已发送状态
+//若服务端同意连接，操作流程如下：
+服务端-&gt;客户端    SYN = 1 , ACK = 1     服务端进入同步收到状态
+客户端-&gt;服务端    ACK = 1                客户端进入ESTABLISHED（已建立连接状态）
+服务端收到客户端的确认后，也进入ESTABLISHED状态。
+</code></pre><p>为什么客户端最后还要发送一次确认：</p>
+<ul>
+<li>这是为了防止已经失效的连接请求报文段突然有传送到了服务端，重新建立了一个连接，因而产生错误和资源浪费。</li>
+<li>所谓“已失效的链接请求报文段”是这样产生的，考虑一种正常情况，客户端发出连接请求，但因为连接请求报文丢失而未收到确认。于是客户端再重传了一次连接请求。后来收到了确认，建立了连接。数据传输完毕后，就释放了连接。客户端共发送了2个连接请求报文段，其中第一丢失，第二个到达了服务端，没有“已失效的连接请求报文段”。</li>
+<li>现假定一种异常情况，即客户端发出第一个请求连接报文段并没有丢失，而是滞留在某个网络节点，以致延误到链接释放后的某个时间才到达服务端。本来这是一个早就失效的报文段。但服务端收到此失效的报文段后，就误认为客户端又发了一次新的连接请求。于是向客户端发出了确认报文段，同意建立连接。假定不采用报文握手，那么只要服务端发出确认，新的连接就建立了。</li>
 </ul>
-<h4 id="面试官提问"><a href="#面试官提问" class="headerlink" title="面试官提问"></a>面试官提问</h4><ul>
-<li>问了let有没有变量提升的问题</li>
-<li>还有一道简单的题我写错了。。他在引导我。。我觉得。。我基础实在。。</li>
-<li>项目中有什么印象特别深刻的（说了项目中遇到的几个问题，关于Angular-cli在微信上的问题，关于ios11图片上传的问题）</li>
-<li>平时有没有做什么东西（github+hexo这个博客）</li>
-<li>css都不会：flexd、css3</li>
-<li>数据库问了下mongoDB，我说了用postgresql，以及优点</li>
-<li>apply，call，bind的区别，以及怎么使用参数（后面这个没能答出来）</li>
-<li>问了express有什么中间件（没能答出来）</li>
-<li>介绍了他们部门的情况</li>
-<li>然后说实习生也是有工作压力的</li>
-<li>然后问能做多久，问我有没有想问的</li>
-<li>面试官问的都很基础，而且很少问项目，我尽量把问题往项目带，才有东西讲。</li>
-<li>面试官人很不错，很有亲和力</li>
-</ul>
-<h3 id="晚上hr再面（02-26）"><a href="#晚上hr再面（02-26）" class="headerlink" title="晚上hr再面（02-26）"></a>晚上hr再面（02-26）</h3><ul>
-<li>问了下我说只能实习3-4个月，她说至少要6个月，我问了是不是考虑6个月就能过去，他说是。</li>
-<li>问了下转正待遇怎么样，她说目前应届生的待遇，就8x14这样子，但每年不一样，都会涨。</li>
-<li>实习的话2-3k包住+餐补。</li>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>数据传输结束后，通信双方都可释放连接。假设客户端先向其TCP发出释放连接报文段，并停止再发送数据，主动关闭TCP连接</p>
+<h4 id="四次挥手过程图："><a href="#四次挥手过程图：" class="headerlink" title="四次挥手过程图："></a>四次挥手过程图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-cefaf82e267b090a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP四次挥手"></p>
+<h4 id="四次挥手过程："><a href="#四次挥手过程：" class="headerlink" title="四次挥手过程："></a>四次挥手过程：</h4><pre><code>客户端-&gt;服务端    FIN = 1             客户端进入中止等待1状态
+服务端-&gt;客户端    ACK = 1                服务端进入关闭等待状态
+//此时TCP进入半关闭状态，服务端继续向客户端发送数据，当数据发送完毕之后
+服务端-&gt;客户端    FIN = 1 , ACK = 1    服务端进入最后确认状态
+//客户端收到确认后，必须对此发出确认
+客户端-&gt;服务端    ACK = 1                客户端进入时间等待状态
+服务端收到确认后关闭连接，客户端必须经过时间等待计时器设置的2MSL后，客户端才进入closed状态。
+</code></pre><p>为什么客户端在时间等待状态必须等待2MSL的时间：</p>
+<ul>
+<li>第一，为了保证客户端发送的左后一个ACK能到达服务端。</li>
+<li>防止上文提到的“已经失效的链接请求报文段”出现在本连接中。</li>
 </ul>
 
         
@@ -560,21 +565,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/02/27/interview-3/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/02/25/network-1/" id="post_nav-older" class="next-content">
+        <a href="/2018/02/27/js-6/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

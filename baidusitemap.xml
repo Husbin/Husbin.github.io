@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/02/28/network-2/</loc>
+    <lastmod>2018-02-28T10:05:44.404Z</lastmod>
+    <data>
+        <display>
+        <title>TCP三次握手、四次挥手</title>
+        <pubTime>2018-02-28T07:05:40.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/01/22/js-2/</loc>
+    <lastmod>2018-02-28T06:47:50.701Z</lastmod>
+    <data>
+        <display>
+        <title>javascript事件与事件委托</title>
+        <pubTime>2018-01-22T14:21:18.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/02/27/interview-3/</loc>
     <lastmod>2018-02-27T15:14:32.018Z</lastmod>
     <data>
@@ -578,26 +618,6 @@
            
              
               <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/01/22/js-2/</loc>
-    <lastmod>2018-02-03T11:54:34.101Z</lastmod>
-    <data>
-        <display>
-        <title>javascript事件与事件委托</title>
-        <pubTime>2018-01-22T14:21:18.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>

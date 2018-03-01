@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Fri Feb 02 2018 10:05:18 GMT+0800">
-        <meta property="article:modified_time" content="Mon Feb 12 2018 22:00:02 GMT+0800">
+        <meta property="article:modified_time" content="Thu Mar 01 2018 10:38:38 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://easywork.xin/2018/02/02/js-4/index.html",
     "headline": "javascript垃圾回收与内存泄漏",
     "datePublished": "Fri Feb 02 2018 10:05:18 GMT+0800",
-    "dateModified": "Mon Feb 12 2018 22:00:02 GMT+0800",
+    "dateModified": "Thu Mar 01 2018 10:38:38 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Husbin",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#垃圾回收机制"><span class="post-toc-number">1.</span> <span class="post-toc-text">垃圾回收机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动垃圾收集机制"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">自动垃圾收集机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#局部变量的生命周期"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">局部变量的生命周期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#javascript中的2中垃圾回收机制"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">javascript中的2中垃圾回收机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标记清除（Mark-and-sweep）"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">标记清除（Mark-and-sweep）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#引用计数（reference-counting）"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">引用计数（reference counting）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内存泄漏"><span class="post-toc-number">2.</span> <span class="post-toc-text">内存泄漏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#javascript中3种常见的内存泄漏"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">javascript中3种常见的内存泄漏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-意外的全局变量"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">1. 意外的全局变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-被遗忘的计数器或者回调函数"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">2.被遗忘的计数器或者回调函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-脱离DOM的引用"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">3. 脱离DOM的引用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-闭包（正常情况下不会造成内存泄漏）"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">4.闭包（正常情况下不会造成内存泄漏）</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#垃圾回收机制"><span class="post-toc-number">1.</span> <span class="post-toc-text">垃圾回收机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自动垃圾收集机制"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">自动垃圾收集机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#局部变量的生命周期"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">局部变量的生命周期</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#javascript中的2种垃圾回收机制"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">javascript中的2种垃圾回收机制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#标记清除（Mark-and-sweep）"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">标记清除（Mark-and-sweep）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#引用计数（reference-counting）"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">引用计数（reference counting）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#内存泄漏"><span class="post-toc-number">2.</span> <span class="post-toc-text">内存泄漏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#javascript中3种常见的内存泄漏"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">javascript中3种常见的内存泄漏</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-意外的全局变量"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">1. 意外的全局变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-被遗忘的计数器或者回调函数"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">2.被遗忘的计数器或者回调函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-脱离DOM的引用"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">3. 脱离DOM的引用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-闭包（正常情况下不会造成内存泄漏）"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">4.闭包（正常情况下不会造成内存泄漏）</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -505,10 +505,10 @@
 <h3 id="局部变量的生命周期"><a href="#局部变量的生命周期" class="headerlink" title="局部变量的生命周期"></a>局部变量的生命周期</h3><ul>
 <li>局部变量只在函数执行的过程中存在。在这个过程中，会为局部变量在栈内存或堆内存上分配相应的空间，以便存储他们的值。然后再函数中使用这些变量，直至函数执行结束。此时，局部变量就没有存在的必要了，因此可以释放他们的内存以供将来使用。</li>
 </ul>
-<h3 id="javascript中的2中垃圾回收机制"><a href="#javascript中的2中垃圾回收机制" class="headerlink" title="javascript中的2中垃圾回收机制"></a>javascript中的2中垃圾回收机制</h3><h4 id="标记清除（Mark-and-sweep）"><a href="#标记清除（Mark-and-sweep）" class="headerlink" title="标记清除（Mark-and-sweep）"></a>标记清除（Mark-and-sweep）</h4><ul>
+<h3 id="javascript中的2种垃圾回收机制"><a href="#javascript中的2种垃圾回收机制" class="headerlink" title="javascript中的2种垃圾回收机制"></a>javascript中的2种垃圾回收机制</h3><h4 id="标记清除（Mark-and-sweep）"><a href="#标记清除（Mark-and-sweep）" class="headerlink" title="标记清除（Mark-and-sweep）"></a>标记清除（Mark-and-sweep）</h4><ul>
 <li>包括标记阶段和清除阶段。</li>
 <li><strong>标记阶段：</strong>垃圾回收器创建了一个<code>roots</code>列表。<code>Roots</code>通常是代码中全局变量的引用。javascript中，<strong><code>window</code>对象是一个全局变量，被当作<code>root</code></strong>。<code>window</code>对象总是存在，因此垃圾回收器可以检查他和他所有子对象是否存在（即不是垃圾）。所有的<code>roots</code>被检查和标记为激活（即不是垃圾）。<strong>所有的子对象也被递归检查，检查从<code>root</code>开始的所有对象，如果是可达的，则打上标记</strong>。标记阶段到此结束。</li>
-<li><strong>清除阶段：</strong>标记阶段完成时，被标记的对象被视为“存活”对象。<strong>然后重新进入递归扫描阶段，将没有标记的对象进行回收</strong>。这一阶段称为清除阶段。在扫描的同时，还需要将存活的对象清除掉，以便下一次GC操作做准备。</li>
+<li><strong>清除阶段：</strong>标记阶段完成时，被标记的对象被视为“存活”对象。<strong>然后重新进入递归扫描阶段，将没有标记的对象进行回收</strong>。这一阶段称为清除阶段。在扫描的同时，还需要将存活的对象的标记清除掉，以便下一次GC操作做准备。</li>
 </ul>
 <h4 id="引用计数（reference-counting）"><a href="#引用计数（reference-counting）" class="headerlink" title="引用计数（reference counting）"></a>引用计数（reference counting）</h4><ul>
 <li>引用计数的含义是跟踪记录每个值被引用的次数。当声明了一个变量并将一个引用类型赋给该变量时，则这个值的引用次数就是1。如果同一个值又被赋给另一个变量，则将该引用次数再加1。相反，如果包含对这个值得引用变量又取得了另一个值，则这个值的引用次数就减1。当这个值得引用次数变为0时，则说明没有办法在访问这个值了，因而久可以将其占用的内存空间回收回来。这样，垃圾回收器下次再运行时，会释放那些引用次数为0的值所占用的内存。</li>
@@ -572,6 +572,7 @@ function removeButton() {
 }
 </code></pre>
 <h4 id="4-闭包（正常情况下不会造成内存泄漏）"><a href="#4-闭包（正常情况下不会造成内存泄漏）" class="headerlink" title="4.闭包（正常情况下不会造成内存泄漏）"></a>4.闭包（正常情况下不会造成内存泄漏）</h4><blockquote>
+<p>闭包就是能够读取其他函数内部变量的函数，闭包的出现时为了突破作用域链的限制。</p>
 <p>由于IE9 之前的版本对JScript 对象和COM 对象使用不同的垃圾收集。因此闭包在IE 的这些版本中会导致一些特殊的问题。<strong>具体来说，如果闭包的作用域链中保存着一个HTML 元素，那么就意味着该元素将无法被销毁</strong>。</p>
 <p>reference – javascript高级程序设计第三版</p>
 </blockquote>

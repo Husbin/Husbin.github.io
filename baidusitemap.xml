@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/02/02/js-4/</loc>
+    <lastmod>2018-03-01T02:38:38.948Z</lastmod>
+    <data>
+        <display>
+        <title>javascript垃圾回收与内存泄漏</title>
+        <pubTime>2018-02-02T02:05:18.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/02/26/interview-2/</loc>
-    <lastmod>2018-02-28T13:56:55.619Z</lastmod>
+    <lastmod>2018-03-01T02:17:46.623Z</lastmod>
     <data>
         <display>
         <title>面试奇谈</title>
@@ -23,10 +43,29 @@
     </url>
 
     
+  <url>
+    <loc>http://easywork.xin/2018/02/25/network-1/</loc>
+    <lastmod>2018-03-01T01:34:06.693Z</lastmod>
+    <data>
+        <display>
+        <title>网络协议的分层结构</title>
+        <pubTime>2018-02-25T06:33:29.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/02/28/network-2/</loc>
-    <lastmod>2018-02-28T10:05:44.404Z</lastmod>
+    <lastmod>2018-03-01T01:27:24.521Z</lastmod>
     <data>
         <display>
         <title>TCP三次握手、四次挥手</title>
@@ -43,6 +82,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://easywork.xin/2018/01/12/base-2/</loc>
+    <lastmod>2018-03-01T00:31:35.366Z</lastmod>
+    <data>
+        <display>
+        <title>web开发必备常识</title>
+        <pubTime>2018-01-12T14:04:09.000Z</pubTime>
+        
+        <tag>web基础知识</tag>
+         
+         
+           
+             
+              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://easywork.xin/2018/01/22/js-2/</loc>
@@ -198,26 +258,6 @@
            
              
               <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/25/network-1/</loc>
-    <lastmod>2018-02-25T07:57:28.474Z</lastmod>
-    <data>
-        <display>
-        <title>网络协议的分层结构</title>
-        <pubTime>2018-02-25T06:33:29.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
           
         </display>
     </data>
@@ -505,26 +545,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/02/02/js-4/</loc>
-    <lastmod>2018-02-12T14:00:02.498Z</lastmod>
-    <data>
-        <display>
-        <title>javascript垃圾回收与内存泄漏</title>
-        <pubTime>2018-02-02T02:05:18.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/02/01/js-3/</loc>
     <lastmod>2018-02-03T13:23:57.740Z</lastmod>
     <data>
@@ -571,26 +591,6 @@
         <display>
         <title>图解BOM与DOM的区别、联系</title>
         <pubTime>2018-01-13T13:22:57.000Z</pubTime>
-        
-        <tag>web基础知识</tag>
-         
-         
-           
-             
-              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/01/12/base-2/</loc>
-    <lastmod>2018-02-03T13:10:39.633Z</lastmod>
-    <data>
-        <display>
-        <title>web开发必备常识</title>
-        <pubTime>2018-01-12T14:04:09.000Z</pubTime>
         
         <tag>web基础知识</tag>
          

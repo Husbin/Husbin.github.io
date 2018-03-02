@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/03/02/js-7/</loc>
+    <lastmod>2018-03-02T04:08:44.631Z</lastmod>
+    <data>
+        <display>
+        <title>简述作用域链、闭包、原型链</title>
+        <pubTime>2018-03-02T01:37:33.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/03/01/network-3/</loc>
-    <lastmod>2018-03-01T04:01:35.343Z</lastmod>
+    <lastmod>2018-03-01T14:22:51.467Z</lastmod>
     <data>
         <display>
         <title>从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</title>
@@ -23,6 +42,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://easywork.xin/2018/01/12/base-2/</loc>

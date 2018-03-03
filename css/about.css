@@ -1,0 +1,20 @@
+h4{
+    color: darkorange;
+}
+#post-content div p{
+    padding-left: 40px;
+}
+#post-content div a{
+    display: block;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+.month{
+    margin: 20px;
+}
+.month-content{
+    display: none;
+}
+.card{
+    margin: 10px;
+}

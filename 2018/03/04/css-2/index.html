@@ -43,7 +43,7 @@
     
     <title>
         
-            分类: 面试奇谈 | 
+            css选择器简介 | 
         
         Husbin
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="与其临渊羡鱼，不如退而结网。">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",css">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -81,6 +81,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -212,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://easywork.xin/categories/面试奇谈/">
+    <meta name="msapplication-starturl" content="http://easywork.xin/2018/03/04/css-2/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Husbin">
@@ -227,13 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://easywork.xin/categories/面试奇谈/">
+    <meta property="og:url" content="http://easywork.xin/2018/03/04/css-2/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: 面试奇谈 | Husbin">
+    <meta property="og:title" content="css选择器简介 | Husbin">
     <meta property="og:image" content="/img/favicon.jpg">
     <meta property="og:description" content="与其临渊羡鱼，不如退而结网。">
-    
+    <meta property="og:article:tag" content="css"> 
 
+    
+        <meta property="article:published_time" content="Sun Mar 04 2018 11:44:00 GMT+0800">
+        <meta property="article:modified_time" content="Sun Mar 04 2018 11:47:59 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -241,13 +247,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://easywork.xin/categories/面试奇谈/index.html" />
+        <link rel="canonical" href="http://easywork.xin/2018/03/04/css-2/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://easywork.xin/2018/03/04/css-2/index.html",
+    "headline": "css选择器简介",
+    "datePublished": "Sun Mar 04 2018 11:44:00 GMT+0800",
+    "dateModified": "Sun Mar 04 2018 11:47:59 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Husbin",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/touxiang.png"
+        },
+        "description": "与其临渊羡鱼，不如退而结网。"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Husbin",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.jpg"
+        }
+    },
+    "keywords": ",css",
+    "description": "与其临渊羡鱼，不如退而结网。",
+}
+</script>
 
 
     
@@ -284,225 +320,322 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择器"><span class="post-toc-number">2.</span> <span class="post-toc-text">选择器</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/02/27/interview-3/">面试奇谈-解答篇</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            2018-02-26面试解析let有...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/02/27/interview-3/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>2月 27, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/面试奇谈/">面试奇谈</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/02/26/interview-2/">面试奇谈</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            关于本文本文只做问题记录及部分解答，另外部分解答移步另一篇博客 面试奇谈-解答篇。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/02/26/interview-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>2月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/面试奇谈/">面试奇谈</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/02/21/interview-1/">他山之石，可为己用</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-他山之石，可为己用。
-刷刷基础题，做做记录而已，这里的内容基本来自网上。
-
-html
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/02/21/interview-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>2月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/面试奇谈/">面试奇谈</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 5; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                css选择器简介
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/touxiang.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Husbin</strong>
+        <span>3月 04, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/css/">css</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=css选择器简介&url=http://easywork.xin/2018/03/04/css-2/index.html&pic=http://easywork.xin/img/favicon.jpg&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=css选择器简介&url=http://easywork.xin/2018/03/04/css-2/index.html&via=Husbin" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://easywork.xin/2018/03/04/css-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://easywork.xin/2018/03/04/css-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Husbin&title=css选择器简介&summary=与其临渊羡鱼，不如退而结网。&pics=http://easywork.xin/img/favicon.jpg&url=http://easywork.xin/2018/03/04/css-2/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我也不知道为什么要再总结一遍，<a href="http://easywork.xin/2017/10/21/css-1/">明明以前也总结过了</a>。可能是买了书（《css权威指南》），膨胀了，再写一遍。</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p><strong>标签选择器</strong></p>
+<pre><code class="css">h1 {color: red}
+h1 , p {color: red}
+</code></pre>
+<p><strong>通配选择器</strong></p>
+<pre><code class="css">*{color: red}
+</code></pre>
+<p><strong>类选择器-多类选择器（使用空格分开）</strong></p>
+<pre><code class="html">&lt;style&gt;
+  .class-selector-1{color: red}
+  .class-selector-2{margin: 10px}
+&lt;/style&gt;
+&lt;span class=&quot;class-selector-1 class-selector-2&quot;&gt;hello&lt;/span&gt;
+</code></pre>
+<p><strong>ID选择器</strong></p>
+<pre><code class="html">&lt;style&gt;
+  #span-1{
+    color: red
+  }
+&lt;/style&gt;
+&lt;span id=&quot;span-1&quot;&gt;hello&lt;/span&gt;
+</code></pre>
+<p><strong>属性选择器</strong></p>
+<pre><code class="html">&lt;!--选择有class属性的所有h1元素--&gt;
+&lt;style&gt;
+  h1[class]{
+    color: red;
+  }
+&lt;/style&gt;
+&lt;h1 class=&quot;selector&quot;&gt;hello&lt;/h1&gt;
+&lt;h1 class=&quot;selector&quot;&gt;woeld&lt;/h1&gt;
+&lt;h1 class=&quot;selector&quot;&gt;yes&lt;/h1&gt;
+</code></pre>
+<p><strong>后代选择器（根据文档结构）</strong></p>
+<ul>
+<li>选择所有子元素</li>
+</ul>
+<pre><code class="html">&lt;!--所有符合条件的后代都会应用--&gt;
+&lt;style&gt;
+  h1 span{
+    color: red;
+  }
+&lt;/style&gt;
+&lt;h1&gt;
+  &lt;span&gt;hello&lt;/span&gt;&lt;span&gt;world&lt;/span&gt;
+&lt;/h1&gt;
+&lt;h1&gt;
+  &lt;em&gt;
+    &lt;span&gt;你好&lt;/span&gt;&lt;span&gt;世界&lt;/span&gt;
+  &lt;/em&gt;
+&lt;/h1&gt;
+</code></pre>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-6f85cab061b73360.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="普通后代选择器"></p>
+<ul>
+<li>选择一个子元素</li>
+</ul>
+<pre><code class="html">&lt;style&gt;
+  h1 &gt; span{
+    color: red;
+  }
+&lt;/style&gt;
+&lt;h1&gt;
+  &lt;span&gt;hello&lt;/span&gt;&lt;span&gt;world&lt;/span&gt;
+&lt;/h1&gt;
+&lt;h1&gt;
+  &lt;em&gt;
+    &lt;span&gt;你好&lt;/span&gt;&lt;span&gt;世界&lt;/span&gt;
+  &lt;/em&gt;
+&lt;/h1&gt;
+</code></pre>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-38f5c7917b602216.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="限定范围的后代选择器"></p>
+<ul>
+<li>选择相邻兄弟元素</li>
+</ul>
+<pre><code class="html">&lt;style type=&quot;text/css&quot;&gt;
+h1 + p {margin-top:50px;}
+&lt;/style&gt;
+&lt;h1&gt;This is a heading.&lt;/h1&gt;
+&lt;p&gt;This is paragraph.&lt;/p&gt;
+&lt;p&gt;This is paragraph.&lt;/p&gt;
+&lt;p&gt;This is paragraph.&lt;/p&gt;
+&lt;p&gt;This is paragraph.&lt;/p&gt;
+&lt;p&gt;This is paragraph.&lt;/p&gt;
+</code></pre>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-5881286866f17890.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择相邻兄弟"></p>
+<p><strong>伪类(:)和伪元素(:: )</strong></p>
+<ul>
+<li>伪类：类用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。</li>
+<li>伪元素：伪元素用于创建一些不在文档树中的元素，并为其添加样式。</li>
+<li>一些老旧的浏览器不支持双冒号的写法，因此如果必须兼容旧浏览器，则应该使用单冒号写法。IE 从 9 开始支持双冒号写法。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-b5532b44caf611ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="伪类.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-c63177cb4cbaadab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="伪元素.png"></p>
+<p><a href="http://www.alloyteam.com/2016/05/summary-of-pseudo-classes-and-pseudo-elements/#prettyPhoto" target="_blank" rel="noopener">图片来源–总结伪类与伪元素</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/02/security-1/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -582,7 +715,7 @@ html
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -600,7 +733,7 @@ html
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/面试奇谈/">面试奇谈<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">7</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/categories/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -624,7 +757,7 @@ html
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">34</span>
+                <span class="sidebar-badge">35</span>
             </a>
         </li>
         
@@ -826,6 +959,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -838,6 +975,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

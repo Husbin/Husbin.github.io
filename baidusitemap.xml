@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/03/07/optimization-2/</loc>
+    <lastmod>2018-03-08T01:32:36.872Z</lastmod>
+    <data>
+        <display>
+        <title>回流(reflow)与重绘(repaint)（未整理完毕）</title>
+        <pubTime>2018-03-07T06:41:41.000Z</pubTime>
+        
+        <tag>前端优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://easywork.xin/2018/03/07/js-8/</loc>
     <lastmod>2018-03-07T14:17:27.878Z</lastmod>
     <data>
@@ -17,26 +38,6 @@
            
              
               <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/07/optimization-2/</loc>
-    <lastmod>2018-03-07T10:55:21.476Z</lastmod>
-    <data>
-        <display>
-        <title>回流(reflow)与重绘(repaint)</title>
-        <pubTime>2018-03-07T06:41:41.000Z</pubTime>
-        
-        <tag>前端优化</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
           
         </display>
     </data>
@@ -102,7 +103,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://easywork.xin/2018/03/05/css-4/</loc>

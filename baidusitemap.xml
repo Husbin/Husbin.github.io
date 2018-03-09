@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://easywork.xin/2017/10/21/css-1/</loc>
+    <lastmod>2018-03-09T11:39:09.510Z</lastmod>
+    <data>
+        <display>
+        <title>css-基础知识</title>
+        <pubTime>2017-10-21T05:21:30.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
+    <lastmod>2018-03-09T08:38:27.434Z</lastmod>
+    <data>
+        <display>
+        <title>优化总体路线</title>
+        <pubTime>2018-03-07T06:35:57.000Z</pubTime>
+        
+        <tag>前端优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/03/07/optimization-2/</loc>
     <lastmod>2018-03-09T07:22:45.871Z</lastmod>
     <data>
@@ -37,26 +77,6 @@
            
              
               <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
-    <lastmod>2018-03-09T03:38:43.378Z</lastmod>
-    <data>
-        <display>
-        <title>优化总体路线</title>
-        <pubTime>2018-03-07T06:35:57.000Z</pubTime>
-        
-        <tag>前端优化</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
           
         </display>
     </data>
@@ -152,26 +172,6 @@
         <display>
         <title>css-选择器简介</title>
         <pubTime>2018-03-04T03:44:00.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-         
-           
-             
-              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2017/10/21/css-1/</loc>
-    <lastmod>2018-03-04T09:52:03.081Z</lastmod>
-    <data>
-        <display>
-        <title>css-基础知识</title>
-        <pubTime>2017-10-21T05:21:30.000Z</pubTime>
         
         <tag>css</tag>
          

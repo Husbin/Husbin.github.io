@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/02/26/interview-2/</loc>
+    <lastmod>2018-03-09T03:44:54.973Z</lastmod>
+    <data>
+        <display>
+        <title>面试奇谈</title>
+        <pubTime>2018-02-26T13:51:01.000Z</pubTime>
+        
+        <tag>面试奇谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/03/07/optimization-2/</loc>
-    <lastmod>2018-03-08T01:32:36.872Z</lastmod>
+    <lastmod>2018-03-09T03:44:22.452Z</lastmod>
     <data>
         <display>
         <title>回流(reflow)与重绘(repaint)（未整理完毕）</title>
@@ -22,6 +42,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
+    <lastmod>2018-03-09T03:38:43.378Z</lastmod>
+    <data>
+        <display>
+        <title>优化总体路线</title>
+        <pubTime>2018-03-07T06:35:57.000Z</pubTime>
+        
+        <tag>前端优化</tag>
+         
+         
+           
+             
+              <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -45,52 +86,12 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
-    <lastmod>2018-03-07T07:34:46.085Z</lastmod>
-    <data>
-        <display>
-        <title>优化总体路线</title>
-        <pubTime>2018-03-07T06:35:57.000Z</pubTime>
-        
-        <tag>前端优化</tag>
-         
-         
-           
-             
-              <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/02/27/interview-3/</loc>
     <lastmod>2018-03-07T07:02:27.213Z</lastmod>
     <data>
         <display>
         <title>面试奇谈-解答篇</title>
         <pubTime>2018-02-27T04:10:49.000Z</pubTime>
-        
-        <tag>面试奇谈</tag>
-         
-         
-           
-             
-              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/26/interview-2/</loc>
-    <lastmod>2018-03-06T08:43:25.532Z</lastmod>
-    <data>
-        <display>
-        <title>面试奇谈</title>
-        <pubTime>2018-02-26T13:51:01.000Z</pubTime>
         
         <tag>面试奇谈</tag>
          

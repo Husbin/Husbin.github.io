@@ -3,6 +3,66 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
+    <lastmod>2018-03-11T10:21:46.364Z</lastmod>
+    <data>
+        <display>
+        <title>总结几个Angular2与ios wechat的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>Angular2</tag>
+         
+         
+           
+             
+              <breadCrumb title="web框架" url="http://easywork.xin/categories/web%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/11/design-2/</loc>
+    <lastmod>2018-03-11T10:21:19.643Z</lastmod>
+    <data>
+        <display>
+        <title>关于项目中遇到的已优化和可继续优化部分</title>
+        <pubTime>2018-03-11T10:20:38.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/11/network-4/</loc>
+    <lastmod>2018-03-11T10:15:26.729Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP状态码</title>
+        <pubTime>2018-03-11T08:05:48.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://easywork.xin/2018/03/11/css-5/</loc>
@@ -616,26 +676,6 @@
         <pubTime>2017-11-17T14:13:23.000Z</pubTime>
         
         <tag>Nodejs</tag>
-         
-         
-           
-             
-              <breadCrumb title="web框架" url="http://easywork.xin/categories/web%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
-    <lastmod>2018-02-22T06:42:46.096Z</lastmod>
-    <data>
-        <display>
-        <title>总结几个Angular2与ios wechat的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
-        
-        <tag>Angular2</tag>
          
          
            

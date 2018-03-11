@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/03/11/design-2/</loc>
+    <lastmod>2018-03-11T10:34:07.328Z</lastmod>
+    <data>
+        <display>
+        <title>关于项目中遇到的已优化和可继续优化部分（未完善）</title>
+        <pubTime>2018-03-11T10:20:38.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
     <lastmod>2018-03-11T10:21:46.364Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="web框架" url="http://easywork.xin/categories/web%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/11/design-2/</loc>
-    <lastmod>2018-03-11T10:21:19.643Z</lastmod>
-    <data>
-        <display>
-        <title>关于项目中遇到的已优化和可继续优化部分</title>
-        <pubTime>2018-03-11T10:20:38.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>

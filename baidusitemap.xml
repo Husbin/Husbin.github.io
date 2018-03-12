@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/03/12/js-10/</loc>
+    <lastmod>2018-03-12T13:50:57.931Z</lastmod>
+    <data>
+        <display>
+        <title>javascript中的面向对象程序设计</title>
+        <pubTime>2018-03-12T01:36:26.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/03/11/design-2/</loc>
-    <lastmod>2018-03-11T10:34:07.328Z</lastmod>
+    <lastmod>2018-03-11T13:58:40.552Z</lastmod>
     <data>
         <display>
         <title>关于项目中遇到的已优化和可继续优化部分（未完善）</title>

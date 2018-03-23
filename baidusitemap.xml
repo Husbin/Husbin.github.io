@@ -4,8 +4,29 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
+    <lastmod>2018-03-23T08:31:13.558Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP琐碎知识点</title>
+        <pubTime>2018-03-17T01:37:41.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://easywork.xin/2018/03/21/vue-5/</loc>
-    <lastmod>2018-03-22T01:19:59.386Z</lastmod>
+    <lastmod>2018-03-22T01:29:28.669Z</lastmod>
     <data>
         <display>
         <title>vue路由基本使用</title>
@@ -23,7 +44,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://easywork.xin/2018/03/19/network-5/</loc>
     <lastmod>2018-03-19T06:57:01.487Z</lastmod>
@@ -31,26 +51,6 @@
         <display>
         <title>HTTP报文（未完）</title>
         <pubTime>2018-03-19T01:10:28.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
-    <lastmod>2018-03-17T03:06:47.969Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP琐碎知识点</title>
-        <pubTime>2018-03-17T01:37:41.000Z</pubTime>
         
         <tag>计算机网络</tag>
          

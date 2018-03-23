@@ -1,1022 +1,2401 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-        Husbin
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
-    <link rel="icon" href="/img/favicon.jpg">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="与其临渊羡鱼，不如退而结网。">
-    <meta name="keywords" content="">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-            
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
 
 
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-image: url(/img/bg.jpg);
-      }
-    </style>
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
 
 
 
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
-    
 
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Husbin">
-    <meta name="msapplication-starturl" content="http://easywork.xin/page/2/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Husbin">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.jpg">
-
-    <!-- Site Verification -->
-    <meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
-    <meta name="baidu-site-verification" content="ZY9PuUsBYC" />
-
-    <!-- RSS -->
-    
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://easywork.xin/page/2/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Husbin">
-    <meta property="og:image" content="/img/favicon.jpg">
-    <meta property="og:description" content="与其临渊羡鱼，不如退而结网。">
-    
-
-    
-
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Add canonical link for SEO -->
-    
-        <link rel="canonical" href="http://easywork.xin/page/2/index.html" />
-    
-
-    <!-- Structured-data for SEO -->
-    
-        
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-    
 
-    <!-- Analytics -->
-    
-    
-    
 
-    <!-- Custom Head -->
-    
 
-    <meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
-    <meta name="baidu-site-verification" content="ZY9PuUsBYC" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="与其临渊羡鱼，不如退而结网。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Husbin">
+<meta property="og:url" content="http://easywork.xin/page/2/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="与其临渊羡鱼，不如退而结网。">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Husbin">
+<meta name="twitter:description" content="与其临渊羡鱼，不如退而结网。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/page/2/"/>
+
+
+
+
+
+  <title>Husbin</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  
+  
     
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
+  
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
 
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/12/js-10/">javascript中的面向对象程序设计</a></p>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            面向对象面向对象（Objet-Oriented，OO）的语言有一个标志，那就是他们都有类的概念，而通过类可以创建具有多个相同属性和方法的对象。ES中没有类的概念，ES中把对象定义为“无序属性的集合，其属性可以包含基本值，对象或者函数”，可以把ES...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/12/js-10/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>3月 12, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/javascript/">javascript</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/11/design-2/">关于项目中遇到的已优化和可继续优化部分（未完善）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            浏览器兼容问题使用babel将es6转化为兼容的es5语法。
-使用polyfills。
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/11/design-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>3月 11, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/设计模式/">设计模式</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/11/network-4/">HTTP状态码</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            状态码的类别
-
-
-
-类别
-原因短语
-
-
-
-
-1XX
-Informationa...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/11/network-4/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>3月 11, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/计算机网络/">计算机网络</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/11/css-5/">css-关于position与float</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言面试过程中吃了css很多亏了。。。。
-position
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/11/css-5/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>3月 11, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/css/">css</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/10/js-9/">js中的正则表达式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            正则表达式正则表达式是一种用来匹配字符串的强有力武器，他的设计思想是用一种描述性的语言来给字符串定义一个规则，凡是符合规则的字符串，就认为他“匹配”，否则，该字符串就是不合法的。因为正则表达式也是用字符串表示的，所以，首先一要了解如何用字符...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/10/js-9/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/touxiang.png" width="44px" height="44px" alt="Husbin's avatar">
-            </div>
-            <div>
-                <strong>Husbin</strong>
-                <span>3月 10, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/javascript/">javascript</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 5; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
     </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/touxiang.png" alt="Husbin's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        2905895313@qq.com
-        <b class="caret"></b>
-    </a>
+  </div>
 </div>
 
+<nav class="site-nav">
+  
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-                <li>
-                    <a href="https://mail.qq.com/" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
+            首页
+          </a>
         </li>
+      
         
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/07/js-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/js-8/" itemprop="url">ES6手抄（阮一峰版）</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T20:05:07+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
 
-    <!-- Archives  -->
     
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">8</span></a>
-            </ul>
-        </li>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
+          
+            <blockquote>
+<p>还是推荐大家去看这个<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门</a>。</p>
+</blockquote>
+<h3 id="语法转化器"><a href="#语法转化器" class="headerlink" title="语法转化器"></a>语法转化器</h3><p>babel转码器，可以将ES6语法转化为ES5兼容的语法。</p>
+<h3 id="let、const"><a href="#let、const" class="headerlink" title="let、const"></a>let、const</h3><ol>
+<li>let没有变量提升、不允许重复声明</li>
+<li>const声明一个只读常量，一旦声明，常量的值不能改变（const保证指向的那个内存地址不再改变）</li>
+<li>let、const声明的全局变量，不属于window</li>
+<li>ES6声明变量的6种方法：（ES5）var、function、（ES6）let、const、import、class</li>
+</ol>
+<h3 id="变量解构赋值"><a href="#变量解构赋值" class="headerlink" title="变量解构赋值"></a>变量解构赋值</h3><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><ol>
+<li>数组解构赋值：<code>let [temp,left,right] = [111,[],[]];</code></li>
+<li>对象解构赋值：<code>let {obj1 , obj2} = {obj1:&quot;1111&quot;,obj2:&quot;2222&quot;}</code></li>
+<li>字符串解构赋值：<code>let [a,b,c,d,e]=&#39;hello&#39;</code></li>
+<li>函数参数的解构赋值：<code>add([x, y])</code></li>
+</ol>
+<h4 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h4><ol>
+<li>交换变量的值：<code>[x,y] = [y,x]</code></li>
+<li>从函数返回多个值：<code>return[a,b,c]</code></li>
+<li>函数参数的定义：<code>f([1,2,3])</code></li>
+<li>提取json数据<code>let {errCode,errText} = {errCode:&#39;200&#39;,errText:&#39;success&#39; }</code></li>
+</ol>
+<h3 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h3><h4 id="…"><a href="#…" class="headerlink" title="…"></a>…</h4><p>扩展运算符是…，好比rest参数的逆运算，将一个数组转化为用逗号分隔的参数序列。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(...[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line"><span class="comment">//1,2,3</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">1</span>,...[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>);</span><br><span class="line"><span class="comment">//1,2,3,4,5</span></span><br></pre></td></tr></table></figure>
+<p>用于函数调用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">push</span>(<span class="params">array,items</span>)</span>&#123;</span><br><span class="line">  array.push(...items);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x+y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">3</span>,<span class="number">38</span>];</span><br><span class="line">add(...numbers);</span><br></pre></td></tr></table></figure>
+<h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p><strong>复制数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es5</span></span><br><span class="line"><span class="keyword">const</span> a1 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> a2 = a1.concat();</span><br><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">const</span> a1 = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="comment">// 写法一</span></span><br><span class="line"><span class="keyword">const</span> a2 = [...a1];</span><br><span class="line"><span class="comment">// 写法二</span></span><br><span class="line"><span class="keyword">const</span> [...a2] = a1;</span><br></pre></td></tr></table></figure>
+<p><strong>合并数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es5</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>].contact(more);</span><br><span class="line"><span class="comment">//es6</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,...more];</span><br></pre></td></tr></table></figure>
+<p><strong>将字符串转化为数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...<span class="string">'hello'</span>];</span><br><span class="line"><span class="comment">// ["h", "e", "l", "l", "o"]</span></span><br></pre></td></tr></table></figure>
+<p><strong>Array.from()</strong></p>
+<p> <code>Array.from</code>方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组去重</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(array));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(unique(array)); <span class="comment">// [1, 2, "1"]</span></span><br></pre></td></tr></table></figure>
+<p><strong>数组实例的includes()</strong></p>
+<p><code>Array.prototype.includes</code>方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的<code>includes</code>方法类似。ES2016 引入了该方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">2</span>)     <span class="comment">// true</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].includes(<span class="number">4</span>)     <span class="comment">// false</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="literal">NaN</span>].includes(<span class="literal">NaN</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="新数据类型：Symbol"><a href="#新数据类型：Symbol" class="headerlink" title="新数据类型：Symbol"></a>新数据类型：Symbol</h3><p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：<code>undefined</code>、<code>null</code>、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
+<p>Symbol 值通过<code>Symbol</code>函数生成。这就是说，对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">typeof</span> s</span><br><span class="line"><span class="comment">// "symbol"</span></span><br></pre></td></tr></table></figure>
+<h3 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h3><p>更详细介绍<a href="http://es6.ruanyifeng.com/#docs/promise" target="_blank" rel="noopener">promise</a></p>
+<p><code>Promise</code>对象有以下两个特点。</p>
+<p>（1）对象的状态不受外界影响。<code>Promise</code>对象代表一个异步操作，有三种状态：<code>pending</code>（进行中）、<code>fulfilled</code>（已成功）和<code>rejected</code>（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是<code>Promise</code>这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。</p>
+<p>（2）一旦状态改变，就不会再变，任何时候都可以得到这个结果。<code>Promise</code>对象的状态改变，只有两种可能：从<code>pending</code>变为<code>fulfilled</code>和从<code>pending</code>变为<code>rejected</code>。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对<code>Promise</code>对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ... some code</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* 异步操作成功 */</span>)&#123;</span><br><span class="line">    resolve(value);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="generator"><a href="#generator" class="headerlink" title="generator"></a>generator</h3><p>更详细介绍<a href="http://es6.ruanyifeng.com/#docs/generator" target="_blank" rel="noopener">generator</a></p>
+<p>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。本章详细介绍 Generator 函数的语法和 API，它的异步编程应用请看《Generator 函数的异步应用》一章。</p>
+<p>Generator 函数有多种理解角度。<strong>语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。</strong></p>
+<p>执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。</p>
+<p>形式上，Generator 函数是一个普通函数，但是有两个特征。一是，<code>function</code>关键字与函数名之间有一个星号；二是，函数体内部使用<code>yield</code>表达式，定义不同的内部状态（<code>yield</code>在英语里的意思就是“产出”）。</p>
+<p><strong><code>yield</code>表达式是暂停执行的标记，而<code>next</code>方法可以恢复执行。</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">helloWorldGenerator</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'hello'</span>;</span><br><span class="line">  <span class="keyword">yield</span> <span class="string">'world'</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'ending'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hw = helloWorldGenerator();</span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line"><span class="comment">// &#123; value: 'hello', done: false &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line"><span class="comment">// &#123; value: 'world', done: false &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line"><span class="comment">// &#123; value: 'ending', done: true &#125;</span></span><br><span class="line"></span><br><span class="line">hw.next()</span><br><span class="line"><span class="comment">// &#123; value: undefined, done: true &#125;</span></span><br></pre></td></tr></table></figure>
+<p>总结一下，调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的<code>next</code>方法，就会返回一个有着<code>value</code>和<code>done</code>两个属性的对象。<code>value</code>属性表示当前的内部状态的值，是<code>yield</code>表达式后面那个表达式的值；<code>done</code>属性是一个布尔值，表示是否遍历结束。</p>
+<h3 id="async"><a href="#async" class="headerlink" title="async"></a>async</h3><p>更详细介绍<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener">async</a></p>
+<p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+<p>async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
+<p>前文有一个 Generator 函数，依次读取两个文件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (error) <span class="keyword">return</span> reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>写成<code>async</code>函数，就是下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> asyncReadFile = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">await</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">await</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>一比较就会发现，<code>async</code>函数就是将 Generator 函数的星号（<code>*</code>）替换成<code>async</code>，将<code>yield</code>替换成<code>await</code>，仅此而已。</strong><code>async</code>函数对 Generator 函数的改进，体现在以下四点。</p>
+<ol>
+<li><p>内置执行器。</p>
+<p>Generator 函数的执行必须靠执行器，所以才有了<code>co</code>模块，而<code>async</code>函数自带执行器。也就是说，<code>async</code>函数的执行，与普通函数一模一样，只要一行。</p>
+</li>
+<li><p>更好的语义。</p>
+</li>
+<li><p>更广的适用性。</p>
+</li>
+<li><p>返回值是 Promise。</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
     
 
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/web基础知识/">web基础知识<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/web框架/">web框架<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端优化/">前端优化<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/安全/">安全<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/琐言碎语/">琐言碎语<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/计算机网络/">计算机网络<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/设计模式/">设计模式<span class="sidebar_archives-count">2</span></a>
-            </ul>
-        </li>
-        
     
 
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/about.html" title="个人记录">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                个人记录
-            </a>
-        </li>
-        
     
 
-    <!-- Article Number  -->
     
-        <li>
-            <a href="/archives">
-                文章总数
-                <span class="sidebar-badge">50</span>
-            </a>
-        </li>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/07/optimization-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
         
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/optimization-2/" itemprop="url">回流(reflow)与重绘(repaint)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:41:41+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端优化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="浏览器渲染原理"><a href="#浏览器渲染原理" class="headerlink" title="浏览器渲染原理"></a>浏览器渲染原理</h3><h4 id="浏览器解析"><a href="#浏览器解析" class="headerlink" title="浏览器解析"></a>浏览器解析</h4><ol>
+<li>浏览器通过请求的url进行域名解析，向服务器发起请求，接受文件（html，css，js，image等）。</li>
+<li>html文件加载后，开始构建DOM Tree。</li>
+<li>css样式文件加载后，开始解析和构建CSS Rule Tree。</li>
+<li>Javascript脚本文件加载后，通过DOM API和CSSOM API 来操作DOM Tree和CSS Rule Tree。</li>
+</ol>
+<h4 id="浏览器渲染"><a href="#浏览器渲染" class="headerlink" title="浏览器渲染"></a>浏览器渲染</h4><ol>
+<li>浏览器引擎通过DOM Tree和CSS Rule Tree 构建Rendering Tree。</li>
+<li>Rending Tree 并不与DOM Tree对应，比如像<code>&lt;head&gt;</code>标签内容或带有<code>display:none；</code>的元素节点并不包括在Rendering Tree中。</li>
+<li>通过CSS Rule Tree匹配DOM Tree进行定位坐标和大小，是否换行，以及<code>position,overflow,z-index</code>等等属性，这个过程称为<code>Flow</code>或<code>Layout</code>。</li>
+<li>最终是通过Native GUI 的API绘制网页画面的过程称为Paint。</li>
+</ol>
+<p><img src="https://github.com/Husbin/Husbin.github.io/blob/master/img/blogimg/%E4%BC%98%E5%8C%96/%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B.png?raw=true" alt="性能优化"></p>
+<h4 id="渲染流程总结"><a href="#渲染流程总结" class="headerlink" title="渲染流程总结"></a>渲染流程总结</h4><blockquote>
+<p>创建DOM树 -&gt; 创建cssom树 -&gt; 执行脚本 -&gt; 生成渲染树 -&gt; 生成布局 -&gt; 绘制</p>
+<p>一旦Render tree构建完毕后，浏览器就根据render tree来绘制页面。浏览器在绘制页面的过程中不断进行重绘和回流。</p>
+</blockquote>
+<h3 id="重绘-repaint-与回流-reflow"><a href="#重绘-repaint-与回流-reflow" class="headerlink" title="重绘(repaint)与回流(reflow)"></a>重绘(repaint)与回流(reflow)</h3><h4 id="重绘（repaint）"><a href="#重绘（repaint）" class="headerlink" title="重绘（repaint）"></a>重绘（repaint）</h4><p>当Render Tree中的一些元素需要更新属性，当这些属性只会影响元素的外观，风格，而不会影响到元素的布局，此类的页面渲染就叫做页面重绘。</p>
+<h4 id="回流（reflow）"><a href="#回流（reflow）" class="headerlink" title="回流（reflow）"></a>回流（reflow）</h4><p>当Render Tree中的一部分或者全部因为元素的规模尺寸，布局，隐藏等改变而引起的页面重新渲染，叫做回流。<strong>回流必引起重绘，重绘不一定会引起回流。</strong></p>
+<h3 id="何时会发生回流（reflow）"><a href="#何时会发生回流（reflow）" class="headerlink" title="何时会发生回流（reflow）"></a>何时会发生回流（reflow）</h3><p>有大量用户行为以及潜在的DHTML改变会触发回流（reflow）。例如，改变浏览器窗口的大小，使用一些Javascript方法，包括计算样式，对DOM进行元素的添加或者删除，或是改变元素的class等。</p>
+<blockquote>
+<ol>
+<li>调整窗口大小（Resizing the window）</li>
+<li>改变字体（Change the font）</li>
+<li>增加或者移除样式表（Adding or removing a stylesheet）</li>
+<li>内容变变化，比如用户在input中输入文字（Content changes ， such as a user typing text in an input box）</li>
+<li>激活css伪类，比如<code>:hover</code>（IE中卫兄弟节点伪类的激活）（Activation of css pseudo such as :hover （in IE the activation of the pesudo cloass of a sibling））</li>
+<li>操作class属性（Manipulation the class attribute）</li>
+<li>脚本操作DOM（A script manipulating the DOM）</li>
+<li>计算<code>offsetWidth</code> 和<code>offsetHeight</code>属性（Calculating offsetWidth and offsetHeight）</li>
+<li>设置style属性的值（setting a property of the style attribute）</li>
+</ol>
+</blockquote>
+<h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><p>回流比重绘的代价更高，回流的花销跟render tree有多少节点需要重新构建有关系，浏览器本身能进行优化，尽可能较少重绘和回流。如果每行javascript代码操作DOM都需要回流的话，浏览器可能就会受不了，所以很多浏览器都会优化这些操作，浏览器维护1个队列，把所有会引起回流，重绘的操作放入这个队列，等待队列中的操作到了一定的数量或者到了一定的时间间隔，浏览器就会flush队列，进行一个批处理。这样就会<strong>让多次的回流、重绘变成了一次回流重绘</strong>。</p>
+<p>当你向浏览器请求一些style信息时，就会让浏览器flush队列，比如：</p>
+<ul>
+<li>offsetTop，offsetLeft，offsetWidth，offsetHeight</li>
+<li>scrollTop/left/width/height</li>
+<li>clientTop/left/width/height</li>
+<li>width，height</li>
+<li>请求了getComputedStyle()，或者IE的currentStyle。</li>
+</ul>
+<p>当请求了上面的一些属性的时候，浏览器为了给你最精确的值，需要flush队列，因为队列中可能会有影响到这些值的操作。即使你获取元素的布局和样式信息跟最近发生或改变的布局信息无关，浏览器都会强行刷新渲染队列。</p>
+<h3 id="如何减少回流、重绘"><a href="#如何减少回流、重绘" class="headerlink" title="如何减少回流、重绘"></a>如何减少回流、重绘</h3><h4 id="css中避免回流"><a href="#css中避免回流" class="headerlink" title="css中避免回流"></a>css中避免回流</h4><ul>
+<li><p><strong>如果想设定元素的样式，通过改变元素的class名（尽可能在DOM树的最末端）</strong></p>
+<p>回流可以自上而下、或自下而上的回流信息传递给周围节点。回流是不可避免的，但是可以减少其影响。尽可能在DOM树的里面改变class，可以限制回流的范围，使其影响尽可能少的节点。例如，应该避免通过改变对包装元素类去影响子节点的现实。面向对象的css始终尝试获得他们影响的类对象（DOM节点或节点），但在这种情况下，他已尽可能的减少了回流的影响，增加性能的优势。</p>
+</li>
+<li><p><strong>避免设置多层内联样式</strong></p>
+<p>我们都知道与DOM交互很慢，我们尝试在一种无形的DOM树片段组进行更改，然后整个改变应用到DOM上又导致一个回流。同样，通过style属性设置样式也会导致回流。避免设置多级内联，因为每个改变都会造成回流，央视应该合并在一个外部类，这样当元素的class属性可被操控师仅会产生一个reflow。</p>
+</li>
+<li><p><strong>动画效果英东到position属性为absolute或fixed的元素上</strong></p>
+<p>动画效果应用到position属性为absolute或fixed元素上，他们不影响其他元素的布局，所以他们只会重新绘制，而不是一个完整的回流，这样消耗更低。</p>
+</li>
+<li><p><strong>牺牲平滑度获取速度</strong></p>
+<p>Opera建议我们牺牲平滑度获取速度，其意思可能是指想每次1像素移动一个动画，但是如果此动画及随后的回流使用了100%的CPU，动画就会看上去是跳动的，因为浏览器正在与更新回流做斗争。动画元素每次移动3像素可能在非常快的机器上看起来平滑度低了，但他不会导致cpu在较慢的机器和移动设备中抖动。</p>
+</li>
+<li><p><strong>避免使用table布局</strong></p>
+<p>避免使用table布局，在布局完全建立之前，table经常需要多个关口，因为table是个很罕见的可以影响在他们之前已经进入DOM元素的显示元素。想象一下，因为表格最后一个单元格的内容过宽而导致纵列大小完全改变。这就是为什么所有的浏览器都逐步地不支持表格的渲染。而有另外一个原因为什么表格布局时很糟糕的主意，根据<a href="http://www.mozilla.org/newlayout/doc/reflow.html" target="_blank" rel="noopener">Mozilla</a>，即使一些小的变化将导致表格(table)中的所有其他节点回流。</p>
+</li>
+<li><p><strong>避免使用css的javascript表达式</strong></p>
+<p>这项规则较过时，但确实是个好的主意。主要的原因，这些表现是如此昂贵，是因为他们每次重新计算文档，或部分文档、回流。正如我们从所有的很多事情看到的：引发回流，它可以每秒产生成千上万次。</p>
+</li>
+</ul>
+<h4 id="javascript避免回流"><a href="#javascript避免回流" class="headerlink" title="javascript避免回流"></a>javascript避免回流</h4><ul>
+<li>避免逐项更改样式，最好一次性更改style属性，或者将样式列表定义为class并一次性更改class属性。</li>
+<li>避免循环操作DOM。创建一个documentFragment或div，在他上面应用所有DOM操作，最后把他添加到window.document。</li>
+<li>也可以在一个display:none的元素上进行操作，最终把他显示出来。因为display:none上的DOM操作不会引发回流和重绘。</li>
+<li>避免循环读取offsetLeft等属性，在循环之前把他们存起来。</li>
+<li>绝对定位具有复杂动画的元素。绝对定位使他脱离文档流，否则会引起父元素以及后续元素大量的回流。</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://segmentfault.com/a/1190000011297958" target="_blank" rel="noopener">浏览器的回流和重绘及其优化方式</a></p>
+<p><a href="http://www.zhangxinxu.com/wordpress/2010/01/%E5%9B%9E%E6%B5%81%E4%B8%8E%E9%87%8D%E7%BB%98%EF%BC%9Acss%E6%80%A7%E8%83%BD%E8%AE%A9javascript%E5%8F%98%E6%85%A2%EF%BC%9F/" target="_blank" rel="noopener">回流与重绘：CSS性能让JavaScript变慢</a>?</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/07/optimization-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/07/optimization-1/" itemprop="url">优化总体路线</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:35:57+08:00">
+                2018-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端优化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h3><p><img src="https://github.com/Husbin/Husbin.github.io/blob/master/img/blogimg/%E4%BC%98%E5%8C%96/%E4%BC%98%E5%8C%96.png?raw=true" alt="性能优化"></p>
+<p>有些是实践过的，有些是没有实践过的，但是思路就在上图还有下面的：</p>
+<ol>
+<li>减少css，js标签，用webpack打包工具打包。css放前面，js放后面，防止单线程阻塞。</li>
+<li>图片加载，base64，雪碧图。</li>
+<li>gzip压缩：gzip压缩是http协议上的gzip压缩编码技术。首先，我们应该要清楚的是压缩可以达到怎样的目的。比如说纯文本内容进行压缩之后，大小可以缩小大概40%左右。大小减小了最直接的就是传输的速度将会加快，以及流量将会减少。尤其是对于大流量类网站来说，压缩文件内容大小，减少流量是很有必要的(毕竟省钱嘛！)，另一方面，压缩过的内容将减少存储空间。</li>
+<li>css:预处理，scss。不滥用字体。</li>
+<li>尽量使用事件代理，利用事件冒泡，避免批量绑定事件。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/05/css-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/05/css-4/" itemprop="url">css-鲜为人知的css单位</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T09:09:17+08:00">
+                2018-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="css中的值和单位"><a href="#css中的值和单位" class="headerlink" title="css中的值和单位"></a>css中的值和单位</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>整数和实数（小数），整数和实数都可以是正数或者负数。</p>
+<h4 id="百分数"><a href="#百分数" class="headerlink" title="百分数"></a>百分数</h4><p>百分数总是相对于另一个值。</p>
+<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><ul>
+<li>命名颜色：red，blue。。。</li>
+<li>用RGB指定颜色：<code>p.one{color:rgb(0%,20%,20%)}</code></li>
+<li>十六进制RGB颜色：<code>h1{color: #FF0000} /*re*/</code></li>
+</ul>
+<h4 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h4><h5 id="绝对长度单位"><a href="#绝对长度单位" class="headerlink" title="绝对长度单位"></a>绝对长度单位</h5><p>比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc）。</p>
+<h5 id="相对长度单位"><a href="#相对长度单位" class="headerlink" title="相对长度单位"></a>相对长度单位</h5><p>em，ex，px</p>
+<h3 id="鲜为人知的css单位"><a href="#鲜为人知的css单位" class="headerlink" title="鲜为人知的css单位"></a>鲜为人知的css单位</h3><h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><h5 id="em"><a href="#em" class="headerlink" title="em"></a>em</h5><p>em单位被定义为当前字体大小，比如在body上设置一个字体的大小，那么在body元素内的任何子元素的em值都等于这个字体大小。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">      <span class="comment">&lt;!--div将有一个2em的font-size。他是所继承的字体的2倍。--&gt;</span></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 2em;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    111(2*10px)</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        222(2*2*10px)</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            333(2*2*2*10px)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>像上述例子，每个元素内部都级联<code>em</code>定义的字体大小，，则每个div从他们的父节点继承字体大小，带给我们之间增加的字体大小。显示如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h5 id="rem-1"><a href="#rem-1" class="headerlink" title="rem"></a>rem</h5><p>虽然在某些情况下可能需要这个，但是通常你可能想居于一个唯一的度量标准来按比例缩放。在这种情况下，应该使用<code>rem</code>。<code>rem</code>中的r代表<code>root</code>，这等同于<code>font-size</code>基于根元素进行设置；在大多数情况下，根元素为<code>html</code>元素。还是上面的例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 2rem;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    111(2*10px)</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        222(2*10px)</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            333(2*10px)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-3fd0eb08b9399c7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>对网络布局的好处：</strong>rem不是只对定义字体大小有用，比如，你可以使用rem把整个网格系统或者ui样式库基于HTML根元素的字体大小上，然后再特定的地方使用em比例缩放。这将带来更加可预测的字体大小和比例缩放。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.container &#123; width: 70rem; // 70 * 14px = 980px &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="vh和vw"><a href="#vh和vw" class="headerlink" title="vh和vw"></a>vh和vw</h4><p>响应式网页设计技术很大程度上依赖于比例规则。然而，css比例不总是每个问题的最佳解决方案。css宽度是相对于最近的包含父元素。如果你想使用显示窗口的宽度或者高度，而不是父元素的宽度将会怎么样。这正是<code>vh(viewport-height)</code>和<code>vw(viewport-weight)</code>。</p>
+<p><code>vh</code>等于<code>viewport</code>高度的<code>1/100</code>。例如浏览器的高是<code>900px</code>，<code>1vh</code>的值为<code>9px</code>。同理，如果窗口宽度为<code>750px</code>，则<code>1vw</code>的值为<code>7.5px</code>。</p>
+<h4 id="ex-和-ch"><a href="#ex-和-ch" class="headerlink" title="ex 和 ch"></a>ex 和 ch</h4><p><code>ex</code>和<code>ch</code>单位，与<code>em</code>和<code>rem</code>相似，依赖于当前字体和字体大小。然而，与<code>em</code>和<code>rem</code>不同的是，这两个单位只也依赖于<code>font-family</code>，因为它们被定为基于特殊字体的法案。</p>
+<h4 id="vmin-和-vmax"><a href="#vmin-和-vmax" class="headerlink" title="vmin 和 vmax"></a>vmin 和 vmax</h4><p><code>vh</code>和<code>vm</code>总是与视口的高度和宽度有关，与之不同的，<code>vmin</code>和<code>vmax</code>是与这次宽度和高度的最大值或最小值有关，取决于哪个更大和更小。例如，如果浏览器设置为<code>1100px</code>宽、<code>700px</code>高，<code>1vmin</code>会是<code>7px</code>,<code>1vmax</code>为<code>11px</code>。然而，如果宽度设置为<code>800px</code>，高度设置为<code>1080px</code>，<code>1vmin</code>将会等于<code>8px</code>而<code>1vmax</code>将会是<code>10.8px</code>。</p>
+<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><p><a href="https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html" target="_blank" rel="noopener">七个你可能不了解的CSS单位</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/04/css-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/04/css-3/" itemprop="url">css-结构和层叠</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T13:57:59+08:00">
+                2018-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>每个合法的文档都会生成一个结构树，了解这一点，就能根据元素的祖先，属性，兄弟元素等等创建选择器来选择元素。有了这个结构树，选择器才能起作用，这也是css另一个重要的方面（继承）的核心。</p>
+<p>继承（<code>Inheritance</code>）是从一个元素向其后代元素传递属性值所采用的机制。确定应当向一个元素应用哪些值时，用户代理不仅要考虑继承，还要考虑声明的特殊性，另外需要考虑声明本身的来源。这个过程就称为层叠（cascade）。</p>
+<p>​                                                            <strong>——《css权威指南》</strong></p>
+</blockquote>
+<h3 id="特殊性"><a href="#特殊性" class="headerlink" title="特殊性"></a>特殊性</h3><p>每个种类的选择器都对应一个特殊性（<code>specificity</code>）。对于每个规则，用户代理会计算选择器的特殊性，并将这个非特殊性附加到规则中的各个声明。如果一个元素有2个或者多个属性声明，那么有最高特殊性的声明就会胜出。（实际上，所有样式冲突的解决都是由层叠来处理的）</p>
+<h4 id="特殊性的规则"><a href="#特殊性的规则" class="headerlink" title="特殊性的规则"></a>特殊性的规则</h4><p>选择器的特殊性由选择器本身的组件决定的。特殊值表述为4个部分，如<code>0,0,0,0</code>。一个选择器的具体特殊性如下确定：</p>
+<ol>
+<li>对于选择器中给定的各个ID属性（<strong>ID选择器</strong>）值，加<code>0,1,0,0</code>。</li>
+<li>对于选择器中给定的各个类属性（<strong>类选择器</strong>）值，属性选择（<strong>属性选择器</strong>）或伪类（<strong>伪类选择器</strong>），加<code>0,0,1,0</code>。</li>
+<li>对于选择器中给定的各个元素和伪元素，加<code>0,0,0,1</code>。</li>
+<li>结合符和通配符选择器对特殊性没什么贡献。</li>
+<li>是不是发现还有<code>1，0，0，0</code>这个没有用到，这个是css2.1新增的，是<strong>内联样式</strong>声明的特殊性。<strong>他与ID选择器的特殊性相同，所以ID选择器很容易覆盖内联样式。</strong></li>
+<li>例子：<code>1,0,0,0</code>的优先级大于<code>0,10,0,0</code>。</li>
+</ol>
+<h3 id="重要性"><a href="#重要性" class="headerlink" title="重要性"></a>重要性</h3><p>有时候某个声明可能非常重要，超过了所有其他生命。css2.1称之为重要声明，并允许在这些声明的结束分号之前插入<code>!important</code>来标志。<code>!important</code>总是放在声明的最后，即分号之前。<strong>重要规则总会胜出。</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">color</span>: red <span class="meta">!important</span>;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><h4 id="关于样式继承"><a href="#关于样式继承" class="headerlink" title="关于样式继承"></a>关于样式继承</h4><p>特殊性对于理解如何向文档应用声明很重要，同样的，还有一个很重要的概念，继承。基于继承机制，样式不仅应用到指定的元素，还会应用到他的后代元素。例如，如果向一个h1元素应用一个颜色，那么这个颜色将应用到h1中的所有文本，甚至应用到该h1的子元素的文本。</p>
+<h4 id="无法继承的属性"><a href="#无法继承的属性" class="headerlink" title="无法继承的属性"></a>无法继承的属性</h4><p>大多数框模型属性是无法继承的，包括边距，内边距，背景个边框。原因很简单，归于一个简单的常识，假设border能继承，那么举个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  p&#123;</span></span><br><span class="line"><span class="undefined">    border: 1px solid red;      </span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">    color: blue;                </span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"border: 1px solid red;"</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果能继承，那么效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-6e1ad06cb6ea6e71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>子元素也多了个框，这明显不是我们想要的，而且我们还要想办法去清除这个内部框。</p>
+<p>所以正确的效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-b2e9afa55936ccb5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h3><h4 id="为什么需要层叠"><a href="#为什么需要层叠" class="headerlink" title="为什么需要层叠"></a>为什么需要层叠</h4><p>层叠式为了解决一个问题：如果遇到两个特殊性相等的规则，要如何抉择。</p>
+<h4 id="层叠的规则"><a href="#层叠的规则" class="headerlink" title="层叠的规则"></a>层叠的规则</h4><p>css所给予的方法就是让样式层叠在一起，这是通过结合继承和特殊性做到的。规则如下：</p>
+<h5 id="按权重和来源排序"><a href="#按权重和来源排序" class="headerlink" title="按权重和来源排序"></a>按权重和来源排序</h5><p>如果两个样式规则应用到同一个元素，而且其中一个规则有<code>!important</code>标志，这个重要规则将胜出。在声明权重方面要考虑5级，权重由大到小的顺序依次为：</p>
+<ol>
+<li>读者的重要声明。（用户自定义配置样式）</li>
+<li>创作人员的重要声明</li>
+<li>创作人员的正常声明</li>
+<li>读者的正常声明</li>
+<li>用户代理声明</li>
+</ol>
+<h5 id="按特殊性排序"><a href="#按特殊性排序" class="headerlink" title="按特殊性排序"></a>按特殊性排序</h5><p>最特殊的声明最优先。例子：<code>1,0,0,0</code>的优先级大于<code>0,10,0,0</code>。</p>
+<h5 id="按顺序排序"><a href="#按顺序排序" class="headerlink" title="按顺序排序"></a>按顺序排序</h5><p>如果2个规则的权重，来源和特殊性完全相同，那么<strong>在样式表中最后一个出现的会胜出</strong>。<strong>css2.1中内联样式声明的特殊性要高于所有样式表选择器</strong>。</p>
+<p>正是由于这种按顺序排序，所以才有了通常推荐的链接样式顺序。一般建议按<code>link-visited-hover-active</code>（LVHA）的顺序声明链接样式如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:link</span>&#123;<span class="attribute">color</span>: blue;&#125;</span><br><span class="line"><span class="selector-pseudo">:visited</span>&#123;<span class="attribute">color</span>: purple;&#125;</span><br><span class="line"><span class="selector-pseudo">:hover</span>&#123;<span class="attribute">color</span>: red;&#125;</span><br><span class="line"><span class="selector-pseudo">:active</span>&#123;<span class="attribute">color</span>: orange;&#125;</span><br></pre></td></tr></table></figure>
+<p>这些选择器的特殊性都是一样的：<code>0,0,1,0</code>。因为他们都有相同的权重、来源和特殊性，因此与元素匹配的最后一个选择器才会胜出。正在”点击”的未访问链接可以与其中3个规则匹配——<code>:link,:hover,:active</code>，所以在这三个规则中最后声明的一个将胜出。如果按照LVHA顺序，:active会胜出，这就是我们所期望的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/04/css-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/04/css-2/" itemprop="url">css-选择器简介</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T11:44:00+08:00">
+                2018-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我也不知道为什么要再总结一遍，<a href="http://easywork.xin/2017/10/21/css-1/">明明以前也总结过了</a>。可能是买了书（《css权威指南》），膨胀了，再写一遍。</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p><strong>标签选择器</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">color</span>: red&#125;</span><br><span class="line"><span class="selector-tag">h1</span> , <span class="selector-tag">p</span> &#123;<span class="attribute">color</span>: red&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>通配选择器</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;<span class="attribute">color</span>: red&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>类选择器-多类选择器（使用空格分开）</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-class">.class-selector-1</span>&#123;<span class="attribute">color</span>: red&#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.class-selector-2</span>&#123;<span class="attribute">margin</span>: <span class="number">10px</span>&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"class-selector-1 class-selector-2"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>ID选择器</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-id">#span-1</span>&#123;</span></span><br><span class="line"><span class="undefined">    color: red</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"span-1"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>属性选择器</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--选择有class属性的所有h1元素--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">h1</span><span class="selector-attr">[class]</span>&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"selector"</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"selector"</span>&gt;</span>woeld<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"selector"</span>&gt;</span>yes<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>后代选择器（根据文档结构）</strong></p>
+<ul>
+<li>选择所有子元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--所有符合条件的后代都会应用--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  h1 span&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>你好<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>世界<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-6f85cab061b73360.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="普通后代选择器"></p>
+<ul>
+<li>选择一个子元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  h1 &gt; span&#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">em</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>你好<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>世界<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-38f5c7917b602216.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="限定范围的后代选择器"></p>
+<ul>
+<li>选择相邻兄弟元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-tag">h1</span> + <span class="selector-tag">p</span> &#123;<span class="attribute">margin-top</span>:<span class="number">50px</span>;&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is a heading.<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is paragraph.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-5881286866f17890.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="选择相邻兄弟"></p>
+<p><strong>伪类(:)和伪元素(:: )</strong></p>
+<ul>
+<li>伪类：类用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。</li>
+<li>伪元素：伪元素用于创建一些不在文档树中的元素，并为其添加样式。</li>
+<li>一些老旧的浏览器不支持双冒号的写法，因此如果必须兼容旧浏览器，则应该使用单冒号写法。IE 从 9 开始支持双冒号写法。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-b5532b44caf611ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="伪类.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-c63177cb4cbaadab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="伪元素.png"></p>
+<p><a href="http://www.alloyteam.com/2016/05/summary-of-pseudo-classes-and-pseudo-elements/#prettyPhoto" target="_blank" rel="noopener">图片来源–总结伪类与伪元素</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/02/security-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/02/security-1/" itemprop="url">跨站脚本攻击（XSS）</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T17:21:13+08:00">
+                2018-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安全/" itemprop="url" rel="index">
+                    <span itemprop="name">安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="跨站脚本攻击（XSS）"><a href="#跨站脚本攻击（XSS）" class="headerlink" title="跨站脚本攻击（XSS）"></a>跨站脚本攻击（XSS）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>跨站脚本攻击，全称是<code>Corss Site Script</code>。xss是指人为通过<strong>html注入</strong>篡改了网页，插入了恶意的脚本，从而在用户浏览网页时，控制用户浏览器的一种攻击。</p>
+<h3 id="xss的种类"><a href="#xss的种类" class="headerlink" title="xss的种类"></a>xss的种类</h3><h4 id="第一种类型：反射型xss"><a href="#第一种类型：反射型xss" class="headerlink" title="第一种类型：反射型xss"></a>第一种类型：反射型xss</h4><p>反射型xss只是简单得把用户输入的数据“反射”给浏览器。也就是说，黑客汪汪需要诱使用户“点击”一个恶意链接，才能攻击成功。反射型xss也叫做“非持久型xss”。</p>
+<h4 id="第二种类型：存储型xss"><a href="#第二种类型：存储型xss" class="headerlink" title="第二种类型：存储型xss"></a>第二种类型：存储型xss</h4><p>存储型xss会把用户输入的数据存储在服务器端。这种xss具有很强的稳定性。</p>
+<p>比较常见的一个场景就是，黑客写下一篇包含有恶意javascript代码的博客文章，文章发表后，所有访问该博客的用户，都会在他们的浏览器中执行这段恶意的javascript代码。黑客把恶意的脚本保存到服务器端，所以这种xss攻击就叫做存储型xss，也就是持久型xss。</p>
+<h4 id="第三种类型：基于DOM型xss（DOM-Based-xss）"><a href="#第三种类型：基于DOM型xss（DOM-Based-xss）" class="headerlink" title="第三种类型：基于DOM型xss（DOM Based xss）"></a>第三种类型：基于DOM型xss（DOM Based xss）</h4><p>实际上，这种类型的xss并非按照“数据是否保存在服务端”来划分，DOM Based xss从效果上来说也是反射型xss。单独划分出来，是因为dom based xss的形成原因比较特殊。DOM—based XSS漏洞是基于文档对象模型Document Objeet Model,DOM)的一种漏洞。</p>
+<h3 id="xss攻击进阶"><a href="#xss攻击进阶" class="headerlink" title="xss攻击进阶"></a>xss攻击进阶</h3><h4 id="cookie劫持攻击"><a href="#cookie劫持攻击" class="headerlink" title="cookie劫持攻击"></a>cookie劫持攻击</h4><h4 id="构造get、post请求"><a href="#构造get、post请求" class="headerlink" title="构造get、post请求"></a>构造get、post请求</h4>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/02/js-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/02/js-7/" itemprop="url">简述作用域链、闭包、原型链</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T09:37:33+08:00">
+                2018-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本文只是先让自己对这3个东西有个概念上的理解而已。深入理解还要再看书</p>
+<p><a href="https://www.jianshu.com/p/e2c72357ed12" target="_blank" rel="noopener">reference - 彻底理解js的作用域链</a></p>
+<p><a href="https://www.jianshu.com/p/d7fbf97a0316" target="_blank" rel="noopener">reference - 彻底理解js闭包</a></p>
+<p><a href="https://www.jianshu.com/p/116ea3be6ef5" target="_blank" rel="noopener">reference - 彻底理解js的原型链</a></p>
+</blockquote>
+<h3 id="作用域链（scope-chain）"><a href="#作用域链（scope-chain）" class="headerlink" title="作用域链（scope chain）"></a>作用域链（scope chain）</h3><ul>
+<li>作用域链与变量对象有着密不可分的关系，因为<strong>作用域链就是变量对象的数组</strong>。其中第一个是当前函数的活动对象，第二个是当前活动函数的父亲的上下文的活动对象，第三个是当前活动函数的爷爷的上下文的活动对象。。。最后一个是全局执行环境变量对象（window）。</li>
+<li><strong>作用域链的用途，是保证对执行环境有权访问的所有变量和函数的有序访问。</strong>作用域链的前端，始终是当前执行的代码所在的环境的变量对象。如果这个环境是函数，则将其活动对象作为变量对象。作用域链中的下一个变量对象来自包含（外部）环境，而再下一个变量对象则来自下一个包含环境。这样，一直延续到全局执行环境；全局执行环境的变量对象始终都是作用域链的最后一个对象。</li>
+<li>举个例子：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> temp1;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp2;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp3     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> func = fun1();</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line"><span class="comment">//内部环境可以通过作用域连访问所有外部环境。</span></span><br><span class="line"><span class="keyword">var</span> temp1 = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(temp1);</span><br><span class="line">    <span class="keyword">var</span> temp2 = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp3 = temp2;</span><br><span class="line">        <span class="built_in">console</span>.log(temp3);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fun2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> func = fun1();</span><br><span class="line">func();</span><br><span class="line"><span class="comment">//打印结果</span></span><br><span class="line"><span class="comment">//1</span></span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="comment">//在fun2中找不到temp2和temp1，这时候就会往上查找，直至找到对应的变量。相反如果执行向下查找的操作，则会报错。</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-90a354b17e356a73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>由例子可知，内部环境可以通过作用域链访问所有外部环境，但外部环境不能访问内部环境中的任何变量和函数。这些环境之间的联系是线性的、有次序的。每个环境可以向上搜索作用域链，以查询变量和函数名；但任何环境都不能通过向下搜索作用域链而进入另一个执行环境。</li>
+</ul>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><h4 id="MDN的定义，很抽象"><a href="#MDN的定义，很抽象" class="headerlink" title="MDN的定义，很抽象"></a>MDN的定义，很抽象</h4><p>闭包是指那些能够访问独立（自由）变量的函数（变量在本地使用，但定义在一个封闭的作用域中）。换句话说，这些函数可以“记忆”他被创建时候的环境。</p>
+<p>在函数外部引用函数内部变量，可以通过闭包实现。闭包的用处往往是在模块封装的时候。可以将模块内部公有部分暴露出来。（面试的时候可以这样说：<strong>闭包就是能够读取其他函数内部变量的函数，闭包的出现时为了突破作用域链的限制。</strong>）</p>
+<h4 id="闭包的特性"><a href="#闭包的特性" class="headerlink" title="闭包的特性"></a>闭包的特性</h4><p>要理解函数闭包，要先知道2条特性：</p>
+<ol>
+<li>函数外部无法访问函数体内的变量，而函数体内部的代码可以访问函数外部的变量。（这是由作用域链的特性决定的）</li>
+<li>即使函数已经执行完毕，在执行期间创建的变量也不会被销毁，因此每运行一次函数就会在内存中留下一组变量。（js当然也有垃圾回收机制，不过如果他发现你正在使用闭包，则不会清理可能会用到的变量）</li>
+</ol>
+<p>下面举个简单的例子说明什么是闭包:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 闭包</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> privateVar = <span class="string">"我是私有的变量"</span>;       <span class="comment">// 外部作用域的对象无法访问到此变量</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(privateVar);            <span class="comment">// 函数内部如果找不到某个变量或者对象，会一级一级往外找</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> inner;                           <span class="comment">// 返回函数inner才是闭包函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> out = outter();</span><br><span class="line">out();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>定义中的“独立(自由)变量”其实就是我们刚才说的私有成员，它们是独立（自由）的，是因为定义它的函数已经死了（执行完毕）！</p>
+<p>“变量在本地使用，但定义在一个封闭的作用域中”的意思是，自由变量可以在闭包函数中使用，但是自由变量并不是在闭包中定义的。</p>
+<p>“闭包函数可以“记忆”它被创建时候的环境”的意思是，<code>outter</code>执行的过程产生了一组变量，这些变量就是inner被声明时候的环境。<code>inner</code>可以记住这个环境（变量<code>privateVar</code>），即使inner离开了<code>outter</code>（被<code>return</code>到外部），它依然记得如何访问这个环境里的变量。</p>
+<p><a href="https://www.jianshu.com/p/d7fbf97a0316" target="_blank" rel="noopener">reference - 彻底理解js闭包</a></p>
+</blockquote>
+<h4 id="一道关于闭包的经典面试题"><a href="#一道关于闭包的经典面试题" class="headerlink" title="一道关于闭包的经典面试题"></a>一道关于闭包的经典面试题</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第一项<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第二项<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第三项<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>第四项<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// window.onload = function() &#123;  //  函数1</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//     var lis = document.getElementsByTagName('li');</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//     for (var i = 0; i &lt; lis.length; i++) &#123;</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//         lis[i].onclick = function() &#123;  //  函数2</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//             alert(i);</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//         &#125;</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// &#125;</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">// 每次输出都是3</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;                    <span class="comment">//  函数1</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> lis = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'li'</span>);</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lis.length; i++) &#123;</span></span><br><span class="line"><span class="actionscript">            lis[i].onclick = (<span class="function"><span class="keyword">function</span><span class="params">(private_i)</span> </span>&#123;  <span class="comment">//  函数2</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;                 <span class="comment">//  函数3</span></span></span><br><span class="line"><span class="undefined">                    alert(private_i);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="actionscript">            &#125;)(i);                                      <span class="comment">//  这里将i作为参数，调用函数2</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><ul>
+<li>在js中，大部分东西都是对象，数组是对象，函数也是对象，对象更加是对象。<strong>不管我们给数组和函数定义什么内容，它们总是有一些相同的方法和属性</strong>。比如说hasOwnProperty()，toString()等。<strong>这说明一个对象所拥有的属性不仅仅是它本身拥有的属性，它还会从其他对象中继承一些属性。当js在一个对象中找不到需要的属性时，它会到这个对象的父对象上去找，以此类推，这就构成了对象的原型链</strong>。</li>
+<li>所有函数都有一个prototype指针，指向原型对象。prototype指针的意义是，当我们使用这个构造函数new出新对象的时候，新对象的原型是谁。</li>
+<li>构造函数的prototype所指向的原型对象有一个constructor指针，指回构造函数。constructor指针有助于我们找到一个对象的构造函数是谁。</li>
+<li><code>__proto__</code>每个对象都有，js在new一个对象的时候，会将它的<code>__proto__</code>指向构造函数的prototype指向的那个对象。</li>
+<li>如果一个对象的<code>__proto__</code>指向了另一个对象，那么前者就继承了后者的所有属性。</li>
+<li>请注意<code>__proto__</code>与<code>prototype</code>的区别！<code>__proto__</code>才是真正连接原型链的东西，而<code>prototype</code>只是构造函数的一个指针属性而已。</li>
 </ul>
 
+          
+        
+      
+    </div>
+    
+    
+    
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+    
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
+    
 
-<!-- Sidebar Divider -->
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<!-- Theme Material -->
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/01/network-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/01/network-3/" itemprop="url">从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-01T11:32:04+08:00">
+                2018-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://github.com/Xieguoiang/FE-Interview-questions#%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%BE%93%E5%85%A5url%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%AD%A5%E9%AA%A4%E4%BB%A5http%E4%B8%BA%E4%BE%8B" target="_blank" rel="noopener">转载-从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</a></p>
+<ol>
+<li><p>在浏览器地址栏输入URL</p>
+</li>
+<li><p>浏览器查看缓存，如果请求资源在缓存中并且新鲜，跳转到转码步骤</p>
+<ol>
+<li>如果资源未缓存，发起新请求</li>
+<li>如果已缓存，检验是否足够新鲜，足够新鲜直接提供给客户端，否则与服务器进行验证。</li>
+<li>检验新鲜通常有两个HTTP头进行控制<code>Expires</code>和<code>Cache-Control</code><ul>
+<li>HTTP1.0提供Expires，值为一个绝对时间表示缓存新鲜日期</li>
+<li>HTTP1.1增加了Cache-Control: max-age=,值为以秒为单位的最大新鲜时间</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>浏览器<strong>解析URL</strong>获取协议，主机，端口，path</p>
+</li>
+<li><p>浏览器<strong>组装一个HTTP（GET）请求报文</strong></p>
+</li>
+<li><p>浏览器获取主机ip地址，过程如下：</p>
+<ol>
+<li>浏览器缓存</li>
+<li>本机缓存</li>
+<li>hosts文件</li>
+<li>路由器缓存</li>
+<li>ISP DNS缓存</li>
+<li>DNS递归查询（可能存在负载均衡导致每次IP不一样）</li>
+</ol>
+</li>
+<li><p>打开一个socket与目标IP地址，端口建立TCP链接，三次握手如下：</p>
+<ol>
+<li>客户端发送一个TCP的<strong>SYN=1，Seq=X</strong>的包到服务器端口</li>
+<li>服务器发回<strong>SYN=1， ACK=X+1， Seq=Y</strong>的响应包</li>
+<li>客户端发送<strong>ACK=Y+1， Seq=Z</strong></li>
+</ol>
+</li>
+<li><p>TCP链接建立后<strong>发送HTTP请求</strong></p>
+</li>
+<li><p>服务器接受请求并解析，将请求转发到服务程序，如虚拟主机使用HTTP Host头部判断请求的服务程序</p>
+</li>
+<li><p>服务器检查<strong>HTTP请求头是否包含缓存验证信息</strong>如果验证缓存新鲜，返回<strong>304</strong>等对应状态码</p>
+</li>
+<li><p>处理程序读取完整请求并准备HTTP响应，可能需要查询数据库等操作</p>
+</li>
+<li><p>服务器将<strong>响应报文通过TCP连接发送回浏览器</strong></p>
+</li>
+<li><p>浏览器接收HTTP响应，然后根据情况选择</p>
+<p>关闭TCP连接或者保留重用，关闭TCP连接的四次挥手如下：</p>
+<ol>
+<li>主动方发送<strong>Fin=1， Ack=Z， Seq= X</strong>报文</li>
+<li>被动方发送<strong>ACK=X+1， Seq=Z</strong>报文</li>
+<li>被动方发送<strong>Fin=1， ACK=X， Seq=Y</strong>报文</li>
+<li>主动方发送<strong>ACK=Y， Seq=X</strong>报文</li>
+</ol>
+</li>
+<li><p>浏览器检查响应状态吗：是否为1XX，3XX， 4XX， 5XX，这些情况处理与2XX不同</p>
+</li>
+<li><p>如果资源可缓存，<strong>进行缓存</strong></p>
+</li>
+<li><p>对响应进行<strong>解码</strong>（例如gzip压缩）</p>
+</li>
+<li><p>根据资源类型决定如何处理（假设资源为HTML文档）</p>
+</li>
+<li><p><strong>解析HTML文档，构件DOM树，下载资源，构造CSSOM树，执行js脚本</strong>，这些操作没有严格的先后顺序，以下分别解释</p>
+</li>
+<li><p>构建DOM树：</p>
+<ol>
+<li><strong>Tokenizing</strong>：根据HTML规范将字符流解析为标记</li>
+<li><strong>Lexing</strong>：词法分析将标记转换为对象并定义属性和规则</li>
+<li><strong>DOM construction</strong>：根据HTML标记关系将对象组成DOM树</li>
+</ol>
+</li>
+<li><p>解析过程中遇到图片、样式表、js文件，<strong>启动下载</strong></p>
+</li>
+<li><p>构建CSSOM树：</p>
+<ol>
+<li><strong>Tokenizing</strong>：字符流转换为标记流</li>
+<li><strong>Node</strong>：根据标记创建节点</li>
+<li><strong>CSSOM</strong>：节点创建CSSOM树</li>
+</ol>
+</li>
+<li><p><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction" target="_blank" rel="noopener">根据DOM树和CSSOM树构建渲染树</a>:</p>
+<ol>
+<li>从DOM树的根节点遍历所有<strong>可见节点</strong>，不可见节点包括：1）<code>script</code>,<code>meta</code>这样本身不可见的标签。2)被css隐藏的节点，如<code>display: none</code></li>
+<li>对每一个可见节点，找到恰当的CSSOM规则并应用</li>
+<li>发布可视节点的内容和计算样式</li>
+</ol>
+</li>
+<li><p>js解析如下：</p>
+<ol>
+<li>浏览器创建Document对象并解析HTML，将解析到的元素和文本节点添加到文档中，此时<strong>document.readystate为loading</strong></li>
+<li>HTML解析器遇到<strong>没有async和defer的script时</strong>，将他们添加到文档中，然后执行行内或外部脚本。这些脚本会同步执行，并且在脚本下载和执行时解析器会暂停。这样就可以用document.write()把文本插入到输入流中。<strong>同步脚本经常简单定义函数和注册事件处理程序，他们可以遍历和操作script和他们之前的文档内容</strong></li>
+<li>当解析器遇到设置了<strong>async</strong>属性的script时，开始下载脚本并继续解析文档。脚本会在它<strong>下载完成后尽快执行</strong>，但是<strong>解析器不会停下来等它下载</strong>。异步脚本<strong>禁止使用document.write()</strong>，它们可以访问自己script和之前的文档元素</li>
+<li>当文档完成解析，document.readState变成interactive</li>
+<li>所有<strong>defer</strong>脚本会<strong>按照在文档出现的顺序执行</strong>，延迟脚本<strong>能访问完整文档树</strong>，禁止使用document.write()</li>
+<li>浏览器<strong>在Document对象上触发DOMContentLoaded事件</strong></li>
+<li>此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等这些<strong>内容完成载入并且所有异步脚本完成载入和执行</strong>，document.readState变为complete,window触发load事件</li>
+</ol>
+</li>
+<li><p><strong>显示页面</strong>（HTML解析过程中会逐步显示页面）</p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<!-- Help & Support -->
-<!--
+    
+      
 
--->
+  
 
-<!-- Feedback -->
-<!--
+  
+  
+  
 
--->
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/28/network-2/">
 
-<!-- About Theme -->
-<!--
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
 
--->
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/28/network-2/" itemprop="url">TCP三次握手、四次挥手</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T15:05:40+08:00">
+                2018-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>想要彻底理解TCP三次握手，四次挥手，一定要认识TCP的首部以及各个字段的意义。主要是序号（seq）、确认号（ack）和控制号。这里我只介绍前面那几个字段的意义，其他的看书（谢希仁的计算机网络课本）。</p>
+<h3 id="TCP首部格式"><a href="#TCP首部格式" class="headerlink" title="TCP首部格式"></a>TCP首部格式</h3><p><img src="http://upload-images.jianshu.io/upload_images/7166236-98eac31fcea79185.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP首部"></p>
+<h4 id="序号"><a href="#序号" class="headerlink" title="序号"></a>序号</h4><p>占4个字节，序号范围是<code>[0 , 2^32-1]</code>，共<code>2^32（即4294967296）</code>个序号。序号增加到<code>2^32-1</code>后，下一个序号又回到0。也就是说序号使用<code>mod 2^32-1</code>。<strong>TCP是面向字节流的，在一个TCP连接中传送的字节流中的每一个字节都是按顺序编号的。</strong>整个要传送的字节流的起始序号必须在建立连接时设置。<strong>首部中的序号字段值则指的是本报文段所发送的数据的第一个字节的序号。</strong>例如，一报文的序号字段值是301，而携带的数据共有100字节。这就表明：本报文段的数据的第一个字节序号是301，最后一个字节序号是400。显然，下一个报文段的数据序号应该从401开始，即下一个报文段的序号字段值应该是401.这个字段的名臣也叫做“报文段序号”。</p>
+<h4 id="确认号"><a href="#确认号" class="headerlink" title="确认号"></a>确认号</h4><p>占4个字节，是<strong>期望收到对方下一个报文段的第一个数据字节的序号</strong>。</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">若确认号 = <span class="built_in">N</span> ， 则表明：到序号<span class="built_in">N</span>-<span class="number">1</span>为止的所有数据都已经正确收到了。</span><br></pre></td></tr></table></figure>
+<h4 id="下面是6个控制位"><a href="#下面是6个控制位" class="headerlink" title="下面是6个控制位"></a>下面是6个控制位</h4><h4 id="紧急URG（URGent）"><a href="#紧急URG（URGent）" class="headerlink" title="紧急URG（URGent）"></a>紧急URG（URGent）</h4><p>当URG = 1时，表明紧急指针字段有效。他告诉系统此报文中有紧急数据，应尽快传送（相当于高优先级的数据），而不要按原来的排队顺序要传送。当URG置1时，发送应用进程就告诉对方的TCP有紧急数据要传送。于是发送方TCP就把紧急数据插入到本报文段数据的最前面，而在紧急数据后面的数据仍是普通数据。这时就要与首部中的紧急指针（urgent pointer）字段配合使用。</p>
+<h4 id="确认ACK（ACKnowledgment）"><a href="#确认ACK（ACKnowledgment）" class="headerlink" title="确认ACK（ACKnowledgment）"></a>确认ACK（ACKnowledgment）</h4><p>仅当ACK=1时，确认号（ack）字段才有效。当ACK=1时，确认号无效。TCP规定，<strong>在连接建立后所有传送的报文段都必须把ACK置1。</strong></p>
+<h4 id="同步SYN（SYNchronization）"><a href="#同步SYN（SYNchronization）" class="headerlink" title="同步SYN（SYNchronization）"></a>同步SYN（SYNchronization）</h4><p><strong>在建立连接时用来同步序号。</strong></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SYN=1</span><br><span class="line">ACK=0</span><br><span class="line">表明这是一个连接请求报文段</span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">若同意建立连接，则应在相应的报文段中使：</span><br><span class="line">SYN = 1</span><br><span class="line">ACK = 1</span><br></pre></td></tr></table></figure>
+<p><strong>因此，SYN置为1就表示这是一个连接请求或连接接受报文。</strong></p>
+<h4 id="终止FIN（FINis）"><a href="#终止FIN（FINis）" class="headerlink" title="终止FIN（FINis）"></a>终止FIN（FINis）</h4><p>用来释放一个连接，当FIN=1时，表明次保温段的发送方数据已经发送完毕，并要求释放运输连接。</p>
+<h4 id="推送-PSH（PuSH）"><a href="#推送-PSH（PuSH）" class="headerlink" title="推送 PSH（PuSH）"></a>推送 PSH（PuSH）</h4><p>当两个应用进行交互式的通信时，有时在一端的应用进程希望在键入一个命令后立即就能收到对方的相应。在这种情况下，TCP就可以使用推送（push）操作。这是，发送方TCP把PSH置1，并立即创建一个报文段发送出去。接收方TCP收到PSH=1的报文段，就尽快地交付接受应用进程，而不再等到整个缓存都填满了再向上交付。</p>
+<h4 id="复位RST（ReSeT）"><a href="#复位RST（ReSeT）" class="headerlink" title="复位RST（ReSeT）"></a>复位RST（ReSeT）</h4><p>当RST=1时，表明TCP连接中出现严重错误，必须释放连接，然后再重新建立运输连接。RST置1还用来拒绝一个非法的报文段或者拒绝一个连接。RST也可称为重建位或重置位。</p>
+<h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>TCP建立连接的过程叫做握手，握手需要在客户端和服务器之间交换三个TCP报文段。</p>
+<h4 id="三次握手示意图："><a href="#三次握手示意图：" class="headerlink" title="三次握手示意图："></a>三次握手示意图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-beadee991d69f4ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP三次握手"></p>
+<h4 id="三次握手过程："><a href="#三次握手过程：" class="headerlink" title="三次握手过程："></a>三次握手过程：</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务器处于监听状态，当客户端想与服务器建立连接时，操作流程如下：</span></span><br><span class="line">客户端-&gt;服务端	SYN = <span class="number">1</span>  			客户端进入同步已发送状态</span><br><span class="line"><span class="comment">//若服务端同意连接，操作流程如下：</span></span><br><span class="line">服务端-&gt;客户端	SYN = <span class="number">1</span> , ACK = <span class="number">1</span> 	服务端进入同步收到状态</span><br><span class="line">客户端-&gt;服务端	ACK = <span class="number">1</span>				客户端进入ESTABLISHED（已建立连接状态）</span><br><span class="line">服务端收到客户端的确认后，也进入ESTABLISHED状态。</span><br></pre></td></tr></table></figure>
+<p>为什么客户端最后还要发送一次确认：</p>
+<ul>
+<li>这是为了防止已经失效的连接请求报文段突然有传送到了服务端，重新建立了一个连接，因而产生错误和资源浪费。</li>
+<li>所谓“已失效的链接请求报文段”是这样产生的，考虑一种正常情况，客户端发出连接请求，但因为连接请求报文丢失而未收到确认。于是客户端再重传了一次连接请求。后来收到了确认，建立了连接。数据传输完毕后，就释放了连接。客户端共发送了2个连接请求报文段，其中第一丢失，第二个到达了服务端，没有“已失效的连接请求报文段”。</li>
+<li>现假定一种异常情况，即客户端发出第一个请求连接报文段并没有丢失，而是滞留在某个网络节点，以致延误到链接释放后的某个时间才到达服务端。本来这是一个早就失效的报文段。但服务端收到此失效的报文段后，就误认为客户端又发了一次新的连接请求。于是向客户端发出了确认报文段，同意建立连接。假定不采用报文握手，那么只要服务端发出确认，新的连接就建立了。</li>
+</ul>
+<h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>数据传输结束后，通信双方都可释放连接。假设客户端先向其TCP发出释放连接报文段，并停止再发送数据，主动关闭TCP连接</p>
+<h4 id="四次挥手过程图："><a href="#四次挥手过程图：" class="headerlink" title="四次挥手过程图："></a>四次挥手过程图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-cefaf82e267b090a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="TCP四次挥手"></p>
+<h4 id="四次挥手过程："><a href="#四次挥手过程：" class="headerlink" title="四次挥手过程："></a>四次挥手过程：</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">客户端-&gt;服务端	FIN = <span class="number">1</span> 			客户端进入中止等待<span class="number">1</span>状态</span><br><span class="line">服务端-&gt;客户端	ACK = <span class="number">1</span>				服务端进入关闭等待状态</span><br><span class="line"><span class="comment">//此时TCP进入半关闭状态，服务端继续向客户端发送数据，当数据发送完毕之后</span></span><br><span class="line">服务端-&gt;客户端	FIN = <span class="number">1</span> , ACK = <span class="number">1</span>	服务端进入最后确认状态</span><br><span class="line"><span class="comment">//客户端收到确认后，必须对此发出确认</span></span><br><span class="line">客户端-&gt;服务端	ACK = <span class="number">1</span>				客户端进入时间等待状态</span><br><span class="line">服务端收到确认后关闭连接，客户端必须经过时间等待计时器设置的<span class="number">2</span>MSL后，客户端才进入closed状态。</span><br></pre></td></tr></table></figure>
+<p>为什么客户端在时间等待状态必须等待2MSL的时间：</p>
+<ul>
+<li>第一，为了保证客户端发送的最后一个ACK能到达服务端。</li>
+<li>防止上文提到的“已经失效的链接请求报文段”出现在本连接中。</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
 
     </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/Husbin" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-        <a href="https://www.zhihu.com/people/wu-ze-bin-68/activities" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
-                <span class="visuallyhidden">Zhihu</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
-</div>
+  </aside>
 
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Husbin
-            
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import JS File -->
-
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-    
-        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
-    
-
-
-
-
-
-
-
-
-
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
-
-    
-
-
-
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
         
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
     
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
 
-                </main>
-            </div>
-        </body>
-    
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

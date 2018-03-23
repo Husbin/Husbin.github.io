@@ -1,5 +1,9 @@
+
+/**
+时间字段颜色
+ */
 h4{
-    color: darkorange;
+    color: #3b5998;
 }
 /**
 #post-content
@@ -21,4 +25,34 @@ h4{
 }
 .card{
     margin: 10px;
+}
+
+.month > h3{
+    font-weight:bold;
+    text-shadow: 1px 2px 3px rgba(67,8,7,0.8);
+    color:#3f51b5;
+    -webkit-mask-image:-webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.9)), color-stop(80%, rgba(0, 0, 0, 0.5)),to(rgba(0, 0, 0, 0)));
+}
+
+.record-text{
+    margin: 0 ;
+    font-size: 24px ;
+    font-weight: 700 ;
+    color: #3b5998
+}
+
+
+/**
+底部文字阴影特效
+ */
+.footer-text{
+    color:#333;
+    background-color: #ddd;
+    text-shadow:
+            1px -1px 0 #767676,
+            -1px 2px 1px #737272,
+            -2px 4px 1px #767474,
+            -3px 6px 1px #787777,
+            -4px 8px 1px #7b7a7a,
+            -5px 10px 1px #7f7d7d
 }

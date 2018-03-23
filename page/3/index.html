@@ -53,16 +53,16 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
 
 
 
@@ -131,6 +131,16 @@
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -191,9 +201,9 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about.html" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             关于
           </a>
@@ -272,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/27/js-6/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/07/js-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -291,7 +301,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/27/js-6/" itemprop="url">call，apply，bind</a></h2>
+                <a class="post-title-link" href="/2018/03/07/js-8/" itemprop="url">ES6手抄（阮一峰版）</a></h2>
         
 
         <div class="post-meta">
@@ -303,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T19:23:15+08:00">
-                2018-02-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T20:05:07+08:00">
+                2018-03-07
               </time>
             
 
@@ -343,6 +353,17 @@
 
           
           
+             <span id="/2018/03/07/js-8/" class="leancloud_visitors" data-flag-title="ES6手抄（阮一峰版）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -365,35 +386,22 @@
       
         
           
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>javascript是动态编程语言，存在创建时上下文，运行时上下文，并且这些上下文都是可以动态改变的。而call，apply和bind的作用就是动态的改变上下文。</p>
-<p>call、apply和bind的作用都差不多，只是使用上有点小区别。</p>
-<h3 id="call和apply"><a href="#call和apply" class="headerlink" title="call和apply"></a>call和apply</h3><p>call，apply都属于<code>Function.prototype</code>的一个方法，他是javascript引擎内在实现的，因为属于<code>Function.prototype</code>，所以每个Function对象实例，都有call，apply属性。其实他们的作用是一样的，只是传递的参数不一样而已。</p>
-<ul>
-<li>apply：接受2个参数，第一个参数指定了函数体内this对象的指向，第二个参数为数组或者一个类数组。apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入。</li>
-<li>call：接受2个参数，第一个参数指定了函数体内this对象的指向，后边的参数是函数调用时的参数按顺序传递。</li>
-</ul>
-<p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    name: <span class="string">"husbin"</span>,</span><br><span class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;</span><br><span class="line">    name: <span class="string">'wzb'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj1.getName());  <span class="comment">// "husbin"</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1.getName.call(obj2));  <span class="comment">// "wzb"</span></span><br><span class="line"><span class="built_in">console</span>.log(obj1.getName.apply(obj2));  <span class="comment">// "wzb"</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showArgs</span>(<span class="params">a, b, c</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a,b,c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">showArgs.call(<span class="keyword">this</span>, <span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">showArgs.apply(<span class="keyword">this</span>, [<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>]);</span><br></pre></td></tr></table></figure>
-<p>面试题：定义一个 log 方法，让它可以代理 console.log 方法：</p>
-<p><strong>去面试的时候，面试官问我怎么使用传进去的参数，我说直接使用，他说不对，是通过一个arguments数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 常规做法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">msg</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="number">12</span>);		<span class="comment">//12</span></span><br><span class="line">log(<span class="number">1</span>,<span class="number">2</span>);		<span class="comment">//1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//上面能够基本解决打印输出问题，但是下面多参数的时候就gg了。换个更好的方式吧。</span></span><br><span class="line"><span class="comment">//去面试的时候，面试官问我怎么使用传进去的参数，我说直接使用，他说不对，是通过一个arguments数组</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, <span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="number">12</span>);		<span class="comment">//12</span></span><br><span class="line">log(<span class="number">1</span>,<span class="number">2</span>);		<span class="comment">//1,2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//接下来是要在每一条打印信息前面都要加上一个特定字符串'Error'又怎么说呢？</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">    args.unshift(<span class="string">'Error'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log.apply(<span class="built_in">console</span>, args);</span><br><span class="line">&#125;</span><br><span class="line">log(<span class="number">12</span>);</span><br><span class="line">log(<span class="number">1</span>,<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="bind"><a href="#bind" class="headerlink" title="bind"></a>bind</h3><p>bind方法与apply和call很相似，也是可以改变函数体内this的指向。</p>
-<blockquote>
-<p>MDN的解释是：bind()方法会创建一个新函数，称为绑定函数，当调用这个绑定函数时，绑定函数会以创建它时传入 bind()方法的第一个参数作为 this，传入 bind() 方法的第二个以及以后的参数加上绑定函数运行时本身的参数按照顺序作为原函数的参数来调用原函数。</p>
-</blockquote>
-<p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.x);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">func();  <span class="comment">// undefined, &#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    x: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> bar = func.bind(obj,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">bar(); <span class="comment">// 2 , &#123;'0':1&#125;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>在Javascript中，多次 bind() 是无效的。更深层次的原因， bind() 的实现，相当于使用函数在内部包了一个 call / apply ，第二次 bind() 相当于再包住第一次 bind() ,故第二次以后的 bind 是无法生效的。</li>
-</ul>
-<h3 id="这三个方法的异同"><a href="#这三个方法的异同" class="headerlink" title="这三个方法的异同"></a>这三个方法的异同</h3><p>举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">x: <span class="number">81</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = &#123;</span><br><span class="line">getX: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>.x;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo.getX.bind(obj)()); <span class="comment">//81</span></span><br><span class="line"><span class="built_in">console</span>.log(foo.getX.call(obj)); <span class="comment">//81</span></span><br><span class="line"><span class="built_in">console</span>.log(foo.getX.apply(obj)); <span class="comment">//81</span></span><br></pre></td></tr></table></figure>
-<p><strong>看到bind后面对了一对括号。区别是，当你希望改变上下文环境之后并非立即执行，而是回调执行的时候，使用 bind() 方法。而 apply/call 则会立即执行函数。</strong></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>apply 、 call 、bind 三者都是用来改变函数的this对象的指向的；<br>apply 、 call 、bind 三者第一个参数都是this要指向的对象，也就是想指定的上下文；<br>apply 、 call 、bind 三者都可以利用后续参数传参；<br>bind是返回对应函数，便于稍后调用；apply、call则是立即调用 。</p>
-<p>[<a href="https://segmentfault.com/a/1190000009650716" target="_blank" rel="noopener">Reference – 前端基础:call,apply,bind的的理解</a>]</p>
-
           
+还是推荐大家去看这个ECMAScript 6 入门。
+
+语法转化器babel转码器，可以将ES6语法转化为ES5兼容的语法。
+let、const
+let没有变量提升、不允许重复声明
+const声明一个只读常量，一旦声明，常量的值不能改变（const保证指向的那个内存地址不再改变）
+let、cons
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/07/js-8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -440,7 +448,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/27/interview-3/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/07/optimization-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -459,7 +467,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/27/interview-3/" itemprop="url">面试奇谈-解答篇</a></h2>
+                <a class="post-title-link" href="/2018/03/07/optimization-2/" itemprop="url">回流(reflow)与重绘(repaint)</a></h2>
         
 
         <div class="post-meta">
@@ -471,8 +479,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T12:10:49+08:00">
-                2018-02-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:41:41+08:00">
+                2018-03-07
               </time>
             
 
@@ -494,8 +502,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/琐言碎语/" itemprop="url" rel="index">
-                    <span itemprop="name">琐言碎语</span>
+                  <a href="/categories/前端优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端优化</span>
                   </a>
                 </span>
 
@@ -510,6 +518,17 @@
           
 
           
+          
+             <span id="/2018/03/07/optimization-2/" class="leancloud_visitors" data-flag-title="回流(reflow)与重绘(repaint)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -533,134 +552,19 @@
       
         
           
-            <h3 id="2018-03-05面试解析"><a href="#2018-03-05面试解析" class="headerlink" title="2018-03-05面试解析"></a>2018-03-05面试解析</h3><h4 id="jenkins工作流程"><a href="#jenkins工作流程" class="headerlink" title="jenkins工作流程"></a>jenkins工作流程</h4><p><strong>搭建：</strong></p>
-<ol>
-<li>与svn/git进行公钥密钥配对，获取拉取项目的权限。</li>
-<li>写持续集成脚本，大概步骤如下：<ol>
-<li>根据程序pid找到就项目进程，执行kill操作。</li>
-<li>重新构建项目。</li>
-<li>执行守护进程，告诉os <code>Don&#39;t kill me</code>。</li>
-</ol>
-</li>
-</ol>
-<p><strong>工作流程：</strong></p>
-<ol>
-<li>jenkins根据是定的时间去检测代码仓是否有变化</li>
-<li>若有变化，重新拉取项目</li>
-<li>根据pid找到旧进程，执行kill操作</li>
-<li>重新构建项目</li>
-<li>执行守护进程，告诉操作系统不要杀了我这个进程<code>don&#39;t kill me</code></li>
-</ol>
-<h4 id="关于ES6"><a href="#关于ES6" class="headerlink" title="关于ES6"></a>关于ES6</h4><p>推荐去看<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门 – 阮一峰</a></p>
-<p><strong>promise的3个状态：</strong></p>
-<ul>
-<li><em>pending</em>: 初始状态，既不是成功，也不是失败状态。</li>
-<li><em>fulfilled</em>: 意味着操作成功完成。</li>
-<li><em>rejected</em>: 意味着操作失败。</li>
-</ul>
-<p><strong>箭头函数与普通函数的区别：</strong></p>
-<ul>
-<li>（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
-<li>（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
-<li>（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</li>
-<li>（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</li>
-<li><a href="http://blog.csdn.net/Levis_1993/article/details/78342354" target="_blank" rel="noopener">箭头函数与function的区别</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">MDN– 箭头函数</a></li>
-<li><a href="https://www.jianshu.com/p/eca50cc933b7" target="_blank" rel="noopener">js箭头函数和普通函数的区别</a></li>
-</ul>
-<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><p><strong>dom回流重绘：</strong></p>
-<p>css与dom解析完毕后，合并为渲染树（render tree）</p>
-<p><em>重绘(repaint)：</em>当render tree中的一些元素需要更新属性，单这些属性只会影响元素的外观，风格，而不会影响到元素的布局，此类的页面渲染叫作页面重绘。</p>
-<p><em>回流(reflow)：</em>当render tree中的一部分（或全部）因为元素的规模尺寸，布局，隐藏等改变而引起的页面重新渲染。</p>
-<p>回流必定引起重绘。</p>
-<p><a href="https://wenhuiyang-luck.github.io/2017/03/14/%E9%A1%B5%E9%9D%A2%E9%87%8D%E7%BB%98%E5%92%8C%E9%A1%B5%E9%9D%A2%E5%9B%9E%E6%B5%81/" target="_blank" rel="noopener">页面重绘（repaint）和页面回流（reflow）</a></p>
-<h4 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h4><blockquote>
-<p>有多年开发经验的工程师，往往都会有自己的一套工具库，称为 utils、helpers 等等，这套库一方面是自己的技术积累，另一方面也是对某项技术的扩展，领先于技术规范的制定和实现。</p>
-<p>Lodash 就是这样的一套工具库，它内部封装了诸多对字符串、数组、对象等常见数据类型的处理函数，其中部分是目前 ECMAScript 尚未制定的规范，但同时被业界所认可的辅助函数。目前每天使用 npm 安装 Lodash 的数量在百万级以上，这在一定程度上证明了其代码的健壮性，值得我们在项目中一试。</p>
-</blockquote>
-<p><a href="https://www.w3cplus.com/javascript/lodash-intro.html" target="_blank" rel="noopener">lodash入门介绍</a></p>
-<p><a href="https://lodash.com/docs" target="_blank" rel="noopener">文档</a></p>
-<h4 id="原生ajax"><a href="#原生ajax" class="headerlink" title="原生ajax"></a>原生ajax</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params">text</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fail</span>(<span class="params">code</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();	<span class="comment">//新建xmlhttprequest对象</span></span><br><span class="line">request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(request.readystate === <span class="number">4</span>)&#123;		<span class="comment">//成功完成</span></span><br><span class="line">    <span class="keyword">if</span>(request.status === <span class="number">200</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> success(request.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> fail(request.status);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//http请求继续</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//发送请求</span></span><br><span class="line">request.open(<span class="string">'GET'</span>,<span class="string">'url'</span>);</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure>
-<h3 id="2018-02-26面试解析"><a href="#2018-02-26面试解析" class="headerlink" title="2018-02-26面试解析"></a>2018-02-26面试解析</h3><h4 id="let有没有提升"><a href="#let有没有提升" class="headerlink" title="let有没有提升"></a>let有没有提升</h4><p>答案是没有，原题如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> val = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">var</span> val = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//10</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
-<p>变种,下面会出现什么情况，答案是会报错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//ReferenceError: val is not defined</span></span><br><span class="line">    <span class="keyword">let</span> val = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
-<p>因为没有变量提升，所以变量没有提前声明，还没有声明就使用，就会报错。</p>
-<h4 id="typeof-“111”-”string”-的boolean值-选择"><a href="#typeof-“111”-”string”-的boolean值-选择" class="headerlink" title="!!typeof “111”===”string” 的boolean值 -选择"></a>!!typeof “111”===”string” 的boolean值 -选择</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consoloe.log(!!<span class="keyword">typeof</span> <span class="string">"111"</span>===<span class="string">"string"</span>)   <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<p>答案是false，然后面试官问了执行顺序，跟我说“！”的优先级比“===”高。根据《javascript高级程序设计第三版介绍》：逻辑非操作符首先会将他的操作数转化为一个布尔值，然后再对其求反。也就是说逻辑非操作符遵循下列规则：</p>
-<ul>
-<li>如果一个操作数是一个对象，则返回false。（!obj === false）</li>
-<li>如果一个操作数是一个空字符串，返回true。(!”” === true)</li>
-<li>如果操作数是一个非空字符串，返回false。(!”1111” === false)</li>
-<li>如果操作数是0，返回true。(!0 === true)</li>
-<li>如果操作数是任意非0数值，包括Infinity，返回false。(!1 === false)</li>
-<li>如果操作数是null，返回true。(! null === true)</li>
-<li>如果操作数是NaN，返回true。(! NaN === true)</li>
-<li>如果操作数是undefined，返回false。(! undefined === true)</li>
-</ul>
-<p>所以原题执行顺序为：</p>
-<ul>
-<li><code>typeof &quot;111&quot;</code> === string </li>
-<li><code>!typeof &quot;111&quot;</code> === false</li>
-<li><code>!!typeof &quot;111&quot;</code> === true</li>
-<li>true === “string” 为false</li>
-</ul>
-<h4 id="关于优化"><a href="#关于优化" class="headerlink" title="关于优化"></a>关于优化</h4><p>关于这题，我是看了一个<a href="https://github.com/laizimo/zimo-article" target="_blank" rel="noopener">博客</a>里面写的，进行总结的。我写的答案大概如下：</p>
-<ol>
-<li>减少css，js标签，用webpack打包工具打包。css放前面，js放后面，防止单线程阻塞。</li>
-<li>图片加载，base64，雪碧图。</li>
-<li>gzip压缩：gzip压缩是http协议上的gzip压缩编码技术。首先，我们应该要清楚的是压缩可以达到怎样的目的。比如说纯文本内容进行压缩之后，大小可以缩小大概40%左右。大小减小了最直接的就是传输的速度将会加快，以及流量将会减少。尤其是对于大流量类网站来说，压缩文件内容大小，减少流量是很有必要的(毕竟省钱嘛！)，另一方面，压缩过的内容将减少存储空间。</li>
-<li>css:预处理，scss。不滥用字体。</li>
-<li>尽量使用事件代理，利用事件冒泡，避免批量绑定事件。</li>
-</ol>
-<h4 id="关于浏览器兼容"><a href="#关于浏览器兼容" class="headerlink" title="关于浏览器兼容"></a>关于浏览器兼容</h4><p>我答了项目中遇到的几个问题，大概全都是我的博客里面写过的问题。<a href="http://easywork.xin/2018/02/12/ng2-5/">总结几个Angular2与ios wechat的问题</a></p>
-<p>浏览器内核答起，回答CSS前缀，Polyfill，Babel这些内容。。</p>
-<h4 id="数据库postgresql优点"><a href="#数据库postgresql优点" class="headerlink" title="数据库postgresql优点"></a>数据库postgresql优点</h4><p>google一波，毕竟写前端很少写数据库。。</p>
-<ol>
-<li>MySQL 的各种 text 字段有不同的限制, 要手动区分 small text, middle text, large text… Pg 没有这个限制, text 能支持各种大小。</li>
-<li>它可以存储 array 和 json, 可以在 array 和 json 上建索引, 甚至还能用表达式索引.</li>
-<li>pg性能优于mysql，相同的数据量计算，pg时间一般只有mysql的四分之一左右（具体情况可能有所不同） </li>
-</ol>
-<h4 id="express有什么中间件"><a href="#express有什么中间件" class="headerlink" title="express有什么中间件"></a>express有什么中间件</h4><p><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.application" target="_blank" rel="noopener">下面全部是文档的介绍</a></p>
-<p>Express 是一个路由和中间件 Web 框架，其自身只具有最低程度的功能：Express 应用程序基本上是一系列中间件函数调用。</p>
-<p>中间件函数能够访问<a href="http://expressjs.com/zh-cn/4x/api.html#req" target="_blank" rel="noopener">请求对象</a> (<code>req</code>)、<a href="http://expressjs.com/zh-cn/4x/api.html#res" target="_blank" rel="noopener">响应对象</a> (<code>res</code>) 以及应用程序的请求/响应循环中的下一个中间件函数。下一个中间件函数通常由名为 <code>next</code> 的变量来表示。</p>
-<p>中间件函数可以执行以下任务：</p>
-<ul>
-<li>执行任何代码。</li>
-<li>对请求和响应对象进行更改。</li>
-<li>结束请求/响应循环。</li>
-<li>调用堆栈中的下一个中间件函数。</li>
-</ul>
-<p>如果当前中间件函数没有结束请求/响应循环，那么它必须调用 <code>next()</code>，以将控制权传递给下一个中间件函数。否则，请求将保持挂起状态。</p>
-<p>Express 应用程序可以使用以下类型的中间件：</p>
-<ul>
-<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.application" target="_blank" rel="noopener">应用层中间件</a></li>
-<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.router" target="_blank" rel="noopener">路由器层中间件</a></li>
-<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.error-handling" target="_blank" rel="noopener">错误处理中间件</a></li>
-<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.built-in" target="_blank" rel="noopener">内置中间件</a></li>
-<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.third-party" target="_blank" rel="noopener">第三方中间件</a></li>
-</ul>
-<p>您可以使用可选安装路径来装入应用层和路由器层中间件。 还可以将一系列中间件函数一起装入，这样会在安装点创建中间件系统的子堆栈。</p>
-<h4 id="字符串反转"><a href="#字符串反转" class="headerlink" title="字符串反转"></a>字符串反转</h4><p><a href="https://www.jianshu.com/p/f6ac19ea0415" target="_blank" rel="noopener">参考</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"a,b,c,d,e,s"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(reverseString(str));   <span class="comment">//s,e,d,c,b,a</span></span><br></pre></td></tr></table></figure>
-<p>相关知识点：</p>
-<p> split() 方法用于把一个<strong>字符串</strong>分割成<strong>字符串数组</strong>。</p>
-<p>reverse() 方法用于颠倒<strong>数组</strong>中元素的顺序,并且会<strong>直接修改原数组</strong>。</p>
-<p>方法用于把数组中的<strong>所有元素</strong>放入一个字符串,并按传入的分隔符进行分割。</p>
-<h4 id="ul和li列表的默认样式"><a href="#ul和li列表的默认样式" class="headerlink" title="ul和li列表的默认样式"></a>ul和li列表的默认样式</h4><p>回来自己在chrome上试了下，结果如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">dir</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">list-style-type</span>: disc;</span><br><span class="line">    <span class="attribute">-webkit-margin-before</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">-webkit-margin-after</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">-webkit-margin-start</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">-webkit-margin-end</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">-webkit-padding-start</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: list-item;</span><br><span class="line">    <span class="attribute">text-align</span>: -webkit-match-parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="css3新特性"><a href="#css3新特性" class="headerlink" title="css3新特性"></a>css3新特性</h4><p><a href="https://www.nowcoder.com/questionTerminal/85d16107dc074d52a69f2e86f08a69b1" target="_blank" rel="noopener">css3特性</a></p>
-<ol>
-<li><strong>CSS3实现圆角（border-radius），阴影（box-shadow），</strong> </li>
-<li><strong>对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform） </strong></li>
-<li>transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px)  skew(-9deg,0deg);// 旋转,缩放,定位,倾斜 </li>
-<li>增加了更多的CSS选择器  多背景 rgba  </li>
-<li>在CSS3中唯一引入的伪元素是 ::selection. </li>
-<li>媒体查询，多栏布局 </li>
-<li>border-image</li>
-</ol>
-
-          
+          浏览器渲染原理浏览器解析
+浏览器通过请求的url进行域名解析，向服务器发起请求，接受文件（html，css，js，image等）。
+html文件加载后，开始构建DOM Tree。
+css样式文件加载后，开始解析和构建CSS Rule Tree。
+Javascript脚本文件加载后，通过DOM API
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/07/optimization-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -707,7 +611,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/26/interview-2/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/07/optimization-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -726,7 +630,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/26/interview-2/" itemprop="url">面试奇谈</a></h2>
+                <a class="post-title-link" href="/2018/03/07/optimization-1/" itemprop="url">优化总体路线</a></h2>
         
 
         <div class="post-meta">
@@ -738,8 +642,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T21:51:01+08:00">
-                2018-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T14:35:57+08:00">
+                2018-03-07
               </time>
             
 
@@ -761,8 +665,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/琐言碎语/" itemprop="url" rel="index">
-                    <span itemprop="name">琐言碎语</span>
+                  <a href="/categories/前端优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端优化</span>
                   </a>
                 </span>
 
@@ -777,6 +681,17 @@
           
 
           
+          
+             <span id="/2018/03/07/optimization-1/" class="leancloud_visitors" data-flag-title="优化总体路线">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -800,164 +715,20 @@
       
         
           
-            <h1 id="关于本文"><a href="#关于本文" class="headerlink" title="关于本文"></a>关于本文</h1><p>本文只做问题记录及部分解答，另外部分解答移步另一篇博客 <a href="http://easywork.xin/2018/02/27/interview-3/">面试奇谈-解答篇</a>。</p>
-<h1 id="2018-03-08——-拼多多"><a href="#2018-03-08——-拼多多" class="headerlink" title="2018-03-08—— 拼多多"></a>2018-03-08—— 拼多多</h1><ul>
-<li>css优化,css放Body前和后的区别</li>
-<li>原型、原型链、继承</li>
-<li>rem的优缺点</li>
-<li>var a = [] 与 var a = new Array()的区别</li>
-<li>([“1”,”2”,”3”]).map(parseInt)</li>
-<li>null和undefined</li>
-<li>栈和堆的区别，前端内存分配</li>
-<li>float时候的position是什么</li>
-<li>一般做动画时间间隔是多少</li>
-<li>如何判断链表是否存在环</li>
-<li>散列表，数组，链表的优劣</li>
-<li>有已排序数组A,B，如何用最快的方法判断A中有多少元素属于B</li>
-<li>输入“123”，输出123</li>
-</ul>
-<ul>
-<li>事件代理事件委托</li>
-<li>阻止事件冒泡</li>
-<li>浏览器多进程，模拟多进程</li>
-<li>进程与线程的区别</li>
-<li>有什么事件是异步的</li>
-<li>快排，插入排序</li>
-<li>最近在了解什么新技术（说了vue）</li>
-<li>问了es6，es7</li>
-<li>问了浏览器引擎</li>
-<li>webworker</li>
-<li>every、filter、map、forEach、once</li>
-</ul>
-<h1 id="2018-03-06——-深圳小鹅通电面"><a href="#2018-03-06——-深圳小鹅通电面" class="headerlink" title="2018-03-06—— 深圳小鹅通电面"></a>2018-03-06—— 深圳小鹅通电面</h1><ul>
-<li>自我介绍</li>
-<li>问了项目</li>
-<li>问了输入url回车之后发生了什么事</li>
-<li>问了怎么优化（页面优化）<ul>
-<li>我说了js，css，webpack，图片，事件代理，问我事件代理如何实现</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>问了为什么重构项目</li>
-<li>问了为什么使用这个技术栈</li>
-<li>问了ng2数据绑定</li>
-<li>问了http首部认识吗</li>
-<li>最后说了句，2天没联系你就说明不过，这个是直接凉了吧//</li>
-</ul>
-<h1 id="2018-03-05-——-蚂蚁金服电面"><a href="#2018-03-05-——-蚂蚁金服电面" class="headerlink" title="2018-03-05 —— 蚂蚁金服电面"></a>2018-03-05 —— 蚂蚁金服电面</h1><p>很多说不出来，说了思路，有些对了有些错了。不求能去，但真的见了世面了。。。</p>
-<h3 id="一面，可能有且只有一面"><a href="#一面，可能有且只有一面" class="headerlink" title="一面，可能有且只有一面"></a>一面，可能有且只有一面</h3><h4 id="问了技术栈"><a href="#问了技术栈" class="headerlink" title="问了技术栈"></a>问了技术栈</h4><ul>
-<li>我说前端ng2，后端go，数据库postgresql</li>
-<li>问了还有没有了解其他，我说了在看vue，说了二者语法类似</li>
-<li><a href="http://easywork.xin/2018/02/24/ng2-6/">问了双向绑定，脏检原理</a></li>
-<li>问了express，我说就做完简单交互就没了</li>
-<li>啊补一个，问了jenkins，我说了大概思路</li>
-</ul>
-<h4 id="问了好多es6"><a href="#问了好多es6" class="headerlink" title="问了好多es6"></a>问了好多es6</h4><p>推荐去看<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门 – 阮一峰</a></p>
-<ul>
-<li>我先说了let，const，promise，generator</li>
-<li>又问了数组解构</li>
-<li>问了promise的3个状态，我就只记得pendling</li>
-<li>问我用promise如何实现：同时发送几个请求，但是需要等到所有请求结束再执行回调。。我大头得问他为什么不用generator。</li>
-<li>他说promise可以实现generator</li>
-<li>问了了解箭头函数吗，跟普通函数的区别（没答出来）</li>
-</ul>
-<h4 id="问了lodash"><a href="#问了lodash" class="headerlink" title="问了lodash"></a>问了lodash</h4><ul>
-<li>我说了大概就是做一些公共的组件，然后存放在一个地方，方便使用。他说大概就是这么个东西。后面又问了什么，我忘记了。（不怎么对）</li>
-</ul>
-<h4 id="问了css"><a href="#问了css" class="headerlink" title="问了css"></a>问了css</h4><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener">flexbox</a></li>
-<li><a href="http://easywork.xin/2017/10/21/css-1/">盒子模型，区别</a>，如何让单独某个div进入怪异模式（后面这个没答出来）</li>
-<li>问了dom回流重绘（不会）</li>
-</ul>
-<h4 id="问了存储"><a href="#问了存储" class="headerlink" title="问了存储"></a>问了存储</h4><ul>
-<li>其实这个是我自己说的，因为问了我css，我css巨弱，就跟他说我还在系统学习，就像项目中xxxxxxxx，然后说到了sessionstroage、localstroage，然后问我二者的区别，说完问我还知道别的吗，我说了cookie和session算不算，说了前后端交互的过程，说完补刀了manifest，说了优点还有机制。</li>
-</ul>
-<h4 id="问了怎么优化"><a href="#问了怎么优化" class="headerlink" title="问了怎么优化"></a>问了怎么优化</h4><ul>
-<li>我说了webpack，js，css之类的，减少http请求</li>
-<li>问了图片，我说base64 雪碧图 ，ng2AOT自带打包雪碧图，</li>
-<li>问了懒加载，我给他说了思路之后，他问我怎么监控是否到底页面底部（答不出来）</li>
-</ul>
-<h4 id="问了原生ajax请求"><a href="#问了原生ajax请求" class="headerlink" title="问了原生ajax请求"></a>问了原生ajax请求</h4><ul>
-<li>我说了new一个xmlhttprequest对象，然后发请求，根据返回的readystatus来判断回复的状态</li>
-<li>问了项目中怎么使用网络请求的，我说了对get，post做一个封装，减少一些冗余代码。</li>
-</ul>
-<h4 id="问了攻击"><a href="#问了攻击" class="headerlink" title="问了攻击"></a>问了攻击</h4><ul>
-<li>我说注入，xss</li>
-<li>问我怎么防注入。我说了前端做下过滤，后端用sql变量。</li>
-<li>问了跨域（项目+总结）</li>
-</ul>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
-<li>写一个get函数用来取数据，有个object，下面有多级，有孙子，孙孙子，孙孙孙子。。如何从某一级根据键值对拿出一个键，我答了柯里化，不知道对不对。。（后来发现牛头不对马嘴）</li>
-<li>说了我的博客有排序算法，问我知道什么排序算法：说了冒泡，快排，插入，选择，js自带的排序。问我复杂度。</li>
-<li>问了数组去重，我说了一开始用过一种蠢方法，后来有新方法，印象是什么form，一句代码就能解决。（查了下是return Array.from(new Set(array));）</li>
-</ul>
-<h4 id="还有我又说了我在看书"><a href="#还有我又说了我在看书" class="headerlink" title="还有我又说了我在看书"></a>还有我又说了我在看书</h4><ul>
-<li>js高级程序设计</li>
-<li>css权威指南</li>
-</ul>
-<h4 id="问我有没有想问的"><a href="#问我有没有想问的" class="headerlink" title="问我有没有想问的"></a>问我有没有想问的</h4><ul>
-<li>问了实习生的培养，他说主要是项目驱动，有代码审核，有经验分享会。</li>
-<li>其实应该问下我的表现怎么样//（逃</li>
-</ul>
-<h1 id="2018-02-28-——-理想信息产业有限公司面试"><a href="#2018-02-28-——-理想信息产业有限公司面试" class="headerlink" title="2018-02-28 —— 理想信息产业有限公司面试"></a>2018-02-28 —— 理想信息产业有限公司面试</h1><h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>今天去的地方怪怪的，说是中国电信的一个子公司，总部在上海，广州有几个办事处。。我去的地方在居民区。。他说是环境最差的一个，专业的hr也不在。</p>
-<h3 id="技术面"><a href="#技术面" class="headerlink" title="技术面"></a>技术面</h3><p>有2个人面试，一个是前端开发的，另一个可能是经理，问的东西不多，所以其实也没什么好总结的。</p>
-<ul>
-<li><a href="http://easywork.xin/2018/01/11/base-1/">问了跨域</a>，我把总结的东西基本都说了一遍，但是回来仔细回想了下好像答的不是很好。下次回答思路应该如下：</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. jsonp：实现原理<span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">标签，回调获取数据；</span></span><br><span class="line"><span class="undefined">		优点：不受同源限制，能兼容旧版本浏览器；</span></span><br><span class="line"><span class="actionscript">		缺点：只能<span class="keyword">get</span></span></span><br><span class="line"><span class="actionscript"><span class="number">2.</span> cors：非简单请求：json，put，<span class="keyword">delete</span>。服务器处理<span class="number">2</span>次请求，压力大；</span></span><br><span class="line"><span class="actionscript">		 简单请求：<span class="keyword">get</span>/post。然后要引入讲到cookie，session。</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>问了做过的项目，我觉得 答得也不是特别好，我直说了做过什么项目，应该引入项目里面遇到的问题。</li>
-<li>问了会不会写文档，有时候要帮忙写文档。</li>
-<li>问了有没有了解vue，react。</li>
-<li>问了有没有了解ng1。我说没写过，但是ng2比ng1好一点，具体体现在<a href="http://easywork.xin/2018/02/24/ng2-6/">双向绑定</a>上，ng1是双向数据流，检查次数很多，ng2是单向数据流，只检查一遍。</li>
-<li>问了我简历上写的项目重构的事，我就说了类似数据结构优化之类的。</li>
-<li>然后问期望薪资，我说了3-4k。</li>
-<li>问我有没有想问的，我问了他们公司跟电信什么关系，他说是电信的子公司，问了环境，问了吃住，问了实习生培养，他说目前没有完善的培养制度，问了要做多久，他的意思应该是做到毕业，然后说实习生没事，半路走不怕违法之类的。问了下转正。。他说5，6k，真的有点嫌弃。</li>
-</ul>
-<p>然后就没问什么问题了，时长也就18分钟左右，然后就说说人事部没人在，叫我回去等通知。感觉有点凉。</p>
-<h1 id="2018-02-26-——-美的面试"><a href="#2018-02-26-——-美的面试" class="headerlink" title="2018-02-26 —— 美的面试"></a>2018-02-26 —— 美的面试</h1><h3 id="写在前面-1"><a href="#写在前面-1" class="headerlink" title="写在前面"></a>写在前面</h3><p>今天一切还算顺利，就是过去的时候被黑车坑了90块车费很心疼。</p>
-<p>第一次面试，拿到offer记录一下。</p>
-<h3 id="hr电话面（02-25）"><a href="#hr电话面（02-25）" class="headerlink" title="hr电话面（02-25）"></a>hr电话面（02-25）</h3><p>问了下日常，还有能全勤吗，然后问了2个基本的问题，<a href="http://easywork.xin/2018/02/01/js-3/">js基本数据类型</a>，<a href="http://easywork.xin/2018/02/27/js-6/">apply，call，bind</a>。第一次接电话，很紧张，答得不是很好，然后通知我去佛山面试。</p>
-<h3 id="技术面（02-26）"><a href="#技术面（02-26）" class="headerlink" title="技术面（02-26）"></a>技术面（02-26）</h3><h4 id="笔试题（题真的很多，css我都没写）"><a href="#笔试题（题真的很多，css我都没写）" class="headerlink" title="笔试题（题真的很多，css我都没写）"></a>笔试题（题真的很多，css我都没写）</h4><ul>
-<li>正则-选择题</li>
-<li>关于日期的-选择题（month是从0开始的）</li>
-<li>window、location-选择题</li>
-<li>h5增加了2个本地存储-填空题(sessionStroage、localStroage)</li>
-<li><a href="http://easywork.xin/2018/02/01/js-3/">变量作用域，变量提升，函数提升</a>，后面追问let有没有提升（答案是没有）</li>
-<li><a href="http://easywork.xin/2018/02/02/js-4/">闭包会导致什么问题</a> - 问答题(答案是内存泄漏)</li>
-<li>!!typeof “111”===”string” 的boolean值 -选择（后续问了执行顺序）</li>
-<li>原型链 - 问答题</li>
-<li><a href="http://easywork.xin/2018/01/22/js-2/">事件委托，事件冒泡，事件捕获，事件的函数</a>- 问答题</li>
-<li>关于优化 - 问答题</li>
-<li>关于浏览器兼容 - 问答题（回答了项目中遇到的几个问题）</li>
-<li><a href="http://easywork.xin/2017/10/21/css-1/">什么是盒子模型</a> - 问答题</li>
-<li>字符串反转（想到了很蠢的方法，然后没写，写了思路。面试官说是数组反转）</li>
-<li>ul和li列表的默认样式</li>
-<li>暂时想到这么多（css都没做所以不记得了，印象中有一道居中，一道flex）。。</li>
-</ul>
-<h4 id="面试官提问"><a href="#面试官提问" class="headerlink" title="面试官提问"></a>面试官提问</h4><ul>
-<li>问了let有没有变量提升的问题</li>
-<li>还有一道简单的题我写错了。。他在引导我。。我觉得。。我基础实在。。</li>
-<li>项目中有什么印象特别深刻的（说了项目中遇到的几个问题，关于Angular-cli在微信上的问题，关于ios11图片上传的问题）</li>
-<li>平时有没有做什么东西（github+hexo这个博客）</li>
-<li>css都不会：flexd、css3</li>
-<li>数据库问了下mongoDB，我说了用postgresql，以及优点</li>
-<li>apply，call，bind的区别，以及怎么使用参数（后面这个没能答出来）</li>
-<li>问了express有什么中间件（没能答出来）</li>
-<li>介绍了他们部门的情况</li>
-<li>然后说实习生也是有工作压力的</li>
-<li>然后问能做多久，问我有没有想问的</li>
-<li>面试官问的都很基础，而且很少问项目，我尽量把问题往项目带，才有东西讲。</li>
-<li>面试官人很不错，很有亲和力</li>
-</ul>
-<h3 id="晚上hr再面（02-26）"><a href="#晚上hr再面（02-26）" class="headerlink" title="晚上hr再面（02-26）"></a>晚上hr再面（02-26）</h3><ul>
-<li>问了下我说只能实习3-4个月，她说至少要6个月，我问了是不是考虑6个月就能过去，他说是。</li>
-<li>问了下转正待遇怎么样，她说目前应届生的待遇，就8x14这样子，但每年不一样，都会涨。</li>
-<li>实习的话2-3k包住+餐补。</li>
-</ul>
+          优化思路
+有些是实践过的，有些是没有实践过的，但是思路就在上图还有下面的：
 
-          
+减少css，js标签，用webpack打包工具打包。css放前面，js放后面，防止单线程阻塞。
+图片加载，base64，雪碧图。
+gzip压缩：gzip压缩是http协议上的gzip压缩编码技术。首先，我们应该要清楚的是压
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/07/optimization-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1004,7 +775,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/25/network-1/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/05/css-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -1023,7 +794,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/25/network-1/" itemprop="url">网络协议的分层结构</a></h2>
+                <a class="post-title-link" href="/2018/03/05/css-4/" itemprop="url">css-鲜为人知的css单位</a></h2>
         
 
         <div class="post-meta">
@@ -1035,8 +806,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T14:33:29+08:00">
-                2018-02-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T09:09:17+08:00">
+                2018-03-05
               </time>
             
 
@@ -1058,8 +829,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机网络</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1074,6 +845,17 @@
           
 
           
+          
+             <span id="/2018/03/05/css-4/" class="leancloud_visitors" data-flag-title="css-鲜为人知的css单位">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -1097,27 +879,22 @@
       
         
           
-            <h3 id="网络协议的层次划分图"><a href="#网络协议的层次划分图" class="headerlink" title="网络协议的层次划分图"></a>网络协议的层次划分图</h3><p><img src="http://upload-images.jianshu.io/upload_images/7166236-41b30ecd692b1927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络协议分层结构"></p>
-<h3 id="各层的功能作用"><a href="#各层的功能作用" class="headerlink" title="各层的功能作用"></a>各层的功能作用</h3><h4 id="物理层（physical-layer）"><a href="#物理层（physical-layer）" class="headerlink" title="物理层（physical layer）"></a>物理层（physical layer）</h4><p>物理层上所传数据的单位是比特。发送方发送1（或0）时，接收方应当受到1（或0）而不是0（或1）。值得注意的是，传递信息所用的一些物理媒体，如双绞线，同轴电缆，光缆，无线信道等，并不属于物理层之内，而实在物理层协议的下面，有人把物理层下面的物理媒体当作第0层。</p>
-<h4 id="数据链路层（data-link-layer）"><a href="#数据链路层（data-link-layer）" class="headerlink" title="数据链路层（data link layer）"></a>数据链路层（data link layer）</h4><p>数据链路层所传输的单位是帧（framing）。两台主机之间的数据传输，总是在一段一段的链路上传送的，在两个相邻的节点之间的链路上传送数据时，数据链路层将网络层交下来的IP数据包组装成帧，在两个相邻节点间的链路上传送帧。总的来说，数据链路层要解决三个问题：</p>
-<ul>
-<li>封装成帧（将网络层交下来的IP数据包添加首部和尾部封装成帧）</li>
-<li>透明传输（保证即使数据中偶然出现帧定界字符，也不会导致传输失败）</li>
-<li>差错检测（CRC循环冗余检验）</li>
-</ul>
-<h4 id="网络层（network-layer）"><a href="#网络层（network-layer）" class="headerlink" title="网络层（network layer）"></a>网络层（network layer）</h4><p>网络层的传输单元叫做分组、IP数据报、数据报、包。网络层负责为分组交换网上的不同主机提供通信服务。在发送数据时，网络层把运输层产生的报文段或用户数据报封装成分组或包进行传送。通过IP找到目的主机，通过端口port找到目的通信程序。</p>
-<h4 id="运输层（transport-layer）"><a href="#运输层（transport-layer）" class="headerlink" title="运输层（transport layer）"></a>运输层（transport layer）</h4><p>运输层的任务就是负责向两台主机中进程之间的通信提供通用的数据传输服务。应用进程利用该服务传送应用层报文。所谓“通用的”，是指并不针对某个特定的网络应用，而是多种应用可以使用同一个运输层服务。由于一台主机可同时运行多个进程，因此运输层有分用和复用的功能。<strong>复用</strong>就是多个应用层进程可同时使用下面运输层的服务，<strong>分用</strong>是运输层把收到的信息分别交付上面应用层中的相应进程。运输层主要使用以下两种协议：</p>
-<ul>
-<li>传输控制协议（Transmission Control Protocol - TCP）——提供面向连接的、可靠的数据传输服务，其数据传输单位是报文段（segment）。</li>
-<li>用户数据报协议（User Datagram Protocol - UDP）——提供无连接的、尽最大努力的数据传输服务，不保证数据传输的可靠性，其数据传输单位是用户数据报。</li>
-</ul>
-<h5 id="UDP与TCP"><a href="#UDP与TCP" class="headerlink" title="UDP与TCP"></a>UDP与TCP</h5><ul>
-<li><strong>UDP是面向报文的</strong>，发送方的UDP对应用程序交下来的报文，在添加首部后就向下交付给IP曾。他既不合并，也不不拆分，而是保留这些报文的边界。也就是说，应用层交给UDP多长的报文，UDP照样发送，即一次发送一个报文。</li>
-<li><strong>TCP是面向字节流的</strong>，TCP中的”流“指的是流入到进程或者从进程流出的字节序列。”面向字节流“的含义是：虽然应用程序和TCP交互式一次一个数据块（大小不等），但TCP把应用程序交下来的数据堪称仅仅是一串无结构的字节流。TCP并不知道所传送的字节流的含义。TCP不保证接收方应用程序所收到的数据块和发送方应用程序所发出来的数据块具有对应的大小关系，但接收方应用程序收到的字节流必须和发送方应用程序发出来的字节流是完全一样的。</li>
-</ul>
-<h4 id="应用层（application-layer）"><a href="#应用层（application-layer）" class="headerlink" title="应用层（application layer）"></a>应用层（application layer）</h4><p>应用层交互的数据单元成为报文（message），应用层是体系结构中的最高层。应用层的任务是通过应用进程间的交互来完成特定网络应用。<strong>应用层协议定义的是应用进程间通信和交互的规则。</strong>这里的进程就是指主机中正在运行的程序。对于不同的网络应用需要不同的应用层协议。在互联网中的应用层协议很多，如域名系统DNS，支持万维网应用的HTTP协议，支持电子邮件的SMTP协议，等等。</p>
+          css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。
+百分数百分数总是相对于另一个值。
+颜色
+命名颜色：red，blue。。。
+用RGB指定颜色：p.one{color:rgb(0%,20%,20%)}
+十六进制RGB颜色：h1{color: #FF0000} /*re*/
 
-          
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/05/css-4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1164,7 +941,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/24/ng2-6/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/04/css-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -1183,7 +960,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/24/ng2-6/" itemprop="url">Angular2双向绑定及变化检测</a></h2>
+                <a class="post-title-link" href="/2018/03/04/css-3/" itemprop="url">css-结构和层叠</a></h2>
         
 
         <div class="post-meta">
@@ -1195,8 +972,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T17:58:21+08:00">
-                2018-02-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T13:57:59+08:00">
+                2018-03-04
               </time>
             
 
@@ -1218,8 +995,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web框架/" itemprop="url" rel="index">
-                    <span itemprop="name">web框架</span>
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -1234,6 +1011,17 @@
           
 
           
+          
+             <span id="/2018/03/04/css-3/" class="leancloud_visitors" data-flag-title="css-结构和层叠">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
@@ -1257,953 +1045,17 @@
       
         
           
-            <p>前几天总结了<a href="http://easywork.xin/2018/02/22/design-1/">MVC、MVP、MVVM设计模式</a>，其中MVVM的核心机制就是双向绑定。React、Vue、Angular的双向绑定，都是基于MVVM的设计模式。</p>
-<h3 id="什么是双向绑定"><a href="#什么是双向绑定" class="headerlink" title="什么是双向绑定"></a>什么是双向绑定</h3><p>如图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7a2c67cba1f6c343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双向绑定.jpg"></p>
-<p>双向绑定机制维护了页面（View）与数据（Data）的一致性。如今，MVVM已经是前段流行框架必不可少的一部分。</p>
-<h3 id="Angular2中的双向绑定"><a href="#Angular2中的双向绑定" class="headerlink" title="Angular2中的双向绑定"></a>Angular2中的双向绑定</h3><p>双向绑定，也是Angular2的核心概念之一，Angular2的双向绑定是这样的：</p>
-<ul>
-<li>data=&gt;view：数据绑定，模板语法是 []</li>
-<li>view=&gt;data：事件绑定，模板语法是 ()</li>
-<li>Angular其实并没有一个双向绑定的实现，<strong>他的双向绑定就是数据绑定+事件绑定</strong>，模板语法是  [()] 。</li>
-</ul>
-<p>Angular2官方给的例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--value是数据绑定，input是事件绑定--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">value</span>]=<span class="string">"currentHero.name"</span>	</span></span><br><span class="line"><span class="tag">       (<span class="attr">input</span>)=<span class="string">"currentHero.name=$event.target.value"</span></span></span><br><span class="line"><span class="tag">       &gt;</span></span><br><span class="line"><span class="comment">&lt;!--等价--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"currentHero.name"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>上面是input空间的双向绑定语法，很清楚的说明了双向绑定与两个单向绑定的关系。这里没有使用<code>ngModule</code>语法，<code>ngModule</code>语法内部实现与这个差不多。</p>
-<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><ol>
-<li>用户操作出发DOM事件通知</li>
-<li>Angular监听到了通知，然后执行模板语法，上面的例子就是将input控件的输入值赋给了<code>currentHero.name</code>。</li>
-</ol>
-<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h4><p>由于js语言并没有属性变化通知的机制，所以angular也不知道谁发生了变化，在什么时候变了。Angular的变化机制是：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7460cf2c640186e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>上面的例子中input的数据绑定过程如下：</p>
-<ol>
-<li>代码修改了<code>currentHero.name</code>的值。</li>
-<li>触发整个组件树的变化检查。</li>
-<li>input显示了修改后的值。</li>
-</ol>
-<h5 id="数据何时变化"><a href="#数据何时变化" class="headerlink" title="数据何时变化"></a>数据何时变化</h5><p>主要入下集中情况可能改变数据：</p>
-<ul>
-<li>用户输入操作，比如点击，提交等。</li>
-<li>请求服务端数据。</li>
-<li>定时事件，比如<code>setTimeout</code>，<code>setInterval</code>。</li>
-</ul>
-<p>这几点有个共同点，就是他们都是异步的。也就是说，所有的异步操作是可能导致数据变化的根源因素。</p>
-<h5 id="如何通知变化"><a href="#如何通知变化" class="headerlink" title="如何通知变化"></a>如何通知变化</h5><p>在Angularjs中是由代码<code>$scope.$apply()</code>或者<code>$scope.$digest</code>触发，而Angular2接入了<code>ZoneJS</code>,由它监听了Angular所有的异步事件。ZoneJS重写了所有的异步API（所谓的猴子补丁，MonkeyPath）。ZoneJS会通知Angular可能有数据发生变化，需要检测更新。</p>
-<h5 id="变化检测原理-–-脏检查"><a href="#变化检测原理-–-脏检查" class="headerlink" title="变化检测原理 – 脏检查"></a>变化检测原理 – 脏检查</h5><p>所谓脏检查就是存储所有变量的值，每当可能有变量发生变化需要检查时，就将所有变量的旧值跟新值进行比较，不相等就说明检测到变化，需要更新对应的视图。</p>
-<h3 id="AngularJS与Angular2变化检测的区别"><a href="#AngularJS与Angular2变化检测的区别" class="headerlink" title="AngularJS与Angular2变化检测的区别"></a>AngularJS与Angular2变化检测的区别</h3><p>Angularjs的变化检测机制也是脏检查，而Angular2的变化检测性能比Angularjs提升了很多。</p>
-<h4 id="Angular2"><a href="#Angular2" class="headerlink" title="Angular2"></a>Angular2</h4><p>Angular的核心是组件化，组件的嵌套会使得最终形成一棵组件树。Angular的变化检测可以分组件进行，每个组件都有对应的变化检测器<code>ChangeDetector</code>。可想而知，这些变化检测器也会构成一棵树。</p>
-<p>另外，Angular的数据流是自顶而下的，从父组件到子组件单向流动。单向数据流向保证了高效、可预测的变化检测，尽管检查了父组件之后，自组件可能会改变父组件的数据使得父组件需要再次被检查，这是不被推荐的数据处理方式。在开发模式下，Angular会进行二次检查，如果出现上述情况，二次检查就会报错：<code>ExpressionChangedAfterItHasBeenCheckedError</code>（关于这个问题的答案，可以在参考资料中找到）。而在生产环境中，脏检查只会执行一次。</p>
-<h4 id="Angularjs"><a href="#Angularjs" class="headerlink" title="Angularjs"></a>Angularjs</h4><p>相比之下，Angularjs采用的是双向数据流，错综复杂的数据流使得他不得不多次检查，使得数据最终趋向稳定。理论上，数据永远不可能稳定，Angularjs的策略是，脏检查超过10次就认定程序有问题。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-4cd8b9089c4fe160.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="angular2-change-detection-moscowjs-31-9-638.jpg"></p>
-<h3 id="变化检测优化"><a href="#变化检测优化" class="headerlink" title="变化检测优化"></a>变化检测优化</h3><h4 id="优化策略"><a href="#优化策略" class="headerlink" title="优化策略"></a>优化策略</h4><p>有2个思路：</p>
-<ol>
-<li>OnPush策略：我知道我没变，别查我。</li>
-<li>手动控制刷新：我变了，只查我。</li>
-</ol>
-<h4 id="变化检测策略-OnPush"><a href="#变化检测策略-OnPush" class="headerlink" title="变化检测策略 OnPush"></a>变化检测策略 OnPush</h4><p>Angular还让开发者拥有制定变化策略的能力。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">enum</span> ChangeDetectionStrategy &#123; </span><br><span class="line">  OnPush, <span class="comment">// 表示变化检测对象的状态为`CheckOnce` </span></span><br><span class="line">  Default, <span class="comment">// 表示变化检测对象的状态为`CheckAlways`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从<code>ChangeDetectionStrategy</code>可以看到，Angular有两种变化检测策略。<code>Default</code>是Angular默认的变化检测策略，也就是脏检查（只要有值发生变化，就全部检查）。开发者可以根据场景来设置更加高效的变化检测方式：<code>OnPush</code>。<code>OnPush</code>策略，就是只有当输入数据的引用发生变化或者有事件触发时，组件进行变化检测。</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h2&gt;&#123;&#123;vData.name&#125;&#125;&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;&#123;&#123;vData.email&#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  <span class="comment">// 设置该组件的变化检测策略为onPush</span></span><br><span class="line">  changeDetection: ChangeDetectionStrategy.OnPush</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> VCardCmp &#123;</span><br><span class="line">  <span class="meta">@Input</span>() vData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>比如上面这个例子，当<code>vData</code>的属性值发生变化的时候，这个组件不会发生变化检测，只有当<code>vData</code>重新赋值的时候才会。一般，只接受输入的木偶子组件（dumb components）比较适合采用<code>onPush</code>策略。</p>
-<p>那什么时候只要对象的属性值发生变化，整个对象的引用就变了呢？不可变对象（Immutable Object）。当组件中的输入对象是不变量时，可采用<code>onPush</code>变化检测策略，减少变化检测的频率。换个角度来说，为了更加智能地执行变化检测，可以在只接受输入的子组件中采用<code>onPush</code>策略。</p>
-<h4 id="手动控制变化检测"><a href="#手动控制变化检测" class="headerlink" title="手动控制变化检测"></a>手动控制变化检测</h4><p>Angular不仅可以让开发者设置变化检测策略，还可以让开发者获取变化检测对象引用<code>ChangeDetectorRef</code>，手动去操作变化检测。变化检测对象引用给开发者提供的方法有以下几种：</p>
-<ul>
-<li><code>markForCheck()</code>：将检查组件的所有父组件所有子组件，即使设置了变化检测策略为<code>onPush</code>。</li>
-<li><code>detach()</code>：将变化检测对象脱离检测对象树，不再进行变化检查；结合<code>detectChanges</code>可实现局部变化检测。（采用<code>onPush</code>策略之后的组件<code>detach()</code>无效）</li>
-<li><code>detectChanges()</code>：将检测该组件及其子组件，结合<code>detach</code>可实现局部检测。</li>
-<li><code>checkNoChanges()</code>: 检测该组件及其子组件，如果有变化存在则报错，用于开发阶段二次验证变化已经完成。</li>
-<li><code>reattach()</code>：将脱离的变化检测对象重新链接到变化检测树上。</li>
-</ul>
-<p>那么，如果是Observable的话，它会订阅所有的变量变化，只要在订阅回调函数中手动触发变化检测即可实现最小成本的检测（仍采用<code>onPush</code>变化检测策略）。举个例子：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  template: <span class="string">'&#123;&#123;counter&#125;&#125;'</span>,</span><br><span class="line">  changeDetection: ChangeDetectionStrategy.OnPush</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> CartBadgeCmp &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Input</span>() addItemStream:Observable&lt;<span class="built_in">any</span>&gt;;</span><br><span class="line">  counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> cd: ChangeDetectorRef</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.addItemStream.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.counter++;        <span class="comment">// 数据模型发生变化</span></span><br><span class="line">      <span class="keyword">this</span>.cd.markForCheck(); <span class="comment">// 手动触发检测</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另外，当数据模型变化太过频繁，我们可自定义变化检测的时机。举个例子：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  template: <span class="string">`&#123;&#123;counter&#125;&#125;</span></span><br><span class="line"><span class="string">  &lt;input type="check" (click)="toggle()"&gt;`</span>, </span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> CartBadgeCmp &#123; </span><br><span class="line">  counter = <span class="number">0</span>;</span><br><span class="line">  detectEnabled = <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> cd: ChangeDetectorRef</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="comment">// 每10毫秒增加1</span></span><br><span class="line">    setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="keyword">this</span>.counter++&#125;, <span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  toggle()&#123;</span><br><span class="line">      <span class="keyword">if</span>( <span class="keyword">this</span>.detectEnabled )&#123;</span><br><span class="line">          <span class="keyword">this</span>.cd.reattach();  <span class="comment">// 链接上变化检测树</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.cd.detach(); <span class="comment">// 脱离变化检测树</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Angular与Angularjs都采用变化检测机制，前者优于后者主要体现在：</p>
-<ul>
-<li>单向数据流动</li>
-<li>以组件为单位维度独立进行检测</li>
-<li>生产环境只进行一次检查</li>
-<li>可自定义的变化检测策略：<code>Default</code>和<code>onPush</code></li>
-<li>可自定义的变化检测操作：<code>markForcheck()</code>、<code>detectChanges()</code>、<code>detach()</code>、<code>reattach()</code>、<code>checkNoChanges()</code></li>
-<li>代码实现上的优化，据说采用了VM friendly的代码。</li>
-</ul>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/29484208" target="_blank" rel="noopener">reference-1–angular2双向绑定与变化检测</a></li>
-<li><a href="https://wufenfen.github.io/2017/07/15/Angular%E5%8F%98%E5%8C%96%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%88%B6%EF%BC%9A%E6%94%B9%E5%96%84%E7%9A%84%E8%84%8F%E6%A3%80%E6%9F%A5/" target="_blank" rel="noopener">reference-2–Angular变化检测机制：改善的脏检查</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/22/design-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/22/design-1/" itemprop="url">MVC、MVP、MVVM</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-22T15:04:23+08:00">
-                2018-02-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前后端分离的架构演变——MVC、MVP和MVVM"><a href="#前后端分离的架构演变——MVC、MVP和MVVM" class="headerlink" title="前后端分离的架构演变——MVC、MVP和MVVM"></a>前后端分离的架构演变——MVC、MVP和MVVM</h2><p>前后端分离之前的架构存在一定的问题–前端缺乏一种可行的开发模式。整体的内容都杂糅在一起，一旦应用增大，就会导致难以维护。因此前后端分离式大型应用程序的必选架构。出现前后端分离的架构之后，前端开发业务逐渐增多，责任也更加巨大，开发者急需一种较好的框架来规范整个应用。因此，前段MVC随之而来。</p>
-<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>前端MVC应该与后端类似，具备<code>view</code>,<code>Controller</code>和<code>Model</code>。</p>
-<ul>
-<li><strong>Model：</strong>负责保存应用数据，与后端数据进行同步。</li>
-<li><strong>Controller：</strong>负责业务逻辑，根据用户行为对Model数据进行修改。</li>
-<li><strong>View：</strong>负责视图展示，将model中的数据可视化出来。</li>
-</ul>
-<p>理论模型如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-5088f2344b93b62c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>这样的模型，理论上是可行的，但在实际开发中，并不会这样去操作。因为开发过程需要灵活，而这种模式不满足灵活的条件。例如，一个小小的事件操作，都必须经过这样的一个流程，那么开发就不那么便捷了。</p>
-<p>在实际场景中，往往会看到另一种模式，如下图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-d1d21a3115b17d90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>这种模式在开发中更加灵活，<a href="http://www.css88.com/doc/backbone/" target="_blank" rel="noopener"><code>backbone.js</code></a>框架就是这种模式。但是这种灵活会导致一些严重的问题（<a href="https://github.com/laizimo/zimo-article/issues/28" target="_blank" rel="noopener">详情戳原文</a>）：</p>
-<ol>
-<li>数据流混乱。</li>
-<li>View比较庞大，controller比较单薄。</li>
-</ol>
-<h3 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h3><p>MVP与MVC很接近，P指的是Presenter，presenter可以理解为一个中间人，它负责着view与model之间的数据流动，防止view与model直接交流。图示如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-b2fdd1ed6e271a8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>我们可以看到，presenter负责和model进行双向交互，还和view进行双向交互。这种交互方式，相对于MVC来说少了一些灵活，View变成了被动视图，并且本身变得很小。他虽然分离了View和Model，但是应用逐渐变大之后，缺陷也会随之暴露：由于大部分逻辑都需要presenter去进行管理，从而导致presenter体积增大，难以维护，如果需要去解决这个问题，或许可以从MVVM的思想中找到答案。</p>
-<h3 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h3><p>所谓MVVM，可以分解为Model - View - ViewModel。ViewModel可以理解为在presenter基础上的进阶版。图示如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-c3e45f40c1cbe2f4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>在这里View是ViewModel的外在显示，和ViewModel的数据是同步的，一旦View中数据发生变化，会自动同步到ViewModel。然后ViewModel可以将变化的数据传给Model；反过来也一样，Model中的数据一旦发生改变，就会将值传给ViewModel，而ViewModel会同步更新到View中，现在的框架实现这样的形式，各有各的不同。主要的三个框架Angular2，Vue，React都是实现了这样子的模式。</p>
-<p>这种的好处就是View和Model之间被分离开来。View不知道Model的存在。这是一个非常松耦合的设计。</p>
-<h3 id="Flux或者Redux"><a href="#Flux或者Redux" class="headerlink" title="Flux或者Redux"></a>Flux或者Redux</h3><p>讨论完上面的三种框架，我们再来看一下Flux。之前，我们在讨论MVC的时候，提及过MVC最主要的缺点就是数据流混乱，难以管理。但是，Facebook却在这个基础上对MVC做出了改变，那就是——单向数据流。只要将数据流进行规范，那么原来的模式还是大有可为的。</p>
-<p>我们可以来看一下，Flux框架的图示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-b4a7cb5c8c25be87.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p>从图中，我们可以看到形成了一条Action到Dispatcher，再到Store，之后是View的，一条单向数据流。在这里Dispatcher会严格限行我们操作数据的行为，而Store也不会暴露setter接口，让其随意被修改。最终，这样的一套框架在大多数场景下，比MVC更加完美。</p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://github.com/laizimo/zimo-article/issues/28" target="_blank" rel="noopener">Reference–前端框架模式的变迁</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/21/interview-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/21/interview-1/" itemprop="url">他山之石，可为己用</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-21T21:44:36+08:00">
-                2018-02-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/琐言碎语/" itemprop="url" rel="index">
-                    <span itemprop="name">琐言碎语</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>他山之石，可为己用。</p>
-<p>刷刷基础题，做做记录而已，这里的内容基本来自网上。</p>
-</blockquote>
-<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><h4 id="在网页上通过链接直接打开邮件客户端发送邮件"><a href="#在网页上通过链接直接打开邮件客户端发送邮件" class="headerlink" title="在网页上通过链接直接打开邮件客户端发送邮件"></a>在网页上通过链接直接打开邮件客户端发送邮件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">”mailto:ming.zhou@nowcoder.com”</span>&gt;</span>发送邮件<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--mailto 后面加发送邮件地址--&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="当表单中包含文件上传控件时，需要将enctype设置为"><a href="#当表单中包含文件上传控件时，需要将enctype设置为" class="headerlink" title="当表单中包含文件上传控件时，需要将enctype设置为"></a>当表单中包含文件上传控件时，需要将enctype设置为</h4><p>enctype 属性规定在发送到服务器之前应该如何对表单数据进行编码。</p>
-<p>属性值:</p>
-<p>application/x-www-form-urlencoded  在发送前编码所有字符（默认） </p>
-<p>multipart/form-data  不对字符编码。 在使用包含文件上传控件的表单时，必须使用该值。</p>
-<p>text/plain  空格转换为 “+” 加号，但不对特殊字符编码。</p>
-<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><h4 id="布尔类型与其它任何类型进行比较，布尔类型将会转换为number类型"><a href="#布尔类型与其它任何类型进行比较，布尔类型将会转换为number类型" class="headerlink" title="布尔类型与其它任何类型进行比较，布尔类型将会转换为number类型"></a>布尔类型与其它任何类型进行比较，布尔类型将会转换为number类型</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//布尔类型里只有这几参数个返回false，其它都为true</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">undefined</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>) <span class="comment">// false </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="number">0</span>) <span class="comment">// false </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="literal">NaN</span>) <span class="comment">// false </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">''</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">Boolean</span>([]); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Number</span>([]); <span class="comment">//0</span></span><br><span class="line"><span class="built_in">Number</span>(&#123;&#125;); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">false</span>); <span class="comment">//0</span></span><br><span class="line">因此：</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(([])?<span class="literal">true</span>:fasle);<span class="comment">// =&gt; console.log((true)?true:false);</span></span><br><span class="line"><span class="built_in">console</span>.log([]==<span class="literal">false</span>?<span class="literal">true</span>:<span class="literal">false</span>); <span class="comment">// =&gt; console.log(0==0?true:false);</span></span><br><span class="line"><span class="built_in">console</span>.log((&#123;&#125;==<span class="literal">false</span>)?<span class="literal">true</span>:<span class="literal">false</span>); <span class="comment">// =&gt; console.log((NaN==0)?true:false);</span></span><br></pre></td></tr></table></figure>
-<p><strong>《JavaScript权威指南》的部分相关知识点 </strong></p>
-<p><strong>“==”运算符（两个操作数的类型不相同时）</strong></p>
-<ul>
-<li>如果一个值是null，另一个值是undefined，则它们相等</li>
-<li>如果一个值是数字，另一个值是字符串，先将字符串转换为数学，然后使用转换后的值进行比较。</li>
-<li>如果其中一个值是true，则将其转换为1再进行比较。如果其中的一个值是false，则将其转换为0再进行比较。</li>
-<li>如果一个值是对象，另一个值是数字或字符串，则将对象转换为原始值，再进行比较。</li>
-</ul>
-<p><strong>对象到数字的转换</strong></p>
-<ul>
-<li>如果对象具有valueOf()方法，后者返回一个原始值，则JavaScript将这个原始值转换为数字（如果需要的话）并返回一个数字。</li>
-<li>否则，如果对象具有toString()方法，后者返回一个原始值，则JavaScript将其转换并返回。（对象的toString()方法返回一个字符串直接量（作者所说的原始值），JavaScript将这个字符串转换为数字类型，并返回这个数字）。</li>
-<li>否则，JavaScript抛出一个类型错误异常。</li>
-</ul>
-<p><strong>空数组转换为数字0</strong></p>
-<ul>
-<li>数组继承了默认的valueOf()方法，这个方法返回一个对象而不是一个原始值，因此，数组到数学的转换则调用toString()方法。空数组转换为空字符串，空字符串转换为数字0.</li>
-</ul>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h4 id="CSS中设置border属性为0与none的区别："><a href="#CSS中设置border属性为0与none的区别：" class="headerlink" title="CSS中设置border属性为0与none的区别："></a><a href="http://blog.csdn.net/qq_37787456/article/details/71702961" target="_blank" rel="noopener">CSS中设置border属性为0与none的区别：</a></h4><p>在我们设置CSS的时候，对标签元素不设置边框属性或者取消边框属性一般设置为：border:none;或border:0;两种方法均可。</p>
-<p>border:none;与border:0;的区别体现有两点：一是理论上的性能差异；二是浏览器兼容性的差异。</p>
-<p><strong>1.性能差异</strong></p>
-<p>【border:0;】把border设为“0”像素虽然在页面上看不见，但按border默认值理解，浏览器依然对border-width/border-color进行了渲染，即已经占用了内存值。<br>【border:none;】把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。</p>
-<p><strong>2.兼容性差异</strong></p>
-<p>兼容性差异只针对浏览器IE6、IE7与标签button、input而言，在win、win7、vista 的XP主题下均会出现此情况。</p>
-<p>【border:none;】当border为“none”时似乎对IE6/7无效边框依然存在，如下例</p>
-<p><img src="http://img.blog.csdn.net/20170512082111272" alt="img"></p>
-<p>【border:0;】当border为“0”时，感觉比“none”更有效，所有浏览器都一致把边框隐藏</p>
-<p><img src="http://img.blog.csdn.net/20170512082145566" alt="img"></p>
-<p>总结：</p>
-<ol>
-<li>对比border:0;与border:none;之间的区别在于有渲染和没渲染，感觉他们和display:none;与 visibility:hidden;的关系类似，而对于border属性的渲染性能对比暂时没找测试的方法，虽然认为他们存在渲染性能上的差异但也只能 说是理论上。</li>
-<li>如何让border:none;实现全兼容？只需要在同一选择符上添加背景属性即可</li>
-</ol>
-<p><img src="http://img.blog.csdn.net/20170512082234113" alt="img"></p>
-<p>对于border:0;与border:none;个人更向于使用,border:none;，因为border:none;毕竟在性能消耗没有争议，而且兼容性可用背景属性解决不足以成为障碍。</p>
-<h4 id="设置文字颜色应使用属性"><a href="#设置文字颜色应使用属性" class="headerlink" title="设置文字颜色应使用属性"></a>设置文字颜色应使用属性</h4><ul>
-<li>color。</li>
-</ul>
-<h2 id="浏览器兼容问题"><a href="#浏览器兼容问题" class="headerlink" title="浏览器兼容问题"></a>浏览器兼容问题</h2><ol>
-<li>border</li>
-</ol>
-<p>IE6、IE7-不支持border:none;</p>
-<p>W3C提示：请始终把border-style属性声明到border-color属性之前，元素必须在改变颜色之前获得边框。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/18/js-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/18/js-5/" itemprop="url">javascript中的this指向</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-18T12:56:23+08:00">
-                2018-02-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><blockquote>
-<p>本文转自<a href="https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html" target="_blank" rel="noopener">深入浅出 JavaScript 中的 this</a></p>
-</blockquote>
-<p>在<code>java</code>等面向对象的语言中，<code>this</code>关键字的含义是明确且具体的，即指代当前对象。<strong>一般在编译期确定下来，或称为编译期绑定。</strong>而在<code>javascript</code>中，<strong><code>this</code>是动态绑定的，或称为运行期绑定的</strong>，这就导致<code>javascript</code>中的<code>this</code>关键字有能力具备多重含义。</p>
-<h3 id="javascript中的-this"><a href="#javascript中的-this" class="headerlink" title="javascript中的 this"></a>javascript中的 this</h3><p>由于其运行期绑定的特性，<code>javascript</code>中的<code>this</code>含义要丰富得多，他可以是全局对象、当前对象或者任意对象，这完全取决于函数的调用方式。<code>javascript</code>中的函数调用有以下几种方式：</p>
-<ul>
-<li>作为对象方法调用</li>
-<li>作为函数调用</li>
-<li>作为构造函数调用</li>
-<li>使用<code>apply</code>或<code>call</code>调用</li>
-</ul>
-<p>下面按照调用方式的不同，分别讨论<code>this</code>的含义。</p>
-<h4 id="作为对象方法调用（this绑定到方法所属的对象）"><a href="#作为对象方法调用（this绑定到方法所属的对象）" class="headerlink" title="作为对象方法调用（this绑定到方法所属的对象）"></a>作为对象方法调用（this绑定到方法所属的对象）</h4><p>在<code>javascript</code>中，函数也是对象，因此函数可以作为一个对象的属性，此时该函数称为该对象的方法，在使用这种调用方式时，<code>this</code>被自然地绑定到该对象。举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = &#123; </span><br><span class="line">x : <span class="number">0</span>, </span><br><span class="line">y : <span class="number">0</span>, </span><br><span class="line">moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">this</span>.x = <span class="keyword">this</span>.x + x; </span><br><span class="line">    <span class="keyword">this</span>.y = <span class="keyword">this</span>.y + y; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;; </span><br><span class="line"> </span><br><span class="line">point.moveTo(<span class="number">1</span>, <span class="number">1</span>)<span class="comment">//this 绑定到当前对象，即 point 对象</span></span><br></pre></td></tr></table></figure>
-<h4 id="作为函数调用（this绑定到全局对象）"><a href="#作为函数调用（this绑定到全局对象）" class="headerlink" title="作为函数调用（this绑定到全局对象）"></a>作为函数调用（this绑定到全局对象）</h4><p>函数也可以被直接调用，此时<code>this</code>绑定到全局对象。在浏览器中，<code>window</code>就是该全局对象。比如下面的例子：函数被调用时，<code>this</code>被绑定到全局对象，接下来执行赋值语句，相当于隐式声明了一个全局变量，这是非常危险的，很容易造成内存泄漏。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeNoSense</span>(<span class="params">x</span>) </span>&#123; </span><br><span class="line"><span class="keyword">this</span>.x = x; </span><br><span class="line">&#125; </span><br><span class="line">makeNoSense(<span class="number">5</span>); </span><br><span class="line">x;<span class="comment">// x 已经成为一个值为 5 的全局变量</span></span><br></pre></td></tr></table></figure>
-<p>对于内部函数，即声明在另一个函数体内的函数，这种绑定到全局对象的方式会产生另一个问题。我们仍然以前面提到的<code>point</code>对象为例，这次我们希望在<code>moveTo</code>方法内定义两个函数，分别将x,y坐标进行平移。结果可能出乎我们的意料，不仅<code>point</code>对象没有移动，反而多出了两个全局变量x，y。举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = &#123; </span><br><span class="line">x : <span class="number">0</span>, </span><br><span class="line">y : <span class="number">0</span>, </span><br><span class="line">moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </span><br><span class="line">    <span class="comment">// 内部函数</span></span><br><span class="line">    <span class="keyword">var</span> moveX = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">this</span>.x = x;<span class="comment">//this 绑定到了哪里？</span></span><br><span class="line">   &#125;; </span><br><span class="line">   <span class="comment">// 内部函数</span></span><br><span class="line">   <span class="keyword">var</span> moveY = <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123; </span><br><span class="line">   <span class="keyword">this</span>.y = y;<span class="comment">//this 绑定到了哪里？</span></span><br><span class="line">   &#125;; </span><br><span class="line"> </span><br><span class="line">   moveX(x); </span><br><span class="line">   moveY(y); </span><br><span class="line">   &#125; </span><br><span class="line">&#125;; </span><br><span class="line">point.moveTo(<span class="number">1</span>, <span class="number">1</span>); </span><br><span class="line"><span class="built_in">console</span>.log(point.x);<span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(point.y);<span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(x);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(y);<span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-<p>这属于<code>javascript</code>的设计缺陷，正确的设计方式是内部韩式的<code>this</code>应该绑定到其外层函数相应的对象上，为了避免这一设计缺陷，<code>javascript</code>约定成俗，使用<code>that</code>代替。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> point = &#123; </span><br><span class="line">x : <span class="number">0</span>, </span><br><span class="line">y : <span class="number">0</span>, </span><br><span class="line">moveTo : <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>; </span><br><span class="line">    <span class="comment">// 内部函数</span></span><br><span class="line">    <span class="keyword">var</span> moveX = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; </span><br><span class="line">    that.x = x;</span><br><span class="line">   &#125;; </span><br><span class="line">   <span class="comment">// 内部函数</span></span><br><span class="line">   <span class="keyword">var</span> moveY = <span class="function"><span class="keyword">function</span>(<span class="params">y</span>) </span>&#123; </span><br><span class="line">   that.y = y;</span><br><span class="line">   &#125;; </span><br><span class="line"> </span><br><span class="line">   moveX(x); </span><br><span class="line">   moveY(y); </span><br><span class="line">   &#125; </span><br><span class="line">&#125;; </span><br><span class="line">point.moveTo(<span class="number">1</span>, <span class="number">1</span>); </span><br><span class="line"><span class="built_in">console</span>.log(point.x);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(point.y);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(x);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(y);<span class="comment">//1</span></span><br></pre></td></tr></table></figure>
-<h4 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h4><p><code>javascript</code>支持面向对象式编程，与主流的面向对象式编程语言不一样，<code>javascript</code>中没有<code>class</code>的概念，而是使用基于原型(<code>prototype</code>)的集成方式。相应的，<code>javascript</code>中的构造函数也很特殊，如果不使用<code>new</code>调用，则和普通函数一样。作为一项约定成俗的准则，构造函数以大写字母开头，提醒调用者使用正确的方式调用。如果调用正确，<code>this</code>绑定到新创建的对象上。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>)</span>&#123; </span><br><span class="line">   <span class="keyword">this</span>.x = x; </span><br><span class="line">   <span class="keyword">this</span>.y = y; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="使用apply或call调用"><a href="#使用apply或call调用" class="headerlink" title="使用apply或call调用"></a>使用apply或call调用</h4><p>毫无疑问，<code>javascript</code>中的函数也是对象，对象则有方法，<code>apply</code>和<code>call</code>就是函数对象的方法。这两个方法异常强大，他们允许切换函数执行的上下文环境(<code>context</code>)，即<code>this</code>绑定的对象。很多 JavaScript 中的技巧以及类库都用到了该方法。让我们看一个具体的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x, y</span>)</span>&#123; </span><br><span class="line">   <span class="keyword">this</span>.x = x; </span><br><span class="line">   <span class="keyword">this</span>.y = y; </span><br><span class="line">   <span class="keyword">this</span>.moveTo = <span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>)</span>&#123; </span><br><span class="line">       <span class="keyword">this</span>.x = x; </span><br><span class="line">       <span class="keyword">this</span>.y = y; </span><br><span class="line">   &#125; </span><br><span class="line">&#125; </span><br><span class="line"> </span><br><span class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Point(<span class="number">0</span>, <span class="number">0</span>); </span><br><span class="line"><span class="keyword">var</span> p2 = &#123;<span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>&#125;; </span><br><span class="line">p1.moveTo(<span class="number">1</span>, <span class="number">1</span>); </span><br><span class="line">p1.moveTo.apply(p2, [<span class="number">10</span>, <span class="number">10</span>]);</span><br></pre></td></tr></table></figure>
-<p>在上面的例子中，我们使用构造函数生成了一个对象 p1，该对象同时具有 moveTo 方法；使用对象字面量创建了另一个对象 p2，我们看到使用 apply 可以将 p1 的方法应用到 p2 上，这时候 this 也被绑定到对象 p2 上。另一个方法 call 也具备同样功能，不同的是最后的参数不是作为一个数组统一传入，而是分开传入的。</p>
-<h3 id="番外：描述new一个对象的过程"><a href="#番外：描述new一个对象的过程" class="headerlink" title="番外：描述new一个对象的过程"></a>番外：描述<code>new</code>一个对象的过程</h3><ul>
-<li>创建一个新对象</li>
-<li>this指向这个新对象</li>
-<li>执行代码，即对 this 赋值</li>
-<li>返回 this</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Human</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="comment">// return this; // 默认有这一行 </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> h1 = <span class="keyword">new</span> Human(<span class="string">'wzb'</span>, <span class="number">21</span>);</span><br><span class="line"><span class="keyword">var</span> h2 = <span class="keyword">new</span> Human(<span class="string">'wzx'</span>, <span class="number">22</span>);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/12/ng2-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/12/ng2-5/" itemprop="url">总结几个Angular2与ios wechat的问题</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-12T21:34:43+08:00">
-                2018-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web框架/" itemprop="url" rel="index">
-                    <span itemprop="name">web框架</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="问题一："><a href="#问题一：" class="headerlink" title="问题一："></a>问题一：</h3><p>ios微信表单填写时，点击之后表单被放大：</p>
-<p><strong>解决：在<code>&lt;meta&gt;</code>增加user-scalable：允许使用者缩放，1 or 0 (yes or no)</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="问题二："><a href="#问题二：" class="headerlink" title="问题二："></a>问题二：</h3><p>ios微信返回时，会从缓存直接加载旧页面，有些事件不会再触发，旧页面一些标志也没有重置，会出现几个组件重叠。</p>
-<ul>
-<li><strong>解决：在二级页面的生命周期的<code>destroy</code>周期，放一个键值对到<code>sessionstroage</code>，返回是从<code>sessionstroage</code>中拿出这个值，如果这个值存在，执行<code>reload()</code>函数。</strong></li>
-<li>另一种思路：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过pageshow事件决定是否需要刷新页面</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'pageshow'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 通过persisted属性判断是否存在 BF Cache</span></span><br><span class="line">    <span class="keyword">if</span> (e.persisted) &#123;</span><br><span class="line">        location.reload();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="问题三："><a href="#问题三：" class="headerlink" title="问题三："></a>问题三：</h3><p>Angular-cli搭建种子工程无法在微信浏览器中打开。</p>
-<p><strong>解决：</strong>查看polyfills.ts文件，解注释：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** IE9, IE10 and IE11 requires all of the following polyfills. **/</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/symbol'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/object'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/function'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/parse-int'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/parse-float'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/number'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/math'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/string'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/date'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/array'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/regexp'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/map'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/weak-map'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'core-js/es6/set'</span>;</span><br></pre></td></tr></table></figure>
-<p>在说这个问题之前要先搞清楚2件事，一是微信浏览器的内核究竟是什么，二是polyfills.ts这个文件有什么用。</p>
-<ol>
-<li>关于浏览器内核，一个腾讯内部人员说微信6.1版本以上的android用户，都是使用的QQ浏览器的X5内核。5.4-6.1之间的版本，若用户安装了QQ浏览器就是使用的X5内核，若用户未安装浏览器，使用的是系统内核（<a href="https://www.zhihu.com/question/22082084" target="_blank" rel="noopener">微信浏览器到底是什么内核？</a>）。X5内核在今年4月份，(Android)已经全面升级为<a href="https://zh.wikipedia.org/wiki/Blink" target="_blank" rel="noopener">Blink内核</a>（Blink引擎基于WebKit2——苹果公司于2010年推出的新的WebKit引擎）。而ios版本一直使用的是safari的内核，也就是webkit。所以现在微信内置的浏览器的内核整体来说是比较统一的，但是微信魔改之后的Blink内核与chrome内核有所差异，所以在chrome调试之后放到微信还是会出现一些问题，就例如上面那个问题，Angular项目跑不动。</li>
-<li>关于<a href="https://angular.cn/guide/browser-support" target="_blank" rel="noopener">polyfills.ts</a>，文档中有详细介绍。由于各个浏览器的javascript引擎有所差异，可以polyfills中导入一些兼容的包，实现浏览器缺失的某些javascript特性。</li>
-</ol>
-<p><strong>结论：</strong>微信浏览器内核可能不支持es6的新特新或者不支持其中的某个特性，把相应的包填充进去之后就能正常运行了。（感觉脱去了IE6的帽子之后又扣上了IE9的帽子。。）</p>
-<h3 id="浏览器兼容问题"><a href="#浏览器兼容问题" class="headerlink" title="浏览器兼容问题"></a>浏览器兼容问题</h3><p>使用babel将es6转化为兼容的es5语法。</p>
-<p>使用polyfills。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/09/base-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/09/base-4/" itemprop="url">前端一定要会的算法--排序</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T13:28:25+08:00">
-                2018-02-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">web基础知识</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>最近也看了一些面经一些总结，排序是出现的频率最高的。今天就来总结一下最常出现的几个排序算法。包括<code>Array</code>对象自带的<code>sort()</code>方法，冒泡排序(<code>BubbleSort</code>)，快速排序(<code>QuickSort</code>)，选择排序(<code>SeletionSort</code>)，插入排序(<code>InsertSort</code>)。本文主要是直接丢代码，不做过多解释，毕竟基本都是数据结构的知识。</p>
-<h3 id="Array-sort"><a href="#Array-sort" class="headerlink" title="Array.sort()"></a>Array.sort()</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认是根据字符串unicode码进行排序</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.sort());        <span class="comment">//[ 12, 22, 3, 4, 42, 43, 45, 55, 77, 87 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//若想指定排序方式，则需要使用Array.sort(CompareFunction)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareFunc</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr.sort(compareFunc));  <span class="comment">//[ 3, 4, 12, 22, 42, 43, 45, 55, 77, 87 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6中更优雅的写法</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b));<span class="comment">//[ 3, 4, 12, 22, 42, 43, 45, 55, 77, 87 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//从V8引擎源码来看，sort是js实现的，且算法是快速排序，实现方式更为复杂，主要是做了性能上的优化。</span></span><br></pre></td></tr></table></figure>
-<h3 id="冒泡排序-BubbleSort"><a href="#冒泡排序-BubbleSort" class="headerlink" title="冒泡排序(BubbleSort)"></a>冒泡排序(BubbleSort)</h3><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; arr.length<span class="number">-1</span> ; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; arr.length<span class="number">-1</span>-i ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                swap(arr,j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr,j</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[j];</span><br><span class="line">    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(bubbleSort(arr));</span><br></pre></td></tr></table></figure>
-<h4 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
-<li>时间复杂度O(n²)。</li>
-<li>空间复杂度O(1)。</li>
-<li>是稳定排序。</li>
-</ul>
-<h4 id="改进，时间复杂度为O-n"><a href="#改进，时间复杂度为O-n" class="headerlink" title="改进，时间复杂度为O(n)"></a>改进，时间复杂度为O(n)</h4><ol>
-<li>加一个标志位，如果没有进行交换，将标志位设置为<code>false</code>，表示排序完成。</li>
-<li>记录最后一次交换的位置，因为最后一次交换的数，是在这一次排序当中最大的数，之后的数都比它大。在最佳状态下，时间复杂度也会缩到O(n)。</li>
-</ol>
-<h3 id="快速排序-QuickSort"><a href="#快速排序-QuickSort" class="headerlink" title="快速排序(QuickSort)"></a>快速排序(QuickSort)</h3><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：找到一个基数，然后将比基数小的数放在基数的左边，将比基数大的放在基数的右边。</span></span><br><span class="line"><span class="comment">//之后进行递归那两组已经归类好的数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> right = [];</span><br><span class="line">    <span class="keyword">let</span> left = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span> ; i &lt; arr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]&gt;temp)&#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> quickSort(left).concat([temp],quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(quickSort(arr));</span><br></pre></td></tr></table></figure>
-<h4 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
-<li>时间复杂度：O(nlogn)。</li>
-<li>空间复杂度：O(logn)。</li>
-<li>是不稳定排序。</li>
-</ul>
-<h3 id="选择排序-SelectionSort"><a href="#选择排序-SelectionSort" class="headerlink" title="选择排序(SelectionSort)"></a>选择排序(SelectionSort)</h3><h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：第一遍，从数组中选出最小的，与第一个元素进行交换；</span></span><br><span class="line"><span class="comment">//第二遍，从第二个元素开始，找出最小的，与第二个元素进行交换，以此循环，完成排序。</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; arr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> index = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i+<span class="number">1</span> ; j &lt; arr.length ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[index] &gt; arr[j])&#123;</span><br><span class="line">                index = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,index,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将目前数组中最小的元素放到第i个位置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr,index,i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[index];</span><br><span class="line">    arr[index] = arr[i];</span><br><span class="line">    arr[i] = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(selectionSort(arr));</span><br></pre></td></tr></table></figure>
-<h4 id="复杂度-2"><a href="#复杂度-2" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
-<li>时间复杂度O(n²)。</li>
-<li>空间复杂度O(1)。</li>
-<li>该排序是不稳定排序。</li>
-</ul>
-<h3 id="插入排序-InsertSort"><a href="#插入排序-InsertSort" class="headerlink" title="插入排序(InsertSort)"></a>插入排序(InsertSort)</h3><h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：首先，循环原数组，然后将当前位置的元素，插入到之前已排好的数组中，依次操作。</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; arr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> temp = arr[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; i ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp &lt; arr[j] &amp;&amp; j === <span class="number">0</span>)&#123;</span><br><span class="line">                arr.splice(i,<span class="number">1</span>);    <span class="comment">//从索引为i的位置删除一项。</span></span><br><span class="line">                arr.unshift(temp);  <span class="comment">//将元素temp增加到数组的开头</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(temp &gt; arr[j] &amp;&amp; temp &lt; arr[j+<span class="number">1</span>] &amp;&amp; j &lt; (i<span class="number">-1</span>))&#123;</span><br><span class="line">                arr.splice(i,<span class="number">1</span>);</span><br><span class="line">                arr.splice(j+<span class="number">1</span>,<span class="number">0</span>,temp); <span class="comment">//在索引为j+1的位置插入temp</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(insertSort(arr));</span><br></pre></td></tr></table></figure>
-<h4 id="复杂度-3"><a href="#复杂度-3" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
-<li>时间复杂度O(n²)。</li>
-<li>空间复杂度O(1)。</li>
-<li>该排序是稳定排序。</li>
-</ul>
-<p>推荐大家去看<a href="https://github.com/laizimo/zimo-article/issues/8" target="_blank" rel="noopener">这个人的mianjing</a>。里面还讲到了基数排序和归并排序，有时间再补上。</p>
-
-          
+          前言
+每个合法的文档都会生成一个结构树，了解这一点，就能根据元素的祖先，属性，兄弟元素等等创建选择器来选择元素。有了这个结构树，选择器才能起作用，这也是css另一个重要的方面（继承）的核心。
+继承（Inheritance）是从一个元素向其后代元素传递属性值所采用的机制。确定应当向一个元素应用哪些值时
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/04/css-3/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2241,7 +1093,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2358,18 +1210,6 @@
 
   
 </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
-
 
 
 
@@ -2517,6 +1357,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 

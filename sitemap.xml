@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
+    
+    <lastmod>2018-03-23T12:59:30.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/categories/index.html</loc>
+    
+    <lastmod>2018-03-23T12:57:16.518Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/tags/index.html</loc>
+    
+    <lastmod>2018-03-23T12:45:16.448Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/19/network-5/</loc>
+    
+    <lastmod>2018-03-23T12:43:30.733Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/11/network-4/</loc>
+    
+    <lastmod>2018-03-23T12:43:27.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/01/network-3/</loc>
+    
+    <lastmod>2018-03-23T12:43:24.487Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/28/network-2/</loc>
+    
+    <lastmod>2018-03-23T12:43:21.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/25/network-1/</loc>
+    
+    <lastmod>2018-03-23T12:43:18.151Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://easywork.xin/about.html</loc>
     
     <lastmod>2018-03-23T11:29:35.755Z</lastmod>
@@ -9,23 +65,9 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
-    
-    <lastmod>2018-03-23T08:31:13.558Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2018/03/21/vue-5/</loc>
     
     <lastmod>2018-03-22T01:29:28.669Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/03/19/network-5/</loc>
-    
-    <lastmod>2018-03-19T06:57:01.487Z</lastmod>
     
   </url>
   
@@ -68,13 +110,6 @@
     <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
     
     <lastmod>2018-03-11T10:21:46.364Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/03/11/network-4/</loc>
-    
-    <lastmod>2018-03-11T10:15:26.729Z</lastmod>
     
   </url>
   
@@ -177,13 +212,6 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/2018/03/01/network-3/</loc>
-    
-    <lastmod>2018-03-01T14:22:51.467Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2018/01/12/base-2/</loc>
     
     <lastmod>2018-03-01T03:32:09.379Z</lastmod>
@@ -194,20 +222,6 @@
     <loc>http://easywork.xin/2018/02/02/js-4/</loc>
     
     <lastmod>2018-03-01T02:38:38.948Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/02/25/network-1/</loc>
-    
-    <lastmod>2018-03-01T01:34:06.693Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/02/28/network-2/</loc>
-    
-    <lastmod>2018-03-01T01:27:24.521Z</lastmod>
     
   </url>
   

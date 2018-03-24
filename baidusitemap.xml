@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/02/26/interview-2/</loc>
+    <lastmod>2018-03-24T11:40:06.911Z</lastmod>
+    <data>
+        <display>
+        <title>面试奇谈</title>
+        <pubTime>2018-02-26T13:51:01.000Z</pubTime>
+        
+        <tag>面试奇谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/03/24/vue-6/</loc>
-    <lastmod>2018-03-24T09:47:03.086Z</lastmod>
+    <lastmod>2018-03-24T11:02:35.054Z</lastmod>
     <data>
         <display>
         <title>vue组件的生命周期</title>
@@ -23,6 +42,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://easywork.xin/2018/03/17/network-6/</loc>
@@ -381,26 +401,6 @@
            
              
               <breadCrumb title="前端优化" url="http://easywork.xin/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/26/interview-2/</loc>
-    <lastmod>2018-03-09T03:44:54.973Z</lastmod>
-    <data>
-        <display>
-        <title>面试奇谈</title>
-        <pubTime>2018-02-26T13:51:01.000Z</pubTime>
-        
-        <tag>面试奇谈</tag>
-         
-         
-           
-             
-              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
           
         </display>
     </data>

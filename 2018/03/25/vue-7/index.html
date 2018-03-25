@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="web基础知识," />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -83,20 +83,21 @@
 
 
 
-<meta name="description" content="出现跨域问题的原因：  同源策略  同源策略三同 协议相同 域名相同 端口相同  同源策略目的 保证用户信息安全，防止恶意网站窃取数据。同源策略是必须的，否则cookie可以共享。  同源策略的限制范围 cookie、localstorage、indexdb无法读取。 DOM无法获取。 ajax请求不能发送。  规避策略 cookie：设置document.domain共享cookie。 DOM获">
-<meta name="keywords" content="web基础知识">
+<meta name="description" content="后端只做测试用，简单写了个处理，其实也没做什么处理，收到了直接返回success。不过好久没写node了。。全都忘光光了。。 12345678910111213141516171819202122232425//login.jslet express = require(&apos;express&apos;);let router = express.Router();router.get(&apos;/&apos;,function">
+<meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域问题">
-<meta property="og:url" content="http://easywork.xin/2018/01/11/base-1/index.html">
+<meta property="og:title" content="Axios使用体验">
+<meta property="og:url" content="http://easywork.xin/2018/03/25/vue-7/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="出现跨域问题的原因：  同源策略  同源策略三同 协议相同 域名相同 端口相同  同源策略目的 保证用户信息安全，防止恶意网站窃取数据。同源策略是必须的，否则cookie可以共享。  同源策略的限制范围 cookie、localstorage、indexdb无法读取。 DOM无法获取。 ajax请求不能发送。  规避策略 cookie：设置document.domain共享cookie。 DOM获">
+<meta property="og:description" content="后端只做测试用，简单写了个处理，其实也没做什么处理，收到了直接返回success。不过好久没写node了。。全都忘光光了。。 12345678910111213141516171819202122232425//login.jslet express = require(&apos;express&apos;);let router = express.Router();router.get(&apos;/&apos;,function">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-acd3c54d85bf38e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-02-03T13:07:41.450Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-da12eaec33718b88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-7581e88121afea5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-25T12:42:44.871Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域问题">
-<meta name="twitter:description" content="出现跨域问题的原因：  同源策略  同源策略三同 协议相同 域名相同 端口相同  同源策略目的 保证用户信息安全，防止恶意网站窃取数据。同源策略是必须的，否则cookie可以共享。  同源策略的限制范围 cookie、localstorage、indexdb无法读取。 DOM无法获取。 ajax请求不能发送。  规避策略 cookie：设置document.domain共享cookie。 DOM获">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-acd3c54d85bf38e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Axios使用体验">
+<meta name="twitter:description" content="后端只做测试用，简单写了个处理，其实也没做什么处理，收到了直接返回success。不过好久没写node了。。全都忘光光了。。 12345678910111213141516171819202122232425//login.jslet express = require(&apos;express&apos;);let router = express.Router();router.get(&apos;/&apos;,function">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7166236-da12eaec33718b88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://easywork.xin/2018/01/11/base-1/"/>
+  <link rel="canonical" href="http://easywork.xin/2018/03/25/vue-7/"/>
 
 
 
 
 
-  <title>跨域问题 | Husbin</title>
+  <title>Axios使用体验 | Husbin</title>
   
 
 
@@ -279,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/01/11/base-1/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/25/vue-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -296,7 +297,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">跨域问题</h2>
+          <h2 class="post-title" itemprop="name headline">Axios使用体验</h2>
         
 
         <div class="post-meta">
@@ -308,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T20:25:09+08:00">
-                2018-01-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T20:10:30+08:00">
+                2018-03-25
               </time>
             
 
@@ -331,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web基础知识/" itemprop="url" rel="index">
-                    <span itemprop="name">web基础知识</span>
+                  <a href="/categories/web框架/" itemprop="url" rel="index">
+                    <span itemprop="name">web框架</span>
                   </a>
                 </span>
 
@@ -348,7 +349,7 @@
 
           
           
-             <span id="/2018/01/11/base-1/" class="leancloud_visitors" data-flag-title="跨域问题">
+             <span id="/2018/03/25/vue-7/" class="leancloud_visitors" data-flag-title="Axios使用体验">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,82 +380,17 @@
       
 
       
-        <p><strong>出现跨域问题的原因：</strong></p>
-<blockquote>
-<p>同源策略</p>
-</blockquote>
-<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><h4 id="三同"><a href="#三同" class="headerlink" title="三同"></a>三同</h4><ul>
-<li>协议相同</li>
-<li>域名相同</li>
-<li>端口相同</li>
-</ul>
-<h4 id="同源策略目的"><a href="#同源策略目的" class="headerlink" title="同源策略目的"></a>同源策略目的</h4><ul>
-<li>保证用户信息安全，防止恶意网站窃取数据。同源策略是必须的，否则cookie可以共享。</li>
-</ul>
-<h4 id="同源策略的限制范围"><a href="#同源策略的限制范围" class="headerlink" title="同源策略的限制范围"></a>同源策略的限制范围</h4><ul>
-<li>cookie、localstorage、indexdb无法读取。</li>
-<li>DOM无法获取。</li>
-<li>ajax请求不能发送。</li>
-</ul>
-<h4 id="规避策略"><a href="#规避策略" class="headerlink" title="规避策略"></a>规避策略</h4><ol>
-<li>cookie：设置<code>document.domain</code>共享cookie。</li>
-<li>DOM获取：（父子页面通信）H5引入了一个API，这个API为windows对象新增了一个<code>window.postMessage</code>方法，允许跨窗口通信，无论这两个窗口是否同源。</li>
-</ol>
-<blockquote>
-<p><code>window.opener.postMessage(content,origin)</code></p>
-<p>content是消息的具体内容，origin是<code>协议 + 域名 + 端口</code></p>
-</blockquote>
-<ol>
-<li>AJAX：</li>
-</ol>
-<ul>
-<li>JSONP：JSONP是服务器无客户端跨源通信的常用方法。基本思想是网页通过添加一个<code>&lt;script&gt;</code>元素，向服务器请求json数据，这种做法不受同源政策的限制，服务器收到请求后，将数据放在一个指定名字的回调函数里面传回来。（只能发GET请求）</li>
-<li>WebSocket：<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket" target="_blank" rel="noopener">WebSocket</a>是一种通信协议。使用<code>ws://</code>（非加密）和<code>wss://</code>（加密）作为协议前缀。该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。</li>
-<li>CORS：详解如下。</li>
-</ul>
-<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><blockquote>
-<p>跨域资源共享（corss-origin resource sharing）：CORS需要浏览器和服务器同时支持。目前所有浏览器都支持该功能，IE浏览器不能低于IE10。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS通信与同源的AJAX通信没有差别，代码完全一样。浏览器一旦发现AJAX请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
-</blockquote>
-<h3 id="两种请求"><a href="#两种请求" class="headerlink" title="两种请求"></a>两种请求</h3><ul>
-<li>浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-acd3c54d85bf38e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="CORS请求.png"></p>
-<h3 id="1-简单请求"><a href="#1-简单请求" class="headerlink" title="1. 简单请求"></a>1. 简单请求</h3><ul>
-<li>对于简单请求，浏览器直接发出CORS请求。具体来说，就是<strong>在Header中增加一个<code>Origin</code>字段</strong>。如果浏览器发现跨源AJAX请求是简单请求，就自动在头信息之中，添加一个<code>Origin</code>字段。</li>
-</ul>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET /cors HTTP/1.1		</span><br><span class="line"><span class="attribute">Origin</span>: http://easywork.xin		//浏览器添加字段，说明本次请求来自哪个源（协议+域名+端口）。</span><br><span class="line"><span class="attribute">Host</span>: 119.23.214.114</span><br><span class="line"><span class="attribute">Accept-Language</span>: en-US</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/5.0...</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>服务器根据<code>Origin</code>的值决定是否同意这次请求。</p>
-<blockquote>
-<p>如果<code>Origin</code>指定的源在不在后端的许可白名单范围内，服务器会返回一个正常的http回应。浏览器接收后发现，这个<code>response</code>的Header没有包含<code>Access-Control-Allow-Origin</code>字段，就知道出错了，从而抛出一个错误，被<code>XMLHttpRequest</code>的<code>onerror</code>回调函数捕获。<strong>这种错误无法通过状态码识别，因此HTTP response的状态码有可能是200。</strong></p>
-<p>如果<code>Origin</code>指定的域名在许可的范围内，则服务器返回的相应中，会多出几个头信息字段</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; Access-Control-Allow-Origin: http://easywork.xin</span><br><span class="line">&gt; Access-Control-Allow-Credentials: true</span><br><span class="line">&gt; Access-Control-Expose-Headers: FooBar</span><br><span class="line">&gt; Content-Type: text/html; charset=utf-8</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<ul>
-<li><code>Access-Control-Allow-Origin</code>：（必须字段）它的值要么是请求时<code>Origin</code>的值，要么是<code>*</code>，表示接受任意域名的请求。</li>
-<li><code>Access-Control-Allow-Credentials</code>：（可选字段）它是一个bool值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。设为true，表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发送到服务器，一方面要服务器同意，指定<code>Access-Control-Allow-Credentials:true</code>；另一方面，前端必须在AJAX请求中打开<code>withCredentials</code>属性：</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&gt; xhr.withCredentials = <span class="literal">true</span>;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>注意：如果要发送Cookie，<code>Access-Control-Allow-Origin</code>不能设置为<code>*</code> ，必须指定明确的，与请求网页一致的域名。同时，Cookie依然遵守同源政策，只有用服务器域名设置的Cookie才会上传，其他域名的Cookie并不会上传。</strong></li>
-</ul>
-<ul>
-<li>Access-Control-Expose-Headers<code>：（可选字段）CORS请求时，</code>XMLHttpRequest<code>对象的</code>getResponseHeader(args)<code>方法只能拿到6个基本字段：</code>Cache-Control<code>、</code>Content-Language<code>、</code>Content-Type<code>、</code>Expires<code>、</code>Last-Modified<code>、</code>Pragma<code>。如果想拿到其他字段，就必须在</code>Access-Control-Expose-Headers`里面指定。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h4 id="2-非简单请求"><a href="#2-非简单请求" class="headerlink" title="2. 非简单请求"></a>2. 非简单请求</h4><ul>
-<li>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是<code>PUT</code>或<code>DELETE</code>，或者<code>Content-Type</code>字段的类型是<code>application/json</code>。</li>
-<li>非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的<code>XMLHttpRequest</code>请求，否则就报错。</li>
-</ul>
-<h3 id="与JSONP比较"><a href="#与JSONP比较" class="headerlink" title="与JSONP比较"></a>与JSONP比较</h3><ul>
-<li>CORS与JSONP的使用目的相同，但是比JSONP更强大。JSONP只支持GET请求，CORS支持所有类型的HTTP请求。JSONP的优势在于支持老式的浏览器，以及可以向比支持CORS的网站请求数据。</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">阮一峰-浏览器同源政策及其规避方法</a></p>
-<p><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">阮一峰-跨域资源共享 CORS 详解</a></p>
+        <h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>只做测试用，简单写了个处理，其实也没做什么处理，收到了直接返回<code>success</code>。不过好久没写node了。。全都忘光光了。。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//login.js</span></span><br><span class="line"><span class="keyword">let</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">let</span> router = express.Router();</span><br><span class="line">router.get(<span class="string">'/'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">request,response,next</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//todo 登陆处理</span></span><br><span class="line">    response.send(&#123;</span><br><span class="line">        code: <span class="number">2000</span>,</span><br><span class="line">        responseText: <span class="string">'success'</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">module</span>.exports = router;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="comment">//解决下跨域</span></span><br><span class="line">app.all(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://127.0.0.1:8080"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Headers"</span>, <span class="string">"X-Requested-With"</span>);</span><br><span class="line">    res.header(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</span><br><span class="line">    res.header(<span class="string">"X-Powered-By"</span>,<span class="string">' 3.2.1'</span>);</span><br><span class="line">    res.header(<span class="string">"Content-Type"</span>, <span class="string">"application/json;charset=utf-8"</span>);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> loginRouter = <span class="built_in">require</span>(<span class="string">'./routes/login'</span>);</span><br><span class="line">app.use(<span class="string">'/login'</span>,loginRouter);</span><br></pre></td></tr></table></figure>
+<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><h4 id="引入axios"><a href="#引入axios" class="headerlink" title="引入axios"></a>引入axios</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install axios</span><br><span class="line"></span><br><span class="line"><span class="comment">//main.js</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line">Vue.prototype.$http = axios;</span><br></pre></td></tr></table></figure>
+<p>做下简单的解析：</p>
+<p>我们用<code>$</code>开头的属性来存放引入的库，这种写法不是强制的，只是为了提醒开发者。（<code>$on , $mount</code>）。</p>
+<p><code>Vue.prototype.$http = axios</code>这一句用来修改Vue的原型属性。</p>
+<h4 id="vue-elementui"><a href="#vue-elementui" class="headerlink" title="vue+elementui"></a>vue+elementui</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">submitForm: <span class="function"><span class="keyword">function</span>(<span class="params">formName</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.fullscreenLoading = <span class="literal">true</span>;						<span class="comment">//缓冲框参数</span></span><br><span class="line">        <span class="keyword">this</span>.$http.get(prefix + <span class="string">'/login'</span>).then(<span class="function"><span class="params">success</span>=&gt;</span>&#123;	<span class="comment">//使用重写过的http</span></span><br><span class="line">          <span class="keyword">this</span>.fullscreenLoading = <span class="literal">false</span>;</span><br><span class="line">          <span class="keyword">this</span>.$router.push(<span class="string">'manager'</span>);</span><br><span class="line">        &#125;,fail=&gt;&#123;</span><br><span class="line">          <span class="keyword">this</span>.fullscreenLoading = <span class="literal">false</span>;</span><br><span class="line">          alert(fail);</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><h4 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-da12eaec33718b88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="回复报文"><a href="#回复报文" class="headerlink" title="回复报文"></a>回复报文</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-7581e88121afea5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="全局配置axios"><a href="#全局配置axios" class="headerlink" title="全局配置axios"></a>全局配置axios</h3><p>可以配置的东西很多我这里配置了全局的baseURL这样不用每一个都写一遍 <code>http://localhost:3000</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Vue.prototype.$http = axios;</span></span><br><span class="line"></span><br><span class="line">Vue.prototype.$http = axios.create(&#123;</span><br><span class="line">  baseURL: <span class="string">'http://localhost:3000'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接执行下面的代码</span></span><br><span class="line"> <span class="keyword">this</span>.$http.get(<span class="string">'/login'</span>)</span><br><span class="line"><span class="comment">//查看console中的network，请求正常：http://localhost:3000/login</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -496,7 +432,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/web基础知识/" rel="tag"># web基础知识</a>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -509,8 +445,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/17/nodejs-1/" rel="next" title="Nodejs-express 解决跨域问题">
-                <i class="fa fa-chevron-left"></i> Nodejs-express 解决跨域问题
+              <a href="/2018/03/24/vue-6/" rel="next" title="vue组件的生命周期">
+                <i class="fa fa-chevron-left"></i> vue组件的生命周期
               </a>
             
           </div>
@@ -518,10 +454,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/01/12/base-2/" rel="prev" title="web开发必备常识">
-                web开发必备常识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -674,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#同源策略"><span class="nav-number">1.</span> <span class="nav-text">同源策略</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三同"><span class="nav-number">1.0.1.</span> <span class="nav-text">三同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略目的"><span class="nav-number">1.0.2.</span> <span class="nav-text">同源策略目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同源策略的限制范围"><span class="nav-number">1.0.3.</span> <span class="nav-text">同源策略的限制范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#规避策略"><span class="nav-number">1.0.4.</span> <span class="nav-text">规避策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CORS"><span class="nav-number">2.</span> <span class="nav-text">CORS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两种请求"><span class="nav-number">2.1.</span> <span class="nav-text">两种请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-简单请求"><span class="nav-number">2.2.</span> <span class="nav-text">1. 简单请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-非简单请求"><span class="nav-number">2.2.1.</span> <span class="nav-text">2. 非简单请求</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与JSONP比较"><span class="nav-number">2.3.</span> <span class="nav-text">与JSONP比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#后端"><span class="nav-number">1.</span> <span class="nav-text">后端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端"><span class="nav-number">2.</span> <span class="nav-text">前端</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入axios"><span class="nav-number">2.1.</span> <span class="nav-text">引入axios</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vue-elementui"><span class="nav-number">2.2.</span> <span class="nav-text">vue+elementui</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">3.</span> <span class="nav-text">效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#登陆"><span class="nav-number">3.1.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#回复报文"><span class="nav-number">3.2.</span> <span class="nav-text">回复报文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置axios"><span class="nav-number">4.</span> <span class="nav-text">全局配置axios</span></a></li></ol></div>
             
 
           </div>

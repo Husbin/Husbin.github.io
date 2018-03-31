@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="目的想实现如下图的上下布局，上面是图片介绍，下面是内容主体。在一般手机上显示稍微正常，但是在ipad(768x1024)和ipad pro(1024x1366)`上，画风就有点奇怪了：图片被拉伸了，另外字体的变化也让人有点无法接受。我用的是媒体查询(media)解决这个问题的。先看下效果（源码在底部）： 在iphone上 在ipad上 在ipad pro上 解决之后的效果图片和字体在视觉上都不会有">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css-媒体查询总结">
+<meta property="og:url" content="http://easywork.xin/2018/03/31/css-7/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="目的想实现如下图的上下布局，上面是图片介绍，下面是内容主体。在一般手机上显示稍微正常，但是在ipad(768x1024)和ipad pro(1024x1366)`上，画风就有点奇怪了：图片被拉伸了，另外字体的变化也让人有点无法接受。我用的是媒体查询(media)解决这个问题的。先看下效果（源码在底部）： 在iphone上 在ipad上 在ipad pro上 解决之后的效果图片和字体在视觉上都不会有">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-9e6fa4e5f98ba05e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-b586a2445a9dc6e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-e2ca69fda00b092a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-53d5b2931b1a0904.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-70e031a9b90eb7f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-f765f89cded553e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-31T03:53:33.443Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css-媒体查询总结">
+<meta name="twitter:description" content="目的想实现如下图的上下布局，上面是图片介绍，下面是内容主体。在一般手机上显示稍微正常，但是在ipad(768x1024)和ipad pro(1024x1366)`上，画风就有点奇怪了：图片被拉伸了，另外字体的变化也让人有点无法接受。我用的是媒体查询(media)解决这个问题的。先看下效果（源码在底部）： 在iphone上 在ipad上 在ipad pro上 解决之后的效果图片和字体在视觉上都不会有">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7166236-9e6fa4e5f98ba05e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/03/31/css-7/"/>
+
+
+
+
+
+  <title>css-媒体查询总结 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/31/css-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">css-媒体查询总结</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T09:48:00+08:00">
+                2018-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/31/css-7/" class="leancloud_visitors" data-flag-title="css-媒体查询总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>想实现如下图的上下布局，上面是图片介绍，下面是内容主体。在一般手机上显示稍微正常，但是在<code>ipad(768x1024</code>)<code>和</code>ipad pro(1024x1366)`上，画风就有点奇怪了：图片被拉伸了，另外字体的变化也让人有点无法接受。我用的是媒体查询(media)解决这个问题的。先看下效果（源码在底部）：</p>
+<h4 id="在iphone上"><a href="#在iphone上" class="headerlink" title="在iphone上"></a>在iphone上</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-9e6fa4e5f98ba05e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="在ipad上"><a href="#在ipad上" class="headerlink" title="在ipad上"></a>在ipad上</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-b586a2445a9dc6e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="在ipad-pro上"><a href="#在ipad-pro上" class="headerlink" title="在ipad pro上"></a>在ipad pro上</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-e2ca69fda00b092a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="解决之后的效果"><a href="#解决之后的效果" class="headerlink" title="解决之后的效果"></a>解决之后的效果</h3><p>图片和字体在视觉上都不会有什么大问题。</p>
+<h4 id="在iphone上-1"><a href="#在iphone上-1" class="headerlink" title="在iphone上"></a>在iphone上</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-53d5b2931b1a0904.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="在ipad上-1"><a href="#在ipad上-1" class="headerlink" title="在ipad上"></a>在ipad上</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-70e031a9b90eb7f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="在ipad-pro上-1"><a href="#在ipad-pro上-1" class="headerlink" title="在ipad pro上"></a>在ipad pro上</h4><p><img src="https://upload-images.jianshu.io/upload_images/7166236-f765f89cded553e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.header</span> <span class="selector-tag">img</span>&#123;<span class="attribute">width</span>: <span class="number">100%</span>;<span class="attribute">height</span>: <span class="number">11.6rem</span>;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.continer</span>&#123;<span class="attribute">width</span>: <span class="number">100%</span>;<span class="attribute">height</span>: <span class="number">100vh</span>;<span class="attribute">background</span>: <span class="number">#4691ee</span>;&#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span> &#123;<span class="attribute">text-align</span>: center;<span class="attribute">font-size</span>: <span class="number">1.2rem</span>;<span class="attribute">margin</span>: unset;&#125;</span></span><br><span class="line"><span class="css">  	<span class="comment">/*这里高度计算并不是特别严谨，想真正做好还是需要专门进行计算的，但是按下面的至少不会影响用户体验*/</span></span></span><br><span class="line"><span class="css">    <span class="comment">/*ipad*/</span></span></span><br><span class="line"><span class="css">    @<span class="keyword">media</span> screen and (min-width:<span class="number">760px</span>) and (max-width:<span class="number">1023px</span>) &#123;</span></span><br><span class="line"><span class="css">        <span class="comment">/** 窗口宽度在760--1023px的样式 ipad为768 **/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.header</span> <span class="selector-tag">img</span>&#123;<span class="attribute">height</span>:<span class="number">22.5rem</span>;<span class="attribute">width</span>:<span class="number">100%</span>&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">2.4rem</span>;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="comment">/*ipad pro*/</span></span></span><br><span class="line"><span class="css">    @<span class="keyword">media</span> screen and (min-width:<span class="number">1024px</span>) &#123;</span></span><br><span class="line"><span class="css">        <span class="comment">/** 窗口宽度1024px 以上，只适配到1024 **/</span></span></span><br><span class="line"><span class="css">        <span class="selector-class">.header</span> <span class="selector-tag">img</span>&#123;<span class="attribute">height</span>:<span class="number">30.5rem</span>;<span class="attribute">width</span>:<span class="number">100%</span>&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">3.2rem</span>;&#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><p>CSS媒体查询是实现响应式设计的主要方法。响应式设计可根据所显示的屏幕大小而改变，他呈现的每个屏幕看起来并不相同。按照可用的屏幕属性，响应式设计提供了UI的最佳效果。</p>
+<p>媒体查询包含一个可选的媒体类型，和满足css3规范的条件下，包含零个或多个表达式，这些表达式描述了媒体特征，最终会被解析为<code>true</code>或<code>false</code>。如果媒体查询中指定的媒体类型匹配文档所使用的设备类型，并且所有的表达式的值都是<code>true</code>，那么该媒体查询结果为<code>true</code>。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- link元素中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(max-width: 800px)"</span> <span class="attr">href</span>=<span class="string">"example.css"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 样式表中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">@<span class="keyword">media</span> (max-width: <span class="number">600px</span>) &#123;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.facet_sidebar</span> &#123;</span></span><br><span class="line"><span class="undefined">    display: none;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!--@media 是媒体类型--&gt;</span></span></span><br><span class="line"><span class="xml"><span class="comment">&lt;!--(max-width:600px)是包含媒体查询的表达式，如果浏览器屏幕小于600px，应用下面的样式。--&gt;</span></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当媒体查询为<code>true</code>时，其对应的样式表或样式规则就会遵循正常的级联规则进行应用。<strong>即使媒体查询返回<code>false</code>，<code>&lt;link&gt;</code>标签指向的样式表也会被下载，但是不会被应用。</strong></p>
+<h4 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h4><p>可以使用<code>not、and、only、,</code>等构造负责的媒体查询。</p>
+<ul>
+<li><code>and</code>操作符用来把多个媒体查询组合成一条媒体查询，对成链式的特征进行请求，只有当每个属性都为真时，结果才为真。</li>
+<li><code>not</code>操作符用来对一条媒体查询的结果进行取反。</li>
+<li><code>only</code>操作符仅在媒体查询匹配成功的情况下被用于应用的一个样式，这对于防止让选中的样式在老式浏览器中被应用到。</li>
+<li>逗号分隔符，与<code>or</code>等意义。满足其中之一即可。</li>
+<li>若用了<code>not</code>或<code>only</code>操作符，必须明确指定一个媒体样式。</li>
+</ul>
+<h5 id="and"><a href="#and" class="headerlink" title="and"></a>and</h5><p><code>and</code>关键字用于合并多个媒体属性或合并媒体属性与媒体类型。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> tv and (min-width: <span class="number">700px</span>) and (orientation: landscape) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p>上面媒体查询仅在电视媒体上，可视区域不小于700像素宽度并且是横屏时有效。</p>
+<h5 id="逗号分隔列表"><a href="#逗号分隔列表" class="headerlink" title="逗号分隔列表"></a>逗号分隔列表</h5><p>媒体查询中使用逗号分隔效果等同于<code>or</code>逻辑操作符。<strong>当使用逗号分隔符的媒体查询时，如果任何一个媒体查询返回真，样式就是有效的。</strong>逗号分隔的列表中每个查询都是独立的，一个查询中的操作符并不影响其他的媒体查询。这意味着逗号媒体查询列表能够作用于不同的媒体属性、类型和状态。</p>
+<p>例如，如果你想在最小宽度为700像素或是横屏的手持设备上应用一组样式，你可以这样写：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">700px</span>), handheld and (orientation: landscape) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p>如上文，如果是一个800px的屏幕设备，媒体语句将会返回真，因为第一部分相当于<code>@media all and (min-width:700px)</code>将会应用于该设备并且返回真，尽管屏幕的媒体类型并不与第二部分的手持媒体类型（handheld）相符。同样的，如果现在只是一个500px+横屏的手持设备，尽管第一部分因为宽度问题而不匹配，第二部分仍会成功，因此整个媒体查询返回真。</p>
+<h5 id="not"><a href="#not" class="headerlink" title="not"></a>not</h5><p><code>not</code>关键字应用于整个媒体查询，<strong>在媒体查询为假时返回真</strong>。<code>not</code>关键字仅能应用于整个查询，而不能单独应用于一个独立的查询。例如，<code>not</code>在下面的查询中最后被计算。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> not all and (monochrome) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p>等价于</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> not (all and (monochrome)) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<h5 id="only"><a href="#only" class="headerlink" title="only"></a>only</h5><p><code>only</code>关键字防止老旧的浏览器不支持带媒体属性的查询而应用到给定的样式。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel="stylesheet" media="only screen and (color)" href="example.css" /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="常见媒体查询"><a href="#常见媒体查询" class="headerlink" title="常见媒体查询"></a>常见媒体查询</h4><p>因为 Apple 首次向市场推出了用户智能手机和平板电脑产品，所以下列大多数媒体查询都是基于这些型号的设备。</p>
+<p>如果目标是横向模式智能手机，则使用：</p>
+ <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">321px</span>) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p>如果目标是纵向模式智能手机，则使用： </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (max-width: <span class="number">320px</span>) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p>如果目标是横向模式 Apple iPad，则使用： </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (orientation: landscape) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<p>如果目标是纵向模式 iPad，则使用： </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (orientation: portrait) &#123; ... &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="媒体类型"><a href="#媒体类型" class="headerlink" title="媒体类型"></a>媒体类型</h4><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media" target="_blank" rel="noopener">media-MDN文档</a></p>
+<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><p>目前支持的浏览器包括Mozilla、Firefox、AppleSafari、Google Chrome和Opera，查看<a href="https://caniuse.com/#feat=css-mediaqueries" target="_blank" rel="noopener">完整的支持列表</a>。不支持media的浏览器需要在项目内导入一个名为<code>respond.js</code>的<code>Javascript polyfill</code>。</p>
+<p><a href="https://github.com/scottjehl/Respond" target="_blank" rel="noopener">Respond.js</a>是一个极小的增强 Web 浏览器的 JavaScript 库，使得原本不支持 CSS 媒体查询的浏览器能够支持它们。该脚本循环遍历页面上的所有 CSS 引用，并使用媒体查询分析 CSS 规则。然后，该脚本会监控浏览器宽度变化，添加或删除与 CSS 中媒体查询匹配的样式。最终结果是，能够在原本不支持的浏览器上运行媒体查询。</p>
+<h3 id="demo源码"><a href="#demo源码" class="headerlink" title="demo源码"></a>demo源码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Media<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">        <span class="selector-class">.header</span> <span class="selector-tag">img</span>&#123;<span class="attribute">width</span>: <span class="number">100%</span>;<span class="attribute">height</span>: <span class="number">11.6rem</span>;&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-class">.continer</span>&#123;<span class="attribute">width</span>: <span class="number">100%</span>;<span class="attribute">height</span>: <span class="number">100vh</span>;<span class="attribute">background</span>: <span class="number">#4691ee</span>;&#125;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">p</span> &#123;<span class="attribute">text-align</span>: center;<span class="attribute">font-size</span>: <span class="number">1.2rem</span>;<span class="attribute">margin</span>: unset;&#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/*这里高度计算并不是特别严谨，想真正做好还是需要专门进行计算的，但是按下面的至少不会影响用户体验*/</span></span></span><br><span class="line"><span class="css">        <span class="comment">/*ipad*/</span></span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">760px</span>) and (max-width:<span class="number">1023px</span>) &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/** 窗口宽度在760--1023px的样式 ipad为768 **/</span></span></span><br><span class="line"><span class="css">            <span class="selector-class">.header</span> <span class="selector-tag">img</span>&#123;<span class="attribute">height</span>:<span class="number">22.5rem</span>;<span class="attribute">width</span>:<span class="number">100%</span>&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">2.4rem</span>;&#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="css">        <span class="comment">/*ipad pro*/</span></span></span><br><span class="line"><span class="css">        @<span class="keyword">media</span> screen and (min-width:<span class="number">1024px</span>) &#123;</span></span><br><span class="line"><span class="css">            <span class="comment">/** 窗口宽度1024px 以上，只适配到1024 **/</span></span></span><br><span class="line"><span class="css">            <span class="selector-class">.header</span> <span class="selector-tag">img</span>&#123;<span class="attribute">height</span>:<span class="number">30.5rem</span>;<span class="attribute">width</span>:<span class="number">100%</span>&#125;</span></span><br><span class="line"><span class="css">            <span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">3.2rem</span>;&#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 18px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>header<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"../asset/paper.jpg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"continer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>continer<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries" target="_blank" rel="noopener">css媒体查询</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media" target="_blank" rel="noopener">@media</a></p>
+<p><a href="https://www.ibm.com/developerworks/cn/web/wa-cssqueries/" target="_blank" rel="noopener">使用CSS媒体查询创建响应式网站</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/03/31/css-7/" title="css-媒体查询总结">css-媒体查询总结</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/03/31/css-7/" title="css-媒体查询总结">http://easywork.xin/2018/03/31/css-7/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年3月31日 - 09时03分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/daily-1/" rel="next" title="前端面试技巧">
+                <i class="fa fa-chevron-left"></i> 前端面试技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在iphone上"><span class="nav-number">1.1.</span> <span class="nav-text">在iphone上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在ipad上"><span class="nav-number">1.2.</span> <span class="nav-text">在ipad上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在ipad-pro上"><span class="nav-number">1.3.</span> <span class="nav-text">在ipad pro上</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决之后的效果"><span class="nav-number">2.</span> <span class="nav-text">解决之后的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在iphone上-1"><span class="nav-number">2.1.</span> <span class="nav-text">在iphone上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在ipad上-1"><span class="nav-number">2.2.</span> <span class="nav-text">在ipad上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在ipad-pro上-1"><span class="nav-number">2.3.</span> <span class="nav-text">在ipad pro上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心代码"><span class="nav-number">2.4.</span> <span class="nav-text">核心代码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#媒体查询"><span class="nav-number">3.</span> <span class="nav-text">媒体查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">3.1.</span> <span class="nav-text">逻辑操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#and"><span class="nav-number">3.1.1.</span> <span class="nav-text">and</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#逗号分隔列表"><span class="nav-number">3.1.2.</span> <span class="nav-text">逗号分隔列表</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#not"><span class="nav-number">3.1.3.</span> <span class="nav-text">not</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#only"><span class="nav-number">3.1.4.</span> <span class="nav-text">only</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见媒体查询"><span class="nav-number">3.2.</span> <span class="nav-text">常见媒体查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#媒体类型"><span class="nav-number">3.3.</span> <span class="nav-text">媒体类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器支持"><span class="nav-number">4.</span> <span class="nav-text">浏览器支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#demo源码"><span class="nav-number">5.</span> <span class="nav-text">demo源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

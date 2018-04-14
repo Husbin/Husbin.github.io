@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/04/07/js-11/</loc>
+    <lastmod>2018-04-14T09:28:55.787Z</lastmod>
+    <data>
+        <display>
+        <title>jquery手记</title>
+        <pubTime>2018-04-07T07:41:06.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://easywork.xin/2018/03/16/css-6/</loc>
@@ -18,26 +38,6 @@
            
              
               <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/04/07/js-11/</loc>
-    <lastmod>2018-04-10T11:21:57.373Z</lastmod>
-    <data>
-        <display>
-        <title>jquery手记</title>
-        <pubTime>2018-04-07T07:41:06.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>

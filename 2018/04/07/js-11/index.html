@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -99,7 +99,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-39efe35c217f1b7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-420e350d8968e75a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-04-14T09:28:55.787Z">
+<meta property="og:updated_time" content="2018-04-14T10:00:51.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery手记">
 <meta name="twitter:description" content="写了几天的jquery，没有以前那么抗拒了。用着用着觉得还是挺不错的，至少用起来比写原生的DOM操作要方便得多，虽然没有框架动不动就双向绑定来的方便。但是学着还是好的，说不定哪天需要看旧项目的代码，还是会有一定的用处的。 熟悉熟悉API，至少让脑子知道有这么一回事就ok了。遇到问题了查一查。 还有就是之前习惯了写es6，最近写要兼容旧的浏览器，所以用es5及以下的东西。但是一定要加use stri">
@@ -111,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -220,6 +220,26 @@
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
             关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -438,7 +458,6 @@
 <li>可以实现鼠标移到某个元素显示特定div，移开隐藏的效果。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显示详情</span></span><br><span class="line">$(<span class="string">"#pageDetails"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#pageDetailsShow"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>);</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#pageDetailsShow"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="绑定onchange事件"><a href="#绑定onchange事件" class="headerlink" title="绑定onchange事件"></a>绑定onchange事件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#uploadFile'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"upload"</span>)</span><br><span class="line">    uploadFile();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="问题三——事件绑定"><a href="#问题三——事件绑定" class="headerlink" title="问题三——事件绑定"></a>问题三——事件绑定</h3><h4 id="bind-、unbind"><a href="#bind-、unbind" class="headerlink" title="bind()、unbind()"></a>bind()、unbind()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line">$(<span class="string">'selector'</span>).bind(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//解绑</span></span><br><span class="line">$(<span class="string">'selector'</span>).unbind(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="delegate-、undelegate"><a href="#delegate-、undelegate" class="headerlink" title="delegate()、undelegate()"></a>delegate()、undelegate()</h4><p>这里对事件代理就不作介绍了，还不知道事件代理的：<a href="http://easywork.xin/2018/01/22/js-2/">传送门——js中的事件与事件委托</a></p>
 <p>其实我写事件代理函数习惯直接把函数挂在节点上。。。（逃。。</p>
@@ -449,6 +468,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).on(events ，[selector] ，[data]，func )</span><br><span class="line"><span class="comment">//event 事件对象</span></span><br><span class="line"><span class="comment">//selector 一个选择器字符串，用于过滤出被选中的元素中能触发事件的后代元素。如果是null的话那就跟bind是一样的效果</span></span><br><span class="line"><span class="comment">//data 事件触发时传递的参数</span></span><br><span class="line"><span class="comment">//func 事件处理函数</span></span><br></pre></td></tr></table></figure>
 <h4 id="one"><a href="#one" class="headerlink" title="one()"></a>one()</h4><p>为元素的事件添加处理函数。处理函数在每个元素上每种事件类型最多执行一次。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).one(event,fun);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'selector'</span>).one(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="绑定onchange事件"><a href="#绑定onchange事件" class="headerlink" title="绑定onchange事件"></a>绑定onchange事件</h4><p>文件/图片上传。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).change(func);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#uploadFile'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    uploadFile();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>以上，都是最近用到的一些api，都是查查文档、资料、教程啥的。用到新的再补上。</p>
 
       
@@ -709,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二——常规操作"><span class="nav-number">2.</span> <span class="nav-text">问题二——常规操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增加-删除css类（class）"><span class="nav-number">2.1.</span> <span class="nav-text">增加/删除css类（class）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改某项css属性"><span class="nav-number">2.2.</span> <span class="nav-text">修改某项css属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听鼠标事件"><span class="nav-number">2.3.</span> <span class="nav-text">监听鼠标事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#‘selector’-mouseleave-func"><span class="nav-number">2.3.1.</span> <span class="nav-text">$(‘selector’).mouseleave(func)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#‘selector’-hover-func1，func2"><span class="nav-number">2.3.2.</span> <span class="nav-text">$(‘selector’).hover(func1，func2)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定onchange事件"><span class="nav-number">2.4.</span> <span class="nav-text">绑定onchange事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三——事件绑定"><span class="nav-number">3.</span> <span class="nav-text">问题三——事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bind-、unbind"><span class="nav-number">3.1.</span> <span class="nav-text">bind()、unbind()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delegate-、undelegate"><span class="nav-number">3.2.</span> <span class="nav-text">delegate()、undelegate()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#on-、off"><span class="nav-number">3.3.</span> <span class="nav-text">on()、off()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#one"><span class="nav-number">3.4.</span> <span class="nav-text">one()</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一"><span class="nav-number">1.</span> <span class="nav-text">问题一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二——常规操作"><span class="nav-number">2.</span> <span class="nav-text">问题二——常规操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增加-删除css类（class）"><span class="nav-number">2.1.</span> <span class="nav-text">增加/删除css类（class）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改某项css属性"><span class="nav-number">2.2.</span> <span class="nav-text">修改某项css属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听鼠标事件"><span class="nav-number">2.3.</span> <span class="nav-text">监听鼠标事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#‘selector’-mouseleave-func"><span class="nav-number">2.3.1.</span> <span class="nav-text">$(‘selector’).mouseleave(func)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#‘selector’-hover-func1，func2"><span class="nav-number">2.3.2.</span> <span class="nav-text">$(‘selector’).hover(func1，func2)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三——事件绑定"><span class="nav-number">3.</span> <span class="nav-text">问题三——事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bind-、unbind"><span class="nav-number">3.1.</span> <span class="nav-text">bind()、unbind()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delegate-、undelegate"><span class="nav-number">3.2.</span> <span class="nav-text">delegate()、undelegate()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#on-、off"><span class="nav-number">3.3.</span> <span class="nav-text">on()、off()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#one"><span class="nav-number">3.4.</span> <span class="nav-text">one()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定onchange事件"><span class="nav-number">3.5.</span> <span class="nav-text">绑定onchange事件</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -834,13 +855,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

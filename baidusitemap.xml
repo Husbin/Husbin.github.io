@@ -3,6 +3,47 @@
 
 
     
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-04-17T12:44:33.991Z</lastmod>
+    <data>
+        <display>
+        <title>赛码——公交车乘客</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
+    <lastmod>2018-04-17T12:36:47.725Z</lastmod>
+    <data>
+        <display>
+        <title>前端一定要会的算法--排序</title>
+        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://easywork.xin/2018/04/15/js-12/</loc>
     <lastmod>2018-04-15T09:49:23.487Z</lastmod>
@@ -22,7 +63,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://easywork.xin/2018/04/07/js-11/</loc>
@@ -958,26 +998,6 @@
         <pubTime>2018-02-06T08:51:42.000Z</pubTime>
         
         <tag>html</tag>
-         
-         
-           
-             
-              <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/09/base-4/</loc>
-    <lastmod>2018-02-25T13:37:00.150Z</lastmod>
-    <data>
-        <display>
-        <title>前端一定要会的算法--排序</title>
-        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
-        
-        <tag>web基础知识</tag>
          
          
            

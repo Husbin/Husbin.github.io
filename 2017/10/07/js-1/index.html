@@ -400,7 +400,7 @@
 <h2 id="关于let关键字"><a href="#关于let关键字" class="headerlink" title="关于let关键字"></a>关于let关键字</h2><ul>
 <li>暑期写了2个月的angular2，最近重新学js，在看ES6的特性，发现ES6出了let关键字，也就是说es6之后，js也能定义块级作用域的变量了。（在es6之前，定义变量用var，变量在函数作用域内生效，但是没有块级作用域，var所定义的变量还是会出现混淆的情况）。感觉要养成let定义变量的习惯。在下面举一个简单的例子：</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>（）</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt;<span class="number">5</span> ; i ++)&#123;&#125;</span><br><span class="line">  	<span class="built_in">console</span>.log(i);              <span class="comment">//i = 5</span></span><br><span class="line">  	<span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; <span class="number">5</span> ; j ++)&#123;&#125;</span><br><span class="line">  	<span class="built_in">console</span>.log(j);              <span class="comment">//RefreenceError , j is not defined</span></span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function test（）&#123;</span><br><span class="line">	for(var i = 0 ; i &lt;5 ; i ++)&#123;&#125;</span><br><span class="line">  	console.log(i);              //i = 5</span><br><span class="line">  	for(let j = 0 ; j &lt; 5 ; j ++)&#123;&#125;</span><br><span class="line">  	console.log(j);              //RefreenceError , j is not defined</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br></pre></td></tr></table></figure>
 <ul>
 <li>由上面的简单例子可知，var定义的变量在函数作用域内生效，而let定义的变量在指定的块（block）内生效。因此可以看出，多用let可以避免很多es6之前的所谓找不到出错的变量在哪个位置的bug。</li>
 </ul>
@@ -603,7 +603,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -614,7 +614,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -625,7 +625,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

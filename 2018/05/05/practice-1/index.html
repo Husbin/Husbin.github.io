@@ -104,7 +104,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-f1e540dc10cb2b2b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-e9d7402c14ed7268.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-78b85c1a83d5e78c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-05-05T08:35:36.812Z">
+<meta property="og:updated_time" content="2018-05-06T05:52:42.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="H5与PC直播方案">
 <meta name="twitter:description" content="研究了几天的b站的直播，理清了大概的思路，做下总结（文尾附源码）。 本文用的技术：vuejs，flvjs，vue-video-player，videojs-contrib-hls，阿里云视频web播放器。 本文以B站为例来做解析。 开始之前正式介绍一大堆专业名词之前，先问几个问题。  为什么b站要做h5视频播放器。 为什么chrome默认禁止了flash。  好吧，带着这两个问题我要开始吹水了。。">
@@ -118,7 +118,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -401,7 +401,7 @@
 </ul>
 <p>好吧，带着这两个问题我要开始吹水了。。</p>
 <h4 id="为什么b站要做h5视频播放器"><a href="#为什么b站要做h5视频播放器" class="headerlink" title="为什么b站要做h5视频播放器"></a>为什么b站要做h5视频播放器</h4><p>在B站推出H5播放器之前，B站PC端的视频使用的可能是RTMP或HTTP-FLV协议（这两个协议功能类似，只是后者没有专利限制），视频格式是flv。RTMP协议是Adobe公司提出的，要使用RTMP或HTTP-FLV协议来传输播放视频，只能使用Flash播放器。</p>
-<p>这样想其实没什么问题，那就用flash播放器咯，可是，有个很致命的问题，<strong>所有ios设备都不支持flash</strong>，也就是说所有iphone、ipad都不支持RTMP或HTTP-FLV协议的视频流，但是<strong>支持苹果自家的fls协议，而在ios设备上，h5支持播放fls协议的视频流</strong>，所以，B站要留住ios用户，使用h5播放器是大势所趋。</p>
+<p>这样想其实没什么问题，那就用flash播放器咯，可是，有个很致命的问题，<strong>所有ios设备都不支持flash</strong>，也就是说所有iphone、ipad都不支持RTMP或HTTP-FLV协议的视频流，但是<strong>支持苹果自家的hls协议，而在ios设备上，h5支持播放hls协议的视频流</strong>，所以，B站要留住ios用户，使用h5播放器是大势所趋。</p>
 <p>至于为什么苹果不支持flash，归结起来有几个原因：</p>
 <ol>
 <li>耗电，在mac使用会明显发热。</li>
@@ -515,7 +515,7 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>按我最近几天的学习，可以初步制定出2套方案：</p>
 <p>一套是<strong>http-flv+hls</strong>：PC端flvjs，移动端使用videojs+videojs-contrib-hls.js。</p>
 <p>另一套是直接使用hls：PC和移动端都使用<code>videojs+vvideojs-contrib-hls.js。</code></p>
-<p>前者的体验在移动程度上优于后者，主要体现在PC端上，flvjs延时更小。</p>
+<p>前者的体验在一定程度上优于后者，主要体现在PC端上，flvjs延时更小。</p>
 <p>还有一种方法是接入第三方播放器，不过要收费，阿里的腾讯的，不展开写了。</p>
 <h3 id="demo地址"><a href="#demo地址" class="headerlink" title="demo地址"></a><a href="https://github.com/Husbin/Player" target="_blank" rel="noopener">demo地址</a></h3>
       
@@ -754,7 +754,15 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
                     <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
                   </li>
                 
               </ul>

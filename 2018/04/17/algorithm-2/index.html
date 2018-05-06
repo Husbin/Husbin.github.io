@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="2017-05-01更新 最近心情有点复杂。。。 赛码——研究生考试 1234567891011121314151617181920let n = parseInt(read_line());let line,p,e,m,o;for(let i = 0 ; i &amp;lt; n ; i++)&amp;#123;	line = read_line().split(&apos; &apos;);  	p = parseInt(lin">
+<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  ###2018-05-06更新 Roman to Integer 题解：给定一串罗马数字以及转化规则，计算转化结果 样例：”III” 输出：3 123456789101112131415161718192021222324252627//这题能吸收一些基础知识。。太菜了。。。//romanNum[&apos;I&apos;] === 1//for 循环中可以改变迭代变量">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="水题题解">
 <meta property="og:url" content="http://easywork.xin/2018/04/17/algorithm-2/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="2017-05-01更新 最近心情有点复杂。。。 赛码——研究生考试 1234567891011121314151617181920let n = parseInt(read_line());let line,p,e,m,o;for(let i = 0 ; i &amp;lt; n ; i++)&amp;#123;	line = read_line().split(&apos; &apos;);  	p = parseInt(lin">
+<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  ###2018-05-06更新 Roman to Integer 题解：给定一串罗马数字以及转化规则，计算转化结果 样例：”III” 输出：3 123456789101112131415161718192021222324252627//这题能吸收一些基础知识。。太菜了。。。//romanNum[&apos;I&apos;] === 1//for 循环中可以改变迭代变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-01T02:06:05.432Z">
+<meta property="og:updated_time" content="2018-05-06T08:33:23.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="水题题解">
-<meta name="twitter:description" content="2017-05-01更新 最近心情有点复杂。。。 赛码——研究生考试 1234567891011121314151617181920let n = parseInt(read_line());let line,p,e,m,o;for(let i = 0 ; i &amp;lt; n ; i++)&amp;#123;	line = read_line().split(&apos; &apos;);  	p = parseInt(lin">
+<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  ###2018-05-06更新 Roman to Integer 题解：给定一串罗马数字以及转化规则，计算转化结果 样例：”III” 输出：3 123456789101112131415161718192021222324252627//这题能吸收一些基础知识。。太菜了。。。//romanNum[&apos;I&apos;] === 1//for 循环中可以改变迭代变量">
 
 
 
@@ -111,7 +111,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -384,13 +384,32 @@
       
 
       
-        <p>2017-05-01更新</p>
-<p>最近心情有点复杂。。。</p>
+        <blockquote>
+<p>对不起，我只做水题，前端就是可以为所欲为。</p>
+</blockquote>
+<p>###2018-05-06更新</p>
+<p><a href="https://leetcode.com/problems/roman-to-integer/description/" target="_blank" rel="noopener">Roman to Integer</a></p>
+<p>题解：给定一串罗马数字以及转化规则，计算转化结果</p>
+<p>样例：”III”</p>
+<p>输出：3</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这题能吸收一些基础知识。。太菜了。。。</span></span><br><span class="line"><span class="comment">//romanNum['I'] === 1</span></span><br><span class="line"><span class="comment">//for 循环中可以改变迭代变量 i 。。</span></span><br><span class="line"><span class="keyword">var</span> romanToInt = <span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> romanNum = &#123;</span><br><span class="line">        <span class="string">"I"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"V"</span> : <span class="number">5</span>,</span><br><span class="line">        <span class="string">"X"</span> : <span class="number">10</span>,</span><br><span class="line">        <span class="string">"L"</span> : <span class="number">50</span>,</span><br><span class="line">        <span class="string">"C"</span> : <span class="number">100</span>,</span><br><span class="line">        <span class="string">"D"</span> : <span class="number">500</span>,</span><br><span class="line">        <span class="string">"M"</span> : <span class="number">1000</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> ronabInt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;string.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(romanNum[string[i+<span class="number">1</span>]] &gt; romanNum[string[i]])&#123;</span><br><span class="line">            ronabInt += romanNum[string[i+<span class="number">1</span>]] - romanNum[string[i]];</span><br><span class="line">            i++;   						<span class="comment">/*在下输了，基础不行。。。*/</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            ronabInt += romanNum[string[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(ronabInt);</span><br><span class="line">    <span class="keyword">return</span> ronabInt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/reverse-integer/description/" target="_blank" rel="noopener">Reverse Integer</a></p>
+<p>题解：给出一个数字，进行翻转，若翻转之后溢出，返回0。</p>
+<p>样例：123</p>
+<p>输出：321</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverse = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> numArray = <span class="built_in">String</span>(x).split(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">let</span> num = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        numArray.splice(<span class="number">0</span>,<span class="number">1</span>);     <span class="comment">//若输入为负数，去除负号。</span></span><br><span class="line">        num = -(<span class="built_in">parseInt</span>(numArray.reverse().join(<span class="string">''</span>)));</span><br><span class="line">        <span class="keyword">if</span>(checkNum(num))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    num = <span class="built_in">parseInt</span>(numArray.reverse().join(<span class="string">''</span>));</span><br><span class="line">    <span class="keyword">if</span>(checkNum(num))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkNum</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &gt;= ((<span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">31</span>))<span class="number">-1</span>) || num &lt;= <span class="built_in">Math</span>.pow(<span class="number">-2</span>,<span class="number">31</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="noopener">Two Sum</a></p>
+<p>题解：给定一个数组和一个目标值，从数组中找出两个值得和等于目标值，输出下标。</p>
+<p>样例：[2,7,11,15]，9</p>
+<p>输出：[0,1]</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; nums.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; nums.length ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i === j)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[j] === target)&#123;</span><br><span class="line">                <span class="keyword">return</span> [i , j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2018-05-01更新"><a href="#2018-05-01更新" class="headerlink" title="2018-05-01更新"></a>2018-05-01更新</h3><p>最近心情有点复杂。。。</p>
 <p><a href="http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3007&amp;konwledgeId=134" target="_blank" rel="noopener">赛码——研究生考试</a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> n = <span class="built_in">parseInt</span>(read_line());</span><br><span class="line"><span class="keyword">let</span> line,p,e,m,o;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; n ; i++)&#123;</span><br><span class="line">	line = read_line().split(<span class="string">' '</span>);</span><br><span class="line">  	p = <span class="built_in">parseInt</span>(line[<span class="number">0</span>]);</span><br><span class="line">  	e = <span class="built_in">parseInt</span>(line[<span class="number">1</span>]);</span><br><span class="line">  	m = <span class="built_in">parseInt</span>(line[<span class="number">2</span>]);</span><br><span class="line">  	o = <span class="built_in">parseInt</span>(line[<span class="number">3</span>]);</span><br><span class="line">	check(p,e,m,o)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">p,e,m,o</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> sum = p+e+m+o;</span><br><span class="line">  <span class="keyword">if</span>(p &lt; <span class="number">60</span> || e &lt; <span class="number">60</span> || m &lt; <span class="number">90</span> || o &lt; <span class="number">90</span> || sum &lt; <span class="number">310</span>)&#123;</span><br><span class="line">    	print(<span class="string">'Fail'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(sum&lt;<span class="number">350</span>) &#123;</span><br><span class="line">    	print(<span class="string">'Zifei'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        	print(<span class="string">'Gongfei'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>好像不支持变量解构赋值。。。</p>
 <hr>
-<p>完全被迫无奈。。。。重新拿起了java。。。</p>
+<h3 id="2018-04-17"><a href="#2018-04-17" class="headerlink" title="2018-04-17"></a>2018-04-17</h3><p>完全被迫无奈。。。。重新拿起了java。。。</p>
 <p><a href="http://exercise.acmcoder.com/online/online_judge_ques?ques_id=1659&amp;konwledgeId=134" target="_blank" rel="noopener">赛码——公交车乘客</a></p>
 <p>一开始理解错题意了，以为是求某一站上下车之和最大的一个。</p>
 <p>仔细看才发现是求车上可能的最大容量。。脑子不中用了。。</p>
@@ -551,8 +570,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -628,7 +656,15 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
                     <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
                   </li>
                 
               </ul>
@@ -638,6 +674,22 @@
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=548145360&auto=1&height=66"></iframe>        </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">2.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

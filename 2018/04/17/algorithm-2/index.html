@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-12更新leetcode-14-Longest Common Prefix 题解：给定一个字符串数组，输出最长前缀，不存在输出空字符。 样例：[“flower”,”flow”,”flight”] 输出：”fl” 1234567891011121314/** * @param &amp;#123;string[]&amp;#125; strs * @r">
+<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-13更新leetcode-09-Palindrome Number 题解：给定一个数字，判断是否为回文数。 样例：121 输出：true 123456789101112/** * @param &amp;#123;number&amp;#125; x * @return &amp;#123;boolean&amp;#125; */var isPalindrome =">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="水题题解">
 <meta property="og:url" content="http://easywork.xin/2018/04/17/algorithm-2/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-12更新leetcode-14-Longest Common Prefix 题解：给定一个字符串数组，输出最长前缀，不存在输出空字符。 样例：[“flower”,”flow”,”flight”] 输出：”fl” 1234567891011121314/** * @param &amp;#123;string[]&amp;#125; strs * @r">
+<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-13更新leetcode-09-Palindrome Number 题解：给定一个数字，判断是否为回文数。 样例：121 输出：true 123456789101112/** * @param &amp;#123;number&amp;#125; x * @return &amp;#123;boolean&amp;#125; */var isPalindrome =">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-12T04:24:45.598Z">
+<meta property="og:updated_time" content="2018-05-13T03:47:48.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="水题题解">
-<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-12更新leetcode-14-Longest Common Prefix 题解：给定一个字符串数组，输出最长前缀，不存在输出空字符。 样例：[“flower”,”flow”,”flight”] 输出：”fl” 1234567891011121314/** * @param &amp;#123;string[]&amp;#125; strs * @r">
+<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-13更新leetcode-09-Palindrome Number 题解：给定一个数字，判断是否为回文数。 样例：121 输出：true 123456789101112/** * @param &amp;#123;number&amp;#125; x * @return &amp;#123;boolean&amp;#125; */var isPalindrome =">
 
 
 
@@ -387,6 +387,16 @@
         <blockquote>
 <p>对不起，我只做水题，前端就是可以为所欲为。</p>
 </blockquote>
+<h3 id="2018-05-13更新"><a href="#2018-05-13更新" class="headerlink" title="2018-05-13更新"></a>2018-05-13更新</h3><p><a href="https://leetcode.com/problems/palindrome-number/description/" target="_blank" rel="noopener">leetcode-09-Palindrome Number</a></p>
+<p>题解：给定一个数字，判断是否为回文数。</p>
+<p>样例：121</p>
+<p>输出：true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; x</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> xStr = <span class="built_in">String</span>(x).split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">if</span>(x === <span class="built_in">parseInt</span>(xStr))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/" target="_blank" rel="noopener">leetcode-26-Remove Duplicates from Sorted Array</a></p>
+<p>题解：给定一个排好序的数组，去除重复元素，返回数组长度，空间复杂度为O(1)，不能使用辅助空间。</p>
+<p>样例：[1,1,2]</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> removeDuplicates = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">    <span class="keyword">while</span>(nums[i] === nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">      nums.splice(i + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="2018-05-12更新"><a href="#2018-05-12更新" class="headerlink" title="2018-05-12更新"></a>2018-05-12更新</h3><p><a href="https://leetcode.com/problems/longest-common-prefix/description/" target="_blank" rel="noopener">leetcode-14-Longest Common Prefix</a></p>
 <p>题解：给定一个字符串数组，输出最长前缀，不存在输出空字符。</p>
 <p>样例：[“flower”,”flow”,”flight”]</p>
@@ -695,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">2.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">3.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-13更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-13更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">2.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">3.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">4.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
             
 
           </div>

@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-13更新leetcode-09-Palindrome Number 题解：给定一个数字，判断是否为回文数。 样例：121 输出：true 123456789101112/** * @param &amp;#123;number&amp;#125; x * @return &amp;#123;boolean&amp;#125; */var isPalindrome =">
+<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-14更新leetcode-27-Remove Element 题解：给定一个数组和一个目标值，去除数组中存在的目标值，返回数组长度，要求不使用额外空间。 样例：[2,2,3,3] , 3 输出：2 12345678910111213141516171819/** * @param &amp;#123;number[]&amp;#125; nums *">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="水题题解">
 <meta property="og:url" content="http://easywork.xin/2018/04/17/algorithm-2/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-13更新leetcode-09-Palindrome Number 题解：给定一个数字，判断是否为回文数。 样例：121 输出：true 123456789101112/** * @param &amp;#123;number&amp;#125; x * @return &amp;#123;boolean&amp;#125; */var isPalindrome =">
+<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-14更新leetcode-27-Remove Element 题解：给定一个数组和一个目标值，去除数组中存在的目标值，返回数组长度，要求不使用额外空间。 样例：[2,2,3,3] , 3 输出：2 12345678910111213141516171819/** * @param &amp;#123;number[]&amp;#125; nums *">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-13T03:55:29.216Z">
+<meta property="og:updated_time" content="2018-05-14T14:52:36.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="水题题解">
-<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-13更新leetcode-09-Palindrome Number 题解：给定一个数字，判断是否为回文数。 样例：121 输出：true 123456789101112/** * @param &amp;#123;number&amp;#125; x * @return &amp;#123;boolean&amp;#125; */var isPalindrome =">
+<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-14更新leetcode-27-Remove Element 题解：给定一个数组和一个目标值，去除数组中存在的目标值，返回数组长度，要求不使用额外空间。 样例：[2,2,3,3] , 3 输出：2 12345678910111213141516171819/** * @param &amp;#123;number[]&amp;#125; nums *">
 
 
 
@@ -387,6 +387,11 @@
         <blockquote>
 <p>对不起，我只做水题，前端就是可以为所欲为。</p>
 </blockquote>
+<h3 id="2018-05-14更新"><a href="#2018-05-14更新" class="headerlink" title="2018-05-14更新"></a>2018-05-14更新</h3><p><a href="https://leetcode.com/problems/remove-element/description/" target="_blank" rel="noopener">leetcode-27-Remove Element</a></p>
+<p>题解：给定一个数组和一个目标值，去除数组中存在的目标值，返回数组长度，要求不使用额外空间。</p>
+<p>样例：[2,2,3,3] , 3</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; val</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> removeElement = <span class="function"><span class="keyword">function</span>(<span class="params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length === <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; nums.length ; i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] === val)&#123;</span><br><span class="line">            nums.splice(i,<span class="number">1</span>);</span><br><span class="line">            removeElement(nums,val);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="2018-05-13更新"><a href="#2018-05-13更新" class="headerlink" title="2018-05-13更新"></a>2018-05-13更新</h3><p><a href="https://leetcode.com/problems/palindrome-number/description/" target="_blank" rel="noopener">leetcode-09-Palindrome Number</a></p>
 <p>题解：给定一个数字，判断是否为回文数。</p>
 <p>样例：121</p>
@@ -705,7 +710,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-13更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-13更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">2.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">3.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">4.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-14更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-14更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-13更新"><span class="nav-number">2.</span> <span class="nav-text">2018-05-13更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">3.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">4.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">5.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
             
 
           </div>

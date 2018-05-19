@@ -5,28 +5,8 @@
     
     
   <url>
-    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
-    <lastmod>2018-05-16T00:57:06.759Z</lastmod>
-    <data>
-        <display>
-        <title>css-布局(未完)</title>
-        <pubTime>2018-03-16T02:56:47.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-         
-           
-             
-              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-05-14T14:52:36.745Z</lastmod>
+    <lastmod>2018-05-19T15:33:33.014Z</lastmod>
     <data>
         <display>
         <title>水题题解</title>
@@ -38,6 +18,26 @@
            
              
               <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
+    <lastmod>2018-05-16T01:01:12.904Z</lastmod>
+    <data>
+        <display>
+        <title>css-布局(未完)</title>
+        <pubTime>2018-03-16T02:56:47.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
           
         </display>
     </data>

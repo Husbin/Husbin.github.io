@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-19更新leetcode-35-Search Insert Position 题解：给定一个排好序的数组和目标值，若数组中存在目标值，输出下标，若不存在，输出目标值若在数组中应处的下标。（可认为数组中不存在重复值） 样例：[2,4,5,7]    5 输出：2 123456789101112131415/** * @param &amp;#1">
+<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-20更新leetcode-58- Length of Last Word 题解：给定一个以空格分隔的字符串，求最后一个单词的长度，若不存在最后一个单词，返回0 样例：”hello world” 输出：5 注意：字符串切割完成之后要进行去除空格的操作，如果去除之后数组长度为空，返回0。 1234567891011121314151617">
 <meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="水题题解">
 <meta property="og:url" content="http://easywork.xin/2018/04/17/algorithm-2/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-19更新leetcode-35-Search Insert Position 题解：给定一个排好序的数组和目标值，若数组中存在目标值，输出下标，若不存在，输出目标值若在数组中应处的下标。（可认为数组中不存在重复值） 样例：[2,4,5,7]    5 输出：2 123456789101112131415/** * @param &amp;#1">
+<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-20更新leetcode-58- Length of Last Word 题解：给定一个以空格分隔的字符串，求最后一个单词的长度，若不存在最后一个单词，返回0 样例：”hello world” 输出：5 注意：字符串切割完成之后要进行去除空格的操作，如果去除之后数组长度为空，返回0。 1234567891011121314151617">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-19T15:33:33.014Z">
+<meta property="og:updated_time" content="2018-05-20T00:38:24.925Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="水题题解">
-<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-19更新leetcode-35-Search Insert Position 题解：给定一个排好序的数组和目标值，若数组中存在目标值，输出下标，若不存在，输出目标值若在数组中应处的下标。（可认为数组中不存在重复值） 样例：[2,4,5,7]    5 输出：2 123456789101112131415/** * @param &amp;#1">
+<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-05-20更新leetcode-58- Length of Last Word 题解：给定一个以空格分隔的字符串，求最后一个单词的长度，若不存在最后一个单词，返回0 样例：”hello world” 输出：5 注意：字符串切割完成之后要进行去除空格的操作，如果去除之后数组长度为空，返回0。 1234567891011121314151617">
 
 
 
@@ -387,6 +387,17 @@
         <blockquote>
 <p>对不起，我只做水题，前端就是可以为所欲为。</p>
 </blockquote>
+<h3 id="2018-05-20更新"><a href="#2018-05-20更新" class="headerlink" title="2018-05-20更新"></a>2018-05-20更新</h3><p><a href="https://leetcode.com/problems/length-of-last-word/description/" target="_blank" rel="noopener">leetcode-58- Length of Last Word</a></p>
+<p>题解：给定一个以空格分隔的字符串，求最后一个单词的长度，若不存在最后一个单词，返回0</p>
+<p>样例：”hello world”</p>
+<p>输出：5</p>
+<p>注意：字符串切割完成之后要进行去除空格的操作，如果去除之后数组长度为空，返回0。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> lengthOfLastWord = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> wordArr = s.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="comment">// 去除空格</span></span><br><span class="line">    <span class="keyword">let</span> wordArrNoEmpty = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; wordArr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(wordArr[i] === <span class="string">''</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        wordArrNoEmpty.push(wordArr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!wordArrNoEmpty || wordArrNoEmpty.length &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> wordArrNoEmpty[wordArrNoEmpty.length<span class="number">-1</span>].length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/implement-strstr/description/" target="_blank" rel="noopener">leetcode-28-Implement strStr()</a></p>
+<p>题解：给定两个字符串，若第二个字符串为第一个字符串的字串，输出下标，否则，返回-1。</p>
+<p>样例： haystack = “hello”, needle = “ll”</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; haystack</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; needle</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> strStr = <span class="function"><span class="keyword">function</span>(<span class="params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> haystack.indexOf(needle);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="2018-05-19更新"><a href="#2018-05-19更新" class="headerlink" title="2018-05-19更新"></a>2018-05-19更新</h3><p><a href="https://leetcode.com/problems/search-insert-position/description/" target="_blank" rel="noopener">leetcode-35-Search Insert Position</a></p>
 <p>题解：给定一个排好序的数组和目标值，若数组中存在目标值，输出下标，若不存在，输出目标值若在数组中应处的下标。（可认为数组中不存在重复值）</p>
 <p>样例：[2,4,5,7]    5</p>
@@ -715,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-19更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-19更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-14更新"><span class="nav-number">2.</span> <span class="nav-text">2018-05-14更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-13更新"><span class="nav-number">3.</span> <span class="nav-text">2018-05-13更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">4.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">5.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">6.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-20更新"><span class="nav-number">1.</span> <span class="nav-text">2018-05-20更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-19更新"><span class="nav-number">2.</span> <span class="nav-text">2018-05-19更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-14更新"><span class="nav-number">3.</span> <span class="nav-text">2018-05-14更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-13更新"><span class="nav-number">4.</span> <span class="nav-text">2018-05-13更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">5.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">6.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">7.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
             
 
           </div>

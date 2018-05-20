@@ -3,6 +3,67 @@
 
 
     
+    
+  <url>
+    <loc>http://easywork.xin/2018/05/20/vue-8/</loc>
+    <lastmod>2018-05-20T09:07:26.705Z</lastmod>
+    <data>
+        <display>
+        <title>vue中的组件通信</title>
+        <pubTime>2018-05-20T08:15:05.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="Vue.js" url="http://easywork.xin/categories/Vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
+    <lastmod>2018-05-20T08:40:02.820Z</lastmod>
+    <data>
+        <display>
+        <title>初识vue.js</title>
+        <pubTime>2017-10-05T14:55:47.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+         
+           
+             
+              <breadCrumb title="Vue.js" url="http://easywork.xin/categories/Vue-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
+    <lastmod>2018-05-20T06:10:23.710Z</lastmod>
+    <data>
+        <display>
+        <title>他山之石，可为己用</title>
+        <pubTime>2018-02-21T13:44:36.000Z</pubTime>
+        
+        <tag>面试奇谈</tag>
+         
+         
+           
+             
+              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
     <lastmod>2018-05-20T00:38:24.925Z</lastmod>
@@ -22,7 +83,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://easywork.xin/2018/03/16/css-6/</loc>
@@ -372,26 +432,6 @@
         <display>
         <title>Vue实例与模板语法</title>
         <pubTime>2017-10-06T10:40:43.000Z</pubTime>
-        
-        <tag>vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="Vue.js" url="http://easywork.xin/categories/Vue-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
-    <lastmod>2018-03-26T03:04:28.953Z</lastmod>
-    <data>
-        <display>
-        <title>初识vue.js</title>
-        <pubTime>2017-10-05T14:55:47.000Z</pubTime>
         
         <tag>vue</tag>
          
@@ -943,26 +983,6 @@
            
              
               <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
-    <lastmod>2018-03-04T03:52:32.044Z</lastmod>
-    <data>
-        <display>
-        <title>他山之石，可为己用</title>
-        <pubTime>2018-02-21T13:44:36.000Z</pubTime>
-        
-        <tag>面试奇谈</tag>
-         
-         
-           
-             
-              <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
           
         </display>
     </data>

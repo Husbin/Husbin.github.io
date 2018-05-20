@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="vue," />
 
 
 
@@ -90,16 +90,18 @@
 
 
 
-<meta name="description" content="与其临渊羡鱼，不如退而结网。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Husbin">
-<meta property="og:url" content="http://easywork.xin/page/13/index.html">
+<meta name="description" content="父组件向子组件通信父组件通过Prop向子组件传递数据。 123456789101112&amp;lt;!--父组件--&amp;gt;&amp;lt;parent-component&amp;gt;  &amp;lt;child-component :dataFromParent=&amp;quot;dataFromParent&amp;quot;&amp;gt;&amp;lt;/child-component&amp;gt;&amp;lt;/parent-component&amp;gt;">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue中的组件通信">
+<meta property="og:url" content="http://easywork.xin/2018/05/20/vue-8/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="与其临渊羡鱼，不如退而结网。">
+<meta property="og:description" content="父组件向子组件通信父组件通过Prop向子组件传递数据。 123456789101112&amp;lt;!--父组件--&amp;gt;&amp;lt;parent-component&amp;gt;  &amp;lt;child-component :dataFromParent=&amp;quot;dataFromParent&amp;quot;&amp;gt;&amp;lt;/child-component&amp;gt;&amp;lt;/parent-component&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-20T09:07:26.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Husbin">
-<meta name="twitter:description" content="与其临渊羡鱼，不如退而结网。">
+<meta name="twitter:title" content="vue中的组件通信">
+<meta name="twitter:description" content="父组件向子组件通信父组件通过Prop向子组件传递数据。 123456789101112&amp;lt;!--父组件--&amp;gt;&amp;lt;parent-component&amp;gt;  &amp;lt;child-component :dataFromParent=&amp;quot;dataFromParent&amp;quot;&amp;gt;&amp;lt;/child-component&amp;gt;&amp;lt;/parent-component&amp;gt;">
 
 
 
@@ -129,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://easywork.xin/page/13/"/>
+  <link rel="canonical" href="http://easywork.xin/2018/05/20/vue-8/"/>
 
 
 
 
 
-  <title>Husbin</title>
+  <title>vue中的组件通信 | Husbin</title>
   
 
 
@@ -164,8 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,9 +269,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -283,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2017/10/08/vue-3/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/05/20/vue-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -300,9 +301,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/08/vue-3/" itemprop="url">计算属性和观察者</a></h2>
+          <h2 class="post-title" itemprop="name headline">vue中的组件通信</h2>
         
 
         <div class="post-meta">
@@ -314,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T18:00:40+08:00">
-                2017-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T16:15:05+08:00">
+                2018-05-20
               </time>
             
 
@@ -354,7 +353,7 @@
 
           
           
-             <span id="/2017/10/08/vue-3/" class="leancloud_visitors" data-flag-title="计算属性和观察者">
+             <span id="/2018/05/20/vue-8/" class="leancloud_visitors" data-flag-title="vue中的组件通信">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -385,18 +384,25 @@
       
 
       
-        
-          
-          计算属性​    直接在模板内的嵌入表达式是非常便利的，但他们实际上是用于简单运算的，在实际开发中很少使用，因为在模板中嵌入太多逻辑会让模板过重且难以维护。例如
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/08/vue-3/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h3 id="父组件向子组件通信"><a href="#父组件向子组件通信" class="headerlink" title="父组件向子组件通信"></a>父组件向子组件通信</h3><p>父组件通过Prop向子组件传递数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--父组件--&gt;</span><br><span class="line">&lt;parent-component&gt;</span><br><span class="line">  &lt;child-component :dataFromParent=&quot;dataFromParent&quot;&gt;&lt;/child-component&gt;</span><br><span class="line">&lt;/parent-component&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--子组件--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default&#123;</span><br><span class="line">    data() &#123;&#125;,</span><br><span class="line">    props:[&apos;dataFromParent&apos;,&apos;dataFromParent2&apos;]</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="子组件向父组件通信"><a href="#子组件向父组件通信" class="headerlink" title="子组件向父组件通信"></a>子组件向父组件通信</h3><p>子组件通过$emit触发事件向父组件发送数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--子组件 child--&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;button @click=&quot;sendData&quot;&gt;Enlarge text&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default&#123;</span><br><span class="line">    data() &#123;&#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      sendData()&#123;</span><br><span class="line">        this.$emit(&quot;dataFromChild&quot;,data);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!--父组件 parent--&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;child-component @sendData=&quot;getData&quot;&gt;&lt;/child-component&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  export default&#123;</span><br><span class="line">    data() &#123;&#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">      getData(data)&#123;</span><br><span class="line">        console.log(data);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="简单应用非父子组件通信"><a href="#简单应用非父子组件通信" class="headerlink" title="简单应用非父子组件通信"></a>简单应用非父子组件通信</h3><p>使用事件总线（Event Bus）进行通信。</p>
+<p>使用一个空的 Vue 实例作为中央事件总线。</p>
+<ul>
+<li>发布消息：bus.$emit(‘EventName’, data)</li>
+<li>订阅消息：bus.$on(‘EventName’,(data)=&gt;{console.log(data)})</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eventbus.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'Vue'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>  <span class="keyword">new</span> Vue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//组件一</span></span><br><span class="line"><span class="keyword">import</span> bus <span class="keyword">from</span> eventbus.js</span><br><span class="line"><span class="comment">//发布事件和数据</span></span><br><span class="line">bus.$emit(<span class="string">'EventName'</span>, data);</span><br><span class="line"></span><br><span class="line"><span class="comment">//组件二</span></span><br><span class="line"><span class="comment">//接收事件和数据，在nounted中，看教程说在created中监听，但是我试过报错了。</span></span><br><span class="line">mounted()&#123;</span><br><span class="line">  bus,$on(<span class="string">'EventName'</span>,(data)=&#123;</span><br><span class="line">    <span class="comment">//todo something</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在组件销毁前解绑事件，防止出现多次捕获事件的情况</span></span><br><span class="line">beforeDestroy()&#123;</span><br><span class="line">  bus.off(<span class="string">'EventName'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="复杂应用非父子组件通信"><a href="#复杂应用非父子组件通信" class="headerlink" title="复杂应用非父子组件通信"></a>复杂应用非父子组件通信</h4><p>使用全局状态管理Vuex。</p>
+<p><a href="https://vuex.vuejs.org/zh-cn/getting-started.html" target="_blank" rel="noopener">文档</a></p>
+<p>每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器，它包含着你的应用中大部分的状态 (state)。Vuex 和单纯的全局对象有以下两点不同：</p>
+<ol>
+<li>Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。</li>
+<li>不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。</li>
+</ol>
+
       
     </div>
     
@@ -406,6 +412,30 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -413,345 +443,64 @@
      
          <div>
           
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/05/20/vue-8/" title="vue中的组件通信">vue中的组件通信</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/05/20/vue-8/" title="vue中的组件通信">http://easywork.xin/2018/05/20/vue-8/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年5月20日 - 16时05分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
       </div>
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2017/10/07/js-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/07/js-1/" itemprop="url">ES6 let，const关键字</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T00:25:13+08:00">
-                2017-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/07/js-1/" class="leancloud_visitors" data-flag-title="ES6 let，const关键字">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          起因Error：let definitions are not supported by current javascript version
-在webstro
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/07/js-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/13/js-13/" rel="next" title="javascript字符串、数组操作（个人字典）">
+                <i class="fa fa-chevron-left"></i> javascript字符串、数组操作（个人字典）
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-     
-         <div>
-          
-      </div>
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2017/10/06/vue-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/06/vue-2/" itemprop="url">Vue实例与模板语法</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-06T18:40:43+08:00">
-                2017-10-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue.js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/06/vue-2/" class="leancloud_visitors" data-flag-title="Vue实例与模板语法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          Vue实例新建一个Vue实例
-每个Vue应用都是通过Vue函数创建一个新的Vue实例开始的：
-12345678910111213let data = &#123
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/06/vue-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-     
-         <div>
-          
-      </div>
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -761,178 +510,18 @@
   </article>
 
 
-    
-      
 
-  
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
 
-  
-  
-  
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2017/10/05/vue_1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Husbin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/img/favicon.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Husbin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/05/vue_1/" itemprop="url">初识vue.js</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T22:55:47+08:00">
-                2017-10-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue.js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/10/05/vue_1/" class="leancloud_visitors" data-flag-title="初识vue.js">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          什么是vue.js
-vue.js是一套构建用户界面的渐进式框架。个人观点，目前大型项目前后端分离已成为趋势，vue采用自底向上增量开发设计，核心库只关注视图层，
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/05/vue_1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-     
-         <div>
-          
-      </div>
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span>
-  </nav>
-
 
 
           </div>
@@ -940,6 +529,10 @@ vue.js是一套构建用户界面的渐进式框架。个人观点，目前大�
 
 
           
+
+  
+
+
 
         </div>
         
@@ -960,8 +553,17 @@ vue.js是一套构建用户界面的渐进式框架。个人观点，目前大�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1055,6 +657,22 @@ vue.js是一套构建用户界面的渐进式框架。个人观点，目前大�
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=548145360&auto=1&height=66"></iframe>        </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件向子组件通信"><span class="nav-number">1.</span> <span class="nav-text">父组件向子组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件向父组件通信"><span class="nav-number">2.</span> <span class="nav-text">子组件向父组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单应用非父子组件通信"><span class="nav-number">3.</span> <span class="nav-text">简单应用非父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂应用非父子组件通信"><span class="nav-number">3.1.</span> <span class="nav-text">复杂应用非父子组件通信</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1176,6 +794,10 @@ vue.js是一套构建用户界面的渐进式框架。个人观点，目前大�
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

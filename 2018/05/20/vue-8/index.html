@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Husbin">
 <meta property="og:description" content="父组件向子组件通信父组件通过Prop向子组件传递数据。 123456789101112&amp;lt;!--父组件--&amp;gt;&amp;lt;parent-component&amp;gt;  &amp;lt;child-component :dataFromParent=&amp;quot;dataFromParent&amp;quot;&amp;gt;&amp;lt;/child-component&amp;gt;&amp;lt;/parent-component&amp;gt;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-20T09:07:26.705Z">
+<meta property="og:updated_time" content="2018-05-20T09:23:28.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中的组件通信">
 <meta name="twitter:description" content="父组件向子组件通信父组件通过Prop向子组件传递数据。 123456789101112&amp;lt;!--父组件--&amp;gt;&amp;lt;parent-component&amp;gt;  &amp;lt;child-component :dataFromParent=&amp;quot;dataFromParent&amp;quot;&amp;gt;&amp;lt;/child-component&amp;gt;&amp;lt;/parent-component&amp;gt;">
@@ -395,7 +395,7 @@
 <li>订阅消息：bus.$on(‘EventName’,(data)=&gt;{console.log(data)})</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eventbus.js</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'Vue'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>  <span class="keyword">new</span> Vue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//组件一</span></span><br><span class="line"><span class="keyword">import</span> bus <span class="keyword">from</span> eventbus.js</span><br><span class="line"><span class="comment">//发布事件和数据</span></span><br><span class="line">bus.$emit(<span class="string">'EventName'</span>, data);</span><br><span class="line"></span><br><span class="line"><span class="comment">//组件二</span></span><br><span class="line"><span class="comment">//接收事件和数据，在nounted中，看教程说在created中监听，但是我试过报错了。</span></span><br><span class="line">mounted()&#123;</span><br><span class="line">  bus,$on(<span class="string">'EventName'</span>,(data)=&#123;</span><br><span class="line">    <span class="comment">//todo something</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在组件销毁前解绑事件，防止出现多次捕获事件的情况</span></span><br><span class="line">beforeDestroy()&#123;</span><br><span class="line">  bus.off(<span class="string">'EventName'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="复杂应用非父子组件通信"><a href="#复杂应用非父子组件通信" class="headerlink" title="复杂应用非父子组件通信"></a>复杂应用非父子组件通信</h4><p>使用全局状态管理Vuex。</p>
+<h3 id="复杂应用非父子组件通信"><a href="#复杂应用非父子组件通信" class="headerlink" title="复杂应用非父子组件通信"></a>复杂应用非父子组件通信</h3><p>使用全局状态管理Vuex。</p>
 <p><a href="https://vuex.vuejs.org/zh-cn/getting-started.html" target="_blank" rel="noopener">文档</a></p>
 <p>每一个 Vuex 应用的核心就是 store（仓库）。“store”基本上就是一个容器，它包含着你的应用中大部分的状态 (state)。Vuex 和单纯的全局对象有以下两点不同：</p>
 <ol>
@@ -667,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件向子组件通信"><span class="nav-number">1.</span> <span class="nav-text">父组件向子组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件向父组件通信"><span class="nav-number">2.</span> <span class="nav-text">子组件向父组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单应用非父子组件通信"><span class="nav-number">3.</span> <span class="nav-text">简单应用非父子组件通信</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂应用非父子组件通信"><span class="nav-number">3.1.</span> <span class="nav-text">复杂应用非父子组件通信</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件向子组件通信"><span class="nav-number">1.</span> <span class="nav-text">父组件向子组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组件向父组件通信"><span class="nav-number">2.</span> <span class="nav-text">子组件向父组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单应用非父子组件通信"><span class="nav-number">3.</span> <span class="nav-text">简单应用非父子组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂应用非父子组件通信"><span class="nav-number">4.</span> <span class="nav-text">复杂应用非父子组件通信</span></a></li></ol></div>
             
 
           </div>

@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
+    <lastmod>2018-05-20T09:25:04.241Z</lastmod>
+    <data>
+        <display>
+        <title>javascript字符串、数组操作（个人字典）</title>
+        <pubTime>2018-05-13T11:51:50.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/05/20/vue-8/</loc>
-    <lastmod>2018-05-20T09:07:26.705Z</lastmod>
+    <lastmod>2018-05-20T09:23:28.358Z</lastmod>
     <data>
         <display>
         <title>vue中的组件通信</title>
@@ -23,6 +42,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
@@ -98,26 +118,6 @@
            
              
               <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
-    <lastmod>2018-05-13T15:03:59.931Z</lastmod>
-    <data>
-        <display>
-        <title>javascript字符串、数组操作（个人字典）</title>
-        <pubTime>2018-05-13T11:51:50.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>

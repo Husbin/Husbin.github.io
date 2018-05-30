@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://easywork.xin/about.html</loc>
+    
+    <lastmod>2018-05-30T01:01:49.571Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/05/30/network-8/</loc>
+    
+    <lastmod>2018-05-30T01:01:10.892Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
+    
+    <lastmod>2018-05-27T04:55:33.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    
+    <lastmod>2018-05-27T03:43:03.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://easywork.xin/2018/05/13/js-13/</loc>
     
     <lastmod>2018-05-20T09:40:27.117Z</lastmod>
@@ -16,13 +44,6 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/about.html</loc>
-    
-    <lastmod>2018-05-20T09:09:55.228Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
     
     <lastmod>2018-05-20T08:40:02.820Z</lastmod>
@@ -33,20 +54,6 @@
     <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
     
     <lastmod>2018-05-20T06:10:23.710Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    
-    <lastmod>2018-05-20T00:38:24.925Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
-    
-    <lastmod>2018-05-16T01:01:12.904Z</lastmod>
     
   </url>
   

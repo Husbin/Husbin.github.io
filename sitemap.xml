@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://easywork.xin/2018/06/06/algorithm-4/</loc>
+    
+    <lastmod>2018-06-06T06:21:48.254Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
+    
+    <lastmod>2018-06-03T01:50:11.120Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    
+    <lastmod>2018-06-02T05:32:35.076Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://easywork.xin/about.html</loc>
     
-    <lastmod>2018-05-30T01:01:49.571Z</lastmod>
+    <lastmod>2018-05-30T01:01:49.572Z</lastmod>
     
   </url>
   
@@ -19,20 +40,6 @@
     <loc>http://easywork.xin/2018/03/16/css-6/</loc>
     
     <lastmod>2018-05-27T04:55:33.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    
-    <lastmod>2018-05-27T03:43:03.790Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
-    
-    <lastmod>2018-05-20T09:40:27.117Z</lastmod>
     
   </url>
   
@@ -67,14 +74,14 @@
   <url>
     <loc>http://easywork.xin/2018/05/05/practice-1/</loc>
     
-    <lastmod>2018-05-06T05:52:42.170Z</lastmod>
+    <lastmod>2018-05-06T05:52:42.171Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/05/03/network-7/</loc>
     
-    <lastmod>2018-05-04T01:35:09.787Z</lastmod>
+    <lastmod>2018-05-04T01:35:09.788Z</lastmod>
     
   </url>
   
@@ -95,7 +102,7 @@
   <url>
     <loc>http://easywork.xin/2018/04/22/css-8/</loc>
     
-    <lastmod>2018-04-22T06:48:42.359Z</lastmod>
+    <lastmod>2018-04-22T06:48:42.360Z</lastmod>
     
   </url>
   
@@ -109,28 +116,28 @@
   <url>
     <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
     
-    <lastmod>2018-04-17T12:36:47.725Z</lastmod>
+    <lastmod>2018-04-17T12:36:47.726Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/31/css-7/</loc>
     
-    <lastmod>2018-03-31T03:53:33.443Z</lastmod>
+    <lastmod>2018-03-31T03:53:33.444Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/27/daily-1/</loc>
     
-    <lastmod>2018-03-27T13:09:34.324Z</lastmod>
+    <lastmod>2018-03-27T13:09:34.325Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/26/base-5/</loc>
     
-    <lastmod>2018-03-26T14:22:49.981Z</lastmod>
+    <lastmod>2018-03-26T14:22:49.982Z</lastmod>
     
   </url>
   
@@ -144,14 +151,14 @@
   <url>
     <loc>http://easywork.xin/2018/03/24/vue-6/</loc>
     
-    <lastmod>2018-03-26T03:05:06.854Z</lastmod>
+    <lastmod>2018-03-26T03:05:06.855Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/21/vue-5/</loc>
     
-    <lastmod>2018-03-26T03:05:03.305Z</lastmod>
+    <lastmod>2018-03-26T03:05:03.306Z</lastmod>
     
   </url>
   
@@ -179,7 +186,7 @@
   <url>
     <loc>http://easywork.xin/2017/11/17/nodejs-1/</loc>
     
-    <lastmod>2018-03-26T03:04:00.658Z</lastmod>
+    <lastmod>2018-03-26T03:04:00.659Z</lastmod>
     
   </url>
   
@@ -193,7 +200,7 @@
   <url>
     <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
     
-    <lastmod>2018-03-26T03:01:07.554Z</lastmod>
+    <lastmod>2018-03-26T03:01:07.555Z</lastmod>
     
   </url>
   
@@ -207,14 +214,14 @@
   <url>
     <loc>http://easywork.xin/2018/01/28/ng2-3/</loc>
     
-    <lastmod>2018-03-26T03:00:59.949Z</lastmod>
+    <lastmod>2018-03-26T03:00:59.950Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2017/11/05/ng2-2/</loc>
     
-    <lastmod>2018-03-26T03:00:56.474Z</lastmod>
+    <lastmod>2018-03-26T03:00:56.475Z</lastmod>
     
   </url>
   
@@ -242,14 +249,14 @@
   <url>
     <loc>http://easywork.xin/categories/index.html</loc>
     
-    <lastmod>2018-03-23T12:57:16.518Z</lastmod>
+    <lastmod>2018-03-23T12:57:16.519Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/tags/index.html</loc>
     
-    <lastmod>2018-03-23T12:45:16.448Z</lastmod>
+    <lastmod>2018-03-23T12:45:16.449Z</lastmod>
     
   </url>
   
@@ -277,14 +284,14 @@
   <url>
     <loc>http://easywork.xin/2018/02/28/network-2/</loc>
     
-    <lastmod>2018-03-23T12:43:21.270Z</lastmod>
+    <lastmod>2018-03-23T12:43:21.271Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/02/25/network-1/</loc>
     
-    <lastmod>2018-03-23T12:43:18.151Z</lastmod>
+    <lastmod>2018-03-23T12:43:18.152Z</lastmod>
     
   </url>
   
@@ -305,7 +312,7 @@
   <url>
     <loc>http://easywork.xin/2018/03/12/js-10/</loc>
     
-    <lastmod>2018-03-14T04:07:49.618Z</lastmod>
+    <lastmod>2018-03-14T04:07:49.619Z</lastmod>
     
   </url>
   
@@ -326,21 +333,21 @@
   <url>
     <loc>http://easywork.xin/2018/03/10/js-9/</loc>
     
-    <lastmod>2018-03-10T05:25:08.351Z</lastmod>
+    <lastmod>2018-03-10T05:25:08.352Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2017/10/21/css-1/</loc>
     
-    <lastmod>2018-03-09T11:48:54.712Z</lastmod>
+    <lastmod>2018-03-09T11:48:54.713Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
     
-    <lastmod>2018-03-09T08:38:27.434Z</lastmod>
+    <lastmod>2018-03-09T08:38:27.435Z</lastmod>
     
   </url>
   
@@ -354,14 +361,14 @@
   <url>
     <loc>http://easywork.xin/resume.html</loc>
     
-    <lastmod>2018-03-09T03:34:47.942Z</lastmod>
+    <lastmod>2018-03-09T03:34:47.943Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/07/js-8/</loc>
     
-    <lastmod>2018-03-07T14:17:27.878Z</lastmod>
+    <lastmod>2018-03-07T14:17:27.879Z</lastmod>
     
   </url>
   
@@ -375,28 +382,28 @@
   <url>
     <loc>http://easywork.xin/2018/03/04/css-3/</loc>
     
-    <lastmod>2018-03-04T09:52:08.988Z</lastmod>
+    <lastmod>2018-03-04T09:52:08.989Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/04/css-2/</loc>
     
-    <lastmod>2018-03-04T09:52:05.759Z</lastmod>
+    <lastmod>2018-03-04T09:52:05.760Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/02/security-1/</loc>
     
-    <lastmod>2018-03-02T12:55:02.263Z</lastmod>
+    <lastmod>2018-03-02T12:55:02.264Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/03/02/js-7/</loc>
     
-    <lastmod>2018-03-02T04:08:44.631Z</lastmod>
+    <lastmod>2018-03-02T04:08:44.632Z</lastmod>
     
   </url>
   
@@ -431,21 +438,21 @@
   <url>
     <loc>http://easywork.xin/2018/02/06/html-1/</loc>
     
-    <lastmod>2018-02-26T01:15:11.094Z</lastmod>
+    <lastmod>2018-02-26T01:15:11.095Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/02/22/design-1/</loc>
     
-    <lastmod>2018-02-25T00:39:25.200Z</lastmod>
+    <lastmod>2018-02-25T00:39:25.201Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://easywork.xin/2018/02/02/the-first-day/</loc>
     
-    <lastmod>2018-02-22T07:01:31.366Z</lastmod>
+    <lastmod>2018-02-22T07:01:31.367Z</lastmod>
     
   </url>
   
@@ -459,7 +466,7 @@
   <url>
     <loc>http://easywork.xin/2017/10/28/this-two-months/</loc>
     
-    <lastmod>2018-02-21T13:45:18.545Z</lastmod>
+    <lastmod>2018-02-21T13:45:18.546Z</lastmod>
     
   </url>
   
@@ -480,7 +487,7 @@
   <url>
     <loc>http://easywork.xin/2018/01/13/base-3/</loc>
     
-    <lastmod>2018-02-03T13:12:01.219Z</lastmod>
+    <lastmod>2018-02-03T13:12:01.220Z</lastmod>
     
   </url>
   

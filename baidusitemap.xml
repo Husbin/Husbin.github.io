@@ -3,10 +3,9 @@
 
 
     
-    
   <url>
     <loc>http://easywork.xin/2018/06/10/practice-2/</loc>
-    <lastmod>2018-06-11T01:56:05.661Z</lastmod>
+    <lastmod>2018-06-11T11:05:10.967Z</lastmod>
     <data>
         <display>
         <title>实习总结</title>
@@ -23,6 +22,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
+    <lastmod>2018-06-11T11:04:03.614Z</lastmod>
+    <data>
+        <display>
+        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
+        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://easywork.xin/2018/06/06/algorithm-4/</loc>

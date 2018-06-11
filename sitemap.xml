@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://easywork.xin/about.html</loc>
+    
+    <lastmod>2018-06-11T02:00:16.084Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://easywork.xin/2018/06/10/practice-2/</loc>
     
-    <lastmod>2018-06-10T07:08:26.709Z</lastmod>
+    <lastmod>2018-06-11T01:56:05.661Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
     
     <lastmod>2018-06-02T05:32:35.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/about.html</loc>
-    
-    <lastmod>2018-05-30T01:01:49.572Z</lastmod>
     
   </url>
   

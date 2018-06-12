@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="前端优化," />
 
 
 
@@ -90,21 +90,23 @@
 
 
 
-<meta name="description" content="css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。 百分数百分数总是相对于另一个值。 颜色 命名颜色：red，blue。。。 用RGB指定颜色：p.one{color:rgb(0%,20%,20%)} 十六进制RGB颜色：h1{color: #FF0000} /*re*/  长度单位绝对长度单位比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc">
-<meta name="keywords" content="css">
+<meta name="description" content="CDN加速实习的时候公司用了这个，不过感觉是运维或者后端的人干的，当时我把项目打包后，他们说要放在cdn上能加速，觉得有点意思。。了解了解。。  内容分发网络（Content delivery network或Content distribution network，缩写：CDN）是指一种通过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他">
+<meta name="keywords" content="前端优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css-鲜为人知的css单位">
-<meta property="og:url" content="http://easywork.xin/2018/03/05/css-4/index.html">
+<meta property="og:title" content="前端优化杂烩">
+<meta property="og:url" content="http://easywork.xin/2018/06/12/optimization-3/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。 百分数百分数总是相对于另一个值。 颜色 命名颜色：red，blue。。。 用RGB指定颜色：p.one{color:rgb(0%,20%,20%)} 十六进制RGB颜色：h1{color: #FF0000} /*re*/  长度单位绝对长度单位比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc">
+<meta property="og:description" content="CDN加速实习的时候公司用了这个，不过感觉是运维或者后端的人干的，当时我把项目打包后，他们说要放在cdn上能加速，觉得有点意思。。了解了解。。  内容分发网络（Content delivery network或Content distribution network，缩写：CDN）是指一种通过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-3fd0eb08b9399c7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-05T06:24:28.461Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-b8e4a7ca012300bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-53177f7295dd475a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-c9ea8da555377a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-816f16a24dde9768.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-06-12T08:27:07.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css-鲜为人知的css单位">
-<meta name="twitter:description" content="css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。 百分数百分数总是相对于另一个值。 颜色 命名颜色：red，blue。。。 用RGB指定颜色：p.one{color:rgb(0%,20%,20%)} 十六进制RGB颜色：h1{color: #FF0000} /*re*/  长度单位绝对长度单位比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="前端优化杂烩">
+<meta name="twitter:description" content="CDN加速实习的时候公司用了这个，不过感觉是运维或者后端的人干的，当时我把项目打包后，他们说要放在cdn上能加速，觉得有点意思。。了解了解。。  内容分发网络（Content delivery network或Content distribution network，缩写：CDN）是指一种通过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7166236-b8e4a7ca012300bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://easywork.xin/2018/03/05/css-4/"/>
+  <link rel="canonical" href="http://easywork.xin/2018/06/12/optimization-3/"/>
 
 
 
 
 
-  <title>css-鲜为人知的css单位 | Husbin</title>
+  <title>前端优化杂烩 | Husbin</title>
   
 
 
@@ -287,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/05/css-4/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/06/12/optimization-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -304,7 +306,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">css-鲜为人知的css单位</h2>
+          <h2 class="post-title" itemprop="name headline">前端优化杂烩</h2>
         
 
         <div class="post-meta">
@@ -316,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T09:09:17+08:00">
-                2018-03-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T09:30:21+08:00">
+                2018-06-12
               </time>
             
 
@@ -339,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/前端优化/" itemprop="url" rel="index">
+                    <span itemprop="name">前端优化</span>
                   </a>
                 </span>
 
@@ -356,7 +358,7 @@
 
           
           
-             <span id="/2018/03/05/css-4/" class="leancloud_visitors" data-flag-title="css-鲜为人知的css单位">
+             <span id="/2018/06/12/optimization-3/" class="leancloud_visitors" data-flag-title="前端优化杂烩">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,29 +389,30 @@
       
 
       
-        <h3 id="css中的值和单位"><a href="#css中的值和单位" class="headerlink" title="css中的值和单位"></a>css中的值和单位</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>整数和实数（小数），整数和实数都可以是正数或者负数。</p>
-<h4 id="百分数"><a href="#百分数" class="headerlink" title="百分数"></a>百分数</h4><p>百分数总是相对于另一个值。</p>
-<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><ul>
-<li>命名颜色：red，blue。。。</li>
-<li>用RGB指定颜色：<code>p.one{color:rgb(0%,20%,20%)}</code></li>
-<li>十六进制RGB颜色：<code>h1{color: #FF0000} /*re*/</code></li>
-</ul>
-<h4 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h4><h5 id="绝对长度单位"><a href="#绝对长度单位" class="headerlink" title="绝对长度单位"></a>绝对长度单位</h5><p>比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc）。</p>
-<h5 id="相对长度单位"><a href="#相对长度单位" class="headerlink" title="相对长度单位"></a>相对长度单位</h5><p>em，ex，px</p>
-<h3 id="鲜为人知的css单位"><a href="#鲜为人知的css单位" class="headerlink" title="鲜为人知的css单位"></a>鲜为人知的css单位</h3><h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><h5 id="em"><a href="#em" class="headerlink" title="em"></a>em</h5><p>em单位被定义为当前字体大小，比如在body上设置一个字体的大小，那么在body元素内的任何子元素的em值都等于这个字体大小。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">      <span class="comment">&lt;!--div将有一个2em的font-size。他是所继承的字体的2倍。--&gt;</span></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 2em;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    111(2*10px)</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        222(2*2*10px)</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            333(2*2*2*10px)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>像上述例子，每个元素内部都级联<code>em</code>定义的字体大小，，则每个div从他们的父节点继承字体大小，带给我们之间增加的字体大小。显示如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h5 id="rem-1"><a href="#rem-1" class="headerlink" title="rem"></a>rem</h5><p>虽然在某些情况下可能需要这个，但是通常你可能想居于一个唯一的度量标准来按比例缩放。在这种情况下，应该使用<code>rem</code>。<code>rem</code>中的r代表<code>root</code>，这等同于<code>font-size</code>基于根元素进行设置；在大多数情况下，根元素为<code>html</code>元素。还是上面的例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 2rem;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    111(2*10px)</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        222(2*10px)</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            333(2*10px)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-3fd0eb08b9399c7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><strong>对网络布局的好处：</strong>rem不是只对定义字体大小有用，比如，你可以使用rem把整个网格系统或者ui样式库基于HTML根元素的字体大小上，然后再特定的地方使用em比例缩放。这将带来更加可预测的字体大小和比例缩放。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.container &#123; width: 70rem; // 70 * 14px = 980px &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="vh和vw"><a href="#vh和vw" class="headerlink" title="vh和vw"></a>vh和vw</h4><p>响应式网页设计技术很大程度上依赖于比例规则。然而，css比例不总是每个问题的最佳解决方案。css宽度是相对于最近的包含父元素。如果你想使用显示窗口的宽度或者高度，而不是父元素的宽度将会怎么样。这正是<code>vh(viewport-height)</code>和<code>vw(viewport-weight)</code>。</p>
-<p><code>vh</code>等于<code>viewport</code>高度的<code>1/100</code>。例如浏览器的高是<code>900px</code>，<code>1vh</code>的值为<code>9px</code>。同理，如果窗口宽度为<code>750px</code>，则<code>1vw</code>的值为<code>7.5px</code>。</p>
-<h4 id="ex-和-ch"><a href="#ex-和-ch" class="headerlink" title="ex 和 ch"></a>ex 和 ch</h4><p><code>ex</code>和<code>ch</code>单位，与<code>em</code>和<code>rem</code>相似，依赖于当前字体和字体大小。然而，与<code>em</code>和<code>rem</code>不同的是，这两个单位只也依赖于<code>font-family</code>，因为它们被定为基于特殊字体的法案。</p>
-<h4 id="vmin-和-vmax"><a href="#vmin-和-vmax" class="headerlink" title="vmin 和 vmax"></a>vmin 和 vmax</h4><p><code>vh</code>和<code>vm</code>总是与视口的高度和宽度有关，与之不同的，<code>vmin</code>和<code>vmax</code>是与这次宽度和高度的最大值或最小值有关，取决于哪个更大和更小。例如，如果浏览器设置为<code>1100px</code>宽、<code>700px</code>高，<code>1vmin</code>会是<code>7px</code>,<code>1vmax</code>为<code>11px</code>。然而，如果宽度设置为<code>800px</code>，高度设置为<code>1080px</code>，<code>1vmin</code>将会等于<code>8px</code>而<code>1vmax</code>将会是<code>10.8px</code>。</p>
-<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><p><a href="https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html" target="_blank" rel="noopener">七个你可能不了解的CSS单位</a></p>
+        <h3 id="CDN加速"><a href="#CDN加速" class="headerlink" title="CDN加速"></a>CDN加速</h3><p>实习的时候公司用了这个，不过感觉是运维或者后端的人干的，当时我把项目打包后，他们说要放在cdn上能加速，觉得有点意思。。了解了解。。</p>
+<blockquote>
+<p>内容分发网络（Content delivery network或Content distribution network，缩写：CDN）是指一种通过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 </p>
+</blockquote>
+<p>CDN主要功能是在不同的地点缓存内容，通过负载均衡技术，将用户的请求定向到最合适的缓存服务器上去获取内容，比如说，是北京的用户，我们让他访问北京的节点，深圳的用户，我们让他访问深圳的节点。通过就近访问，加速用户对网站的访问。解决Internet网络拥堵状况，提高用户访问网络的响应速度。</p>
+<p><strong>配置CND路径：/config/index.js文件中，修改assetsPublicPath字段，设置为cdn前缀即可。</strong></p>
+<h3 id="webpack-gzip压缩"><a href="#webpack-gzip压缩" class="headerlink" title="webpack gzip压缩"></a>webpack gzip压缩</h3><p>基于vue</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm install compression-webpack-plugin</span><br><span class="line"></span><br><span class="line"><span class="comment">//config/index.js</span></span><br><span class="line">productionGzip: <span class="literal">true</span>,		<span class="comment">//将这个字段设置为true</span></span><br><span class="line"></span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>查看效果：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7166236-b8e4a7ca012300bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>这个方案，需要服务端的支持，nginx需要开启gzip支持。</p>
+<p><a href="https://www.cnblogs.com/lggggg/p/8295169.html" target="_blank" rel="noopener">vue单页面打包文件大？首次加载慢？nginx带你飞，从7.5M到1.3M蜕变</a></p>
+<h3 id="打包分析"><a href="#打包分析" class="headerlink" title="打包分析"></a>打包分析</h3><p>项目功能做完之后，或者在项目进行的过程中，有时候想优化却无从下手，或者有时候我们优化某一个模块，却发现再怎么优化也提升不了多少性能。。所以，又目的优化很重要。小伙伴介绍的一种方法（滑稽：<a href="https://www.npmjs.com/package/webpack-bundle-analyzer" target="_blank" rel="noopener">Webpack Bundle Analyzer</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//安装依赖</span></span><br><span class="line">npm install --save-dev webpack-bundle-analyzer</span><br><span class="line"><span class="comment">//webpack配置 /build/webpack.prod.conf.js</span></span><br><span class="line"><span class="keyword">const</span> BundleAnalyzerPlugin = <span class="built_in">require</span>(<span class="string">'webpack-bundle-analyzer'</span>).BundleAnalyzerPlugin;</span><br><span class="line">plugins: [<span class="keyword">new</span> BundleAnalyzerPlugin(),]</span><br></pre></td></tr></table></figure>
+<p>然后再每次打包的时候，这个工具会自动开启一个服务，用来显示项目中各个模块所占的大小。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7166236-53177f7295dd475a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="组件按需加载"><a href="#组件按需加载" class="headerlink" title="组件按需加载"></a>组件按需加载</h3><p>未加入按需加载时：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7166236-c9ea8da555377a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><a href="https://router.vuejs.org/zh/guide/advanced/lazy-loading.html" target="_blank" rel="noopener">路由懒加载</a>：结合 Vue 的<a href="https://cn.vuejs.org/guide/components.html#%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6" target="_blank" rel="noopener">异步组件</a>和 Webpack 的<a href="https://doc.webpack-china.org/guides/code-splitting-async/#require-ensure-/" target="_blank" rel="noopener">代码分割功能</a>，轻松实现路由组件的懒加载。 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line">Vue.use(Router);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  mode: <span class="string">'hash'</span>,</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/'</span>,</span><br><span class="line">      component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'../components/HelloWorld'</span>],resolve)</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path: <span class="string">'/normal'</span>,</span><br><span class="line">      component: <span class="function"><span class="params">resolve</span> =&gt;</span> <span class="built_in">require</span>([<span class="string">'../components/NormalRem'</span>],resolve)</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>组件间的依赖是独立的。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7166236-816f16a24dde9768.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 
       
     </div>
@@ -459,16 +462,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://easywork.xin/2018/03/05/css-4/" title="css-鲜为人知的css单位">css-鲜为人知的css单位</a>
+              <a href="http://easywork.xin/2018/06/12/optimization-3/" title="前端优化杂烩">前端优化杂烩</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://easywork.xin/2018/03/05/css-4/" title="css-鲜为人知的css单位">http://easywork.xin/2018/03/05/css-4/</a>
+              <a href="http://easywork.xin/2018/06/12/optimization-3/" title="前端优化杂烩">http://easywork.xin/2018/06/12/optimization-3/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2018年3月5日 - 09时03分
+                <strong>发布时间：</strong>2018年6月12日 - 09时06分
             </li>
 
             <li class="post-copyright-license">
@@ -481,7 +484,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/前端优化/" rel="tag"># 前端优化</a>
           
         </div>
       
@@ -494,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/04/css-3/" rel="next" title="css-结构和层叠">
-                <i class="fa fa-chevron-left"></i> css-结构和层叠
+              <a href="/2018/06/11/practice-3/" rel="next" title="基于Vue移动端自适应方案与视网膜1px问题">
+                <i class="fa fa-chevron-left"></i> 基于Vue移动端自适应方案与视网膜1px问题
               </a>
             
           </div>
@@ -503,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/07/optimization-1/" rel="prev" title="优化总体路线">
-                优化总体路线 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -679,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#css中的值和单位"><span class="nav-number">1.</span> <span class="nav-text">css中的值和单位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字"><span class="nav-number">1.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#百分数"><span class="nav-number">1.2.</span> <span class="nav-text">百分数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">1.3.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长度单位"><span class="nav-number">1.4.</span> <span class="nav-text">长度单位</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#绝对长度单位"><span class="nav-number">1.4.1.</span> <span class="nav-text">绝对长度单位</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对长度单位"><span class="nav-number">1.4.2.</span> <span class="nav-text">相对长度单位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲜为人知的css单位"><span class="nav-number">2.</span> <span class="nav-text">鲜为人知的css单位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rem"><span class="nav-number">2.1.</span> <span class="nav-text">rem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#em"><span class="nav-number">2.1.1.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rem-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">rem</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vh和vw"><span class="nav-number">2.2.</span> <span class="nav-text">vh和vw</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ex-和-ch"><span class="nav-number">2.3.</span> <span class="nav-text">ex 和 ch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vmin-和-vmax"><span class="nav-number">2.4.</span> <span class="nav-text">vmin 和 vmax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reference"><span class="nav-number">2.5.</span> <span class="nav-text">reference</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CDN加速"><span class="nav-number">1.</span> <span class="nav-text">CDN加速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-gzip压缩"><span class="nav-number">2.</span> <span class="nav-text">webpack gzip压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打包分析"><span class="nav-number">3.</span> <span class="nav-text">打包分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件按需加载"><span class="nav-number">4.</span> <span class="nav-text">组件按需加载</span></a></li></ol></div>
             
 
           </div>

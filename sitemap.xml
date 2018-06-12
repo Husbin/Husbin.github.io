@@ -2,9 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://easywork.xin/about.html</loc>
+    
+    <lastmod>2018-06-12T08:29:31.708Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/06/12/optimization-3/</loc>
+    
+    <lastmod>2018-06-12T08:27:07.854Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
+    
+    <lastmod>2018-06-12T01:28:14.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
+    
+    <lastmod>2018-06-11T14:48:41.611Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://easywork.xin/2018/06/10/practice-2/</loc>
     
-    <lastmod>2018-06-11T11:05:10.967Z</lastmod>
+    <lastmod>2018-06-11T11:13:10.909Z</lastmod>
     
   </url>
   
@@ -16,23 +44,9 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/about.html</loc>
-    
-    <lastmod>2018-06-11T11:03:56.871Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/2018/06/06/algorithm-4/</loc>
     
     <lastmod>2018-06-06T06:21:48.254Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
-    
-    <lastmod>2018-06-03T01:50:11.120Z</lastmod>
     
   </url>
   
@@ -355,13 +369,6 @@
     <loc>http://easywork.xin/2017/10/21/css-1/</loc>
     
     <lastmod>2018-03-09T11:48:54.713Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/03/07/optimization-1/</loc>
-    
-    <lastmod>2018-03-09T08:38:27.435Z</lastmod>
     
   </url>
   

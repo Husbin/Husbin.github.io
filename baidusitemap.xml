@@ -3,9 +3,150 @@
 
 
     
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/25/css-9/</loc>
+    <lastmod>2018-06-25T03:57:11.818Z</lastmod>
+    <data>
+        <display>
+        <title>css3-animation实现雪花效果</title>
+        <pubTime>2018-06-25T02:02:46.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/22/js-15/</loc>
+    <lastmod>2018-06-25T02:02:47.027Z</lastmod>
+    <data>
+        <display>
+        <title>深浅拷贝</title>
+        <pubTime>2018-06-22T11:37:55.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
+    <lastmod>2018-06-23T13:27:21.730Z</lastmod>
+    <data>
+        <display>
+        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
+        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
+    <lastmod>2018-06-23T12:37:12.783Z</lastmod>
+    <data>
+        <display>
+        <title>总结几个Angular2与ios wechat的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>Angular2</tag>
+         
+         
+           
+             
+              <breadCrumb title="Angular2" url="http://easywork.xin/categories/Angular2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/05/03/network-7/</loc>
+    <lastmod>2018-06-22T14:12:43.184Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP发展历程</title>
+        <pubTime>2018-05-03T13:07:43.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/10/js-9/</loc>
+    <lastmod>2018-06-20T12:50:13.379Z</lastmod>
+    <data>
+        <display>
+        <title>js中的正则表达式</title>
+        <pubTime>2018-03-10T01:30:06.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-06-20T03:18:43.486Z</lastmod>
+    <data>
+        <display>
+        <title>水题题解</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://easywork.xin/2018/06/19/js-14/</loc>
-    <lastmod>2018-06-19T09:23:48.522Z</lastmod>
+    <lastmod>2018-06-19T13:19:53.099Z</lastmod>
     <data>
         <display>
         <title>js链式调用</title>
@@ -163,7 +304,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://easywork.xin/2018/06/12/optimization-3/</loc>
     <lastmod>2018-06-12T08:27:07.854Z</lastmod>
@@ -205,52 +345,12 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
-    <lastmod>2018-06-11T11:04:03.614Z</lastmod>
-    <data>
-        <display>
-        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
-        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/06/06/algorithm-4/</loc>
     <lastmod>2018-06-06T06:21:48.254Z</lastmod>
     <data>
         <display>
         <title>数组乱序</title>
         <pubTime>2018-06-06T02:28:27.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-06-02T05:32:35.076Z</lastmod>
-    <data>
-        <display>
-        <title>水题题解</title>
-        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
         
         <tag>algorithm</tag>
          
@@ -706,26 +806,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
-    <lastmod>2018-03-26T03:01:07.555Z</lastmod>
-    <data>
-        <display>
-        <title>总结几个Angular2与ios wechat的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
-        
-        <tag>Angular2</tag>
-         
-         
-           
-             
-              <breadCrumb title="Angular2" url="http://easywork.xin/categories/Angular2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/02/05/ng2-4/</loc>
     <lastmod>2018-03-26T03:01:04.164Z</lastmod>
     <data>
@@ -982,26 +1062,6 @@
            
              
               <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/10/js-9/</loc>
-    <lastmod>2018-03-10T05:25:08.352Z</lastmod>
-    <data>
-        <display>
-        <title>js中的正则表达式</title>
-        <pubTime>2018-03-10T01:30:06.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>

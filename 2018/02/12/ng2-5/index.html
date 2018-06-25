@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Husbin">
 <meta property="og:description" content="问题一：ios微信表单填写时，点击之后表单被放大： 解决：在&amp;lt;meta&amp;gt;增加user-scalable：允许使用者缩放，1 or 0 (yes or no) 1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&amp;gt; 问题二：ios微信返回时，会从缓存直接加载">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-26T03:01:07.555Z">
+<meta property="og:updated_time" content="2018-06-23T12:37:12.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结几个Angular2与ios wechat的问题">
 <meta name="twitter:description" content="问题一：ios微信表单填写时，点击之后表单被放大： 解决：在&amp;lt;meta&amp;gt;增加user-scalable：允许使用者缩放，1 or 0 (yes or no) 1&amp;lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&amp;gt; 问题二：ios微信返回时，会从缓存直接加载">
@@ -404,6 +404,12 @@
 <p><strong>结论：</strong>微信浏览器内核可能不支持es6的新特新或者不支持其中的某个特性，把相应的包填充进去之后就能正常运行了。（感觉脱去了IE6的帽子之后又扣上了IE9的帽子。。）</p>
 <h3 id="浏览器兼容问题"><a href="#浏览器兼容问题" class="headerlink" title="浏览器兼容问题"></a>浏览器兼容问题</h3><p>使用babel将es6转化为兼容的es5语法。</p>
 <p>使用polyfills。</p>
+<h3 id="Angular2-优势"><a href="#Angular2-优势" class="headerlink" title="Angular2 优势"></a>Angular2 优势</h3><h4 id="跨平台"><a href="#跨平台" class="headerlink" title="跨平台"></a>跨平台</h4><h5 id="渐进式的WebApp"><a href="#渐进式的WebApp" class="headerlink" title="渐进式的WebApp"></a>渐进式的WebApp</h5><p>使用现代web平台的功能来实现应用程序般的用户体验。高性能、离线和零安装。 </p>
+<h5 id="原生应用"><a href="#原生应用" class="headerlink" title="原生应用"></a>原生应用</h5><p>通过使用Ionic Framework、NativeScript和React Native的策略来创建原生移动应用。 </p>
+<h5 id="桌面应用"><a href="#桌面应用" class="headerlink" title="桌面应用"></a>桌面应用</h5><p>通过使用相同的、我们学过的、为了Web的Angular方法添加上可访问原生操作系统API的能力，来创建可在Mac、Windows和Linux多平台上安装的桌面应用。 </p>
+<h4 id="Typescript"><a href="#Typescript" class="headerlink" title="Typescript"></a>Typescript</h4><p>完全面向对象，静态类型，提供静态检查，现有 ES6+ 的超集，官方提供的编译器能够支持编译到 ES5，ES6，贴合工程化的需要，适合团队使用，学习成本不高 </p>
+<p> 依赖注入：angular2的基于类型做依赖注入比基于变量名作依赖注入安全</p>
+<h4 id="命令行操作"><a href="#命令行操作" class="headerlink" title="命令行操作"></a>命令行操作</h4><p>命令行工具：从快速开始构建、添加组件和测试，然后到快速的部署。 </p>
 
       
     </div>
@@ -588,7 +594,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">69</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -673,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一："><span class="nav-number">1.</span> <span class="nav-text">问题一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二："><span class="nav-number">2.</span> <span class="nav-text">问题二：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三："><span class="nav-number">3.</span> <span class="nav-text">问题三：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器兼容问题"><span class="nav-number">4.</span> <span class="nav-text">浏览器兼容问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一："><span class="nav-number">1.</span> <span class="nav-text">问题一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二："><span class="nav-number">2.</span> <span class="nav-text">问题二：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三："><span class="nav-number">3.</span> <span class="nav-text">问题三：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器兼容问题"><span class="nav-number">4.</span> <span class="nav-text">浏览器兼容问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular2-优势"><span class="nav-number">5.</span> <span class="nav-text">Angular2 优势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跨平台"><span class="nav-number">5.1.</span> <span class="nav-text">跨平台</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#渐进式的WebApp"><span class="nav-number">5.1.1.</span> <span class="nav-text">渐进式的WebApp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原生应用"><span class="nav-number">5.1.2.</span> <span class="nav-text">原生应用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#桌面应用"><span class="nav-number">5.1.3.</span> <span class="nav-text">桌面应用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Typescript"><span class="nav-number">5.2.</span> <span class="nav-text">Typescript</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行操作"><span class="nav-number">5.3.</span> <span class="nav-text">命令行操作</span></a></li></ol></li></ol></div>
             
 
           </div>

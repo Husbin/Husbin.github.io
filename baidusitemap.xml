@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-06-29T13:58:20.011Z</lastmod>
+    <data>
+        <display>
+        <title>水题题解</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/06/25/css-9/</loc>
-    <lastmod>2018-06-25T03:57:11.818Z</lastmod>
+    <lastmod>2018-06-25T13:00:04.224Z</lastmod>
     <data>
         <display>
         <title>css3-animation实现雪花效果</title>
@@ -23,6 +42,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://easywork.xin/2018/06/22/js-15/</loc>
@@ -118,26 +138,6 @@
            
              
               <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-06-20T03:18:43.486Z</lastmod>
-    <data>
-        <display>
-        <title>水题题解</title>
-        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
           
         </display>
     </data>

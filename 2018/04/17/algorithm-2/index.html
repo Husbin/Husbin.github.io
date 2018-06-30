@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="algorithm," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-06-20更新leetcode-121-Best Time to Buy and Sell Stock  题解：给定一个数组，n个元素表示n天，每个元素代表当天股票的价格，求最大利润（买入-卖出）。假设第i天的价格最低是n，第k天的价格最大是m，maxprofit = m-n，其中i&amp;lt;k。 样例：[7,1,5,3,6,4] 输出：5。">
+<meta name="keywords" content="algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="水题题解">
+<meta property="og:url" content="http://easywork.xin/2018/04/17/algorithm-2/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-06-20更新leetcode-121-Best Time to Buy and Sell Stock  题解：给定一个数组，n个元素表示n天，每个元素代表当天股票的价格，求最大利润（买入-卖出）。假设第i天的价格最低是n，第k天的价格最大是m，maxprofit = m-n，其中i&amp;lt;k。 样例：[7,1,5,3,6,4] 输出：5。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-29T14:04:55.485Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="水题题解">
+<meta name="twitter:description" content="对不起，我只做水题，前端就是可以为所欲为。  2018-06-20更新leetcode-121-Best Time to Buy and Sell Stock  题解：给定一个数组，n个元素表示n天，每个元素代表当天股票的价格，求最大利润（买入-卖出）。假设第i天的价格最低是n，第k天的价格最大是m，maxprofit = m-n，其中i&amp;lt;k。 样例：[7,1,5,3,6,4] 输出：5。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/04/17/algorithm-2/"/>
+
+
+
+
+
+  <title>水题题解 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/04/17/algorithm-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">水题题解</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T20:24:02+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/17/algorithm-2/" class="leancloud_visitors" data-flag-title="水题题解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>对不起，我只做水题，前端就是可以为所欲为。</p>
+</blockquote>
+<h3 id="2018-06-20更新"><a href="#2018-06-20更新" class="headerlink" title="2018-06-20更新"></a>2018-06-20更新</h3><p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/" target="_blank" rel="noopener">leetcode-121-Best Time to Buy and Sell Stock </a></p>
+<p>题解：给定一个数组，n个元素表示n天，每个元素代表当天股票的价格，求最大利润（买入-卖出）。假设第i天的价格最低是n，第k天的价格最大是m，maxprofit = m-n，其中i&lt;k。</p>
+<p>样例：[7,1,5,3,6,4]</p>
+<p>输出：5。（第二天1元，第5天6元，6-1=5）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> maxProfit = <span class="function"><span class="keyword">function</span> (<span class="params">prices</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!prices || prices.length &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> profitArr = [];     <span class="comment">//存放每一轮得出的差值</span></span><br><span class="line">    <span class="keyword">let</span> maxProfitArr = [];  <span class="comment">//存放每一轮的最大值</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; prices.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> temp = prices[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i+<span class="number">1</span> ; j &lt; prices.length ; j++)&#123;</span><br><span class="line">            profitArr.push(prices[j]-temp);</span><br><span class="line">        &#125;</span><br><span class="line">        maxProfitArr.push(<span class="built_in">Math</span>.max(...profitArr));</span><br><span class="line">        <span class="comment">//中间数组用完清空</span></span><br><span class="line">        profitArr = [];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> max = <span class="built_in">Math</span>.max(...maxProfitArr);</span><br><span class="line">    <span class="keyword">if</span>(max &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(maxProfit([<span class="number">7</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">4</span>]))</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank" rel="noopener">leetcode-122-Best Time to Buy and Sell Stock II</a></p>
+<p>题解：假设有一个数组，其中第<em>i</em> 个元素是第<em>i</em>天给定股票的价格。 设计一个算法来找到最大的利润。您可以根据需要完成尽可能多的交易（即多次买入和卖出一次股票）。注意：不得同时进行多笔交易（即您必须在再次购买之前出售股票）。</p>
+<p>输入：[7,1,5,3,6,4]</p>
+<p>输出：7（在第2天买入（价格= 1）并在第3天卖出（价格= 5），利润= 5-1 = 4。然后在第4天购买（价格= 3）并在第5天卖出（价格= 6），利润= 6-3 = 3。）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> maxProfit = <span class="function"><span class="keyword">function</span> (<span class="params">prices</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(prices == <span class="literal">null</span> || prices.length &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> profit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span> ; i &lt; prices.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> fast = prices[i];</span><br><span class="line">        <span class="keyword">let</span> slow = prices[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(fast &gt; slow)&#123;</span><br><span class="line">            profit += fast - slow;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> profit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-06-20更新-1"><a href="#2018-06-20更新-1" class="headerlink" title="2018-06-20更新"></a>2018-06-20更新</h3><p><a href="https://leetcode.com/problems/plus-one/description/" target="_blank" rel="noopener">leetcode-66-Plus One</a></p>
+<p>题解：给定一个数字数组，最后一个元素+1，输出新数组。</p>
+<p>样例：[1,2,3,4];(1234)</p>
+<p>输出：[1,2,3,5]。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> plusOne = <span class="function"><span class="keyword">function</span>(<span class="params">digits</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = digits.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        digits[i] = (digits[i] + <span class="number">1</span>) % <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//检测第一个元素是否为0</span></span><br><span class="line">        <span class="keyword">if</span> (digits[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> digits;</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;</span><br><span class="line">    digits.unshift(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> digits;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-06-02更新"><a href="#2018-06-02更新" class="headerlink" title="2018-06-02更新"></a>2018-06-02更新</h3><p><a href="https://leetcode.com/problems/maximum-subarray/description/" target="_blank" rel="noopener">leetcode-53-Maximum Subarray </a></p>
+<p>题解：给定一个数组，求子序列中和最大的序列，返回最大的和</p>
+<p>样例：[-2,1,-3,4,-1,2,1,-5,4]</p>
+<p>输出：6（[4,-1,2,1]）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxSubArray = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> last = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> max = nums[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> num <span class="keyword">of</span> nums)&#123;</span><br><span class="line">        <span class="keyword">if</span>(last&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            last += num;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            last = num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(last&gt;max)&#123;</span><br><span class="line">            max = last;		<span class="comment">//保留最大值</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-05-26更新"><a href="#2018-05-26更新" class="headerlink" title="2018-05-26更新"></a>2018-05-26更新</h3><p><a href="https://leetcode.com/problems/sqrtx/description/" target="_blank" rel="noopener">leetcode-69-Sqrt(x)</a></p>
+<p>题解：输入一个目标值，返回目标值的平方根</p>
+<p>样例：4    8</p>
+<p>输出：2    2(2.8…取整)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; x</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> mySqrt = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseInt</span>(<span class="built_in">Math</span>.sqrt(x));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-05-20更新"><a href="#2018-05-20更新" class="headerlink" title="2018-05-20更新"></a>2018-05-20更新</h3><p><a href="https://leetcode.com/problems/length-of-last-word/description/" target="_blank" rel="noopener">leetcode-58- Length of Last Word</a></p>
+<p>题解：给定一个以空格分隔的字符串，求最后一个单词的长度，若不存在最后一个单词，返回0</p>
+<p>样例：”hello world”</p>
+<p>输出：5</p>
+<p>注意：字符串切割完成之后要进行去除空格的操作，如果去除之后数组长度为空，返回0。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> lengthOfLastWord = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> wordArr = s.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="comment">// 去除空格</span></span><br><span class="line">    <span class="keyword">let</span> wordArrNoEmpty = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; wordArr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(wordArr[i] === <span class="string">''</span>)&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        wordArrNoEmpty.push(wordArr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!wordArrNoEmpty || wordArrNoEmpty.length &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> wordArrNoEmpty[wordArrNoEmpty.length<span class="number">-1</span>].length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/implement-strstr/description/" target="_blank" rel="noopener">leetcode-28-Implement strStr()</a></p>
+<p>题解：给定两个字符串，若第二个字符串为第一个字符串的子串，输出下标，否则，返回-1。</p>
+<p>样例： haystack = “hello”, needle = “ll”</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; haystack</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; needle</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> strStr = <span class="function"><span class="keyword">function</span>(<span class="params">haystack, needle</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> haystack.indexOf(needle);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-05-19更新"><a href="#2018-05-19更新" class="headerlink" title="2018-05-19更新"></a>2018-05-19更新</h3><p><a href="https://leetcode.com/problems/search-insert-position/description/" target="_blank" rel="noopener">leetcode-35-Search Insert Position</a></p>
+<p>题解：给定一个排好序的数组和目标值，若数组中存在目标值，输出下标，若不存在，输出目标值若在数组中应处的下标。（可认为数组中不存在重复值）</p>
+<p>样例：[2,4,5,7]    5</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> searchInsert = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(nums.indexOf(target) &lt; <span class="number">0</span>)&#123;</span><br><span class="line">    nums.push(target);</span><br><span class="line">    <span class="comment">//此处做了排序，不知道如何利用已经排好序这个条件</span></span><br><span class="line">    nums.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">    <span class="keyword">return</span> nums.indexOf(target);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> nums.indexOf(target);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-05-14更新"><a href="#2018-05-14更新" class="headerlink" title="2018-05-14更新"></a>2018-05-14更新</h3><p><a href="https://leetcode.com/problems/remove-element/description/" target="_blank" rel="noopener">leetcode-27-Remove Element</a></p>
+<p>题解：给定一个数组和一个目标值，去除数组中存在的目标值，返回数组长度，要求不使用额外空间。</p>
+<p>样例：[2,2,3,3] , 3</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; val</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> removeElement = <span class="function"><span class="keyword">function</span>(<span class="params">nums, val</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length === <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; nums.length ; i ++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] === val)&#123;</span><br><span class="line">            nums.splice(i,<span class="number">1</span>);</span><br><span class="line">            removeElement(nums,val);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-05-13更新"><a href="#2018-05-13更新" class="headerlink" title="2018-05-13更新"></a>2018-05-13更新</h3><p><a href="https://leetcode.com/problems/palindrome-number/description/" target="_blank" rel="noopener">leetcode-09-Palindrome Number</a></p>
+<p>题解：给定一个数字，判断是否为回文数。</p>
+<p>样例：121</p>
+<p>输出：true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; x</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> xStr = <span class="built_in">String</span>(x).split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">if</span>(x === <span class="built_in">parseInt</span>(xStr))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/" target="_blank" rel="noopener">leetcode-26-Remove Duplicates from Sorted Array</a></p>
+<p>题解：给定一个排好序的数组，去除重复元素，返回数组长度，空间复杂度为O(1)，不能使用辅助空间。</p>
+<p>样例：[1,1,2]</p>
+<p>输出：2</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> removeDuplicates = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; ++i) &#123;</span><br><span class="line">    <span class="keyword">while</span>(nums[i] === nums[i + <span class="number">1</span>]) &#123;</span><br><span class="line">      nums.splice(i + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> nums.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-05-12更新"><a href="#2018-05-12更新" class="headerlink" title="2018-05-12更新"></a>2018-05-12更新</h3><p><a href="https://leetcode.com/problems/longest-common-prefix/description/" target="_blank" rel="noopener">leetcode-14-Longest Common Prefix</a></p>
+<p>题解：给定一个字符串数组，输出最长前缀，不存在输出空字符。</p>
+<p>样例：[“flower”,”flow”,”flight”]</p>
+<p>输出：”fl”</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span>(<span class="params">strs</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prefix = strs[<span class="number">0</span>] || <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; strs.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> str = strs[i];</span><br><span class="line">        <span class="keyword">while</span> (str.indexOf(prefix) != <span class="number">0</span>) &#123;</span><br><span class="line">            prefix = prefix.substr(<span class="number">0</span>, prefix.length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prefix;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/valid-parentheses/description/" target="_blank" rel="noopener">leetcode-20-Valid Parentheses</a></p>
+<p>题解：给定一串只包含’(){}[]’的字符串，进行有效性判断。</p>
+<p>输入：{[()]}</p>
+<p>输出：true</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string&#125; s</span></span><br><span class="line"><span class="comment"> * @return &#123;boolean&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValid = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [];</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;</span><br><span class="line">        <span class="string">']'</span>: <span class="string">'['</span>,</span><br><span class="line">        <span class="string">'&#125;'</span>: <span class="string">'&#123;'</span>,</span><br><span class="line">        <span class="string">')'</span>: <span class="string">'('</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> strArr = s.split(<span class="string">""</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> elem <span class="keyword">of</span> strArr) &#123;</span><br><span class="line">        arr.push(elem);</span><br><span class="line">        <span class="keyword">if</span>(elem === <span class="string">']'</span> || elem === <span class="string">'&#125;'</span> || elem === <span class="string">')'</span>) &#123;</span><br><span class="line">            arr.pop();</span><br><span class="line">            <span class="keyword">if</span>(arr.pop() != obj[elem]) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr.length == <span class="number">0</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>好吧，好好复习下字符串和数组的知识，惹不起惹不起。</p>
+<p>###2018-05-06更新</p>
+<p><a href="https://leetcode.com/problems/roman-to-integer/description/" target="_blank" rel="noopener">leetcode-13-Roman to Integer</a></p>
+<p>题解：给定一串罗马数字以及转化规则，计算转化结果</p>
+<p>样例：”III”</p>
+<p>输出：3</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这题能吸收一些基础知识。。太菜了。。。</span></span><br><span class="line"><span class="comment">//romanNum['I'] === 1</span></span><br><span class="line"><span class="comment">//for 循环中可以改变迭代变量 i 。。</span></span><br><span class="line"><span class="keyword">var</span> romanToInt = <span class="function"><span class="keyword">function</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> romanNum = &#123;</span><br><span class="line">        <span class="string">"I"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"V"</span> : <span class="number">5</span>,</span><br><span class="line">        <span class="string">"X"</span> : <span class="number">10</span>,</span><br><span class="line">        <span class="string">"L"</span> : <span class="number">50</span>,</span><br><span class="line">        <span class="string">"C"</span> : <span class="number">100</span>,</span><br><span class="line">        <span class="string">"D"</span> : <span class="number">500</span>,</span><br><span class="line">        <span class="string">"M"</span> : <span class="number">1000</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> ronabInt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;string.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(romanNum[string[i+<span class="number">1</span>]] &gt; romanNum[string[i]])&#123;</span><br><span class="line">            ronabInt += romanNum[string[i+<span class="number">1</span>]] - romanNum[string[i]];</span><br><span class="line">            i++;   						<span class="comment">/*在下输了，基础不行。。。*/</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            ronabInt += romanNum[string[i]];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(ronabInt);</span><br><span class="line">    <span class="keyword">return</span> ronabInt;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/reverse-integer/description/" target="_blank" rel="noopener">leetcode-7-Reverse Integer</a></p>
+<p>题解：给出一个数字，进行翻转，若翻转之后溢出，返回0。</p>
+<p>样例：123</p>
+<p>输出：321</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverse = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> numArray = <span class="built_in">String</span>(x).split(<span class="string">''</span>);</span><br><span class="line">    <span class="keyword">let</span> num = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">if</span>(x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        numArray.splice(<span class="number">0</span>,<span class="number">1</span>);     <span class="comment">//若输入为负数，去除负号。</span></span><br><span class="line">        num = -(<span class="built_in">parseInt</span>(numArray.reverse().join(<span class="string">''</span>)));</span><br><span class="line">        <span class="keyword">if</span>(checkNum(num))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">    num = <span class="built_in">parseInt</span>(numArray.reverse().join(<span class="string">''</span>));</span><br><span class="line">    <span class="keyword">if</span>(checkNum(num))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkNum</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(num &gt;= ((<span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">31</span>))<span class="number">-1</span>) || num &lt;= <span class="built_in">Math</span>.pow(<span class="number">-2</span>,<span class="number">31</span>))&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.com/problems/two-sum/description/" target="_blank" rel="noopener">leetcode-1-Two Sum</a></p>
+<p>题解：给定一个数组和一个目标值，从数组中找出两个值得和等于目标值，输出下标。</p>
+<p>样例：[2,7,11,15]，9</p>
+<p>输出：[0,1]</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @param &#123;number&#125; target</span></span><br><span class="line"><span class="comment"> * @return &#123;number[]&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; nums.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; nums.length ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i === j)&#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[j] === target)&#123;</span><br><span class="line">                <span class="keyword">return</span> [i , j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2018-05-01更新"><a href="#2018-05-01更新" class="headerlink" title="2018-05-01更新"></a>2018-05-01更新</h3><p>最近心情有点复杂。。。</p>
+<p><a href="http://exercise.acmcoder.com/online/online_judge_ques?ques_id=3007&amp;konwledgeId=134" target="_blank" rel="noopener">赛码——研究生考试</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> n = <span class="built_in">parseInt</span>(read_line());</span><br><span class="line"><span class="keyword">let</span> line,p,e,m,o;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; n ; i++)&#123;</span><br><span class="line">	line = read_line().split(<span class="string">' '</span>);</span><br><span class="line">  	p = <span class="built_in">parseInt</span>(line[<span class="number">0</span>]);</span><br><span class="line">  	e = <span class="built_in">parseInt</span>(line[<span class="number">1</span>]);</span><br><span class="line">  	m = <span class="built_in">parseInt</span>(line[<span class="number">2</span>]);</span><br><span class="line">  	o = <span class="built_in">parseInt</span>(line[<span class="number">3</span>]);</span><br><span class="line">	check(p,e,m,o)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">p,e,m,o</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">let</span> sum = p+e+m+o;</span><br><span class="line">  <span class="keyword">if</span>(p &lt; <span class="number">60</span> || e &lt; <span class="number">60</span> || m &lt; <span class="number">90</span> || o &lt; <span class="number">90</span> || sum &lt; <span class="number">310</span>)&#123;</span><br><span class="line">    	print(<span class="string">'Fail'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(sum&lt;<span class="number">350</span>) &#123;</span><br><span class="line">    	print(<span class="string">'Zifei'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        	print(<span class="string">'Gongfei'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>好像不支持变量解构赋值。。。</p>
+<hr>
+<h3 id="2018-04-17"><a href="#2018-04-17" class="headerlink" title="2018-04-17"></a>2018-04-17</h3><p>完全被迫无奈。。。。重新拿起了java。。。</p>
+<p><a href="http://exercise.acmcoder.com/online/online_judge_ques?ques_id=1659&amp;konwledgeId=134" target="_blank" rel="noopener">赛码——公交车乘客</a></p>
+<p>一开始理解错题意了，以为是求某一站上下车之和最大的一个。</p>
+<p>仔细看才发现是求车上可能的最大容量。。脑子不中用了。。</p>
+<p>MAX（上车人数-下车人数+当前车上的人数）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args [])</span></span>&#123;</span><br><span class="line">        Scanner cin = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = cin.nextInt();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; n ; i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> a = cin.nextInt(); 		<span class="comment">//下车人数</span></span><br><span class="line">            <span class="keyword">int</span> b = cin.nextInt();  	<span class="comment">//上车人数</span></span><br><span class="line">            sum = sum + b - a;</span><br><span class="line">            <span class="keyword">if</span>(sum &gt; max)&#123;</span><br><span class="line">                max = sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解">水题题解</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解">http://easywork.xin/2018/04/17/algorithm-2/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年4月17日 - 20时04分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/15/js-12/" rel="next" title="前端网络请求的前世今生">
+                <i class="fa fa-chevron-left"></i> 前端网络请求的前世今生
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/22/css-8/" rel="prev" title="从简书编辑器学布局">
+                从简书编辑器学布局 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-06-20更新"><span class="nav-number">1.</span> <span class="nav-text">2018-06-20更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-06-20更新-1"><span class="nav-number">2.</span> <span class="nav-text">2018-06-20更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-06-02更新"><span class="nav-number">3.</span> <span class="nav-text">2018-06-02更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-26更新"><span class="nav-number">4.</span> <span class="nav-text">2018-05-26更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-20更新"><span class="nav-number">5.</span> <span class="nav-text">2018-05-20更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-19更新"><span class="nav-number">6.</span> <span class="nav-text">2018-05-19更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-14更新"><span class="nav-number">7.</span> <span class="nav-text">2018-05-14更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-13更新"><span class="nav-number">8.</span> <span class="nav-text">2018-05-13更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-12更新"><span class="nav-number">9.</span> <span class="nav-text">2018-05-12更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-05-01更新"><span class="nav-number">10.</span> <span class="nav-text">2018-05-01更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-04-17"><span class="nav-number">11.</span> <span class="nav-text">2018-04-17</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

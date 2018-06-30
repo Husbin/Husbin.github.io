@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写了几天的jquery，没有以前那么抗拒了。用着用着觉得还是挺不错的，至少用起来比写原生的DOM操作要方便得多，虽然没有框架动不动就双向绑定来的方便。但是学着还是好的，说不定哪天需要看旧项目的代码，还是会有一定的用处的。 熟悉熟悉API，至少让脑子知道有这么一回事就ok了。遇到问题了查一查。 还有就是之前习惯了写es6，最近写要兼容旧的浏览器，所以用es5及以下的东西。但是一定要加use stri">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery手记">
+<meta property="og:url" content="http://easywork.xin/2018/04/07/js-11/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="写了几天的jquery，没有以前那么抗拒了。用着用着觉得还是挺不错的，至少用起来比写原生的DOM操作要方便得多，虽然没有框架动不动就双向绑定来的方便。但是学着还是好的，说不定哪天需要看旧项目的代码，还是会有一定的用处的。 熟悉熟悉API，至少让脑子知道有这么一回事就ok了。遇到问题了查一查。 还有就是之前习惯了写es6，最近写要兼容旧的浏览器，所以用es5及以下的东西。但是一定要加use stri">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-39efe35c217f1b7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-420e350d8968e75a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-04-19T12:24:37.487Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery手记">
+<meta name="twitter:description" content="写了几天的jquery，没有以前那么抗拒了。用着用着觉得还是挺不错的，至少用起来比写原生的DOM操作要方便得多，虽然没有框架动不动就双向绑定来的方便。但是学着还是好的，说不定哪天需要看旧项目的代码，还是会有一定的用处的。 熟悉熟悉API，至少让脑子知道有这么一回事就ok了。遇到问题了查一查。 还有就是之前习惯了写es6，最近写要兼容旧的浏览器，所以用es5及以下的东西。但是一定要加use stri">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/7166236-39efe35c217f1b7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/04/07/js-11/"/>
+
+
+
+
+
+  <title>jquery手记 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/04/07/js-11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">jquery手记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-07T15:41:06+08:00">
+                2018-04-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/07/js-11/" class="leancloud_visitors" data-flag-title="jquery手记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>写了几天的jquery，没有以前那么抗拒了。用着用着觉得还是挺不错的，至少用起来比写原生的DOM操作要方便得多，虽然没有框架动不动就双向绑定来的方便。但是学着还是好的，说不定哪天需要看旧项目的代码，还是会有一定的用处的。</p>
+<p>熟悉熟悉API，至少让脑子知道有这么一回事就ok了。遇到问题了查一查。</p>
+<p>还有就是之前习惯了写es6，最近写要兼容旧的浏览器，所以用es5及以下的东西。但是一定要加<code>use strict</code>，放过寄几以及以后维护你代码的人。。不要全局变量到处飞。。</p>
+<h3 id="问题一-——-jQuery报错"><a href="#问题一-——-jQuery报错" class="headerlink" title="问题一 —— jQuery报错"></a>问题一 —— jQuery报错</h3><h4 id="报错一："><a href="#报错一：" class="headerlink" title="报错一："></a>报错一：</h4><p>checks that jQuery selectors are used in an efficient way.It suggests to splite descendant selectors which are perfaced with id selector and warns about duplicated selectors which could be cached.</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7166236-39efe35c217f1b7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最近在实现一个小功能，但不知道为什么写着写着越觉得有点卡顿，内心觉得有可能是浏览器的问题所以也没怎么在意，其实一直存在一个警告，就上图，只是我没怎么在意。</p>
+<p>查了一下<a href="http://learn.jquery.com/using-jquery-core/selecting-elements/#saving-selections" target="_blank" rel="noopener">文档</a>发现<strong>jQuery不会缓存元素。如果选择器需要重复使用，应将选择器保存在变量中，而不是重复进行选择。</strong></p>
+<p>因此按文档说的，将重复使用的选择器都用变量存储起来，让变量来实现选择器的缓存。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/7166236-420e350d8968e75a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>不要吐槽我为什么变量用1和2了。。。（逃</p>
+<h4 id="报错二："><a href="#报错二：" class="headerlink" title="报错二："></a>报错二：</h4><p>项目中引入了BBCode转码文件后，jQuery中的<code>$</code>符号用不了，只能使用<code>jQuery</code>。</p>
+<p>原因：$命名空间被占用，使用<code>jQuery.noConflict()</code>返回一个新的别名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $jq=jQuery.noConflict();</span><br><span class="line"></span><br><span class="line">$jq(<span class="string">'.classSelector'</span>).addClass(<span class="string">"addClassName"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="问题二——常规操作"><a href="#问题二——常规操作" class="headerlink" title="问题二——常规操作"></a>问题二——常规操作</h3><h4 id="增加-删除css类（class）"><a href="#增加-删除css类（class）" class="headerlink" title="增加/删除css类（class）"></a>增加/删除css类（class）</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//增加class</span></span><br><span class="line">$(<span class="string">'.classSelector'</span>).addClass(<span class="string">"addClassName"</span>);</span><br><span class="line">$(<span class="string">'#idSelector'</span>).addClass(<span class="string">"addClassName"</span>);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'selector'</span>).addClass(<span class="string">'class1 class2'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除class</span></span><br><span class="line">$(<span class="string">'.classSelector'</span>).removeClass(<span class="string">"removeClassName"</span>);</span><br><span class="line">$(<span class="string">'#idSelector'</span>).removeClass(<span class="string">"removeClassName"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="修改某项css属性"><a href="#修改某项css属性" class="headerlink" title="修改某项css属性"></a>修改某项css属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.classSelector'</span>).css(<span class="string">"css"</span>,<span class="string">"value"</span>);</span><br><span class="line">$(<span class="string">'#idSelector'</span>).css(<span class="string">"css"</span>,<span class="string">"value"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//example</span></span><br><span class="line">$(<span class="string">'.classSelector'</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>);</span><br><span class="line">$(<span class="string">'#idSelector'</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>);</span><br><span class="line"></span><br><span class="line">$(selector).css(&#123;</span><br><span class="line">  <span class="string">'css1'</span>:<span class="string">'value'</span>;</span><br><span class="line">  <span class="string">'css2'</span>:<span class="string">'value'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="监听鼠标事件"><a href="#监听鼠标事件" class="headerlink" title="监听鼠标事件"></a>监听鼠标事件</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(‘selector’).click(func)</td>
+<td>点击鼠标左键时触发</td>
+</tr>
+<tr>
+<td>$(‘selector’).dbclick(func)</td>
+<td>迅速连续的两次点击时触发</td>
+</tr>
+<tr>
+<td>$(‘selector’).mousedown(func)</td>
+<td>按下鼠标时触发</td>
+</tr>
+<tr>
+<td>$(‘selector’).mouseover(func)</td>
+<td>松开鼠标时触发</td>
+</tr>
+<tr>
+<td>$(‘selector’).mouseup(func)</td>
+<td>鼠标从一个元素移入另一个元素时触发</td>
+</tr>
+<tr>
+<td><strong>$(‘selector’).mouseout(func)</strong></td>
+<td><strong>鼠标移出元素时触发（冒泡）</strong></td>
+</tr>
+<tr>
+<td>$(‘selector’).mouseenter(func)</td>
+<td>鼠标移入元素时触发</td>
+</tr>
+<tr>
+<td><strong>$(‘selector’).mouseleave(func)</strong></td>
+<td><strong>鼠标移出元素时触发（不冒泡）</strong></td>
+</tr>
+<tr>
+<td>$(‘selector’).hover(func1，func2)</td>
+<td>hover事件</td>
+</tr>
+<tr>
+<td>$(‘selector’).toggle(func1，func2)</td>
+<td>鼠标点击切换事件</td>
+</tr>
+</tbody>
+</table>
+<h5 id="‘selector’-mouseleave-func"><a href="#‘selector’-mouseleave-func" class="headerlink" title="$(‘selector’).mouseleave(func)"></a>$(‘selector’).mouseleave(func)</h5><ul>
+<li>可以实现鼠标移开目标区域关闭div的效果。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听鼠标移动</span></span><br><span class="line">$(<span class="string">"selector"</span>).mouseleave(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(showbody)&#123;</span><br><span class="line">    selectorBody.css(<span class="string">'display'</span>,<span class="string">'none'</span>);</span><br><span class="line">    showbody = !showbody;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="‘selector’-hover-func1，func2"><a href="#‘selector’-hover-func1，func2" class="headerlink" title="$(‘selector’).hover(func1，func2)"></a>$(‘selector’).hover(func1，func2)</h5><ul>
+<li>可以实现鼠标移到某个元素显示特定div，移开隐藏的效果。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 显示详情</span></span><br><span class="line">$(<span class="string">"#pageDetails"</span>).hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#pageDetailsShow"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>);</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">"#pageDetailsShow"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="多个选择器绑定同一事件"><a href="#多个选择器绑定同一事件" class="headerlink" title="多个选择器绑定同一事件"></a>多个选择器绑定同一事件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 失去焦点事件</span></span><br><span class="line">jQuery(<span class="string">'#selector1 , #selector2 , #selector3'</span>).blur(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// todo something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="jquery中获取某个节点的firstchild"><a href="#jquery中获取某个节点的firstchild" class="headerlink" title="jquery中获取某个节点的firstchild"></a>jquery中获取某个节点的firstchild</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#selector :first-child'</span>).blur(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'blur'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//原生写法</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"selectorId"</span>).firstChild.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   alert(<span class="string">'blur'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题三——事件绑定"><a href="#问题三——事件绑定" class="headerlink" title="问题三——事件绑定"></a>问题三——事件绑定</h3><h4 id="bind-、unbind"><a href="#bind-、unbind" class="headerlink" title="bind()、unbind()"></a>bind()、unbind()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line">$(<span class="string">'selector'</span>).bind(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//解绑</span></span><br><span class="line">$(<span class="string">'selector'</span>).unbind(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="delegate-、undelegate"><a href="#delegate-、undelegate" class="headerlink" title="delegate()、undelegate()"></a>delegate()、undelegate()</h4><p>这里对事件代理就不作介绍了，还不知道事件代理的：<a href="http://easywork.xin/2018/01/22/js-2/">传送门——js中的事件与事件委托</a></p>
+<p>其实我写事件代理函数习惯直接把函数挂在节点上。。。（逃。。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加代理</span></span><br><span class="line">$(<span class="string">'rootSelector'</span>).delegate(childSelector,event,data,func);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'rootSelector'</span>).delegate(<span class="string">"button"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//清除代理</span></span><br><span class="line">$(<span class="string">'selector'</span>).undelegate(selector,event,func);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'selector'</span>).undelegate(<span class="string">"p"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="on-、off"><a href="#on-、off" class="headerlink" title="on()、off()"></a>on()、off()</h4><p>在某些情况下，跟bind和unbind没啥区别。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//绑定</span></span><br><span class="line">$(<span class="string">'selector'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//解绑</span></span><br><span class="line">$(<span class="string">'selector'</span>).off(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
+<p>再看文档看on的参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).on(events ，[selector] ，[data]，func )</span><br><span class="line"><span class="comment">//event 事件对象</span></span><br><span class="line"><span class="comment">//selector 一个选择器字符串，用于过滤出被选中的元素中能触发事件的后代元素。如果是null的话那就跟bind是一样的效果</span></span><br><span class="line"><span class="comment">//data 事件触发时传递的参数</span></span><br><span class="line"><span class="comment">//func 事件处理函数</span></span><br></pre></td></tr></table></figure>
+<h4 id="one"><a href="#one" class="headerlink" title="one()"></a>one()</h4><p>为元素的事件添加处理函数。处理函数在每个元素上每种事件类型最多执行一次。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).one(event,fun);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'selector'</span>).one(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="绑定onchange事件"><a href="#绑定onchange事件" class="headerlink" title="绑定onchange事件"></a>绑定onchange事件</h4><p>文件/图片上传。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).change(func);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#uploadFile'</span>).change(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    uploadFile();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>以上，都是最近用到的一些api，都是查查文档、资料、教程啥的。用到新的再补上。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/04/07/js-11/" title="jquery手记">jquery手记</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/04/07/js-11/" title="jquery手记">http://easywork.xin/2018/04/07/js-11/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年4月7日 - 15时04分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/31/css-7/" rel="next" title="css-媒体查询总结">
+                <i class="fa fa-chevron-left"></i> css-媒体查询总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/15/js-12/" rel="prev" title="前端网络请求的前世今生">
+                前端网络请求的前世今生 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题一-——-jQuery报错"><span class="nav-number">1.</span> <span class="nav-text">问题一 —— jQuery报错</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#报错一："><span class="nav-number">1.1.</span> <span class="nav-text">报错一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错二："><span class="nav-number">1.2.</span> <span class="nav-text">报错二：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题二——常规操作"><span class="nav-number">2.</span> <span class="nav-text">问题二——常规操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#增加-删除css类（class）"><span class="nav-number">2.1.</span> <span class="nav-text">增加/删除css类（class）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改某项css属性"><span class="nav-number">2.2.</span> <span class="nav-text">修改某项css属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听鼠标事件"><span class="nav-number">2.3.</span> <span class="nav-text">监听鼠标事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#‘selector’-mouseleave-func"><span class="nav-number">2.3.1.</span> <span class="nav-text">$(‘selector’).mouseleave(func)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#‘selector’-hover-func1，func2"><span class="nav-number">2.3.2.</span> <span class="nav-text">$(‘selector’).hover(func1，func2)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多个选择器绑定同一事件"><span class="nav-number">2.4.</span> <span class="nav-text">多个选择器绑定同一事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jquery中获取某个节点的firstchild"><span class="nav-number">2.5.</span> <span class="nav-text">jquery中获取某个节点的firstchild</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题三——事件绑定"><span class="nav-number">3.</span> <span class="nav-text">问题三——事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bind-、unbind"><span class="nav-number">3.1.</span> <span class="nav-text">bind()、unbind()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delegate-、undelegate"><span class="nav-number">3.2.</span> <span class="nav-text">delegate()、undelegate()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#on-、off"><span class="nav-number">3.3.</span> <span class="nav-text">on()、off()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#one"><span class="nav-number">3.4.</span> <span class="nav-text">one()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#绑定onchange事件"><span class="nav-number">3.5.</span> <span class="nav-text">绑定onchange事件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

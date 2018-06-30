@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Angular2," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本来在看vue.js没多久，最近在赶一个项目用回了angular2，还是先把ng2搞定吧，毕竟还不怎么懂。这两天我做的是用户表单数据的提交，大部分很简单，双向绑定就完事了，主要还是沟通的问题哈哈哈哈，虽然沟通的时候有点暴躁想甩锅，不过出了门还是高高兴兴吃饭高高兴兴回去。 好了切入问题。这几天做得最久的是仿照微信UI做的图片上传/显示缩略图/预览/删除功能，要求图片1–9张。下面来记录下如何实现微">
+<meta name="keywords" content="Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular2-仿照微信UI实现9张图片上传和预览">
+<meta property="og:url" content="http://easywork.xin/2017/10/18/ng2-1/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="本来在看vue.js没多久，最近在赶一个项目用回了angular2，还是先把ng2搞定吧，毕竟还不怎么懂。这两天我做的是用户表单数据的提交，大部分很简单，双向绑定就完事了，主要还是沟通的问题哈哈哈哈，虽然沟通的时候有点暴躁想甩锅，不过出了门还是高高兴兴吃饭高高兴兴回去。 好了切入问题。这几天做得最久的是仿照微信UI做的图片上传/显示缩略图/预览/删除功能，要求图片1–9张。下面来记录下如何实现微">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-1f0bd973c370959a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-572b424232ae8766.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-063b0ebd764dfc06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-e59903dc3138c278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-26T03:00:51.746Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular2-仿照微信UI实现9张图片上传和预览">
+<meta name="twitter:description" content="本来在看vue.js没多久，最近在赶一个项目用回了angular2，还是先把ng2搞定吧，毕竟还不怎么懂。这两天我做的是用户表单数据的提交，大部分很简单，双向绑定就完事了，主要还是沟通的问题哈哈哈哈，虽然沟通的时候有点暴躁想甩锅，不过出了门还是高高兴兴吃饭高高兴兴回去。 好了切入问题。这几天做得最久的是仿照微信UI做的图片上传/显示缩略图/预览/删除功能，要求图片1–9张。下面来记录下如何实现微">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-1f0bd973c370959a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2017/10/18/ng2-1/"/>
+
+
+
+
+
+  <title>Angular2-仿照微信UI实现9张图片上传和预览 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2017/10/18/ng2-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Angular2-仿照微信UI实现9张图片上传和预览</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T20:14:22+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular2/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/10/18/ng2-1/" class="leancloud_visitors" data-flag-title="Angular2-仿照微信UI实现9张图片上传和预览">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>本来在看vue.js没多久，最近在赶一个项目用回了angular2，还是先把ng2搞定吧，毕竟还不怎么懂。这两天我做的是用户表单数据的提交，大部分很简单，双向绑定就完事了，主要还是沟通的问题哈哈哈哈，虽然沟通的时候有点暴躁想甩锅，不过出了门还是高高兴兴吃饭高高兴兴回去。</li>
+<li>好了切入问题。这几天做得最久的是仿照微信UI做的图片上传/显示缩略图/预览/删除功能，要求图片1–9张。下面来记录下如何实现微信的图片预览/删除功能。</li>
+</ul>
+<h2 id="样式–weui-css"><a href="#样式–weui-css" class="headerlink" title="样式–weui.css"></a>样式–weui.css</h2><ul>
+<li>样式用的是微信官方ui，weui.min.css（生产环境下建议使用此压缩版）。</li>
+<li>下载地址<a href="https://github.com/Tencent/weui/releases" target="_blank" rel="noopener">weui.css/weui.min.css</a>。</li>
+</ul>
+<h2 id="样例–weui-io"><a href="#样例–weui-io" class="headerlink" title="样例–weui.io"></a>样例–weui.io</h2><ul>
+<li>微信官方自带了demo: <a href="https://weui.io/" target="_blank" rel="noopener">weui.io</a>。</li>
+</ul>
+<h2 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h2><ul>
+<li>在正式进入各个小功能的解说前，先上官方demo-&gt;<a href="https://weui.io/" target="_blank" rel="noopener">weui.io</a>查看图片上传组件的样式以及源代码。</li>
+</ul>
+<h4 id="官方ui显示如下，图片上传的ui在Uploader中。"><a href="#官方ui显示如下，图片上传的ui在Uploader中。" class="headerlink" title="官方ui显示如下，图片上传的ui在Uploader中。"></a>官方ui显示如下，图片上传的ui在Uploader中。</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-1f0bd973c370959a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="图片上传的源码从审查元素中可获取，如下所示："><a href="#图片上传的源码从审查元素中可获取，如下所示：" class="headerlink" title="图片上传的源码从审查元素中可获取，如下所示："></a>图片上传的源码从审查元素中可获取，如下所示：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page uploader js_show"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page__hd"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"page__title"</span>&gt;</span>Uploader<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"page__desc"</span>&gt;</span>上传组件，一般配合<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"link"</span> <span class="attr">href</span>=<span class="string">" "</span>&gt;</span>组件Gallery<span class="tag">&lt;/<span class="name">a</span> &gt;</span>来使用。<span class="tag">&lt;/<span class="name">p</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page__bd"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery"</span> <span class="attr">id</span>=<span class="string">"gallery"</span> <span class="attr">style</span>=<span class="string">"opacity: 0; display: none;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"weui-gallery__img"</span> <span class="attr">id</span>=<span class="string">"galleryImg"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery__opr"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:"</span> <span class="attr">class</span>=<span class="string">"weui-gallery__del"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"weui-icon-delete weui-icon_gallery-delete"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">a</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-cells weui-cells_form"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-cell"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-cell__bd"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader"</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader__hd"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"weui-uploader__title"</span>&gt;</span>图片上传<span class="tag">&lt;/<span class="name">p</span> &gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader__info"</span>&gt;</span>0/2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader__bd"</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"weui-uploader__files"</span> <span class="attr">id</span>=<span class="string">"uploaderFiles"</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file weui-uploader__file_status"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file-content"</span>&gt;</span></span><br><span class="line">                                        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"weui-icon-warn"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file weui-uploader__file_status"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span></span><br><span class="line">                                    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file-content"</span>&gt;</span>50%<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-uploader__input-box"</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"uploaderInput"</span> <span class="attr">class</span>=<span class="string">"weui-uploader__input"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">accept</span>=<span class="string">"image/*"</span> <span class="attr">multiple</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">                            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"page__ft j_bottom"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:home()"</span>&gt;</span><span class="tag">&lt; <span class="attr">img</span> <span class="attr">src</span>=<span class="string">"./images/icon_footer_link.png"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>观察上面的代码，外层样式直接套用，核心功能块如下：</li>
+</ul>
+<ol>
+<li><strong>图片预览/删除部分：</strong></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery"</span> <span class="attr">id</span>=<span class="string">"gallery"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--显示预览--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"weui-gallery__img"</span> <span class="attr">id</span>=<span class="string">"galleryImg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--删除按钮--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery__opr"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:"</span> <span class="attr">class</span>=<span class="string">"weui-gallery__del"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"weui-icon-delete weui-icon_gallery-delete"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>图片缩略图列表部分：</strong></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"weui-uploader__files"</span> <span class="attr">id</span>=<span class="string">"uploaderFiles"</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--每张图片是一个&lt;li&gt;标签--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"weui-uploader__file"</span> <span class="attr">style</span>=<span class="string">"background-image:url(./images/pic_160.png)"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>有了上面的准备，下载就可以对功能进行实现了:</li>
+</ul>
+<h3 id="1-图片缩略图显示"><a href="#1-图片缩略图显示" class="headerlink" title="1. 图片缩略图显示"></a>1. 图片缩略图显示</h3><ul>
+<li>观察源码可知，每张图片的缩略图的代码结构如下：</li>
+</ul>
+<p><code>&lt;li class=&quot;weui-uploader__file&quot; style=&quot;background-image:url(./images/pic_160.png)&quot;&gt;&lt;/li&gt;</code></p>
+<ul>
+<li>他将图片的url直接放到了<code>background-img:url()</code>属性中，样式直接使用微信的官方ui的class。因此，我们可以做这样操作：<strong>创建一个数组存<code>picturesUrl</code>放图片的url，用angular2的指令<code>*ngFor</code>根据数组中的内容动态生成缩略图列表（注意picturesUrl中元素的格式为：<code>url(图片的url)）</code>：</strong>，图片url数组中的每个元素依次存进中间变量<code>img</code>中，<strong>然后使用angular2指令<code>[ngStyle]</code>根据img的值生成预览图</strong>，主要代码如下：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"weui-uploader__files picture-preview"</span> <span class="attr">id</span>=<span class="string">"uploaderFiles"</span> &gt;</span></span><br><span class="line">                                <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let img of picturesUrl"</span></span></span><br><span class="line"><span class="tag">                                    <span class="attr">class</span>=<span class="string">"weui-uploader__file"</span></span></span><br><span class="line"><span class="tag">                                    [<span class="attr">ngStyle</span>]=<span class="string">"&#123;'background-image':img&#125;"</span>&gt;</span></span><br><span class="line">                                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--img实例--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--'url(http://upload-images.jianshu.io/upload_images/7166236-ed8a621900728c39.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)'--&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在ts文件中定义图片数组并且给一定的模拟数据：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">picturesUrl = [</span><br><span class="line">    <span class="string">'url(http://upload-images.jianshu.io/upload_images/7166236-40ed406c30ef20a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)'</span>,</span><br><span class="line">    <span class="string">'url(http://upload-images.jianshu.io/upload_images/7166236-d79762ed654342bf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)'</span>,</span><br><span class="line">    <span class="string">'url(http://upload-images.jianshu.io/upload_images/7166236-64e1a458e5e29d59.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)'</span>,</span><br><span class="line">    <span class="string">'url(http://upload-images.jianshu.io/upload_images/7166236-9a267a540acb8688.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)'</span>,</span><br><span class="line">    <span class="string">'url(http://upload-images.jianshu.io/upload_images/7166236-283f5687cb73eea8.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)'</span>,</span><br><span class="line">  ]; <span class="comment">//存储图片Url</span></span><br><span class="line">  title = <span class="string">'app'</span>;</span><br><span class="line">  shown = <span class="literal">false</span>;    <span class="comment">//是否显示预览，初始化为否</span></span><br><span class="line">  selectImageUrl: <span class="built_in">string</span>; <span class="comment">//用于存放选中图片的url</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-图片预览显示与消失"><a href="#2-图片预览显示与消失" class="headerlink" title="2. 图片预览显示与消失"></a>2. 图片预览显示与消失</h3><ul>
+<li>此处图片预览使用原生自带的方法，微信的做法应该是通过<code>[ngStyle]</code>来控制整个<code>&lt;div&gt;</code>样式，而我采用了与生成缩略图相同的方法，<strong>用<code>[ngStyle]</code>指令以及<code>*ngIf</code>指令控制预览图的显示</strong>，然后在预览图的范围上绑定一个点击事件<code>(click)=&quot;touchEvent()&quot;</code>，用于监听用户的点击，实现<strong>点击退出预览</strong>的功能。主要代码如下：</li>
+<li>微信的做法（根据点击页面获取到的代码）：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--预览隐藏的样式--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery"</span> <span class="attr">id</span>=<span class="string">"gallery"</span> <span class="attr">style</span>=<span class="string">"opacity: 0; display: none;"</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--预览显示的样式--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery"</span> <span class="attr">id</span>=<span class="string">"gallery"</span> <span class="attr">style</span>=<span class="string">"display: block; opacity: 1;"</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>我采用的做法：</strong></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">class</span>=<span class="string">"weui-gallery"</span> <span class="attr">id</span>=<span class="string">"gallery"</span> <span class="attr">style</span>=<span class="string">"display: block"</span></span></span><br><span class="line"><span class="tag">             *<span class="attr">ngIf</span>=<span class="string">"shown"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"weui-gallery__img"</span> (<span class="attr">click</span>)=<span class="string">"touchEvent()"</span> [<span class="attr">ngStyle</span>]=<span class="string">"&#123;'background-image':selectImageUrl&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"weui-gallery__opr"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:"</span> (<span class="attr">click</span>)=<span class="string">"onDelete()"</span> <span class="attr">class</span>=<span class="string">"weui-gallery__del"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"weui-icon-delete weui-icon_gallery-delete"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">a</span> &gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//点击缩略图显示预览</span></span><br><span class="line">  showPicture($event)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"$event.target.backgroundImage："</span> + $event.target.style.backgroundImage);</span><br><span class="line">    <span class="keyword">this</span>.selectImageUrl = $event.target.style.backgroundImage;</span><br><span class="line">    <span class="keyword">this</span>.shown = <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//点击屏幕退出预览</span></span><br><span class="line">touchEvent()&#123;</span><br><span class="line">    <span class="keyword">this</span>.shown = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-图片删除"><a href="#3-图片删除" class="headerlink" title="3. 图片删除"></a>3. 图片删除</h3><ul>
+<li>图片删除的主要代码嵌套在图片预览的代码块中，只要为删除部分绑定一个点击事件（<code>(click)=&quot;onDelete()&quot;</code>），点击时出发删除并且退出预览即可。</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">onDelete()&#123;</span><br><span class="line">    <span class="keyword">if</span>(isUndefined(<span class="keyword">this</span>.selectImageUrl))&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"查看图片预览，图片url未定义，this.selectImageUrl："</span> + <span class="keyword">this</span>.selectImageUrl);</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">//正则去除URL中的双引号</span></span><br><span class="line">    <span class="keyword">this</span>.selectImageUrl = <span class="keyword">this</span>.selectImageUrl.replace(<span class="regexp">/"/g</span>,<span class="string">""</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"(this.picturesUrl.indexOf(this.selectImageUrl):"</span>+<span class="keyword">this</span>.picturesUrl.indexOf(<span class="keyword">this</span>.selectImageUrl));</span><br><span class="line">    <span class="comment">//判断图片URL是否存在</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.picturesUrl.indexOf(<span class="keyword">this</span>.selectImageUrl)!== <span class="number">-1</span>)&#123;</span><br><span class="line">      <span class="keyword">this</span>.picturesUrl.splice(<span class="keyword">this</span>.picturesUrl.indexOf(<span class="keyword">this</span>.selectImageUrl) , <span class="number">1</span>);</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.shown = <span class="literal">false</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="number">20</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"删除图片出错，获取URL或URL格式出错出错："</span> + <span class="keyword">this</span>.selectImageUrl )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="效果如下："><a href="#效果如下：" class="headerlink" title="效果如下："></a>效果如下：</h3><h4 id="显示缩略图："><a href="#显示缩略图：" class="headerlink" title="显示缩略图："></a>显示缩略图：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-572b424232ae8766.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="显示预览："><a href="#显示预览：" class="headerlink" title="显示预览："></a>显示预览：</h4><p><img src="http://upload-images.jianshu.io/upload_images/7166236-063b0ebd764dfc06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="点击下面的删除栏："><a href="#点击下面的删除栏：" class="headerlink" title="点击下面的删除栏："></a>点击下面的删除栏：</h3><p><img src="http://upload-images.jianshu.io/upload_images/7166236-e59903dc3138c278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="2017-12-02-更正"><a href="#2017-12-02-更正" class="headerlink" title="2017-12-02 更正"></a>2017-12-02 更正</h3><ul>
+<li>其实获取图片应该异步加载的，这个问题很严重，正常大小的图片在显示之前应该保证在显示之前已经下载好了或者，在加载的时候做缓冲显示，不然如果图片一大或者网络一卡，加载的时候就很诡异，用户体验不是很好。</li>
+<li>源码戳-&gt;<a href="https://github.com/Husbin/web/tree/master/wechat-picture" target="_blank" rel="noopener">demo源码</a></li>
+<li>在线demo-&gt;<a href="http://119.23.214.114:8888/" target="_blank" rel="noopener">戳你狗头</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2017/10/18/ng2-1/" title="Angular2-仿照微信UI实现9张图片上传和预览">Angular2-仿照微信UI实现9张图片上传和预览</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2017/10/18/ng2-1/" title="Angular2-仿照微信UI实现9张图片上传和预览">http://easywork.xin/2017/10/18/ng2-1/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2017年10月18日 - 20时10分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular2/" rel="tag"># Angular2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/10/vue-4/" rel="next" title="条件渲染与列表渲染">
+                <i class="fa fa-chevron-left"></i> 条件渲染与列表渲染
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/21/css-1/" rel="prev" title="css-基础知识">
+                css-基础知识 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#样式–weui-css"><span class="nav-number">1.</span> <span class="nav-text">样式–weui.css</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例–weui-io"><span class="nav-number">2.</span> <span class="nav-text">样例–weui.io</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要步骤"><span class="nav-number">3.</span> <span class="nav-text">主要步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#官方ui显示如下，图片上传的ui在Uploader中。"><span class="nav-number">3.0.1.</span> <span class="nav-text">官方ui显示如下，图片上传的ui在Uploader中。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图片上传的源码从审查元素中可获取，如下所示："><span class="nav-number">3.0.2.</span> <span class="nav-text">图片上传的源码从审查元素中可获取，如下所示：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-图片缩略图显示"><span class="nav-number">3.1.</span> <span class="nav-text">1. 图片缩略图显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-图片预览显示与消失"><span class="nav-number">3.2.</span> <span class="nav-text">2. 图片预览显示与消失</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-图片删除"><span class="nav-number">3.3.</span> <span class="nav-text">3. 图片删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果如下："><span class="nav-number">3.4.</span> <span class="nav-text">效果如下：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示缩略图："><span class="nav-number">3.4.1.</span> <span class="nav-text">显示缩略图：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示预览："><span class="nav-number">3.4.2.</span> <span class="nav-text">显示预览：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点击下面的删除栏："><span class="nav-number">3.5.</span> <span class="nav-text">点击下面的删除栏：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2017-12-02-更正"><span class="nav-number">3.6.</span> <span class="nav-text">2017-12-02 更正</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Angular2," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前几天总结了MVC、MVP、MVVM设计模式，其中MVVM的核心机制就是双向绑定。React、Vue、Angular的双向绑定，都是基于MVVM的设计模式。 什么是双向绑定如图：  双向绑定机制维护了页面（View）与数据（Data）的一致性。如今，MVVM已经是前段流行框架必不可少的一部分。 Angular2中的双向绑定双向绑定，也是Angular2的核心概念之一，Angular2的双向绑定是这">
+<meta name="keywords" content="Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular2双向绑定及变化检测">
+<meta property="og:url" content="http://easywork.xin/2018/02/24/ng2-6/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="前几天总结了MVC、MVP、MVVM设计模式，其中MVVM的核心机制就是双向绑定。React、Vue、Angular的双向绑定，都是基于MVVM的设计模式。 什么是双向绑定如图：  双向绑定机制维护了页面（View）与数据（Data）的一致性。如今，MVVM已经是前段流行框架必不可少的一部分。 Angular2中的双向绑定双向绑定，也是Angular2的核心概念之一，Angular2的双向绑定是这">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-7a2c67cba1f6c343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-7460cf2c640186e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-4cd8b9089c4fe160.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-26T03:01:11.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular2双向绑定及变化检测">
+<meta name="twitter:description" content="前几天总结了MVC、MVP、MVVM设计模式，其中MVVM的核心机制就是双向绑定。React、Vue、Angular的双向绑定，都是基于MVVM的设计模式。 什么是双向绑定如图：  双向绑定机制维护了页面（View）与数据（Data）的一致性。如今，MVVM已经是前段流行框架必不可少的一部分。 Angular2中的双向绑定双向绑定，也是Angular2的核心概念之一，Angular2的双向绑定是这">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-7a2c67cba1f6c343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/02/24/ng2-6/"/>
+
+
+
+
+
+  <title>Angular2双向绑定及变化检测 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/24/ng2-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Angular2双向绑定及变化检测</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T17:58:21+08:00">
+                2018-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular2/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/24/ng2-6/" class="leancloud_visitors" data-flag-title="Angular2双向绑定及变化检测">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>前几天总结了<a href="http://easywork.xin/2018/02/22/design-1/">MVC、MVP、MVVM设计模式</a>，其中MVVM的核心机制就是双向绑定。React、Vue、Angular的双向绑定，都是基于MVVM的设计模式。</p>
+<h3 id="什么是双向绑定"><a href="#什么是双向绑定" class="headerlink" title="什么是双向绑定"></a>什么是双向绑定</h3><p>如图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7a2c67cba1f6c343.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双向绑定.jpg"></p>
+<p>双向绑定机制维护了页面（View）与数据（Data）的一致性。如今，MVVM已经是前段流行框架必不可少的一部分。</p>
+<h3 id="Angular2中的双向绑定"><a href="#Angular2中的双向绑定" class="headerlink" title="Angular2中的双向绑定"></a>Angular2中的双向绑定</h3><p>双向绑定，也是Angular2的核心概念之一，Angular2的双向绑定是这样的：</p>
+<ul>
+<li>data=&gt;view：数据绑定，模板语法是 []</li>
+<li>view=&gt;data：事件绑定，模板语法是 ()</li>
+<li>Angular其实并没有一个双向绑定的实现，<strong>他的双向绑定就是数据绑定+事件绑定</strong>，模板语法是  [()] 。</li>
+</ul>
+<p>Angular2官方给的例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--value是数据绑定，input是事件绑定--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [<span class="attr">value</span>]=<span class="string">"currentHero.name"</span>	</span></span><br><span class="line"><span class="tag">       (<span class="attr">input</span>)=<span class="string">"currentHero.name=$event.target.value"</span></span></span><br><span class="line"><span class="tag">       &gt;</span></span><br><span class="line"><span class="comment">&lt;!--等价--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"currentHero.name"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面是input空间的双向绑定语法，很清楚的说明了双向绑定与两个单向绑定的关系。这里没有使用<code>ngModule</code>语法，<code>ngModule</code>语法内部实现与这个差不多。</p>
+<h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><ol>
+<li>用户操作出发DOM事件通知</li>
+<li>Angular监听到了通知，然后执行模板语法，上面的例子就是将input控件的输入值赋给了<code>currentHero.name</code>。</li>
+</ol>
+<h4 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h4><p>由于js语言并没有属性变化通知的机制，所以angular也不知道谁发生了变化，在什么时候变了。Angular的变化机制是：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7460cf2c640186e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>上面的例子中input的数据绑定过程如下：</p>
+<ol>
+<li>代码修改了<code>currentHero.name</code>的值。</li>
+<li>触发整个组件树的变化检查。</li>
+<li>input显示了修改后的值。</li>
+</ol>
+<h5 id="数据何时变化"><a href="#数据何时变化" class="headerlink" title="数据何时变化"></a>数据何时变化</h5><p>主要入下集中情况可能改变数据：</p>
+<ul>
+<li>用户输入操作，比如点击，提交等。</li>
+<li>请求服务端数据。</li>
+<li>定时事件，比如<code>setTimeout</code>，<code>setInterval</code>。</li>
+</ul>
+<p>这几点有个共同点，就是他们都是异步的。也就是说，所有的异步操作是可能导致数据变化的根源因素。</p>
+<h5 id="如何通知变化"><a href="#如何通知变化" class="headerlink" title="如何通知变化"></a>如何通知变化</h5><p>在Angularjs中是由代码<code>$scope.$apply()</code>或者<code>$scope.$digest</code>触发，而Angular2接入了<code>ZoneJS</code>,由它监听了Angular所有的异步事件。ZoneJS重写了所有的异步API（所谓的猴子补丁，MonkeyPath）。ZoneJS会通知Angular可能有数据发生变化，需要检测更新。</p>
+<h5 id="变化检测原理-–-脏检查"><a href="#变化检测原理-–-脏检查" class="headerlink" title="变化检测原理 – 脏检查"></a>变化检测原理 – 脏检查</h5><p>所谓脏检查就是存储所有变量的值，每当可能有变量发生变化需要检查时，就将所有变量的旧值跟新值进行比较，不相等就说明检测到变化，需要更新对应的视图。</p>
+<h3 id="AngularJS与Angular2变化检测的区别"><a href="#AngularJS与Angular2变化检测的区别" class="headerlink" title="AngularJS与Angular2变化检测的区别"></a>AngularJS与Angular2变化检测的区别</h3><p>Angularjs的变化检测机制也是脏检查，而Angular2的变化检测性能比Angularjs提升了很多。</p>
+<h4 id="Angular2"><a href="#Angular2" class="headerlink" title="Angular2"></a>Angular2</h4><p>Angular的核心是组件化，组件的嵌套会使得最终形成一棵组件树。Angular的变化检测可以分组件进行，每个组件都有对应的变化检测器<code>ChangeDetector</code>。可想而知，这些变化检测器也会构成一棵树。</p>
+<p>另外，Angular的数据流是自顶而下的，从父组件到子组件单向流动。单向数据流向保证了高效、可预测的变化检测，尽管检查了父组件之后，自组件可能会改变父组件的数据使得父组件需要再次被检查，这是不被推荐的数据处理方式。在开发模式下，Angular会进行二次检查，如果出现上述情况，二次检查就会报错：<code>ExpressionChangedAfterItHasBeenCheckedError</code>（关于这个问题的答案，可以在参考资料中找到）。而在生产环境中，脏检查只会执行一次。</p>
+<h4 id="Angularjs"><a href="#Angularjs" class="headerlink" title="Angularjs"></a>Angularjs</h4><p>相比之下，Angularjs采用的是双向数据流，错综复杂的数据流使得他不得不多次检查，使得数据最终趋向稳定。理论上，数据永远不可能稳定，Angularjs的策略是，脏检查超过10次就认定程序有问题。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-4cd8b9089c4fe160.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="angular2-change-detection-moscowjs-31-9-638.jpg"></p>
+<h3 id="变化检测优化"><a href="#变化检测优化" class="headerlink" title="变化检测优化"></a>变化检测优化</h3><h4 id="优化策略"><a href="#优化策略" class="headerlink" title="优化策略"></a>优化策略</h4><p>有2个思路：</p>
+<ol>
+<li>OnPush策略：我知道我没变，别查我。</li>
+<li>手动控制刷新：我变了，只查我。</li>
+</ol>
+<h4 id="变化检测策略-OnPush"><a href="#变化检测策略-OnPush" class="headerlink" title="变化检测策略 OnPush"></a>变化检测策略 OnPush</h4><p>Angular还让开发者拥有制定变化策略的能力。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">enum</span> ChangeDetectionStrategy &#123; </span><br><span class="line">  OnPush, <span class="comment">// 表示变化检测对象的状态为`CheckOnce` </span></span><br><span class="line">  Default, <span class="comment">// 表示变化检测对象的状态为`CheckAlways`</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从<code>ChangeDetectionStrategy</code>可以看到，Angular有两种变化检测策略。<code>Default</code>是Angular默认的变化检测策略，也就是脏检查（只要有值发生变化，就全部检查）。开发者可以根据场景来设置更加高效的变化检测方式：<code>OnPush</code>。<code>OnPush</code>策略，就是只有当输入数据的引用发生变化或者有事件触发时，组件进行变化检测。</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h2&gt;&#123;&#123;vData.name&#125;&#125;&lt;/h2&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;&#123;&#123;vData.email&#125;&#125;&lt;/span&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">  <span class="comment">// 设置该组件的变化检测策略为onPush</span></span><br><span class="line">  changeDetection: ChangeDetectionStrategy.OnPush</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> VCardCmp &#123;</span><br><span class="line">  <span class="meta">@Input</span>() vData;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>比如上面这个例子，当<code>vData</code>的属性值发生变化的时候，这个组件不会发生变化检测，只有当<code>vData</code>重新赋值的时候才会。一般，只接受输入的木偶子组件（dumb components）比较适合采用<code>onPush</code>策略。</p>
+<p>那什么时候只要对象的属性值发生变化，整个对象的引用就变了呢？不可变对象（Immutable Object）。当组件中的输入对象是不变量时，可采用<code>onPush</code>变化检测策略，减少变化检测的频率。换个角度来说，为了更加智能地执行变化检测，可以在只接受输入的子组件中采用<code>onPush</code>策略。</p>
+<h4 id="手动控制变化检测"><a href="#手动控制变化检测" class="headerlink" title="手动控制变化检测"></a>手动控制变化检测</h4><p>Angular不仅可以让开发者设置变化检测策略，还可以让开发者获取变化检测对象引用<code>ChangeDetectorRef</code>，手动去操作变化检测。变化检测对象引用给开发者提供的方法有以下几种：</p>
+<ul>
+<li><code>markForCheck()</code>：将检查组件的所有父组件所有子组件，即使设置了变化检测策略为<code>onPush</code>。</li>
+<li><code>detach()</code>：将变化检测对象脱离检测对象树，不再进行变化检查；结合<code>detectChanges</code>可实现局部变化检测。（采用<code>onPush</code>策略之后的组件<code>detach()</code>无效）</li>
+<li><code>detectChanges()</code>：将检测该组件及其子组件，结合<code>detach</code>可实现局部检测。</li>
+<li><code>checkNoChanges()</code>: 检测该组件及其子组件，如果有变化存在则报错，用于开发阶段二次验证变化已经完成。</li>
+<li><code>reattach()</code>：将脱离的变化检测对象重新链接到变化检测树上。</li>
+</ul>
+<p>那么，如果是Observable的话，它会订阅所有的变量变化，只要在订阅回调函数中手动触发变化检测即可实现最小成本的检测（仍采用<code>onPush</code>变化检测策略）。举个例子：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  template: <span class="string">'&#123;&#123;counter&#125;&#125;'</span>,</span><br><span class="line">  changeDetection: ChangeDetectionStrategy.OnPush</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> CartBadgeCmp &#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Input</span>() addItemStream:Observable&lt;<span class="built_in">any</span>&gt;;</span><br><span class="line">  counter = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> cd: ChangeDetectorRef</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.addItemStream.subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.counter++;        <span class="comment">// 数据模型发生变化</span></span><br><span class="line">      <span class="keyword">this</span>.cd.markForCheck(); <span class="comment">// 手动触发检测</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，当数据模型变化太过频繁，我们可自定义变化检测的时机。举个例子：</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  template: <span class="string">`&#123;&#123;counter&#125;&#125;</span></span><br><span class="line"><span class="string">  &lt;input type="check" (click)="toggle()"&gt;`</span>, </span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">class</span> CartBadgeCmp &#123; </span><br><span class="line">  counter = <span class="number">0</span>;</span><br><span class="line">  detectEnabled = <span class="literal">false</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">private</span> cd: ChangeDetectorRef</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="comment">// 每10毫秒增加1</span></span><br><span class="line">    setInterval(<span class="function"><span class="params">()</span>=&gt;</span>&#123;<span class="keyword">this</span>.counter++&#125;, <span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  toggle()&#123;</span><br><span class="line">      <span class="keyword">if</span>( <span class="keyword">this</span>.detectEnabled )&#123;</span><br><span class="line">          <span class="keyword">this</span>.cd.reattach();  <span class="comment">// 链接上变化检测树</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.cd.detach(); <span class="comment">// 脱离变化检测树</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Angular与Angularjs都采用变化检测机制，前者优于后者主要体现在：</p>
+<ul>
+<li>单向数据流动</li>
+<li>以组件为单位维度独立进行检测</li>
+<li>生产环境只进行一次检查</li>
+<li>可自定义的变化检测策略：<code>Default</code>和<code>onPush</code></li>
+<li>可自定义的变化检测操作：<code>markForcheck()</code>、<code>detectChanges()</code>、<code>detach()</code>、<code>reattach()</code>、<code>checkNoChanges()</code></li>
+<li>代码实现上的优化，据说采用了VM friendly的代码。</li>
+</ul>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/29484208" target="_blank" rel="noopener">reference-1–angular2双向绑定与变化检测</a></li>
+<li><a href="https://wufenfen.github.io/2017/07/15/Angular%E5%8F%98%E5%8C%96%E6%A3%80%E6%B5%8B%E6%9C%BA%E5%88%B6%EF%BC%9A%E6%94%B9%E5%96%84%E7%9A%84%E8%84%8F%E6%A3%80%E6%9F%A5/" target="_blank" rel="noopener">reference-2–Angular变化检测机制：改善的脏检查</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/02/24/ng2-6/" title="Angular2双向绑定及变化检测">Angular2双向绑定及变化检测</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/02/24/ng2-6/" title="Angular2双向绑定及变化检测">http://easywork.xin/2018/02/24/ng2-6/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年2月24日 - 17时02分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular2/" rel="tag"># Angular2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/22/design-1/" rel="next" title="MVC、MVP、MVVM">
+                <i class="fa fa-chevron-left"></i> MVC、MVP、MVVM
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/25/network-1/" rel="prev" title="网络协议的分层结构">
+                网络协议的分层结构 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是双向绑定"><span class="nav-number">1.</span> <span class="nav-text">什么是双向绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular2中的双向绑定"><span class="nav-number">2.</span> <span class="nav-text">Angular2中的双向绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件绑定"><span class="nav-number">2.1.</span> <span class="nav-text">事件绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据绑定"><span class="nav-number">2.2.</span> <span class="nav-text">数据绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数据何时变化"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据何时变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何通知变化"><span class="nav-number">2.2.2.</span> <span class="nav-text">如何通知变化</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变化检测原理-–-脏检查"><span class="nav-number">2.2.3.</span> <span class="nav-text">变化检测原理 – 脏检查</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AngularJS与Angular2变化检测的区别"><span class="nav-number">3.</span> <span class="nav-text">AngularJS与Angular2变化检测的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Angular2"><span class="nav-number">3.1.</span> <span class="nav-text">Angular2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Angularjs"><span class="nav-number">3.2.</span> <span class="nav-text">Angularjs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变化检测优化"><span class="nav-number">4.</span> <span class="nav-text">变化检测优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化策略"><span class="nav-number">4.1.</span> <span class="nav-text">优化策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变化检测策略-OnPush"><span class="nav-number">4.2.</span> <span class="nav-text">变化检测策略 OnPush</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#手动控制变化检测"><span class="nav-number">4.3.</span> <span class="nav-text">手动控制变化检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">4.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

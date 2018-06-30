@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="algorithm," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="写在前面最近也看了一些面经一些总结，排序是出现的频率最高的。今天就来总结一下最常出现的几个排序算法。包括Array对象自带的sort()方法，冒泡排序(BubbleSort)，快速排序(QuickSort)，选择排序(SeletionSort)，插入排序(InsertSort)。本文主要是直接丢代码，不做过多解释，毕竟基本都是数据结构的知识。 Array.sort()代码：123456789101">
+<meta name="keywords" content="algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端一定要会的算法--排序">
+<meta property="og:url" content="http://easywork.xin/2018/02/09/algorithm-1/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="写在前面最近也看了一些面经一些总结，排序是出现的频率最高的。今天就来总结一下最常出现的几个排序算法。包括Array对象自带的sort()方法，冒泡排序(BubbleSort)，快速排序(QuickSort)，选择排序(SeletionSort)，插入排序(InsertSort)。本文主要是直接丢代码，不做过多解释，毕竟基本都是数据结构的知识。 Array.sort()代码：123456789101">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-17T12:36:47.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端一定要会的算法--排序">
+<meta name="twitter:description" content="写在前面最近也看了一些面经一些总结，排序是出现的频率最高的。今天就来总结一下最常出现的几个排序算法。包括Array对象自带的sort()方法，冒泡排序(BubbleSort)，快速排序(QuickSort)，选择排序(SeletionSort)，插入排序(InsertSort)。本文主要是直接丢代码，不做过多解释，毕竟基本都是数据结构的知识。 Array.sort()代码：123456789101">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/02/09/algorithm-1/"/>
+
+
+
+
+
+  <title>前端一定要会的算法--排序 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/09/algorithm-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">前端一定要会的算法--排序</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T13:28:25+08:00">
+                2018-02-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/09/algorithm-1/" class="leancloud_visitors" data-flag-title="前端一定要会的算法--排序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>最近也看了一些面经一些总结，排序是出现的频率最高的。今天就来总结一下最常出现的几个排序算法。包括<code>Array</code>对象自带的<code>sort()</code>方法，冒泡排序(<code>BubbleSort</code>)，快速排序(<code>QuickSort</code>)，选择排序(<code>SeletionSort</code>)，插入排序(<code>InsertSort</code>)。本文主要是直接丢代码，不做过多解释，毕竟基本都是数据结构的知识。</p>
+<h3 id="Array-sort"><a href="#Array-sort" class="headerlink" title="Array.sort()"></a>Array.sort()</h3><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认是根据字符串unicode码进行排序</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.sort());        <span class="comment">//[ 12, 22, 3, 4, 42, 43, 45, 55, 77, 87 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//若想指定排序方式，则需要使用Array.sort(CompareFunction)</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compareFunc</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr.sort(compareFunc));  <span class="comment">//[ 3, 4, 12, 22, 42, 43, 45, 55, 77, 87 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6中更优雅的写法</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b));<span class="comment">//[ 3, 4, 12, 22, 42, 43, 45, 55, 77, 87 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//从V8引擎源码来看，sort是js实现的，且算法是快速排序，实现方式更为复杂，主要是做了性能上的优化。</span></span><br></pre></td></tr></table></figure>
+<h3 id="冒泡排序-BubbleSort"><a href="#冒泡排序-BubbleSort" class="headerlink" title="冒泡排序(BubbleSort)"></a>冒泡排序(BubbleSort)</h3><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bubbleSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; arr.length<span class="number">-1</span> ; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; arr.length<span class="number">-1</span>-i ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                swap(arr,j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr,j</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[j];</span><br><span class="line">    arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">    arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(bubbleSort(arr));</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
+<li>时间复杂度O(n²)。</li>
+<li>空间复杂度O(1)。</li>
+<li>是稳定排序。</li>
+</ul>
+<h4 id="改进，时间复杂度为O-n"><a href="#改进，时间复杂度为O-n" class="headerlink" title="改进，时间复杂度为O(n)"></a>改进，时间复杂度为O(n)</h4><ol>
+<li>加一个标志位，如果没有进行交换，将标志位设置为<code>false</code>，表示排序完成。</li>
+<li>记录最后一次交换的位置，因为最后一次交换的数，是在这一次排序当中最大的数，之后的数都比它大。在最佳状态下，时间复杂度也会缩到O(n)。</li>
+</ol>
+<h3 id="快速排序-QuickSort"><a href="#快速排序-QuickSort" class="headerlink" title="快速排序(QuickSort)"></a>快速排序(QuickSort)</h3><h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：找到一个基数，然后将比基数小的数放在基数的左边，将比基数大的放在基数的右边。</span></span><br><span class="line"><span class="comment">//之后进行递归那两组已经归类好的数组</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> right = [];</span><br><span class="line">    <span class="keyword">let</span> left = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span> ; i &lt; arr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]&gt;temp)&#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> quickSort(left).concat([temp],quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(quickSort(arr));</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度-1"><a href="#复杂度-1" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
+<li>时间复杂度：O(nlogn)。</li>
+<li>空间复杂度：O(logn)。</li>
+<li>是不稳定排序。</li>
+</ul>
+<h3 id="选择排序-SelectionSort"><a href="#选择排序-SelectionSort" class="headerlink" title="选择排序(SelectionSort)"></a>选择排序(SelectionSort)</h3><h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：第一遍，从数组中选出最小的，与第一个元素进行交换；</span></span><br><span class="line"><span class="comment">//第二遍，从第二个元素开始，找出最小的，与第二个元素进行交换，以此循环，完成排序。</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectionSort</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; arr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> index = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i+<span class="number">1</span> ; j &lt; arr.length ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[index] &gt; arr[j])&#123;</span><br><span class="line">                index = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,index,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//将目前数组中最小的元素放到第i个位置</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr,index,i</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp = arr[index];</span><br><span class="line">    arr[index] = arr[i];</span><br><span class="line">    arr[i] = temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(selectionSort(arr));</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度-2"><a href="#复杂度-2" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
+<li>时间复杂度O(n²)。</li>
+<li>空间复杂度O(1)。</li>
+<li>该排序是不稳定排序。</li>
+</ul>
+<h3 id="插入排序-InsertSort"><a href="#插入排序-InsertSort" class="headerlink" title="插入排序(InsertSort)"></a>插入排序(InsertSort)</h3><h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//思路：首先，循环原数组，然后将当前位置的元素，插入到之前已排好的数组中，依次操作。</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">22</span>,<span class="number">12</span>,<span class="number">4</span>,<span class="number">45</span>,<span class="number">3</span>,<span class="number">87</span>,<span class="number">77</span>,<span class="number">43</span>,<span class="number">55</span>,<span class="number">42</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span> ; i &lt; arr.length ; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> temp = arr[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span> ; j &lt; i ; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(temp &lt; arr[j] &amp;&amp; j === <span class="number">0</span>)&#123;</span><br><span class="line">                arr.splice(i,<span class="number">1</span>);    <span class="comment">//从索引为i的位置删除一项。</span></span><br><span class="line">                arr.unshift(temp);  <span class="comment">//将元素temp增加到数组的开头</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(temp &gt; arr[j] &amp;&amp; temp &lt; arr[j+<span class="number">1</span>] &amp;&amp; j &lt; (i<span class="number">-1</span>))&#123;</span><br><span class="line">                arr.splice(i,<span class="number">1</span>);</span><br><span class="line">                arr.splice(j+<span class="number">1</span>,<span class="number">0</span>,temp); <span class="comment">//在索引为j+1的位置插入temp</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(insertSort(arr));</span><br></pre></td></tr></table></figure>
+<h4 id="复杂度-3"><a href="#复杂度-3" class="headerlink" title="复杂度"></a>复杂度</h4><ul>
+<li>时间复杂度O(n²)。</li>
+<li>空间复杂度O(1)。</li>
+<li>该排序是稳定排序。</li>
+</ul>
+<p>推荐大家去看<a href="https://github.com/laizimo/zimo-article/issues/8" target="_blank" rel="noopener">这个人的mianjing</a>。里面还讲到了基数排序和归并排序，有时间再补上。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/02/09/algorithm-1/" title="前端一定要会的算法--排序">前端一定要会的算法--排序</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/02/09/algorithm-1/" title="前端一定要会的算法--排序">http://easywork.xin/2018/02/09/algorithm-1/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年2月9日 - 13时02分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/06/html-1/" rel="next" title="HTML标签分类总结">
+                <i class="fa fa-chevron-left"></i> HTML标签分类总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/12/ng2-5/" rel="prev" title="总结几个Angular2与ios wechat的问题">
+                总结几个Angular2与ios wechat的问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-sort"><span class="nav-number">2.</span> <span class="nav-text">Array.sort()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码："><span class="nav-number">2.1.</span> <span class="nav-text">代码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序-BubbleSort"><span class="nav-number">3.</span> <span class="nav-text">冒泡排序(BubbleSort)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">3.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂度"><span class="nav-number">3.2.</span> <span class="nav-text">复杂度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进，时间复杂度为O-n"><span class="nav-number">3.3.</span> <span class="nav-text">改进，时间复杂度为O(n)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速排序-QuickSort"><span class="nav-number">4.</span> <span class="nav-text">快速排序(QuickSort)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码-1"><span class="nav-number">4.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂度-1"><span class="nav-number">4.2.</span> <span class="nav-text">复杂度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择排序-SelectionSort"><span class="nav-number">5.</span> <span class="nav-text">选择排序(SelectionSort)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码-2"><span class="nav-number">5.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂度-2"><span class="nav-number">5.2.</span> <span class="nav-text">复杂度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入排序-InsertSort"><span class="nav-number">6.</span> <span class="nav-text">插入排序(InsertSort)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码-3"><span class="nav-number">6.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂度-3"><span class="nav-number">6.2.</span> <span class="nav-text">复杂度</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

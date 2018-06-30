@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="Angular2," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Angular2官方文档对组件交互这块有详细的介绍–&amp;gt;文档–组件之间的交互。按文档介绍，组件间交互的方式一共有4种，包括：    通过输入型绑定把数据从父组件传到子组件（@Input decoration）；子组件暴露一个EventEmitter属性（@Output decoration），当事件发生时，利用该属性emits向父组件发射事件。 父组件与子组件通过本地变量互动。（# var）">
+<meta name="keywords" content="Angular2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular2 父子组件通信方式">
+<meta property="og:url" content="http://easywork.xin/2018/01/28/ng2-3/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="Angular2官方文档对组件交互这块有详细的介绍–&amp;gt;文档–组件之间的交互。按文档介绍，组件间交互的方式一共有4种，包括：    通过输入型绑定把数据从父组件传到子组件（@Input decoration）；子组件暴露一个EventEmitter属性（@Output decoration），当事件发生时，利用该属性emits向父组件发射事件。 父组件与子组件通过本地变量互动。（# var）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-0719c2871bece58f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-ff5638347a8e81a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-34dc99ad8b400f46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-7bb37d5459bdd836.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-03056b04144101fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-6408a8fa3ab28f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-26T03:00:59.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular2 父子组件通信方式">
+<meta name="twitter:description" content="Angular2官方文档对组件交互这块有详细的介绍–&amp;gt;文档–组件之间的交互。按文档介绍，组件间交互的方式一共有4种，包括：    通过输入型绑定把数据从父组件传到子组件（@Input decoration）；子组件暴露一个EventEmitter属性（@Output decoration），当事件发生时，利用该属性emits向父组件发射事件。 父组件与子组件通过本地变量互动。（# var）">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-0719c2871bece58f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/01/28/ng2-3/"/>
+
+
+
+
+
+  <title>Angular2 父子组件通信方式 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/01/28/ng2-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Angular2 父子组件通信方式</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-28T14:47:40+08:00">
+                2018-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Angular2/" itemprop="url" rel="index">
+                    <span itemprop="name">Angular2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/28/ng2-3/" class="leancloud_visitors" data-flag-title="Angular2 父子组件通信方式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>Angular2官方文档对组件交互这块有详细的介绍–&gt;<a href="https://angular.cn/guide/component-interaction" target="_blank" rel="noopener">文档–组件之间的交互</a>。按文档介绍，组件间交互的方式一共有4种，包括：</li>
+</ul>
+<blockquote>
+<ol>
+<li>通过输入型绑定把数据从父组件传到子组件（<code>@Input decoration</code>）；子组件暴露一个<code>EventEmitter</code>属性（<code>@Output decoration</code>），当事件发生时，利用该属性<code>emits</code>向父组件发射事件。</li>
+<li>父组件与子组件通过本地变量互动。（<code># var</code>）</li>
+<li>父组件调用<code>@ViewChild</code>。</li>
+<li>父组件和子组件通过服务来通讯。</li>
+</ol>
+</blockquote>
+<ul>
+<li>我在这里只总结、详细介绍3种我在项目中使用过的方法，看完本文大概能做到如下的效果：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-0719c2871bece58f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>创建项目，项目结构如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-ff5638347a8e81a9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id="通过-Input、-Output装饰器进行父、子组件间的通信"><a href="#通过-Input、-Output装饰器进行父、子组件间的通信" class="headerlink" title="通过@Input、@Output装饰器进行父、子组件间的通信"></a>通过<code>@Input</code>、<code>@Output</code>装饰器进行父、子组件间的通信</h3><ul>
+<li><code>@Input</code>：该属性绑定用于父组件向子组件传递数据。子组件可以通过以下两种方法截取属性的变更：<ul>
+<li>使用一个输入属性的setter，以拦截父组件中值得变化。</li>
+<li>通过<code>ngOnchanges()</code>来截听输入属性值的变化。</li>
+</ul>
+</li>
+<li><code>@Output</code>：该数据绑定用于子组件向父组件传递数据和事件。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--parent.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 1000px;margin: auto"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 500px;float: left"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line">    父组件</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>父组件<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"input"</span>&gt;</span>父组件输入：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"input"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"Input something"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"parentPrint"</span>  </span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"output"</span>&gt;</span>父组件输出：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"output"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"Output something"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"contentFromChild"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-child</span></span></span><br><span class="line"><span class="tag">  [<span class="attr">fromParent</span>]=<span class="string">"parentPrint"</span></span></span><br><span class="line"><span class="tag">  (<span class="attr">fromChild</span>)=<span class="string">"fromChild($event)"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">app-child</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--child.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 500px;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line">    子组件</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>子组件<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"input"</span>&gt;</span>子组件输入：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"input"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"Input something"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"contentFromChild"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"output"</span>&gt;</span>子组件输出：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"output"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"Output something"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"fromParent"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>  <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> (<span class="attr">click</span>)=<span class="string">"clickChild()"</span>&gt;</span>Output方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果如下：（1、父组件输入，子组件可同步输出；2、子组件输入需要（3、）点击按钮触发发射事件，将数据传送给父组件。）</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-34dc99ad8b400f46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li><strong><code>@Input:</code></strong>父组件输入的同时，子组件能同步获取数据进行显示。核心代码如下：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父组件</span></span><br><span class="line">parentPrint: <span class="built_in">any</span>;			<span class="comment">//ts中，声明一个变量</span></span><br><span class="line">[(ngModel)]=<span class="string">"parentPrint"</span>	<span class="comment">//html中，绑定变量，获取用户输入</span></span><br><span class="line"><span class="comment">//html中，将数据传给子组件</span></span><br><span class="line">&lt;app-child [fromParent]=<span class="string">"parentPrint"</span>&gt;&lt;<span class="regexp">/app-child&gt; </span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/子组件</span></span><br><span class="line"><span class="regexp">@Input() fromParent;	 	/</span><span class="regexp">/ts中，用于直接接收从父组件获取的数据</span></span><br><span class="line"><span class="regexp">[(ngModel)]="fromParent"	/</span><span class="regexp">/html中，用于显示数据</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过<code>setter</code>截听输入属性值的变化，在子组件中声明一个私有变量来获取父组件传递过来的数据，从而屏蔽上层获取下层信息。（简单一点就是不让父组件知道子组件用什么东西去接收传过来的数据）通过这种方法也可以获得同样的效果。</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子组件</span></span><br><span class="line"> <span class="keyword">private</span> _fromParent: <span class="built_in">any</span>;     	<span class="comment">//私有变量，通过setter获取父组件的数据</span></span><br><span class="line"><span class="meta">@Input</span>()                      	<span class="comment">//通过setter获取父组件的数据</span></span><br><span class="line">  <span class="keyword">set</span> fromParent(fromParent: <span class="built_in">any</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>._fromParent = fromParent;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">get</span> fromParent(): <span class="built_in">any</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._fromParent;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong><code>@Output:</code></strong>父组件接收子组件的数据时，子组件暴露一个<code>EventEmitter</code>属性，当事件发生时，子组件利用该属性<code>emits</code>(向上弹射)事件。父组件绑定到这个事件属性，并在事件发生时作出回应。核心代码如下：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子组件</span></span><br><span class="line"><span class="meta">@Output</span>() fromChild = <span class="keyword">new</span> EventEmitter&lt;<span class="built_in">any</span>&gt;();	<span class="comment">//暴露一个输出属性</span></span><br><span class="line"></span><br><span class="line">&lt;button  <span class="keyword">class</span>=<span class="string">"btn btn-primary"</span> (click)=<span class="string">"clickChild()"</span>&gt;Output方式&lt;<span class="regexp">/button&gt; </span></span><br><span class="line"><span class="regexp"> /</span><span class="regexp">/触发发射函数，将数据发送给父组件</span></span><br><span class="line"><span class="regexp">  clickChild() &#123;</span></span><br><span class="line"><span class="regexp">    console.log('click child' , this.contentFromChild);</span></span><br><span class="line"><span class="regexp">    this.fromChild.emit(this.contentFromChild);</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父组件</span></span><br><span class="line">[(ngModel)]=<span class="string">"contentFromChild"</span>  <span class="comment">//绑定输出子组件的数据</span></span><br><span class="line"><span class="comment">//使用子组件，绑定事件属性</span></span><br><span class="line">&lt;app-child</span><br><span class="line">  [fromParent]=<span class="string">"parentPrint"</span></span><br><span class="line">  (fromChild)=<span class="string">"fromChild($event)"</span></span><br><span class="line">&gt;&lt;<span class="regexp">/app-child&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/事件处理函数</span></span><br><span class="line"><span class="regexp"> fromChild(event) &#123;</span></span><br><span class="line"><span class="regexp">   console.log(event);</span></span><br><span class="line"><span class="regexp">   this.contentFromChild = event;</span></span><br><span class="line"><span class="regexp"> &#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="父组件通过调用-ViewChild-来获取子组件的数据"><a href="#父组件通过调用-ViewChild-来获取子组件的数据" class="headerlink" title="父组件通过调用@ViewChild()来获取子组件的数据"></a>父组件通过调用<code>@ViewChild()</code>来获取子组件的数据</h3><ul>
+<li>如果父组件的类需要读取子组件的属性和值或调用子组件的方法时，就可以把子组件作为<code>ViewChild</code>，注入到父组件里面。<code>ViewChild</code>顾名思义就是可以看见子组件里面的属性和方法。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--parent.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 1000px;margin: auto"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 500px;float: left"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line">    父组件</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>父组件<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"viewoutput"</span>&gt;</span>ViewChild父组件输出：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"viewoutput"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"ViewChild父组件输出"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"viewOutput"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> (<span class="attr">click</span>)=<span class="string">"clickView()"</span>&gt;</span>ViewChild方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-child</span>&gt;</span><span class="tag">&lt;/<span class="name">app-child</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--child.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 500px;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line">    子组件</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>子组件<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"input"</span>&gt;</span>子组件输入：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"input"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"Input something"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"contentFromChild"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7bb37d5459bdd836.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>父组件核心代码：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ts</span></span><br><span class="line"><span class="meta">@ViewChild</span>(ChildComponent)               	<span class="comment">// 使用viewChild导入引用</span></span><br><span class="line"><span class="keyword">private</span> childComponent: ChildComponent; 	<span class="comment">// 将子组件注入到私有属性</span></span><br><span class="line"><span class="comment">//获取子组件数据并显示</span></span><br><span class="line">clickView() &#123;</span><br><span class="line">  	<span class="comment">//直接获取子组件的属性</span></span><br><span class="line">    <span class="keyword">this</span>.viewOutput = <span class="keyword">this</span>.childComponent.contentFromChild;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//html</span></span><br><span class="line">[(ngModel)]=<span class="string">"viewOutput"</span></span><br><span class="line"> &lt;button <span class="keyword">class</span>=<span class="string">"btn btn-primary"</span> (click)=<span class="string">"clickView()"</span>&gt;ViewChild方式&lt;<span class="regexp">/button&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="父组件和子组件通过服务来通讯"><a href="#父组件和子组件通过服务来通讯" class="headerlink" title="父组件和子组件通过服务来通讯"></a>父组件和子组件通过服务来通讯</h3><ul>
+<li>父组件和它的子组件共享同一个服务，利用该服务在家庭内部实现双向通讯。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--parent.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 1000px;margin: auto"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 500px;float: left"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line">    父组件</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>父组件<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"serviceoutput"</span>&gt;</span>父组件服务输入：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"serviceoutput"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"服务输入"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"serviceInput"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> (<span class="attr">click</span>)=<span class="string">"clickService()"</span>&gt;</span>Service方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">app-child</span>&gt;</span><span class="tag">&lt;/<span class="name">app-child</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--child.component.html--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span> <span class="attr">style</span>=<span class="string">"width: 500px;"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-header"</span>&gt;</span></span><br><span class="line">    子组件</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-body"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span> <span class="attr">class</span>=<span class="string">"card-title"</span>&gt;</span>子组件<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"serviceoutput"</span>&gt;</span>子组件服务输入：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">class</span>=<span class="string">"form-control"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">id</span>=<span class="string">"serviceoutput"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">placeholder</span>=<span class="string">"服务输入"</span></span></span><br><span class="line"><span class="tag">             [(<span class="attr">ngModel</span>)]=<span class="string">"serviceInput"</span></span></span><br><span class="line"><span class="tag">      &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn btn-primary"</span> (<span class="attr">click</span>)=<span class="string">"clickService()"</span>&gt;</span>Service方式<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务</span></span><br><span class="line"><span class="comment">//meditor.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123;Injectable&#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Subject&#125; <span class="keyword">from</span> <span class="string">'rxjs/Subject'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Observable&#125; <span class="keyword">from</span> <span class="string">'rxjs/Observable'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> MeditorService &#123;</span><br><span class="line">  <span class="keyword">private</span> subject = <span class="keyword">new</span> Subject&lt;MeditorMsg&gt;();</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">  <span class="comment">// 获取订阅者</span></span><br><span class="line">  <span class="keyword">public</span> getObservable(): Observable&lt;MeditorMsg&gt; &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.subject.asObservable();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 推送信息</span></span><br><span class="line">  <span class="keyword">public</span> push(msg: MeditorMsg) &#123;</span><br><span class="line">    <span class="keyword">this</span>.subject.next(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 中间者信息</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> MeditorMsg &#123;</span><br><span class="line">  id: <span class="built_in">string</span>;</span><br><span class="line">  body: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>效果如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-03056b04144101fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><ul>
+<li>父子组件的核心代码类似，在构造函数中将该服务实例注入到自身，父子组件都有一个唯一的<code>id</code>。无论是父组件还是子组件调用<code>push()</code>方法推送数据，双方都能接收到数据，这时候就要根据<code>id</code>来判断是要父组件使用数据还是子组件使用数据。核心代码如下：</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">subscription: Subscription = <span class="literal">null</span>;  <span class="comment">//初始化一个订阅对象</span></span><br><span class="line"><span class="comment">//子组件构造函数，用于监听数据推送</span></span><br><span class="line"><span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> meditor: MeditorService</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.subscription = meditor.getObservable().subscribe(</span><br><span class="line">      msg =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(msg);</span><br><span class="line">        <span class="keyword">if</span> (msg.id === <span class="string">'parent'</span>) &#123;		<span class="comment">//id为parent，获取父组件数据</span></span><br><span class="line">          <span class="keyword">this</span>.serviceInput = msg.body;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// 子组件将数据推送到中间着，给订阅者</span></span><br><span class="line">clickService() &#123;</span><br><span class="line">    <span class="keyword">this</span>.meditor.push(&#123;id: <span class="string">'parent'</span>, body: <span class="keyword">this</span>.serviceInput&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//父组件构造函数，用于监听数据推送</span></span><br><span class="line"><span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> meditor: MeditorService</span></span><br><span class="line"><span class="params">  </span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.subscription = meditor.getObservable().subscribe(</span><br><span class="line">      msg =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(msg);</span><br><span class="line">        <span class="keyword">if</span> (msg.id === <span class="string">'child'</span>) &#123;		<span class="comment">//id为child，获取子组件数据</span></span><br><span class="line">          <span class="keyword">this</span>.serviceInput = msg.body;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// 父组件将数据推送到中间着，给订阅者</span></span><br><span class="line">clickService() &#123;</span><br><span class="line">    <span class="keyword">this</span>.meditor.push(&#123;id: <span class="string">'parent'</span>, body: <span class="keyword">this</span>.serviceInput&#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>我上面写的还不是很完善，就是在生命周期结束前，也就是在<code>onDestroy</code>周期中，要<strong>取消订阅</strong>。</li>
+</ul>
+<p>​       以上，就是最近在使用的组件交互的总结。个人觉得通过服务来交互的可扩展性更强。例如，我们项目中用到了一个动态显示的侧栏，不同时期点击显示侧栏要显示不同的东西。这个时候把侧栏作为父组件，子组件作为消息的一部分传递给父组件，父组件根据子组件名动态生成模板，显示在侧栏上面。说了这么多废话大概就是下图的意思：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-6408a8fa3ab28f5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>最后附上demo源码：<a href="https://github.com/Husbin/web/tree/master/ComponentCommunication" target="_blank" rel="noopener">父子组件交互demo</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/01/28/ng2-3/" title="Angular2 父子组件通信方式">Angular2 父子组件通信方式</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/01/28/ng2-3/" title="Angular2 父子组件通信方式">http://easywork.xin/2018/01/28/ng2-3/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年1月28日 - 14时01分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular2/" rel="tag"># Angular2</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/22/js-2/" rel="next" title="javascript事件与事件委托">
+                <i class="fa fa-chevron-left"></i> javascript事件与事件委托
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/01/js-3/" rel="prev" title="javascript数据、变量类型与预解析">
+                javascript数据、变量类型与预解析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-Input、-Output装饰器进行父、子组件间的通信"><span class="nav-number">1.</span> <span class="nav-text">通过@Input、@Output装饰器进行父、子组件间的通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件通过调用-ViewChild-来获取子组件的数据"><span class="nav-number">2.</span> <span class="nav-text">父组件通过调用@ViewChild()来获取子组件的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#父组件和子组件通过服务来通讯"><span class="nav-number">3.</span> <span class="nav-text">父组件和子组件通过服务来通讯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text"> </span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="javascript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="事件： 事件就是文档或浏览器窗口中发生的一些特定的交互瞬间。javascript与HTML之间的交互就是通过事件来实现的。观察者模型：使用侦听器或处理程序要预定时间，以便时间发生时执行相应的代码，这种模型支持页面的行为（javascript）与页面的外观（HTML和CSS）之间的松散耦合。  事件监听器与处理程序： 响应某个事件的函数就叫做事件处理程序或事件监听器。在触发DOM上的某个事件时，会产">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript事件与事件委托">
+<meta property="og:url" content="http://easywork.xin/2018/01/22/js-2/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="事件： 事件就是文档或浏览器窗口中发生的一些特定的交互瞬间。javascript与HTML之间的交互就是通过事件来实现的。观察者模型：使用侦听器或处理程序要预定时间，以便时间发生时执行相应的代码，这种模型支持页面的行为（javascript）与页面的外观（HTML和CSS）之间的松散耦合。  事件监听器与处理程序： 响应某个事件的函数就叫做事件处理程序或事件监听器。在触发DOM上的某个事件时，会产">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-7ea31711b0a97b9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-99ab05f566aa2f19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-93635f7dfc7e1750.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-a1efe0cd4c2f8b3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-a6f4cf8620b9905b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-ad770bbb4064b989.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-a00520e7b3c8833e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-dc3b24d733fc42d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-c1b983a015164c9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-1ef58d04fea91443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-02-28T06:47:50.701Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript事件与事件委托">
+<meta name="twitter:description" content="事件： 事件就是文档或浏览器窗口中发生的一些特定的交互瞬间。javascript与HTML之间的交互就是通过事件来实现的。观察者模型：使用侦听器或处理程序要预定时间，以便时间发生时执行相应的代码，这种模型支持页面的行为（javascript）与页面的外观（HTML和CSS）之间的松散耦合。  事件监听器与处理程序： 响应某个事件的函数就叫做事件处理程序或事件监听器。在触发DOM上的某个事件时，会产">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-7ea31711b0a97b9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/01/22/js-2/"/>
+
+
+
+
+
+  <title>javascript事件与事件委托 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/01/22/js-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">javascript事件与事件委托</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T22:21:18+08:00">
+                2018-01-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/22/js-2/" class="leancloud_visitors" data-flag-title="javascript事件与事件委托">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="事件："><a href="#事件：" class="headerlink" title="事件："></a>事件：</h4><blockquote>
+<p>事件就是文档或浏览器窗口中发生的一些特定的交互瞬间。javascript与HTML之间的交互就是通过事件来实现的。<strong>观察者模型：</strong>使用侦听器或处理程序要预定时间，以便时间发生时执行相应的代码，这种模型支持页面的行为（javascript）与页面的外观（HTML和CSS）之间的松散耦合。</p>
+</blockquote>
+<h4 id="事件监听器与处理程序："><a href="#事件监听器与处理程序：" class="headerlink" title="事件监听器与处理程序："></a>事件监听器与处理程序：</h4><ul>
+<li>响应某个事件的函数就叫做事件处理程序或事件监听器。在触发DOM上的某个事件时，会产生一个事件对象<code>event</code>，这个对象中包含着所有与事件有关的信息，包括导致事件的元素，事件 的类型以及其他与特定事件相关的信息，这个对象不需要定义，可以直接使用。</li>
+<li>事件处理程序：事件处理程序的名字以<code>on</code>开头，类似<code>click、load、和 mouseover</code>都是事件的名字，因此，<code>click</code>的事件处理程序就是<code>onclick</code>。案例如下：<code>onclick</code>就是事件处理程序</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">"width: 90px;height:90px;background-color: cyan;margin: 0 auto;"</span> <span class="attr">onclick</span>=<span class="string">"showMessage(event)"</span> &gt;</span>孩子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">showMessage</span>(<span class="params">event</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">        alert(event.target.id);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>事件监听器：例子如下：<code>child.addEventListener(&quot;click&quot;,function (),true)</code>是将指定的监听器注册到<code>child</code>上，当该对象触发指定的事件时，指定的回调函数就会被执行。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">"width: 90px;height:90px;background-color: cyan;margin: 0 auto;"</span> &gt;</span>孩子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> child = <span class="built_in">document</span>.getElementById(<span class="string">"child"</span>);</span></span><br><span class="line"><span class="undefined">    /**</span></span><br><span class="line"><span class="undefined">     *  事件监听器</span></span><br><span class="line"><span class="undefined">     *  addEventListener(eventName , dealEventFunc , boolean)</span></span><br><span class="line"><span class="undefined">     *  eventName: 要处理的事件名</span></span><br><span class="line"><span class="undefined">     *  dealEventFunc: 作为事件处理程序的函数</span></span><br><span class="line"><span class="javascript">     *  boolean: <span class="literal">true</span>表捕获事件，<span class="literal">false</span>表冒泡事件</span></span><br><span class="line"><span class="undefined">     * */</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 捕获事件流</span></span></span><br><span class="line"><span class="javascript">    child.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      	<span class="comment">//取消冒泡</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//event.stopPropagation();          //w3c</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//event.cancelBubble = true;        //IE</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"捕获事件流：click child!"</span>);</span></span><br><span class="line"><span class="javascript">    &#125;,<span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">//冒泡事件流</span></span></span><br><span class="line"><span class="javascript">    child.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"冒泡事件流：click child!"</span>);</span></span><br><span class="line"><span class="javascript">    &#125;,<span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="事件流："><a href="#事件流：" class="headerlink" title="事件流："></a>事件流：</h4><ul>
+<li>构建一棵dom树如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-7ea31711b0a97b9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ol>
+<li>IE事件流：事件冒泡流。</li>
+</ol>
+<blockquote>
+<p>事件开始时由最具体的元素（文档中嵌到层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-99ab05f566aa2f19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>点击<code>child</code>的<code>&lt;div&gt;</code>，显示如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-93635f7dfc7e1750.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>点击<code>parent</code>的<code>&lt;div&gt;</code>，显示如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-a1efe0cd4c2f8b3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ol>
+<li>NetSpace事件流：事件捕获流。</li>
+</ol>
+<blockquote>
+<p>事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件，事件捕获的用意在于在事件到达预定目标之前捕获他。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-a6f4cf8620b9905b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>点击<code>child</code>的<code>&lt;div&gt;</code>，显示如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-ad770bbb4064b989.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>点击<code>parent</code>的<code>&lt;div&gt;</code>，显示如下：</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-a00520e7b3c8833e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ol>
+<li>DOM事件流：包括三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。</li>
+</ol>
+<blockquote>
+<p>DOM2级事件规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。首先发生的是事件捕获，为截获事件提供了机会，然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件做出响应。</p>
+<p>下图，捕获阶段：1，2，3，4</p>
+<p>处于目标阶段在事件处理中被看成是冒泡阶段的一部分</p>
+<p>然后冒泡事件发生：5，6，7，8，9</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-dc3b24d733fc42d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">event.stopPropagation();          <span class="comment">//w3c</span></span><br><span class="line">event.cancelBubble = <span class="literal">true</span>;        <span class="comment">//IE</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-c1b983a015164c9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h4><ul>
+<li><strong>内存和性能：</strong>在javascript中，添加到页面上的时间处理程序数量将直接影响到页面的整体运行性能。导致这一问题的原因是多方面的，首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的DOM访问次数，会延迟整个页面的交互就绪时间。</li>
+<li><strong>事件委托：</strong>事件委托利用了事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。使整个页面只有少量的函数，从而优化页面性能。实例代码如下：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">id</span>=<span class="string">"html"</span> <span class="attr">onclick</span>=<span class="string">"clickDiv(event)"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">id</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"grandparent"</span> <span class="attr">style</span>=<span class="string">"width: 270px;height:270px;background-color: blue; margin: 0 auto; text-align: center;line-height: 3"</span>&gt;</span>祖父</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"parent"</span> <span class="attr">style</span>=<span class="string">"width: 180px;height:180px;background-color: cadetblue;margin: 0 auto;"</span>&gt;</span>父亲</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"child"</span> <span class="attr">style</span>=<span class="string">"width: 90px;height:90px;background-color: cyan;margin: 0 auto;"</span> &gt;</span>孩子</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> child = <span class="built_in">document</span>.getElementById(<span class="string">"child"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> parent = <span class="built_in">document</span>.getElementById(<span class="string">"parent"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> grandparent = <span class="built_in">document</span>.getElementById(<span class="string">"grandparent"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> body = <span class="built_in">document</span>.getElementById(<span class="string">"body"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> html = <span class="built_in">document</span>.getElementById(<span class="string">"html"</span>);</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">clickDiv</span>(<span class="params">event</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">switch</span> (event.target.id)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">case</span> <span class="string">'child'</span>:<span class="built_in">console</span>.log(<span class="string">"click child!"</span>);<span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">case</span> <span class="string">'parent'</span>:<span class="built_in">console</span>.log(<span class="string">"click parent!"</span>);<span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">case</span> <span class="string">'grandparent'</span>:<span class="built_in">console</span>.log(<span class="string">"click grandparent!"</span>);<span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">case</span> <span class="string">'body'</span>:<span class="built_in">console</span>.log(<span class="string">"click body!"</span>);<span class="keyword">break</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">case</span> <span class="string">'html'</span>:<span class="built_in">console</span>.log(<span class="string">"click html!"</span>);<span class="keyword">break</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>在<code>&lt;html&gt;</code>标签中添加了<code>onclick(event)</code>事件处理程序。由于其他标签都是<code>&lt;html&gt;</code>的子节点，而且他们的事件会冒泡，所以单击事件终会被这个函数处理，点击各个点的输出情况如下所示。与给每个节点加一个处理程序相比，这种方法需要占用的内存更少，只添加了一个处理程序，虽然对用户来说最终结果都相同，但这种技术需要占用的内存更少，<strong>所有用到按钮的事件都适合采用事件委托技术</strong>。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/7166236-1ef58d04fea91443.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<ul>
+<li>如果可行的话，也可以考虑为<code>document</code>对象添加一个事件处理程序，用以处理页面上发生的某种特定类型的事件，这样做与传统的做法相比具有如下优点：<ol>
+<li><code>document</code>对象很快就可以访问，而且可以在生命周期的任何时间点上为它添加事件处理程序。‘</li>
+<li>在页面中设置事件处理程序所需的时间更少，只添加体格事件处理程序所需的DOM引用更少，所花的时间也更少。</li>
+<li>真个页面占用的内存空间更少，能够提升整体性能。</li>
+</ol>
+</li>
+<li><a href="https://github.com/Husbin/web/blob/master/javascript/base/eventBubble.html" target="_blank" rel="noopener">整个demo代码</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/01/22/js-2/" title="javascript事件与事件委托">javascript事件与事件委托</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/01/22/js-2/" title="javascript事件与事件委托">http://easywork.xin/2018/01/22/js-2/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年1月22日 - 22时01分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/13/base-3/" rel="next" title="图解BOM与DOM的区别、联系">
+                <i class="fa fa-chevron-left"></i> 图解BOM与DOM的区别、联系
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/28/ng2-3/" rel="prev" title="Angular2 父子组件通信方式">
+                Angular2 父子组件通信方式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件："><span class="nav-number">1.</span> <span class="nav-text">事件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件监听器与处理程序："><span class="nav-number">2.</span> <span class="nav-text">事件监听器与处理程序：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件流："><span class="nav-number">3.</span> <span class="nav-text">事件流：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#阻止事件冒泡"><span class="nav-number">4.</span> <span class="nav-text">阻止事件冒泡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件委托"><span class="nav-number">5.</span> <span class="nav-text">事件委托</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

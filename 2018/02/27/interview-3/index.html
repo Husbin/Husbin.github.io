@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<meta name="google-site-verification" content="z0Ny_8DovDGxvXH_bxA-J5aWKJrynnkENbNlw4yle64" />
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/img/favicon.jpg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/img/manifest.json">
+
+
+  <meta name="msapplication-config" content="/img/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="面试奇谈," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="bind模拟实现12345678910Function.prototype.bind2 = function (context) &amp;#123;    var self = this;    // 获取bind2函数从第二个参数到最后一个参数,这里的参数是bind的时候传入的    var args = Array.prototype.slice.call(arguments, 1);    ret">
+<meta name="keywords" content="面试奇谈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试奇谈-解答篇">
+<meta property="og:url" content="http://easywork.xin/2018/02/27/interview-3/index.html">
+<meta property="og:site_name" content="Husbin">
+<meta property="og:description" content="bind模拟实现12345678910Function.prototype.bind2 = function (context) &amp;#123;    var self = this;    // 获取bind2函数从第二个参数到最后一个参数,这里的参数是bind的时候传入的    var args = Array.prototype.slice.call(arguments, 1);    ret">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-14T08:42:35.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试奇谈-解答篇">
+<meta name="twitter:description" content="bind模拟实现12345678910Function.prototype.bind2 = function (context) &amp;#123;    var self = this;    // 获取bind2函数从第二个参数到最后一个参数,这里的参数是bind的时候传入的    var args = Array.prototype.slice.call(arguments, 1);    ret">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://easywork.xin/2018/02/27/interview-3/"/>
+
+
+
+
+
+  <title>面试奇谈-解答篇 | Husbin</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c5ca69f821a53c5e8cf387ba711675bc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Husbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">与其临渊羡鱼，不如退而结网。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/02/27/interview-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Husbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/img/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Husbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">面试奇谈-解答篇</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T12:10:49+08:00">
+                2018-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/琐言碎语/" itemprop="url" rel="index">
+                    <span itemprop="name">琐言碎语</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/02/27/interview-3/" class="leancloud_visitors" data-flag-title="面试奇谈-解答篇">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="bind模拟实现"><a href="#bind模拟实现" class="headerlink" title="bind模拟实现"></a>bind模拟实现</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind2 = <span class="function"><span class="keyword">function</span> (<span class="params">context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 获取bind2函数从第二个参数到最后一个参数,这里的参数是bind的时候传入的</span></span><br><span class="line">    <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 这个时候的arguments是指执行bind返回的函数传入的参数</span></span><br><span class="line">        <span class="keyword">var</span> bindArgs = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">        self.apply(context, args.concat(bindArgs));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2018-03-05面试解析"><a href="#2018-03-05面试解析" class="headerlink" title="2018-03-05面试解析"></a>2018-03-05面试解析</h3><h4 id="jenkins工作流程"><a href="#jenkins工作流程" class="headerlink" title="jenkins工作流程"></a>jenkins工作流程</h4><p><strong>搭建：</strong></p>
+<ol>
+<li>与svn/git进行公钥密钥配对，获取拉取项目的权限。</li>
+<li>写持续集成脚本，大概步骤如下：<ol>
+<li>根据程序pid找到就项目进程，执行kill操作。</li>
+<li>重新构建项目。</li>
+<li>执行守护进程，告诉os <code>Don&#39;t kill me</code>。</li>
+</ol>
+</li>
+</ol>
+<p><strong>工作流程：</strong></p>
+<ol>
+<li>jenkins根据是定的时间去检测代码仓是否有变化</li>
+<li>若有变化，重新拉取项目</li>
+<li>根据pid找到旧进程，执行kill操作</li>
+<li>重新构建项目</li>
+<li>执行守护进程，告诉操作系统不要杀了我这个进程<code>don&#39;t kill me</code></li>
+</ol>
+<h4 id="关于ES6"><a href="#关于ES6" class="headerlink" title="关于ES6"></a>关于ES6</h4><p>推荐去看<a href="http://es6.ruanyifeng.com/" target="_blank" rel="noopener">ECMAScript 6 入门 – 阮一峰</a></p>
+<p><strong>promise的3个状态：</strong></p>
+<ul>
+<li><em>pending</em>: 初始状态，既不是成功，也不是失败状态。</li>
+<li><em>fulfilled</em>: 意味着操作成功完成。</li>
+<li><em>rejected</em>: 意味着操作失败。</li>
+</ul>
+<p><strong>箭头函数与普通函数的区别：</strong></p>
+<ul>
+<li>（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
+<li>（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</li>
+<li>（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</li>
+<li><a href="http://blog.csdn.net/Levis_1993/article/details/78342354" target="_blank" rel="noopener">箭头函数与function的区别</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">MDN– 箭头函数</a></li>
+<li><a href="https://www.jianshu.com/p/eca50cc933b7" target="_blank" rel="noopener">js箭头函数和普通函数的区别</a></li>
+</ul>
+<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><p><strong>dom回流重绘：</strong></p>
+<p>css与dom解析完毕后，合并为渲染树（render tree）</p>
+<p><em>重绘(repaint)：</em>当render tree中的一些元素需要更新属性，单这些属性只会影响元素的外观，风格，而不会影响到元素的布局，此类的页面渲染叫作页面重绘。</p>
+<p><em>回流(reflow)：</em>当render tree中的一部分（或全部）因为元素的规模尺寸，布局，隐藏等改变而引起的页面重新渲染。</p>
+<p>回流必定引起重绘。</p>
+<p><a href="https://wenhuiyang-luck.github.io/2017/03/14/%E9%A1%B5%E9%9D%A2%E9%87%8D%E7%BB%98%E5%92%8C%E9%A1%B5%E9%9D%A2%E5%9B%9E%E6%B5%81/" target="_blank" rel="noopener">页面重绘（repaint）和页面回流（reflow）</a></p>
+<h4 id="lodash"><a href="#lodash" class="headerlink" title="lodash"></a>lodash</h4><blockquote>
+<p>有多年开发经验的工程师，往往都会有自己的一套工具库，称为 utils、helpers 等等，这套库一方面是自己的技术积累，另一方面也是对某项技术的扩展，领先于技术规范的制定和实现。</p>
+<p>Lodash 就是这样的一套工具库，它内部封装了诸多对字符串、数组、对象等常见数据类型的处理函数，其中部分是目前 ECMAScript 尚未制定的规范，但同时被业界所认可的辅助函数。目前每天使用 npm 安装 Lodash 的数量在百万级以上，这在一定程度上证明了其代码的健壮性，值得我们在项目中一试。</p>
+</blockquote>
+<p><a href="https://www.w3cplus.com/javascript/lodash-intro.html" target="_blank" rel="noopener">lodash入门介绍</a></p>
+<p><a href="https://lodash.com/docs" target="_blank" rel="noopener">文档</a></p>
+<h4 id="原生ajax"><a href="#原生ajax" class="headerlink" title="原生ajax"></a>原生ajax</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">success</span>(<span class="params">text</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fail</span>(<span class="params">code</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> XMLHttpRequest();	<span class="comment">//新建xmlhttprequest对象</span></span><br><span class="line">request.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(request.readystate === <span class="number">4</span>)&#123;		<span class="comment">//成功完成</span></span><br><span class="line">    <span class="keyword">if</span>(request.status === <span class="number">200</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> success(request.responseText);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> fail(request.status);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//http请求继续</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//发送请求</span></span><br><span class="line">request.open(<span class="string">'GET'</span>,<span class="string">'url'</span>);</span><br><span class="line">request.send();</span><br></pre></td></tr></table></figure>
+<h3 id="2018-02-26面试解析"><a href="#2018-02-26面试解析" class="headerlink" title="2018-02-26面试解析"></a>2018-02-26面试解析</h3><h4 id="let有没有提升"><a href="#let有没有提升" class="headerlink" title="let有没有提升"></a>let有没有提升</h4><p>答案是没有，原题如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//undefined</span></span><br><span class="line">    <span class="keyword">var</span> val = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">var</span> val = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//10</span></span><br><span class="line">&#125;</span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
+<p>变种,下面会出现什么情况，答案是会报错：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> val = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);   	<span class="comment">//ReferenceError: val is not defined</span></span><br><span class="line">    <span class="keyword">let</span> val = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
+<p>因为没有变量提升，所以变量没有提前声明，还没有声明就使用，就会报错。</p>
+<h4 id="typeof-“111”-”string”-的boolean值-选择"><a href="#typeof-“111”-”string”-的boolean值-选择" class="headerlink" title="!!typeof “111”===”string” 的boolean值 -选择"></a>!!typeof “111”===”string” 的boolean值 -选择</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consoloe.log(!!<span class="keyword">typeof</span> <span class="string">"111"</span>===<span class="string">"string"</span>)   <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>答案是false，然后面试官问了执行顺序，跟我说“！”的优先级比“===”高。根据《javascript高级程序设计第三版介绍》：逻辑非操作符首先会将他的操作数转化为一个布尔值，然后再对其求反。也就是说逻辑非操作符遵循下列规则：</p>
+<ul>
+<li>如果一个操作数是一个对象，则返回false。（!obj === false）</li>
+<li>如果一个操作数是一个空字符串，返回true。(!”” === true)</li>
+<li>如果操作数是一个非空字符串，返回false。(!”1111” === false)</li>
+<li>如果操作数是0，返回true。(!0 === true)</li>
+<li>如果操作数是任意非0数值，包括Infinity，返回false。(!1 === false)</li>
+<li>如果操作数是null，返回true。(! null === true)</li>
+<li>如果操作数是NaN，返回true。(! NaN === true)</li>
+<li>如果操作数是undefined，返回false。(! undefined === true)</li>
+</ul>
+<p>所以原题执行顺序为：</p>
+<ul>
+<li><code>typeof &quot;111&quot;</code> === string </li>
+<li><code>!typeof &quot;111&quot;</code> === false</li>
+<li><code>!!typeof &quot;111&quot;</code> === true</li>
+<li>true === “string” 为false</li>
+</ul>
+<h4 id="关于优化"><a href="#关于优化" class="headerlink" title="关于优化"></a>关于优化</h4><p>关于这题，我是看了一个<a href="https://github.com/laizimo/zimo-article" target="_blank" rel="noopener">博客</a>里面写的，进行总结的。我写的答案大概如下：</p>
+<ol>
+<li>减少css，js标签，用webpack打包工具打包。css放前面，js放后面，防止单线程阻塞。</li>
+<li>图片加载，base64，雪碧图。</li>
+<li>gzip压缩：gzip压缩是http协议上的gzip压缩编码技术。首先，我们应该要清楚的是压缩可以达到怎样的目的。比如说纯文本内容进行压缩之后，大小可以缩小大概40%左右。大小减小了最直接的就是传输的速度将会加快，以及流量将会减少。尤其是对于大流量类网站来说，压缩文件内容大小，减少流量是很有必要的(毕竟省钱嘛！)，另一方面，压缩过的内容将减少存储空间。</li>
+<li>css:预处理，scss。不滥用字体。</li>
+<li>尽量使用事件代理，利用事件冒泡，避免批量绑定事件。</li>
+</ol>
+<h4 id="关于浏览器兼容"><a href="#关于浏览器兼容" class="headerlink" title="关于浏览器兼容"></a>关于浏览器兼容</h4><p>我答了项目中遇到的几个问题，大概全都是我的博客里面写过的问题。<a href="http://easywork.xin/2018/02/12/ng2-5/">总结几个Angular2与ios wechat的问题</a></p>
+<p>浏览器内核答起，回答CSS前缀，Polyfill，Babel这些内容。。</p>
+<h4 id="数据库postgresql优点"><a href="#数据库postgresql优点" class="headerlink" title="数据库postgresql优点"></a>数据库postgresql优点</h4><p>google一波，毕竟写前端很少写数据库。。</p>
+<ol>
+<li>MySQL 的各种 text 字段有不同的限制, 要手动区分 small text, middle text, large text… Pg 没有这个限制, text 能支持各种大小。</li>
+<li>它可以存储 array 和 json, 可以在 array 和 json 上建索引, 甚至还能用表达式索引.</li>
+<li>pg性能优于mysql，相同的数据量计算，pg时间一般只有mysql的四分之一左右（具体情况可能有所不同） </li>
+</ol>
+<h4 id="express有什么中间件"><a href="#express有什么中间件" class="headerlink" title="express有什么中间件"></a>express有什么中间件</h4><p><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.application" target="_blank" rel="noopener">下面全部是文档的介绍</a></p>
+<p>Express 是一个路由和中间件 Web 框架，其自身只具有最低程度的功能：Express 应用程序基本上是一系列中间件函数调用。</p>
+<p>中间件函数能够访问<a href="http://expressjs.com/zh-cn/4x/api.html#req" target="_blank" rel="noopener">请求对象</a> (<code>req</code>)、<a href="http://expressjs.com/zh-cn/4x/api.html#res" target="_blank" rel="noopener">响应对象</a> (<code>res</code>) 以及应用程序的请求/响应循环中的下一个中间件函数。下一个中间件函数通常由名为 <code>next</code> 的变量来表示。</p>
+<p>中间件函数可以执行以下任务：</p>
+<ul>
+<li>执行任何代码。</li>
+<li>对请求和响应对象进行更改。</li>
+<li>结束请求/响应循环。</li>
+<li>调用堆栈中的下一个中间件函数。</li>
+</ul>
+<p>如果当前中间件函数没有结束请求/响应循环，那么它必须调用 <code>next()</code>，以将控制权传递给下一个中间件函数。否则，请求将保持挂起状态。</p>
+<p>Express 应用程序可以使用以下类型的中间件：</p>
+<ul>
+<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.application" target="_blank" rel="noopener">应用层中间件</a></li>
+<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.router" target="_blank" rel="noopener">路由器层中间件</a></li>
+<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.error-handling" target="_blank" rel="noopener">错误处理中间件</a></li>
+<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.built-in" target="_blank" rel="noopener">内置中间件</a></li>
+<li><a href="http://expressjs.com/zh-cn/guide/using-middleware.html#middleware.third-party" target="_blank" rel="noopener">第三方中间件</a></li>
+</ul>
+<p>您可以使用可选安装路径来装入应用层和路由器层中间件。 还可以将一系列中间件函数一起装入，这样会在安装点创建中间件系统的子堆栈。</p>
+<h4 id="字符串反转"><a href="#字符串反转" class="headerlink" title="字符串反转"></a>字符串反转</h4><p><a href="https://www.jianshu.com/p/f6ac19ea0415" target="_blank" rel="noopener">参考</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"a,b,c,d,e,s"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(reverseString(str));   <span class="comment">//s,e,d,c,b,a</span></span><br></pre></td></tr></table></figure>
+<p>相关知识点：</p>
+<p> split() 方法用于把一个<strong>字符串</strong>分割成<strong>字符串数组</strong>。</p>
+<p>reverse() 方法用于颠倒<strong>数组</strong>中元素的顺序,并且会<strong>直接修改原数组</strong>。</p>
+<p>方法用于把数组中的<strong>所有元素</strong>放入一个字符串,并按传入的分隔符进行分割。</p>
+<h4 id="ul和li列表的默认样式"><a href="#ul和li列表的默认样式" class="headerlink" title="ul和li列表的默认样式"></a>ul和li列表的默认样式</h4><p>回来自己在chrome上试了下，结果如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">dir</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">list-style-type</span>: disc;</span><br><span class="line">    <span class="attribute">-webkit-margin-before</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">-webkit-margin-after</span>: <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">-webkit-margin-start</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">-webkit-margin-end</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="attribute">-webkit-padding-start</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: list-item;</span><br><span class="line">    <span class="attribute">text-align</span>: -webkit-match-parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="css3新特性"><a href="#css3新特性" class="headerlink" title="css3新特性"></a>css3新特性</h4><p><a href="https://www.nowcoder.com/questionTerminal/85d16107dc074d52a69f2e86f08a69b1" target="_blank" rel="noopener">css3特性</a></p>
+<ol>
+<li><strong>CSS3实现圆角（border-radius），阴影（box-shadow），</strong> </li>
+<li><strong>对文字加特效（text-shadow、），线性渐变（gradient），旋转（transform） </strong></li>
+<li>transform:rotate(9deg) scale(0.85,0.90) translate(0px,-30px)  skew(-9deg,0deg);// 旋转,缩放,定位,倾斜 </li>
+<li>增加了更多的CSS选择器  多背景 rgba  </li>
+<li>在CSS3中唯一引入的伪元素是 ::selection. </li>
+<li>媒体查询，多栏布局 </li>
+<li>border-image</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+     
+         <div>
+          
+          <ul class="post-copyright">
+             <li class="post-copyright-link">
+              <strong>本文作者：</strong>
+              <a href="/" title="欢迎访问 Husbin 的个人博客">Husbin</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文标题：</strong>
+              <a href="http://easywork.xin/2018/02/27/interview-3/" title="面试奇谈-解答篇">面试奇谈-解答篇</a>
+            </li>
+
+            <li class="post-copyright-link">
+              <strong>本文链接：</strong>
+              <a href="http://easywork.xin/2018/02/27/interview-3/" title="面试奇谈-解答篇">http://easywork.xin/2018/02/27/interview-3/</a>
+            </li>
+
+            <li class="post-copyright-date">
+                <strong>发布时间：</strong>2018年2月27日 - 12时02分
+            </li>
+
+            <li class="post-copyright-license">
+              <strong>版权声明： </strong>
+              本文由 Husbin 原创，采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="license" target="_blank">保留署名-非商业性使用-禁止演绎 4.0-国际许可协议</a> </br>转载请保留以上声明信息！
+            </li>
+          </ul>
+        
+      </div>
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试奇谈/" rel="tag"># 面试奇谈</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/26/interview-2/" rel="next" title="面试奇谈">
+                <i class="fa fa-chevron-left"></i> 面试奇谈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/27/js-6/" rel="prev" title="call，apply，bind">
+                call，apply，bind <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      <div class="share-component" data-mobile-sites="weibo,qq,qzone,tencent"></div>
+<!-- share.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+<!-- share.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/img/favicon.jpg"
+                alt="Husbin" />
+            
+              <p class="site-author-name" itemprop="name">Husbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Husbin/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/about.html" title="更新日历" target="_blank">更新日历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/02/26/interview-2/" title="面试奇谈" target="_blank">面试奇谈</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://easywork.xin/2018/04/17/algorithm-2/" title="水题题解" target="_blank">水题题解</a>
+                  </li>
+                
+              </ul>
+            </div>
+          <br>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=530507&auto=0&height=66"></iframe>
+</div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#bind模拟实现"><span class="nav-number">1.</span> <span class="nav-text">bind模拟实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-03-05面试解析"><span class="nav-number"></span> <span class="nav-text">2018-03-05面试解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jenkins工作流程"><span class="nav-number">1.</span> <span class="nav-text">jenkins工作流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于ES6"><span class="nav-number">2.</span> <span class="nav-text">关于ES6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css"><span class="nav-number">3.</span> <span class="nav-text">css</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lodash"><span class="nav-number">4.</span> <span class="nav-text">lodash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原生ajax"><span class="nav-number">5.</span> <span class="nav-text">原生ajax</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-02-26面试解析"><span class="nav-number"></span> <span class="nav-text">2018-02-26面试解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#let有没有提升"><span class="nav-number">1.</span> <span class="nav-text">let有没有提升</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof-“111”-”string”-的boolean值-选择"><span class="nav-number">2.</span> <span class="nav-text">!!typeof “111”===”string” 的boolean值 -选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于优化"><span class="nav-number">3.</span> <span class="nav-text">关于优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于浏览器兼容"><span class="nav-number">4.</span> <span class="nav-text">关于浏览器兼容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库postgresql优点"><span class="nav-number">5.</span> <span class="nav-text">数据库postgresql优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#express有什么中间件"><span class="nav-number">6.</span> <span class="nav-text">express有什么中间件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串反转"><span class="nav-number">7.</span> <span class="nav-text">字符串反转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ul和li列表的默认样式"><span class="nav-number">8.</span> <span class="nav-text">ul和li列表的默认样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#css3新特性"><span class="nav-number">9.</span> <span class="nav-text">css3新特性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Husbin</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("OaoR6BdarH7eOL930yNsn4SC-gzGzoHsz", "xdyf8sDaKoc9J6VBoiccj4ly");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

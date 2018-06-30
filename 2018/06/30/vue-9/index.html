@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-3b1b96566a1b14ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-3fe992fd3459cd70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-3168ffa77158fc5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-06-30T05:53:19.897Z">
+<meta property="og:updated_time" content="2018-06-30T06:27:44.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始搭Vue-cli">
 <meta name="twitter:description" content="从零开始搭Vue项目，主要是想脱离对脚手架全家桶的依赖，以及从中深入学习一点webpack相关的知识，不要每次打开package.json以及webpack的配置文件都一脸懵逼。  新建项目12mkdir vue-cli-webpackcd vue-cli-webpack 使用npm init生成package.json文件1npm init 执行上述命令后，在项目文件夹下生成了package.">
@@ -402,7 +402,7 @@
 <p>执行上述命令后，在项目文件夹下生成了<code>package.json</code>文件。</p>
 <p>文件中的各个字段介绍：<a href="http://javascript.ruanyifeng.com/nodejs/packagejson.html" target="_blank" rel="noopener">package.json文件</a></p>
 <h3 id="引入webpack"><a href="#引入webpack" class="headerlink" title="引入webpack"></a>引入webpack</h3><p>webpack使用教程：<a href="https://webpack.docschina.org/concepts/" target="_blank" rel="noopener">webpack</a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack --save-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack --save-dev</span><br><span class="line">npm install webpack-cli -D</span><br></pre></td></tr></table></figure>
 <p>然后创建一些必要的文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">touch index.html</span><br><span class="line">mkdir src</span><br><span class="line"><span class="built_in">cd</span> src</span><br><span class="line">touch main.js</span><br></pre></td></tr></table></figure>
 <p>main.js文件如下：</p>
@@ -493,6 +493,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./styles/main.css'</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./component/app'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">    components: &#123; App &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>重新执行<code>npm run dev</code>，即可查看效果。</p>
 <h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>到这里就差不多结束了。接下来就需要什么下什么，vue-router，vuex之类的。</p>
+<p>整份代码请戳：<a href="https://github.com/Husbin/vue-cli-webpack" target="_blank" rel="noopener">vue-cli-webpack</a></p>
 <p>还有推荐一个包分析工具：<a href="https://www.npmjs.com/package/webpack-bundle-analyzer" target="_blank" rel="noopener">webpack-bundle-analyzer</a></p>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://juejin.im/post/5a425cb4f265da43294e4f2e#comment" target="_blank" rel="noopener">webpack 搭建 vue 项目</a></p>
 <p><a href="https://webpack.docschina.org/configuration/" target="_blank" rel="noopener">webpack</a></p>

@@ -3,6 +3,27 @@
 
 
     
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-07-01T12:47:42.682Z</lastmod>
+    <data>
+        <display>
+        <title>水题题解</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://easywork.xin/2018/06/30/vue-9/</loc>
     <lastmod>2018-06-30T06:27:44.106Z</lastmod>
@@ -19,26 +40,6 @@
            
              
               <breadCrumb title="Vue.js" url="http://easywork.xin/categories/Vue-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-06-29T14:04:55.485Z</lastmod>
-    <data>
-        <display>
-        <title>水题题解</title>
-        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
           
         </display>
     </data>
@@ -64,7 +65,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://easywork.xin/2018/06/22/js-15/</loc>

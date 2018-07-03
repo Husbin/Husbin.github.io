@@ -3,10 +3,29 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
+    <lastmod>2018-07-03T13:46:03.195Z</lastmod>
+    <data>
+        <display>
+        <title>项目中遇到的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-07-01T12:47:42.682Z</lastmod>
+    <lastmod>2018-07-02T12:48:58.624Z</lastmod>
     <data>
         <display>
         <title>水题题解</title>
@@ -23,6 +42,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://easywork.xin/2018/06/30/vue-9/</loc>
@@ -100,26 +120,6 @@
            
              
               <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/12/ng2-5/</loc>
-    <lastmod>2018-06-23T12:37:12.783Z</lastmod>
-    <data>
-        <display>
-        <title>总结几个Angular2与ios wechat的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
-        
-        <tag>Angular2</tag>
-         
-         
-           
-             
-              <breadCrumb title="Angular2" url="http://easywork.xin/categories/Angular2/"/>
           
         </display>
     </data>

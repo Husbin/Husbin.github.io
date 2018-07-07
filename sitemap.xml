@@ -2,16 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
     
-    <lastmod>2018-07-03T13:57:13.516Z</lastmod>
+    <lastmod>2018-07-07T11:52:13.326Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
     
-    <lastmod>2018-07-02T12:48:58.624Z</lastmod>
+    <lastmod>2018-07-06T06:46:45.293Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
+    
+    <lastmod>2018-07-06T06:33:46.553Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/07/05/security-2/</loc>
+    
+    <lastmod>2018-07-05T03:08:06.897Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/02/security-1/</loc>
+    
+    <lastmod>2018-07-05T03:03:32.033Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/07/04/vue-10/</loc>
+    
+    <lastmod>2018-07-05T01:06:40.593Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/07/04/a/</loc>
+    
+    <lastmod>2018-07-04T11:46:49.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/07/04/build-tool-1/</loc>
+    
+    <lastmod>2018-07-04T07:23:26.315Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/06/30/vue-9/</loc>
+    
+    <lastmod>2018-07-04T06:56:05.345Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
+    
+    <lastmod>2018-07-04T06:55:38.301Z</lastmod>
     
   </url>
   
@@ -19,13 +75,6 @@
     <loc>http://easywork.xin/about.html</loc>
     
     <lastmod>2018-07-01T12:59:05.327Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/06/30/vue-9/</loc>
-    
-    <lastmod>2018-06-30T06:27:44.106Z</lastmod>
     
   </url>
   
@@ -166,13 +215,6 @@
     <loc>http://easywork.xin/2017/10/05/vue_1/</loc>
     
     <lastmod>2018-05-20T08:40:02.820Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/02/21/interview-1/</loc>
-    
-    <lastmod>2018-05-20T06:10:23.710Z</lastmod>
     
   </url>
   
@@ -331,13 +373,6 @@
   </url>
   
   <url>
-    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
-    
-    <lastmod>2018-03-23T12:59:30.725Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://easywork.xin/categories/index.html</loc>
     
     <lastmod>2018-03-23T12:57:16.519Z</lastmod>
@@ -453,13 +488,6 @@
     <loc>http://easywork.xin/2018/03/04/css-2/</loc>
     
     <lastmod>2018-03-04T09:52:05.760Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://easywork.xin/2018/03/02/security-1/</loc>
-    
-    <lastmod>2018-03-02T12:55:02.264Z</lastmod>
     
   </url>
   

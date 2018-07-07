@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="内容协商内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。 基准包含在请求报文中的某些字段就是判断的基准：  Accept Accept-Charset Accept-Encoding Accept-Language Content-Language  内容协商技术服务器驱动协商（Server-d">
+<meta name="description" content="2018-07-04更get和post的区别 get使用url或cookie传参，而post将数据放在body中。 get方式提交数据有长度限制，而post的数据可以很大。 post比get安全，因为数据在地址栏上不可见。 get和post最大的区别主要是GET请求是幂等性的，POST请求不是。    什么是幂等性？幂等性是指一次和多次请求某一个资源应该具有同样的副作用。简单来说意味着对同一URL">
 <meta name="keywords" content="计算机网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTTP琐碎知识点">
 <meta property="og:url" content="http://easywork.xin/2018/03/17/network-6/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="内容协商内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。 基准包含在请求报文中的某些字段就是判断的基准：  Accept Accept-Charset Accept-Encoding Accept-Language Content-Language  内容协商技术服务器驱动协商（Server-d">
+<meta property="og:description" content="2018-07-04更get和post的区别 get使用url或cookie传参，而post将数据放在body中。 get方式提交数据有长度限制，而post的数据可以很大。 post比get安全，因为数据在地址栏上不可见。 get和post最大的区别主要是GET请求是幂等性的，POST请求不是。    什么是幂等性？幂等性是指一次和多次请求某一个资源应该具有同样的副作用。简单来说意味着对同一URL">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/Husbin/Husbin.github.io/blob/master/img/blogimg/network/network-1.png?raw=true">
-<meta property="og:updated_time" content="2018-03-23T12:59:30.725Z">
+<meta property="og:updated_time" content="2018-07-04T06:55:38.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP琐碎知识点">
-<meta name="twitter:description" content="内容协商内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。 基准包含在请求报文中的某些字段就是判断的基准：  Accept Accept-Charset Accept-Encoding Accept-Language Content-Language  内容协商技术服务器驱动协商（Server-d">
+<meta name="twitter:description" content="2018-07-04更get和post的区别 get使用url或cookie传参，而post将数据放在body中。 get方式提交数据有长度限制，而post的数据可以很大。 post比get安全，因为数据在地址栏上不可见。 get和post最大的区别主要是GET请求是幂等性的，POST请求不是。    什么是幂等性？幂等性是指一次和多次请求某一个资源应该具有同样的副作用。简单来说意味着对同一URL">
 <meta name="twitter:image" content="https://github.com/Husbin/Husbin.github.io/blob/master/img/blogimg/network/network-1.png?raw=true">
 
 
@@ -386,7 +386,24 @@
       
 
       
-        <h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p>内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
+        <h3 id="2018-07-04更"><a href="#2018-07-04更" class="headerlink" title="2018-07-04更"></a>2018-07-04更</h3><h3 id="get和post的区别"><a href="#get和post的区别" class="headerlink" title="get和post的区别"></a>get和post的区别</h3><ol>
+<li>get使用url或cookie传参，而post将数据放在body中。</li>
+<li>get方式提交数据有长度限制，而post的数据可以很大。</li>
+<li>post比get安全，因为数据在地址栏上不可见。</li>
+<li>get和post最大的区别主要是GET请求是幂等性的，POST请求不是。 </li>
+</ol>
+<blockquote>
+<p>什么是幂等性？幂等性是指一次和多次请求某一个资源应该具有同样的副作用。简单来说意味着对同一URL的多个请求应该返回同样的结果。</p>
+<p> 正因为它们有这样的区别，所以不应该且不能用get请求做数据的增删改这些有副作用的操作。因为get请求是幂等的，在网络不好的隧道中会尝试重试。如果用get请求增数据，会有重复操作的风险，而这种重复操作可能会导致副作用（浏览器和操作系统并不知道你会用get请求去做增操作）。 </p>
+</blockquote>
+<h3 id="http与https区别"><a href="#http与https区别" class="headerlink" title="http与https区别"></a>http与https区别</h3><ol>
+<li>https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。 </li>
+<li>http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。 </li>
+<li>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。 </li>
+<li>http的连接很简单，是无状态的；HTTPS协议是由SSL（Secure Sockets Layer） +HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。 </li>
+</ol>
+<hr>
+<h3 id="内容协商"><a href="#内容协商" class="headerlink" title="内容协商"></a>内容协商</h3><p>内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为合适的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。</p>
 <h4 id="基准"><a href="#基准" class="headerlink" title="基准"></a>基准</h4><p>包含在请求报文中的某些字段就是判断的基准：</p>
 <ul>
 <li>Accept</li>
@@ -620,7 +637,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">73</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -705,7 +722,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容协商"><span class="nav-number">1.</span> <span class="nav-text">内容协商</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基准"><span class="nav-number">1.1.</span> <span class="nav-text">基准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内容协商技术"><span class="nav-number">1.2.</span> <span class="nav-text">内容协商技术</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器驱动协商（Server-driven-Negotiation）"><span class="nav-number">1.2.1.</span> <span class="nav-text">服务器驱动协商（Server-driven Negotiation）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端驱动协商（Agent-driven-Negotiation）"><span class="nav-number">1.2.2.</span> <span class="nav-text">客户端驱动协商（Agent-driven Negotiation）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#透明协商（Transparent-Negoyiation）"><span class="nav-number">1.2.3.</span> <span class="nav-text">透明协商（Transparent Negoyiation）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩传输的内容编码"><span class="nav-number">2.</span> <span class="nav-text">压缩传输的内容编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url详解"><span class="nav-number">3.</span> <span class="nav-text">url详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协议部分"><span class="nav-number">3.1.</span> <span class="nav-text">协议部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名部分"><span class="nav-number">3.2.</span> <span class="nav-text">域名部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口部分"><span class="nav-number">3.3.</span> <span class="nav-text">端口部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟目录部分"><span class="nav-number">3.4.</span> <span class="nav-text">虚拟目录部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件名部分"><span class="nav-number">3.5.</span> <span class="nav-text">文件名部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数部分"><span class="nav-number">3.6.</span> <span class="nav-text">参数部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锚部分"><span class="nav-number">3.7.</span> <span class="nav-text">锚部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四种常见的POST提交数据方式"><span class="nav-number">4.</span> <span class="nav-text">四种常见的POST提交数据方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#application-x-www-form-urlencoded"><span class="nav-number">4.1.</span> <span class="nav-text">application/x-www-form-urlencoded</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#multipart-form-data"><span class="nav-number">4.2.</span> <span class="nav-text">multipart/form-data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#application-json"><span class="nav-number">4.3.</span> <span class="nav-text">application/json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#text-xml"><span class="nav-number">4.4.</span> <span class="nav-text">text/xml</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-07-04更"><span class="nav-number">1.</span> <span class="nav-text">2018-07-04更</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get和post的区别"><span class="nav-number">2.</span> <span class="nav-text">get和post的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http与https区别"><span class="nav-number">3.</span> <span class="nav-text">http与https区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内容协商"><span class="nav-number">4.</span> <span class="nav-text">内容协商</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基准"><span class="nav-number">4.1.</span> <span class="nav-text">基准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内容协商技术"><span class="nav-number">4.2.</span> <span class="nav-text">内容协商技术</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#服务器驱动协商（Server-driven-Negotiation）"><span class="nav-number">4.2.1.</span> <span class="nav-text">服务器驱动协商（Server-driven Negotiation）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#客户端驱动协商（Agent-driven-Negotiation）"><span class="nav-number">4.2.2.</span> <span class="nav-text">客户端驱动协商（Agent-driven Negotiation）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#透明协商（Transparent-Negoyiation）"><span class="nav-number">4.2.3.</span> <span class="nav-text">透明协商（Transparent Negoyiation）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩传输的内容编码"><span class="nav-number">5.</span> <span class="nav-text">压缩传输的内容编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url详解"><span class="nav-number">6.</span> <span class="nav-text">url详解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#协议部分"><span class="nav-number">6.1.</span> <span class="nav-text">协议部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名部分"><span class="nav-number">6.2.</span> <span class="nav-text">域名部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#端口部分"><span class="nav-number">6.3.</span> <span class="nav-text">端口部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟目录部分"><span class="nav-number">6.4.</span> <span class="nav-text">虚拟目录部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件名部分"><span class="nav-number">6.5.</span> <span class="nav-text">文件名部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参数部分"><span class="nav-number">6.6.</span> <span class="nav-text">参数部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锚部分"><span class="nav-number">6.7.</span> <span class="nav-text">锚部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四种常见的POST提交数据方式"><span class="nav-number">7.</span> <span class="nav-text">四种常见的POST提交数据方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#application-x-www-form-urlencoded"><span class="nav-number">7.1.</span> <span class="nav-text">application/x-www-form-urlencoded</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#multipart-form-data"><span class="nav-number">7.2.</span> <span class="nav-text">multipart/form-data</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#application-json"><span class="nav-number">7.3.</span> <span class="nav-text">application/json</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#text-xml"><span class="nav-number">7.4.</span> <span class="nav-text">text/xml</span></a></li></ol></li></ol></div>
             
 
           </div>

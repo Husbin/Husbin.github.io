@@ -4,8 +4,228 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/07/08/network-9/</loc>
+    <lastmod>2018-07-08T10:23:55.709Z</lastmod>
+    <data>
+        <display>
+        <title>http协商缓存与强缓存</title>
+        <pubTime>2018-07-08T05:28:08.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
+    <lastmod>2018-07-08T05:38:22.987Z</lastmod>
+    <data>
+        <display>
+        <title>项目中遇到的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/05/30/network-8/</loc>
+    <lastmod>2018-07-08T05:29:35.966Z</lastmod>
+    <data>
+        <display>
+        <title>websocket使用与应用场景</title>
+        <pubTime>2018-05-30T00:57:02.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
+    <lastmod>2018-07-08T05:29:30.973Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP琐碎知识点</title>
+        <pubTime>2018-03-17T01:37:41.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/19/network-5/</loc>
+    <lastmod>2018-07-08T05:29:27.327Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP报文（未完）</title>
+        <pubTime>2018-03-19T01:10:28.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/11/network-4/</loc>
+    <lastmod>2018-07-08T05:29:24.167Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP状态码</title>
+        <pubTime>2018-03-11T08:05:48.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/01/network-3/</loc>
+    <lastmod>2018-07-08T05:29:19.798Z</lastmod>
+    <data>
+        <display>
+        <title>从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</title>
+        <pubTime>2018-03-01T03:32:04.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/28/network-2/</loc>
+    <lastmod>2018-07-08T05:29:16.588Z</lastmod>
+    <data>
+        <display>
+        <title>TCP三次握手、四次挥手</title>
+        <pubTime>2018-02-28T07:05:40.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/25/network-1/</loc>
+    <lastmod>2018-07-08T05:29:13.224Z</lastmod>
+    <data>
+        <display>
+        <title>网络协议的分层结构</title>
+        <pubTime>2018-02-25T06:33:29.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/05/03/network-7/</loc>
+    <lastmod>2018-07-08T05:29:03.928Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP发展历程</title>
+        <pubTime>2018-05-03T13:07:43.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
+    <lastmod>2018-07-08T03:23:23.470Z</lastmod>
+    <data>
+        <display>
+        <title>javascript字符串、数组操作（个人字典）</title>
+        <pubTime>2018-05-13T11:51:50.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-07-07T11:52:13.326Z</lastmod>
+    <lastmod>2018-07-08T03:20:56.345Z</lastmod>
     <data>
         <display>
         <title>水题题解</title>
@@ -24,19 +244,19 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
-    <lastmod>2018-07-06T06:46:45.293Z</lastmod>
+    <loc>http://easywork.xin/2018/06/22/js-15/</loc>
+    <lastmod>2018-07-08T00:57:14.184Z</lastmod>
     <data>
         <display>
-        <title>项目中遇到的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        <title>深浅拷贝</title>
+        <pubTime>2018-06-22T11:37:55.000Z</pubTime>
         
-        <tag>practice</tag>
+        <tag>javascript</tag>
          
          
            
              
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>
@@ -162,26 +382,6 @@
     </url>
 
     
-  <url>
-    <loc>http://easywork.xin/2018/03/17/network-6/</loc>
-    <lastmod>2018-07-04T06:55:38.301Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP琐碎知识点</title>
-        <pubTime>2018-03-17T01:37:41.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
   <url>
     <loc>http://easywork.xin/2018/06/25/css-9/</loc>
@@ -204,26 +404,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/06/22/js-15/</loc>
-    <lastmod>2018-06-25T02:02:47.027Z</lastmod>
-    <data>
-        <display>
-        <title>深浅拷贝</title>
-        <pubTime>2018-06-22T11:37:55.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
     <lastmod>2018-06-23T13:27:21.730Z</lastmod>
     <data>
@@ -237,26 +417,6 @@
            
              
               <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/05/03/network-7/</loc>
-    <lastmod>2018-06-22T14:12:43.184Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP发展历程</title>
-        <pubTime>2018-05-03T13:07:43.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
           
         </display>
     </data>
@@ -424,26 +584,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/05/13/js-13/</loc>
-    <lastmod>2018-06-12T13:34:28.273Z</lastmod>
-    <data>
-        <display>
-        <title>javascript字符串、数组操作（个人字典）</title>
-        <pubTime>2018-05-13T11:51:50.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/06/12/optimization-3/</loc>
     <lastmod>2018-06-12T08:27:07.854Z</lastmod>
     <data>
@@ -497,26 +637,6 @@
            
              
               <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/05/30/network-8/</loc>
-    <lastmod>2018-05-30T01:01:10.892Z</lastmod>
-    <data>
-        <display>
-        <title>websocket使用与应用场景</title>
-        <pubTime>2018-05-30T00:57:02.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
           
         </display>
     </data>
@@ -1005,106 +1125,6 @@
 
     
     
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/19/network-5/</loc>
-    <lastmod>2018-03-23T12:43:30.733Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP报文（未完）</title>
-        <pubTime>2018-03-19T01:10:28.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/11/network-4/</loc>
-    <lastmod>2018-03-23T12:43:27.398Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP状态码</title>
-        <pubTime>2018-03-11T08:05:48.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/01/network-3/</loc>
-    <lastmod>2018-03-23T12:43:24.487Z</lastmod>
-    <data>
-        <display>
-        <title>从浏览器地址栏输入url到显示页面的步骤(以HTTP为例)</title>
-        <pubTime>2018-03-01T03:32:04.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/28/network-2/</loc>
-    <lastmod>2018-03-23T12:43:21.271Z</lastmod>
-    <data>
-        <display>
-        <title>TCP三次握手、四次挥手</title>
-        <pubTime>2018-02-28T07:05:40.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/25/network-1/</loc>
-    <lastmod>2018-03-23T12:43:18.152Z</lastmod>
-    <data>
-        <display>
-        <title>网络协议的分层结构</title>
-        <pubTime>2018-02-25T06:33:29.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
   <url>

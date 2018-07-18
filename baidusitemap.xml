@@ -3,6 +3,26 @@
 
 
     
+  <url>
+    <loc>http://easywork.xin/2018/03/02/js-7/</loc>
+    <lastmod>2018-07-13T12:25:10.784Z</lastmod>
+    <data>
+        <display>
+        <title>简述作用域链、闭包、原型链</title>
+        <pubTime>2018-03-02T01:37:33.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -558,26 +578,6 @@
            
              
               <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/02/js-7/</loc>
-    <lastmod>2018-06-14T02:55:53.349Z</lastmod>
-    <data>
-        <display>
-        <title>简述作用域链、闭包、原型链</title>
-        <pubTime>2018-03-02T01:37:33.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>

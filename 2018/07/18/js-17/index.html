@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -90,21 +90,18 @@
 
 
 
-<meta name="description" content="css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。 百分数百分数总是相对于另一个值。 颜色 命名颜色：red，blue。。。 用RGB指定颜色：p.one{color:rgb(0%,20%,20%)} 十六进制RGB颜色：h1{color: #FF0000} /*re*/  长度单位绝对长度单位比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc">
-<meta name="keywords" content="css">
+<meta name="description" content="防抖（Debounce）和节流 （Throttle） 都是用来控制某个函数在一定时间内执行次数的多少以优化高频率执行js代码的一种技巧，两者相似而又不同。  防抖（Debounce）函数防抖（debounce）是指在一定时间内，在动作被连续频繁触发的情况下，动作只会被执行一次，也就是说当调用动作过n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间，所以短时间内的连续动作永远只">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css-鲜为人知的css单位">
-<meta property="og:url" content="http://easywork.xin/2018/03/05/css-4/index.html">
+<meta property="og:title" content="防抖与节流">
+<meta property="og:url" content="http://easywork.xin/2018/07/18/js-17/index.html">
 <meta property="og:site_name" content="Husbin">
-<meta property="og:description" content="css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。 百分数百分数总是相对于另一个值。 颜色 命名颜色：red，blue。。。 用RGB指定颜色：p.one{color:rgb(0%,20%,20%)} 十六进制RGB颜色：h1{color: #FF0000} /*re*/  长度单位绝对长度单位比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc">
+<meta property="og:description" content="防抖（Debounce）和节流 （Throttle） 都是用来控制某个函数在一定时间内执行次数的多少以优化高频率执行js代码的一种技巧，两者相似而又不同。  防抖（Debounce）函数防抖（debounce）是指在一定时间内，在动作被连续频繁触发的情况下，动作只会被执行一次，也就是说当调用动作过n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间，所以短时间内的连续动作永远只">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-3fd0eb08b9399c7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-05T06:24:28.461Z">
+<meta property="og:updated_time" content="2018-07-18T14:23:09.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css-鲜为人知的css单位">
-<meta name="twitter:description" content="css中的值和单位数字整数和实数（小数），整数和实数都可以是正数或者负数。 百分数百分数总是相对于另一个值。 颜色 命名颜色：red，blue。。。 用RGB指定颜色：p.one{color:rgb(0%,20%,20%)} 十六进制RGB颜色：h1{color: #FF0000} /*re*/  长度单位绝对长度单位比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="防抖与节流">
+<meta name="twitter:description" content="防抖（Debounce）和节流 （Throttle） 都是用来控制某个函数在一定时间内执行次数的多少以优化高频率执行js代码的一种技巧，两者相似而又不同。  防抖（Debounce）函数防抖（debounce）是指在一定时间内，在动作被连续频繁触发的情况下，动作只会被执行一次，也就是说当调用动作过n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间，所以短时间内的连续动作永远只">
 
 
 
@@ -134,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://easywork.xin/2018/03/05/css-4/"/>
+  <link rel="canonical" href="http://easywork.xin/2018/07/18/js-17/"/>
 
 
 
 
 
-  <title>css-鲜为人知的css单位 | Husbin</title>
+  <title>防抖与节流 | Husbin</title>
   
 
 
@@ -287,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/03/05/css-4/">
+    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/07/18/js-17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -304,7 +301,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">css-鲜为人知的css单位</h2>
+          <h2 class="post-title" itemprop="name headline">防抖与节流</h2>
         
 
         <div class="post-meta">
@@ -316,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T09:09:17+08:00">
-                2018-03-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T22:16:35+08:00">
+                2018-07-18
               </time>
             
 
@@ -339,8 +336,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -356,7 +353,7 @@
 
           
           
-             <span id="/2018/03/05/css-4/" class="leancloud_visitors" data-flag-title="css-鲜为人知的css单位">
+             <span id="/2018/07/18/js-17/" class="leancloud_visitors" data-flag-title="防抖与节流">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,29 +384,16 @@
       
 
       
-        <h3 id="css中的值和单位"><a href="#css中的值和单位" class="headerlink" title="css中的值和单位"></a>css中的值和单位</h3><h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>整数和实数（小数），整数和实数都可以是正数或者负数。</p>
-<h4 id="百分数"><a href="#百分数" class="headerlink" title="百分数"></a>百分数</h4><p>百分数总是相对于另一个值。</p>
-<h4 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h4><ul>
-<li>命名颜色：red，blue。。。</li>
-<li>用RGB指定颜色：<code>p.one{color:rgb(0%,20%,20%)}</code></li>
-<li>十六进制RGB颜色：<code>h1{color: #FF0000} /*re*/</code></li>
-</ul>
-<h4 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h4><h5 id="绝对长度单位"><a href="#绝对长度单位" class="headerlink" title="绝对长度单位"></a>绝对长度单位</h5><p>比较少用，主要有英寸（in）,厘米（cm），毫米（mm），点（pt）,派卡（pc）。</p>
-<h5 id="相对长度单位"><a href="#相对长度单位" class="headerlink" title="相对长度单位"></a>相对长度单位</h5><p>em，ex，px</p>
-<h3 id="鲜为人知的css单位"><a href="#鲜为人知的css单位" class="headerlink" title="鲜为人知的css单位"></a>鲜为人知的css单位</h3><h4 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h4><h5 id="em"><a href="#em" class="headerlink" title="em"></a>em</h5><p>em单位被定义为当前字体大小，比如在body上设置一个字体的大小，那么在body元素内的任何子元素的em值都等于这个字体大小。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">      <span class="comment">&lt;!--div将有一个2em的font-size。他是所继承的字体的2倍。--&gt;</span></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 2em;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    111(2*10px)</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        222(2*2*10px)</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            333(2*2*2*10px)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>像上述例子，每个元素内部都级联<code>em</code>定义的字体大小，，则每个div从他们的父节点继承字体大小，带给我们之间增加的字体大小。显示如下：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-501c11d35c7052d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h5 id="rem-1"><a href="#rem-1" class="headerlink" title="rem"></a>rem</h5><p>虽然在某些情况下可能需要这个，但是通常你可能想居于一个唯一的度量标准来按比例缩放。在这种情况下，应该使用<code>rem</code>。<code>rem</code>中的r代表<code>root</code>，这等同于<code>font-size</code>基于根元素进行设置；在大多数情况下，根元素为<code>html</code>元素。还是上面的例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        div &#123;</span></span><br><span class="line"><span class="undefined">            font-size: 2rem;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">style</span>=<span class="string">"font-size: 10px"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    111(2*10px)</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        222(2*10px)</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            333(2*10px)</span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/7166236-3fd0eb08b9399c7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<p><strong>对网络布局的好处：</strong>rem不是只对定义字体大小有用，比如，你可以使用rem把整个网格系统或者ui样式库基于HTML根元素的字体大小上，然后再特定的地方使用em比例缩放。这将带来更加可预测的字体大小和比例缩放。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.container &#123; width: 70rem; // 70 * 14px = 980px &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="vh和vw"><a href="#vh和vw" class="headerlink" title="vh和vw"></a>vh和vw</h4><p>响应式网页设计技术很大程度上依赖于比例规则。然而，css比例不总是每个问题的最佳解决方案。css宽度是相对于最近的包含父元素。如果你想使用显示窗口的宽度或者高度，而不是父元素的宽度将会怎么样。这正是<code>vh(viewport-height)</code>和<code>vw(viewport-weight)</code>。</p>
-<p><code>vh</code>等于<code>viewport</code>高度的<code>1/100</code>。例如浏览器的高是<code>900px</code>，<code>1vh</code>的值为<code>9px</code>。同理，如果窗口宽度为<code>750px</code>，则<code>1vw</code>的值为<code>7.5px</code>。</p>
-<h4 id="ex-和-ch"><a href="#ex-和-ch" class="headerlink" title="ex 和 ch"></a>ex 和 ch</h4><p><code>ex</code>和<code>ch</code>单位，与<code>em</code>和<code>rem</code>相似，依赖于当前字体和字体大小。然而，与<code>em</code>和<code>rem</code>不同的是，这两个单位只也依赖于<code>font-family</code>，因为它们被定为基于特殊字体的法案。</p>
-<h4 id="vmin-和-vmax"><a href="#vmin-和-vmax" class="headerlink" title="vmin 和 vmax"></a>vmin 和 vmax</h4><p><code>vh</code>和<code>vm</code>总是与视口的高度和宽度有关，与之不同的，<code>vmin</code>和<code>vmax</code>是与这次宽度和高度的最大值或最小值有关，取决于哪个更大和更小。例如，如果浏览器设置为<code>1100px</code>宽、<code>700px</code>高，<code>1vmin</code>会是<code>7px</code>,<code>1vmax</code>为<code>11px</code>。然而，如果宽度设置为<code>800px</code>，高度设置为<code>1080px</code>，<code>1vmin</code>将会等于<code>8px</code>而<code>1vmax</code>将会是<code>10.8px</code>。</p>
-<h4 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h4><p><a href="https://www.w3cplus.com/css/7-css-units-you-might-not-know-about.html" target="_blank" rel="noopener">七个你可能不了解的CSS单位</a></p>
+        <p>防抖（Debounce）和节流 （Throttle） 都是用来控制某个函数在一定时间内执行次数的多少以优化高频率执行js代码的一种技巧，两者相似而又不同。 </p>
+<h3 id="防抖（Debounce）"><a href="#防抖（Debounce）" class="headerlink" title="防抖（Debounce）"></a>防抖（Debounce）</h3><p>函数防抖（debounce）是指在一定时间内，在动作被连续频繁触发的情况下，动作只会被执行一次，也就是说当调用动作过n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间，所以短时间内的连续动作永远只会触发一次，比如说用手指一直按住一个弹簧，它将不会弹起直到你松手为止。 </p>
+<h3 id="节流（Throttle）"><a href="#节流（Throttle）" class="headerlink" title="节流（Throttle）"></a>节流（Throttle）</h3><p>函数节流是指一定时间内执行的操作只执行一次，也就是说即预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期，一个比较形象的例子是如果将水龙头拧紧直到水是以水滴的形式流出，那你会发现每隔一段时间，就会有一滴水流出。 </p>
+<h3 id="优化场景"><a href="#优化场景" class="headerlink" title="优化场景"></a>优化场景</h3><p>函数节流（throttle）与 函数防抖（debounce）都是为了限制函数的执行频次，以优化函数触发频率过高导致的响应速度跟不上触发频率，出现延迟，假死或卡顿的现象。</p>
+<p>比如如下的情况：</p>
+<p>window对象的resize、scroll事件</p>
+<p>拖拽时的mousemove事件</p>
+<p>文字输入、自动完成的keyup事件</p>
+<h4 id="函数防抖"><a href="#函数防抖" class="headerlink" title="函数防抖"></a>函数防抖</h4><p>假设我们网站有个搜索框，用户输入文本我们会自动联想匹配出一些结果供用户选择。我们可能首先想到的做法就是监听keyup事件，然后异步去查询结果。这个方法本身是没错的，但是如果用户快速的输入了一连串的字符，假设是10个字符，那么就会在瞬间触发了10次的请求，这无疑不是我们想要的。我们想要的是用户停止输入的时候才去触发查询的请求，这时候防抖函数就可以帮到我们。</p>
+<h4 id="函数节流"><a href="#函数节流" class="headerlink" title="函数节流"></a>函数节流</h4><p>如果我们现在需要做一个记录用户鼠标移动轨迹的小应用，像这种对流畅度有一定的要求的情况，再用上面的防抖函数就不合适了，如果用防抖函数会出现什么效果呢？如果鼠标移动速度较快，那么只有在我们每次鼠标停下来的时候才能发送当前的位置，但是如果我们每次移动都发送并记录鼠标的位置，那也是相当恐怖的，鼠标随便移动一下就会有成百上千条记录位置的请求发出去，这个时候我们就可以用到函数节流，节流顾名思义也就是个一段儿时间去发送一次位置，可以大大减少请求发送次数。</p>
 
       
     </div>
@@ -459,16 +443,16 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://easywork.xin/2018/03/05/css-4/" title="css-鲜为人知的css单位">css-鲜为人知的css单位</a>
+              <a href="http://easywork.xin/2018/07/18/js-17/" title="防抖与节流">防抖与节流</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://easywork.xin/2018/03/05/css-4/" title="css-鲜为人知的css单位">http://easywork.xin/2018/03/05/css-4/</a>
+              <a href="http://easywork.xin/2018/07/18/js-17/" title="防抖与节流">http://easywork.xin/2018/07/18/js-17/</a>
             </li>
 
             <li class="post-copyright-date">
-                <strong>发布时间：</strong>2018年3月5日 - 09时03分
+                <strong>发布时间：</strong>2018年7月18日 - 22时07分
             </li>
 
             <li class="post-copyright-license">
@@ -481,7 +465,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag"># css</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -494,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/04/css-3/" rel="next" title="css-结构和层叠">
-                <i class="fa fa-chevron-left"></i> css-结构和层叠
+              <a href="/2018/07/13/js-16/" rel="next" title="javascript中的事件循环机制">
+                <i class="fa fa-chevron-left"></i> javascript中的事件循环机制
               </a>
             
           </div>
@@ -503,10 +487,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/07/optimization-1/" rel="prev" title="优化总体路线">
-                优化总体路线 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -679,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#css中的值和单位"><span class="nav-number">1.</span> <span class="nav-text">css中的值和单位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字"><span class="nav-number">1.1.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#百分数"><span class="nav-number">1.2.</span> <span class="nav-text">百分数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#颜色"><span class="nav-number">1.3.</span> <span class="nav-text">颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长度单位"><span class="nav-number">1.4.</span> <span class="nav-text">长度单位</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#绝对长度单位"><span class="nav-number">1.4.1.</span> <span class="nav-text">绝对长度单位</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对长度单位"><span class="nav-number">1.4.2.</span> <span class="nav-text">相对长度单位</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鲜为人知的css单位"><span class="nav-number">2.</span> <span class="nav-text">鲜为人知的css单位</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rem"><span class="nav-number">2.1.</span> <span class="nav-text">rem</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#em"><span class="nav-number">2.1.1.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rem-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">rem</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vh和vw"><span class="nav-number">2.2.</span> <span class="nav-text">vh和vw</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ex-和-ch"><span class="nav-number">2.3.</span> <span class="nav-text">ex 和 ch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vmin-和-vmax"><span class="nav-number">2.4.</span> <span class="nav-text">vmin 和 vmax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#reference"><span class="nav-number">2.5.</span> <span class="nav-text">reference</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#防抖（Debounce）"><span class="nav-number">1.</span> <span class="nav-text">防抖（Debounce）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节流（Throttle）"><span class="nav-number">2.</span> <span class="nav-text">节流（Throttle）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化场景"><span class="nav-number">3.</span> <span class="nav-text">优化场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数防抖"><span class="nav-number">3.1.</span> <span class="nav-text">函数防抖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数节流"><span class="nav-number">3.2.</span> <span class="nav-text">函数节流</span></a></li></ol></li></ol></div>
             
 
           </div>

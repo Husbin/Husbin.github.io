@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Husbin">
 <meta property="og:description" content="xssXSS是一种代码注入类攻击，它允许攻击者在其他人的电脑上面执行恶意的脚本代码。往往XSS并不需要攻击者去直接攻击受害者的浏览器。攻击者可以利用网站的漏洞，将这一段恶意代码提交。然后，通过网站去传递给受害者，同时窃取受害者的信息等。 首先，作为一个开发者，必须达成的一点共识是所有的用户输入都是不安全的。尤其是类似于XSS这类的注入型漏洞。我们可以通过两个方式对其进行防御——编码和验证。 编码：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T03:08:06.897Z">
+<meta property="og:updated_time" content="2018-07-19T13:14:49.468Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端杀手">
 <meta name="twitter:description" content="xssXSS是一种代码注入类攻击，它允许攻击者在其他人的电脑上面执行恶意的脚本代码。往往XSS并不需要攻击者去直接攻击受害者的浏览器。攻击者可以利用网站的漏洞，将这一段恶意代码提交。然后，通过网站去传递给受害者，同时窃取受害者的信息等。 首先，作为一个开发者，必须达成的一点共识是所有的用户输入都是不安全的。尤其是类似于XSS这类的注入型漏洞。我们可以通过两个方式对其进行防御——编码和验证。 编码：">
@@ -389,7 +389,7 @@
 <p>编码：对于用户的输入而言，所输入的内容只会作为数据，而不是代码。<br>验证：通过正则表达式等方式，去检查用户的输入中是否带有敏感字符等。<br>所以，我们的解决方案可以围绕上述两点进行展开：</p>
 <h4 id="输入检测"><a href="#输入检测" class="headerlink" title="输入检测"></a>输入检测</h4><p>对用户输入的数据进行检测。对于这些代码注入类的漏洞原则上是不相信用户输入的数据的。所以，我们要对用户输入的数据进行一定程度上的过滤，将输入数据中的特殊字符与关键词都过滤掉，并且对输入的长度进行一定的限制。只要开发的人员严格检查每个输入点，对每个输入点的数据进行检测和xss过滤，是可以阻止xss攻击的。</p>
 <h4 id="输出编码"><a href="#输出编码" class="headerlink" title="输出编码"></a>输出编码</h4><p>通过前面xss的原理分析，我们知道造成xss的还有一个原因是应用程序直接将用户输入的数据嵌入HTML页面中了。如果我们对用户输入的数据进行编码，之后在嵌入页面中，那么html页面会将输入的数据当作是普通的数据进行处理。</p>
-<h4 id="Cookie安全"><a href="#Cookie安全" class="headerlink" title="Cookie安全"></a>Cookie安全</h4><p>利用xss攻击，我们可以轻易的获取到用户的cookie信息。那么我们需要对用户的cookie进行一定的处理。首先，我们尽可能减少cookie中敏感信息的存储，并且尽量对cookie使用hash算法多次散列存放。合理的使用cookie的httponly的属性值。这样可以防止恶意的js代码对cookie的调用。</p>
+<h4 id="Cookie安全"><a href="#Cookie安全" class="headerlink" title="Cookie安全"></a>Cookie安全</h4><p>利用xss攻击，我们可以轻易的获取到用户的cookie信息。那么我们需要对用户的cookie进行一定的处理。首先，我们尽可能减少cookie中敏感信息的存储，并且尽量对cookie使用hash算法多次散列存放。合理的使用cookie的httponly的属性值。这样可以防止恶意的js代码对cookie的调用。（如果在cookie中设置了HttpOnly属性，那么通过<strong>js脚本</strong>将无法读取到cookie信息，这样能有效的防止XSS攻击。）</p>
 <h4 id="禁用脚本"><a href="#禁用脚本" class="headerlink" title="禁用脚本"></a>禁用脚本</h4><p>可以在浏览器中进行js的安全设置。类似与chrome等浏览器都会拦截一些危险的xss操作，例如：想要读取cookie时，浏览器会阻止这个操作，征求用户指示，同时提醒用户此类操作的危害性。</p>
 <h3 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h3><p>CSRF 顾名思义，是伪造请求，冒充用户在站内的正常操作。我们知道，绝大多数网站是通过 cookie 等方式辨识用户身份（包括使用服务器端 Session 的网站，因为 Session ID 也是大多保存在 cookie 里面的），再予以授权的。所以要伪造用户的正常操作，最好的方法是通过 XSS 或链接欺骗等途径，让用户在本机（即拥有身份 cookie 的浏览器端）发起用户所不知道的请求。</p>
 <p>CSRF，对于目前而言攻击较少，也是因为对于这方面的防御手段越来越成熟所导致的。下面，我们来看一下如何去防护CSRF的攻击。</p>
@@ -596,7 +596,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">80</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

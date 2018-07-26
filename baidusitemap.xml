@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/07/05/security-2/</loc>
+    <lastmod>2018-07-19T13:14:49.468Z</lastmod>
+    <data>
+        <display>
+        <title>前端杀手</title>
+        <pubTime>2018-07-05T03:02:29.000Z</pubTime>
+        
+        <tag>security</tag>
+         
+         
+           
+             
+              <breadCrumb title="security" url="http://easywork.xin/categories/security/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
+    <lastmod>2018-07-18T23:30:42.014Z</lastmod>
+    <data>
+        <display>
+        <title>项目中遇到的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/07/18/js-17/</loc>
+    <lastmod>2018-07-18T14:23:09.771Z</lastmod>
+    <data>
+        <display>
+        <title>防抖与节流</title>
+        <pubTime>2018-07-18T14:16:35.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/03/02/js-7/</loc>
     <lastmod>2018-07-13T12:25:10.784Z</lastmod>
     <data>
@@ -206,26 +266,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
-    <lastmod>2018-07-08T05:38:22.987Z</lastmod>
-    <data>
-        <display>
-        <title>项目中遇到的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/05/30/network-8/</loc>
     <lastmod>2018-07-08T05:29:35.966Z</lastmod>
     <data>
@@ -399,26 +439,6 @@
            
              
               <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/07/05/security-2/</loc>
-    <lastmod>2018-07-05T03:08:06.897Z</lastmod>
-    <data>
-        <display>
-        <title>前端杀手</title>
-        <pubTime>2018-07-05T03:02:29.000Z</pubTime>
-        
-        <tag>security</tag>
-         
-         
-           
-             
-              <breadCrumb title="security" url="http://easywork.xin/categories/security/"/>
           
         </display>
     </data>

@@ -4,8 +4,68 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/05/03/network-7/</loc>
+    <lastmod>2018-07-29T12:40:46.076Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP发展历程</title>
+        <pubTime>2018-05-03T13:07:43.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-07-29T12:12:08.251Z</lastmod>
+    <data>
+        <display>
+        <title>水题题解</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
+    <lastmod>2018-07-29T12:11:58.962Z</lastmod>
+    <data>
+        <display>
+        <title>css-布局(未完)</title>
+        <pubTime>2018-03-16T02:56:47.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/07/05/security-2/</loc>
-    <lastmod>2018-07-19T13:14:49.468Z</lastmod>
+    <lastmod>2018-07-29T03:31:50.781Z</lastmod>
     <data>
         <display>
         <title>前端杀手</title>
@@ -139,46 +199,6 @@
            
              
               <breadCrumb title="琐言碎语" url="http://easywork.xin/categories/%E7%90%90%E8%A8%80%E7%A2%8E%E8%AF%AD/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-07-11T13:11:29.349Z</lastmod>
-    <data>
-        <display>
-        <title>水题题解</title>
-        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
-    <lastmod>2018-07-10T13:50:24.011Z</lastmod>
-    <data>
-        <display>
-        <title>css-布局(未完)</title>
-        <pubTime>2018-03-16T02:56:47.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-         
-           
-             
-              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
           
         </display>
     </data>
@@ -392,26 +412,6 @@
         <display>
         <title>网络协议的分层结构</title>
         <pubTime>2018-02-25T06:33:29.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/05/03/network-7/</loc>
-    <lastmod>2018-07-08T05:29:03.928Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP发展历程</title>
-        <pubTime>2018-05-03T13:07:43.000Z</pubTime>
         
         <tag>计算机网络</tag>
          

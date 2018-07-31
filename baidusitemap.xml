@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/05/30/network-8/</loc>
+    <lastmod>2018-07-31T13:22:44.674Z</lastmod>
+    <data>
+        <display>
+        <title>websocket使用与应用场景</title>
+        <pubTime>2018-05-30T00:57:02.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/15/network-10/</loc>
+    <lastmod>2018-07-31T07:37:23.625Z</lastmod>
+    <data>
+        <display>
+        <title>前端网络请求的前世今生</title>
+        <pubTime>2018-04-15T04:04:33.000Z</pubTime>
+        
+        <tag>network</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/05/03/network-7/</loc>
     <lastmod>2018-07-29T12:40:46.076Z</lastmod>
     <data>
@@ -272,26 +312,6 @@
         <display>
         <title>http协商缓存与强缓存</title>
         <pubTime>2018-07-08T05:28:08.000Z</pubTime>
-        
-        <tag>计算机网络</tag>
-         
-         
-           
-             
-              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/05/30/network-8/</loc>
-    <lastmod>2018-07-08T05:29:35.966Z</lastmod>
-    <data>
-        <display>
-        <title>websocket使用与应用场景</title>
-        <pubTime>2018-05-30T00:57:02.000Z</pubTime>
         
         <tag>计算机网络</tag>
          
@@ -804,26 +824,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://easywork.xin/2018/04/15/js-12/</loc>
-    <lastmod>2018-05-01T02:16:58.516Z</lastmod>
-    <data>
-        <display>
-        <title>前端网络请求的前世今生</title>
-        <pubTime>2018-04-15T04:04:33.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://easywork.xin/2018/04/22/css-8/</loc>

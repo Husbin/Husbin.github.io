@@ -4,6 +4,86 @@
 
     
   <url>
+    <loc>http://easywork.xin/2017/08/03/algorithm-5/</loc>
+    <lastmod>2018-08-06T03:41:40.904Z</lastmod>
+    <data>
+        <display>
+        <title>最近要干的活</title>
+        <pubTime>2017-08-03T07:24:44.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-08-05T10:19:10.184Z</lastmod>
+    <data>
+        <display>
+        <title>水题题解</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
+    <lastmod>2018-08-04T03:15:39.720Z</lastmod>
+    <data>
+        <display>
+        <title>前端一定要会的算法--排序</title>
+        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
+    <lastmod>2018-08-03T05:52:09.766Z</lastmod>
+    <data>
+        <display>
+        <title>项目中遇到的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/07/18/js-17/</loc>
     <lastmod>2018-08-03T04:38:26.197Z</lastmod>
     <data>
@@ -44,26 +124,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-08-02T10:52:29.538Z</lastmod>
-    <data>
-        <display>
-        <title>水题题解</title>
-        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/07/05/security-2/</loc>
     <lastmod>2018-08-02T07:22:59.451Z</lastmod>
     <data>
@@ -77,26 +137,6 @@
            
              
               <breadCrumb title="security" url="http://easywork.xin/categories/security/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
-    <lastmod>2018-08-02T07:13:27.558Z</lastmod>
-    <data>
-        <display>
-        <title>项目中遇到的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
           
         </display>
     </data>
@@ -859,26 +899,6 @@
            
              
               <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
-    <lastmod>2018-04-17T12:36:47.726Z</lastmod>
-    <data>
-        <display>
-        <title>前端一定要会的算法--排序</title>
-        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
           
         </display>
     </data>

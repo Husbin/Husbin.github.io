@@ -4,12 +4,32 @@
 
     
   <url>
-    <loc>http://easywork.xin/2017/08/03/algorithm-5/</loc>
-    <lastmod>2018-08-06T03:41:40.904Z</lastmod>
+    <loc>http://easywork.xin/2018/04/15/network-10/</loc>
+    <lastmod>2018-08-09T02:56:36.622Z</lastmod>
     <data>
         <display>
-        <title>最近要干的活</title>
-        <pubTime>2017-08-03T07:24:44.000Z</pubTime>
+        <title>前端网络请求的前世今生</title>
+        <pubTime>2018-04-15T04:04:33.000Z</pubTime>
+        
+        <tag>计算机网络</tag>
+         
+         
+           
+             
+              <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
+    <lastmod>2018-08-08T13:59:10.063Z</lastmod>
+    <data>
+        <display>
+        <title>水题题解</title>
+        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
         
         <tag>algorithm</tag>
          
@@ -24,12 +44,72 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/04/17/algorithm-2/</loc>
-    <lastmod>2018-08-05T10:19:10.184Z</lastmod>
+    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
+    <lastmod>2018-08-07T13:25:35.422Z</lastmod>
     <data>
         <display>
-        <title>水题题解</title>
-        <pubTime>2018-04-17T12:24:02.000Z</pubTime>
+        <title>css-布局(未完)</title>
+        <pubTime>2018-03-16T02:56:47.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+         
+           
+             
+              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
+    <lastmod>2018-08-07T06:25:17.855Z</lastmod>
+    <data>
+        <display>
+        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
+        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
+        
+        <tag>practice</tag>
+         
+         
+           
+             
+              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/07/18/js-17/</loc>
+    <lastmod>2018-08-06T11:20:11.713Z</lastmod>
+    <data>
+        <display>
+        <title>防抖与节流</title>
+        <pubTime>2018-07-18T14:16:35.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2017/08/03/algorithm-5/</loc>
+    <lastmod>2018-08-06T11:19:18.073Z</lastmod>
+    <data>
+        <display>
+        <title>最近要干的活</title>
+        <pubTime>2017-08-03T07:24:44.000Z</pubTime>
         
         <tag>algorithm</tag>
          
@@ -77,26 +157,6 @@
            
              
               <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/07/18/js-17/</loc>
-    <lastmod>2018-08-03T04:38:26.197Z</lastmod>
-    <data>
-        <display>
-        <title>防抖与节流</title>
-        <pubTime>2018-07-18T14:16:35.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
           
         </display>
     </data>
@@ -164,26 +224,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/04/15/network-10/</loc>
-    <lastmod>2018-07-31T07:37:23.625Z</lastmod>
-    <data>
-        <display>
-        <title>前端网络请求的前世今生</title>
-        <pubTime>2018-04-15T04:04:33.000Z</pubTime>
-        
-        <tag>network</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机网络" url="http://easywork.xin/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/05/03/network-7/</loc>
     <lastmod>2018-07-29T12:40:46.076Z</lastmod>
     <data>
@@ -197,26 +237,6 @@
            
              
               <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/03/16/css-6/</loc>
-    <lastmod>2018-07-29T12:11:58.962Z</lastmod>
-    <data>
-        <display>
-        <title>css-布局(未完)</title>
-        <pubTime>2018-03-16T02:56:47.000Z</pubTime>
-        
-        <tag>css</tag>
-         
-         
-           
-             
-              <breadCrumb title="css" url="http://easywork.xin/categories/css/"/>
           
         </display>
     </data>
@@ -558,26 +578,6 @@
            
              
               <breadCrumb title="Vue.js" url="http://easywork.xin/categories/Vue-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
-    <lastmod>2018-06-23T13:27:21.730Z</lastmod>
-    <data>
-        <display>
-        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
-        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
           
         </display>
     </data>

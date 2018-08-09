@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-954cebd642dc616b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-92f6e2e59ee65dce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/7166236-c9b14ecf69996451.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-06-23T13:27:21.730Z">
+<meta property="og:updated_time" content="2018-08-07T06:25:17.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Vue移动端自适应方案与视网膜1px问题">
 <meta name="twitter:description" content="开始之前需要了解的知识有：  移动web适配利器-rem 使用Flexible实现手淘H5页面的终端适配  简单粗暴的粗略版移动端自适应昨天说的粗糙的方案，现在写个栗子。重温一下那个思路：  获取设备宽度width 跟据设备宽度设置rem的值（1rem=width/倍数），设置body的font-size即可，即font-size = width/倍数 设计稿上的px等比换算成rem  核心代码：">
@@ -439,6 +439,11 @@
 <li>物理像素：一个物理像素就是显示器上最小的物理显示单元，在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值。 </li>
 <li>像素比（devicePixelRatio  dpr）：设备物理像素 ／ 设备独立像素，<strong>由于不同的手机拥有的像素比也不尽相同，因此一个css像素占据的物理像素个数也是不一样，也就是说css中的1px并不等于移动设备的1px </strong>（有人说是为了降低颗粒感，增强用户体验）。 </li>
 </ul>
+<blockquote>
+<p>UI设计师设计的时候，画的1px(真实像素)实际上是0.5px(css)的线或者边框。但是他不这么认为，他认为他画的就是1px的线，因为他画的稿的尺寸本身就是屏幕尺寸的2倍。假设手机视网膜屏的宽度是320x480宽，但实际尺寸是640x960宽，设计师设计图的时候一定是按照640x960设计的。但是前端工程师写代码的时候，所有css都是按照320x480写的，写1px(css)，浏览器自动变成2px(真实像素)。</p>
+<p>那么前端工程师为什么不能直接写0.5px(css)呢？因为在老版本的系统里写0.5px(css)的话，会被浏览器解读为0px(css)，就没有边框了。所以只能写成1px(css)，实际在屏幕上显示出来就是设计师画的1px(真实像素)的2倍那么宽，所以设计师会觉得这个线太粗了，和他的设计稿不一样。在新版的系统里，已经开始逐渐支持0.5px(css)这种写法。所以如果设计师在大图上设计了一个1px(真实像素)的线的话，前端工程师直接除以2，写0.5px(css)就好了。</p>
+<p><a href="https://segmentfault.com/q/1010000010750697" target="_blank" rel="noopener">https://segmentfault.com/q/1010000010750697</a></p>
+</blockquote>
 <h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><h5 id="0-5px边框"><a href="#0-5px边框" class="headerlink" title="0.5px边框"></a>0.5px边框</h5><p>由于存在兼容问题，可通过js检测浏览器能否处理0.5px边框，如果可以，给html标签元素添加个class。</p>
 <p>优点：简单，不需要过多的代码。</p>
 <p>缺点：无法兼容安卓设备，ios8以下的设备。</p>
@@ -644,7 +649,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -655,7 +660,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/07/13/js-16/</loc>
+    <lastmod>2018-08-09T12:54:03.040Z</lastmod>
+    <data>
+        <display>
+        <title>浏览器中的事件循环机制</title>
+        <pubTime>2018-07-13T08:22:33.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/22/design-1/</loc>
+    <lastmod>2018-08-09T03:31:35.661Z</lastmod>
+    <data>
+        <display>
+        <title>MVC、MVP、MVVM</title>
+        <pubTime>2018-02-22T07:04:23.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/04/15/network-10/</loc>
-    <lastmod>2018-08-09T02:56:36.622Z</lastmod>
+    <lastmod>2018-08-09T03:30:58.949Z</lastmod>
     <data>
         <display>
         <title>前端网络请求的前世今生</title>
@@ -264,26 +304,6 @@
 
     
     
-    
-  <url>
-    <loc>http://easywork.xin/2018/07/13/js-16/</loc>
-    <lastmod>2018-07-13T09:30:21.061Z</lastmod>
-    <data>
-        <display>
-        <title>javascript中的事件循环机制</title>
-        <pubTime>2018-07-13T08:22:33.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://easywork.xin/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://easywork.xin/2018/05/13/js-13/</loc>
@@ -1463,26 +1483,6 @@
            
              
               <breadCrumb title="web基础知识" url="http://easywork.xin/categories/web%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/22/design-1/</loc>
-    <lastmod>2018-02-25T00:39:25.201Z</lastmod>
-    <data>
-        <display>
-        <title>MVC、MVP、MVVM</title>
-        <pubTime>2018-02-22T07:04:23.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="设计模式" url="http://easywork.xin/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>

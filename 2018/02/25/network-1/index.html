@@ -99,7 +99,7 @@
 <meta property="og:description" content="网络协议的层次划分图 各层的功能作用物理层（physical layer）物理层上所传数据的单位是比特。发送方发送1（或0）时，接收方应当受到1（或0）而不是0（或1）。值得注意的是，传递信息所用的一些物理媒体，如双绞线，同轴电缆，光缆，无线信道等，并不属于物理层之内，而实在物理层协议的下面，有人把物理层下面的物理媒体当作第0层。 数据链路层（data link layer）数据链路层所传输的单位">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/7166236-41b30ecd692b1927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-08T05:29:13.224Z">
+<meta property="og:updated_time" content="2018-08-17T01:33:31.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络协议的分层结构">
 <meta name="twitter:description" content="网络协议的层次划分图 各层的功能作用物理层（physical layer）物理层上所传数据的单位是比特。发送方发送1（或0）时，接收方应当受到1（或0）而不是0（或1）。值得注意的是，传递信息所用的一些物理媒体，如双绞线，同轴电缆，光缆，无线信道等，并不属于物理层之内，而实在物理层协议的下面，有人把物理层下面的物理媒体当作第0层。 数据链路层（data link layer）数据链路层所传输的单位">
@@ -387,14 +387,14 @@
 
       
         <h3 id="网络协议的层次划分图"><a href="#网络协议的层次划分图" class="headerlink" title="网络协议的层次划分图"></a>网络协议的层次划分图</h3><p><img src="http://upload-images.jianshu.io/upload_images/7166236-41b30ecd692b1927.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="网络协议分层结构"></p>
-<h3 id="各层的功能作用"><a href="#各层的功能作用" class="headerlink" title="各层的功能作用"></a>各层的功能作用</h3><h4 id="物理层（physical-layer）"><a href="#物理层（physical-layer）" class="headerlink" title="物理层（physical layer）"></a>物理层（physical layer）</h4><p>物理层上所传数据的单位是比特。发送方发送1（或0）时，接收方应当受到1（或0）而不是0（或1）。值得注意的是，传递信息所用的一些物理媒体，如双绞线，同轴电缆，光缆，无线信道等，并不属于物理层之内，而实在物理层协议的下面，有人把物理层下面的物理媒体当作第0层。</p>
-<h4 id="数据链路层（data-link-layer）"><a href="#数据链路层（data-link-layer）" class="headerlink" title="数据链路层（data link layer）"></a>数据链路层（data link layer）</h4><p>数据链路层所传输的单位是帧（framing）。两台主机之间的数据传输，总是在一段一段的链路上传送的，在两个相邻的节点之间的链路上传送数据时，数据链路层将网络层交下来的IP数据包组装成帧，在两个相邻节点间的链路上传送帧。总的来说，数据链路层要解决三个问题：</p>
+<h3 id="各层的功能作用"><a href="#各层的功能作用" class="headerlink" title="各层的功能作用"></a>各层的功能作用</h3><h4 id="物理层（physical-layer）"><a href="#物理层（physical-layer）" class="headerlink" title="物理层（physical layer）"></a>物理层（physical layer）</h4><p><strong>物理层上所传数据的单位是比特。</strong>发送方发送1（或0）时，接收方应当受到1（或0）而不是0（或1）。值得注意的是，传递信息所用的一些物理媒体，如双绞线，同轴电缆，光缆，无线信道等，并不属于物理层之内，而实在物理层协议的下面，有人把物理层下面的物理媒体当作第0层。</p>
+<h4 id="数据链路层（data-link-layer）"><a href="#数据链路层（data-link-layer）" class="headerlink" title="数据链路层（data link layer）"></a>数据链路层（data link layer）</h4><p><strong>数据链路层所传输的单位是帧（framing）。</strong>两台主机之间的数据传输，总是在一段一段的链路上传送的，在两个相邻的节点之间的链路上传送数据时，数据链路层将网络层交下来的IP数据包组装成帧，在两个相邻节点间的链路上传送帧。总的来说，数据链路层要解决三个问题：</p>
 <ul>
 <li>封装成帧（将网络层交下来的IP数据包添加首部和尾部封装成帧）</li>
 <li>透明传输（保证即使数据中偶然出现帧定界字符，也不会导致传输失败）</li>
 <li>差错检测（CRC循环冗余检验）</li>
 </ul>
-<h4 id="网络层（network-layer）"><a href="#网络层（network-layer）" class="headerlink" title="网络层（network layer）"></a>网络层（network layer）</h4><p>网络层的传输单元叫做分组、IP数据报、数据报、包。网络层负责为分组交换网上的不同主机提供通信服务。在发送数据时，网络层把运输层产生的报文段或用户数据报封装成分组或包进行传送。通过IP找到目的主机，通过端口port找到目的通信程序。</p>
+<h4 id="网络层（network-layer）"><a href="#网络层（network-layer）" class="headerlink" title="网络层（network layer）"></a>网络层（network layer）</h4><p><strong>网络层的传输单元叫做分组、IP数据报、数据报、包。</strong>网络层负责为分组交换网上的不同主机提供通信服务。在发送数据时，网络层把运输层产生的报文段或用户数据报封装成分组或包进行传送。通过IP找到目的主机，通过端口port找到目的通信程序。</p>
 <h4 id="运输层（transport-layer）"><a href="#运输层（transport-layer）" class="headerlink" title="运输层（transport layer）"></a>运输层（transport layer）</h4><p>运输层的任务就是负责向两台主机中进程之间的通信提供通用的数据传输服务。应用进程利用该服务传送应用层报文。所谓“通用的”，是指并不针对某个特定的网络应用，而是多种应用可以使用同一个运输层服务。由于一台主机可同时运行多个进程，因此运输层有分用和复用的功能。<strong>复用</strong>就是多个应用层进程可同时使用下面运输层的服务，<strong>分用</strong>是运输层把收到的信息分别交付上面应用层中的相应进程。运输层主要使用以下两种协议：</p>
 <ul>
 <li>传输控制协议（Transmission Control Protocol - TCP）——提供面向连接的、可靠的数据传输服务，其数据传输单位是报文段（segment）。</li>
@@ -404,7 +404,63 @@
 <li><strong>UDP是面向报文的</strong>，发送方的UDP对应用程序交下来的报文，在添加首部后就向下交付给IP曾。他既不合并，也不不拆分，而是保留这些报文的边界。也就是说，应用层交给UDP多长的报文，UDP照样发送，即一次发送一个报文。</li>
 <li><strong>TCP是面向字节流的</strong>，TCP中的”流“指的是流入到进程或者从进程流出的字节序列。”面向字节流“的含义是：虽然应用程序和TCP交互式一次一个数据块（大小不等），但TCP把应用程序交下来的数据堪称仅仅是一串无结构的字节流。TCP并不知道所传送的字节流的含义。TCP不保证接收方应用程序所收到的数据块和发送方应用程序所发出来的数据块具有对应的大小关系，但接收方应用程序收到的字节流必须和发送方应用程序发出来的字节流是完全一样的。</li>
 </ul>
+<h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p><strong>这一层管理主机之间的会话进程，即负责建立、管理、终止进程之间的会话。</strong>会话层还利用在数据中插入校验点来实现数据的同步，访问验证和会话管理在内的建立和维护应用之间通信的机制。如服务器验证用户登录便是由会话层完成的。使通信会话在通信失效时从校验点继续恢复通信。 </p>
+<h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>这一层主要解决用户信息的语法表示问题。它将欲交换的数据从适合于某一用户的抽象语法，转换为适合于OSI系统内部使用的传送语法。即提供格式化的表示和转换数据服务。<strong>数据的压缩和解压缩， 加密和解密等工作都由表示层负责。</strong> </p>
 <h4 id="应用层（application-layer）"><a href="#应用层（application-layer）" class="headerlink" title="应用层（application layer）"></a>应用层（application layer）</h4><p>应用层交互的数据单元成为报文（message），应用层是体系结构中的最高层。应用层的任务是通过应用进程间的交互来完成特定网络应用。<strong>应用层协议定义的是应用进程间通信和交互的规则。</strong>这里的进程就是指主机中正在运行的程序。对于不同的网络应用需要不同的应用层协议。在互联网中的应用层协议很多，如域名系统DNS，支持万维网应用的HTTP协议，支持电子邮件的SMTP协议，等等。</p>
+<h3 id="各层传输协议、传输单元、主要功能性设备比较"><a href="#各层传输协议、传输单元、主要功能性设备比较" class="headerlink" title="各层传输协议、传输单元、主要功能性设备比较"></a>各层传输协议、传输单元、主要功能性设备比较</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>传输协议</th>
+<th>传输单元</th>
+<th>主要功能设备/接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>物理层</td>
+<td>IEEE 802.1A、IEEE 802.2</td>
+<td>bit-flow 比特流</td>
+<td>光纤、双绞线、中继器和集线器 &amp; RJ-45(网线接口)</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>ARP、MAC、 FDDI、Ethernet、Arpanet、PPP、PDN</td>
+<td>frame 帧</td>
+<td>网桥、二层交换机</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>IP、ICMP、ARP、RARP</td>
+<td>数据包（packet）</td>
+<td>路由器、三层交换机</td>
+</tr>
+<tr>
+<td>传输层</td>
+<td>TCP、UDP</td>
+<td>Segment/Datagram</td>
+<td>四层交换机</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>SMTP、DNS</td>
+<td>报文</td>
+<td>QoS</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>Telnet、SNMP</td>
+<td>报文</td>
+<td>–</td>
+</tr>
+<tr>
+<td>应用层</td>
+<td>FTP、TFTP、Telnet、HTTP、DNS</td>
+<td>报文</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -414,30 +470,6 @@
 
     
 
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div></div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/img/wechatpay.jpg" alt="Husbin 微信支付"/>
-        <p>微信支付</p>
-      </div>
-    
-
-    
-
-    
-
-  </div>
-</div>
-
-      </div>
     
 
     
@@ -589,7 +621,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">80</span>
+                  <span class="site-state-item-count">81</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -674,7 +706,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络协议的层次划分图"><span class="nav-number">1.</span> <span class="nav-text">网络协议的层次划分图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各层的功能作用"><span class="nav-number">2.</span> <span class="nav-text">各层的功能作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#物理层（physical-layer）"><span class="nav-number">2.1.</span> <span class="nav-text">物理层（physical layer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层（data-link-layer）"><span class="nav-number">2.2.</span> <span class="nav-text">数据链路层（data link layer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层（network-layer）"><span class="nav-number">2.3.</span> <span class="nav-text">网络层（network layer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运输层（transport-layer）"><span class="nav-number">2.4.</span> <span class="nav-text">运输层（transport layer）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP与TCP"><span class="nav-number">2.4.1.</span> <span class="nav-text">UDP与TCP</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层（application-layer）"><span class="nav-number">2.5.</span> <span class="nav-text">应用层（application layer）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络协议的层次划分图"><span class="nav-number">1.</span> <span class="nav-text">网络协议的层次划分图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各层的功能作用"><span class="nav-number">2.</span> <span class="nav-text">各层的功能作用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#物理层（physical-layer）"><span class="nav-number">2.1.</span> <span class="nav-text">物理层（physical layer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据链路层（data-link-layer）"><span class="nav-number">2.2.</span> <span class="nav-text">数据链路层（data link layer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网络层（network-layer）"><span class="nav-number">2.3.</span> <span class="nav-text">网络层（network layer）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运输层（transport-layer）"><span class="nav-number">2.4.</span> <span class="nav-text">运输层（transport layer）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#UDP与TCP"><span class="nav-number">2.4.1.</span> <span class="nav-text">UDP与TCP</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#会话层"><span class="nav-number">2.5.</span> <span class="nav-text">会话层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表示层"><span class="nav-number">2.6.</span> <span class="nav-text">表示层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层（application-layer）"><span class="nav-number">2.7.</span> <span class="nav-text">应用层（application layer）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各层传输协议、传输单元、主要功能性设备比较"><span class="nav-number">3.</span> <span class="nav-text">各层传输协议、传输单元、主要功能性设备比较</span></a></li></ol></div>
             
 
           </div>

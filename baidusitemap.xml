@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
+    <lastmod>2018-09-24T09:18:56.125Z</lastmod>
+    <data>
+        <display>
+        <title>前端一定要会的算法--排序</title>
+        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/09/23/react-3/</loc>
+    <lastmod>2018-09-24T02:56:35.352Z</lastmod>
+    <data>
+        <display>
+        <title>深入React技术栈学习笔记</title>
+        <pubTime>2018-09-23T01:45:37.000Z</pubTime>
+        
+        <tag>react</tag>
+         
+         
+           
+             
+              <breadCrumb title="React.js" url="http://easywork.xin/categories/React-js/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
     <lastmod>2018-09-23T01:50:55.888Z</lastmod>
     <data>
@@ -17,26 +57,6 @@
            
              
               <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/09/23/react-3/</loc>
-    <lastmod>2018-09-23T01:47:50.911Z</lastmod>
-    <data>
-        <display>
-        <title>react-3</title>
-        <pubTime>2018-09-23T01:45:37.000Z</pubTime>
-        
-        <tag>react</tag>
-         
-         
-           
-             
-              <breadCrumb title="React.js" url="http://easywork.xin/categories/React-js/"/>
           
         </display>
     </data>
@@ -177,26 +197,6 @@
            
              
               <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
-    <lastmod>2018-08-16T11:09:58.380Z</lastmod>
-    <data>
-        <display>
-        <title>前端一定要会的算法--排序</title>
-        <pubTime>2018-02-09T05:28:25.000Z</pubTime>
-        
-        <tag>algorithm</tag>
-         
-         
-           
-             
-              <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
           
         </display>
     </data>

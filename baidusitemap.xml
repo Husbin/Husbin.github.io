@@ -4,6 +4,106 @@
 
     
   <url>
+    <loc>http://easywork.xin/2019/05/26/practice-5/</loc>
+    <lastmod>2019-05-26T17:07:55.414Z</lastmod>
+    <data>
+        <display>
+        <title>工作总结（一）</title>
+        <pubTime>2019-05-26T08:36:14.000Z</pubTime>
+        
+        <tag>work</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="http://easywork.xin/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
+    <lastmod>2019-05-26T08:41:42.028Z</lastmod>
+    <data>
+        <display>
+        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
+        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
+        
+        <tag>work</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="http://easywork.xin/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/05/05/practice-1/</loc>
+    <lastmod>2019-05-26T08:41:35.110Z</lastmod>
+    <data>
+        <display>
+        <title>H5与PC直播方案</title>
+        <pubTime>2018-05-05T04:17:38.000Z</pubTime>
+        
+        <tag>work</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="http://easywork.xin/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/06/10/practice-2/</loc>
+    <lastmod>2019-05-26T08:41:31.126Z</lastmod>
+    <data>
+        <display>
+        <title>实习总结</title>
+        <pubTime>2018-06-10T01:19:43.000Z</pubTime>
+        
+        <tag>work</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="http://easywork.xin/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
+    <lastmod>2019-05-26T08:41:24.040Z</lastmod>
+    <data>
+        <display>
+        <title>项目中遇到的问题</title>
+        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
+        
+        <tag>work</tag>
+         
+         
+           
+             
+              <breadCrumb title="work" url="http://easywork.xin/categories/work/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://easywork.xin/2018/02/09/algorithm-1/</loc>
     <lastmod>2018-09-24T09:18:56.125Z</lastmod>
     <data>
@@ -37,26 +137,6 @@
            
              
               <breadCrumb title="React.js" url="http://easywork.xin/categories/React-js/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/02/12/practice-4/</loc>
-    <lastmod>2018-09-23T01:50:55.888Z</lastmod>
-    <data>
-        <display>
-        <title>项目中遇到的问题</title>
-        <pubTime>2018-02-12T13:34:43.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
           
         </display>
     </data>
@@ -297,26 +377,6 @@
            
              
               <breadCrumb title="network" url="http://easywork.xin/categories/network/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/06/11/practice-3/</loc>
-    <lastmod>2018-08-07T06:25:17.855Z</lastmod>
-    <data>
-        <display>
-        <title>基于Vue移动端自适应方案与视网膜1px问题</title>
-        <pubTime>2018-06-11T05:41:46.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
           
         </display>
     </data>
@@ -865,26 +925,6 @@
 
     
   <url>
-    <loc>http://easywork.xin/2018/06/10/practice-2/</loc>
-    <lastmod>2018-06-13T02:46:53.707Z</lastmod>
-    <data>
-        <display>
-        <title>实习总结</title>
-        <pubTime>2018-06-10T01:19:43.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://easywork.xin/2018/06/12/optimization-3/</loc>
     <lastmod>2018-06-12T08:27:07.854Z</lastmod>
     <data>
@@ -998,26 +1038,6 @@
            
              
               <breadCrumb title="algorithm" url="http://easywork.xin/categories/algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://easywork.xin/2018/05/05/practice-1/</loc>
-    <lastmod>2018-05-06T05:52:42.171Z</lastmod>
-    <data>
-        <display>
-        <title>H5与PC直播方案</title>
-        <pubTime>2018-05-05T04:17:38.000Z</pubTime>
-        
-        <tag>practice</tag>
-         
-         
-           
-             
-              <breadCrumb title="practice" url="http://easywork.xin/categories/practice/"/>
           
         </display>
     </data>
@@ -1446,7 +1466,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://easywork.xin/2018/03/07/js-8/</loc>

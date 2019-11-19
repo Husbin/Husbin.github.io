@@ -94,7 +94,7 @@
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jquery手记">
-<meta property="og:url" content="http://easywork.xin/2018/04/07/js-11/index.html">
+<meta property="og:url" content="http://Husbin.github.io/2018/04/07/js-11/index.html">
 <meta property="og:site_name" content="Husbin">
 <meta property="og:description" content="写了几天的jquery，没有以前那么抗拒了。用着用着觉得还是挺不错的，至少用起来比写原生的DOM操作要方便得多，虽然没有框架动不动就双向绑定来的方便。但是学着还是好的，说不定哪天需要看旧项目的代码，还是会有一定的用处的。 熟悉熟悉API，至少让脑子知道有这么一回事就ok了。遇到问题了查一查。 还有就是之前习惯了写es6，最近写要兼容旧的浏览器，所以用es5及以下的东西。但是一定要加use stri">
 <meta property="og:locale" content="zh-Hans">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://easywork.xin/2018/04/07/js-11/"/>
+  <link rel="canonical" href="http://Husbin.github.io/2018/04/07/js-11/"/>
 
 
 
@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://easywork.xin/2018/04/07/js-11/">
+    <link itemprop="mainEntityOfPage" href="http://Husbin.github.io/2018/04/07/js-11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Husbin">
@@ -463,7 +463,7 @@
 <h4 id="多个选择器绑定同一事件"><a href="#多个选择器绑定同一事件" class="headerlink" title="多个选择器绑定同一事件"></a>多个选择器绑定同一事件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 失去焦点事件</span></span><br><span class="line">jQuery(<span class="string">'#selector1 , #selector2 , #selector3'</span>).blur(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// todo something</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h4 id="jquery中获取某个节点的firstchild"><a href="#jquery中获取某个节点的firstchild" class="headerlink" title="jquery中获取某个节点的firstchild"></a>jquery中获取某个节点的firstchild</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#selector :first-child'</span>).blur(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'blur'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//原生写法</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"selectorId"</span>).firstChild.onblur = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   alert(<span class="string">'blur'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="问题三——事件绑定"><a href="#问题三——事件绑定" class="headerlink" title="问题三——事件绑定"></a>问题三——事件绑定</h3><h4 id="bind-、unbind"><a href="#bind-、unbind" class="headerlink" title="bind()、unbind()"></a>bind()、unbind()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'selector'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//等价于</span></span><br><span class="line">$(<span class="string">'selector'</span>).bind(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//解绑</span></span><br><span class="line">$(<span class="string">'selector'</span>).unbind(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="delegate-、undelegate"><a href="#delegate-、undelegate" class="headerlink" title="delegate()、undelegate()"></a>delegate()、undelegate()</h4><p>这里对事件代理就不作介绍了，还不知道事件代理的：<a href="http://easywork.xin/2018/01/22/js-2/">传送门——js中的事件与事件委托</a></p>
+<h4 id="delegate-、undelegate"><a href="#delegate-、undelegate" class="headerlink" title="delegate()、undelegate()"></a>delegate()、undelegate()</h4><p>这里对事件代理就不作介绍了，还不知道事件代理的：<a href="http://easywork.xin/2018/01/22/js-2/" target="_blank" rel="noopener">传送门——js中的事件与事件委托</a></p>
 <p>其实我写事件代理函数习惯直接把函数挂在节点上。。。（逃。。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加代理</span></span><br><span class="line">$(<span class="string">'rootSelector'</span>).delegate(childSelector,event,data,func);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'rootSelector'</span>).delegate(<span class="string">"button"</span>,<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//todo something</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//清除代理</span></span><br><span class="line">$(<span class="string">'selector'</span>).undelegate(selector,event,func);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'selector'</span>).undelegate(<span class="string">"p"</span>);</span><br></pre></td></tr></table></figure>
 <h4 id="on-、off"><a href="#on-、off" class="headerlink" title="on()、off()"></a>on()、off()</h4><p>在某些情况下，跟bind和unbind没啥区别。</p>
@@ -500,12 +500,12 @@
 
             <li class="post-copyright-link">
               <strong>本文标题：</strong>
-              <a href="http://easywork.xin/2018/04/07/js-11/" title="jquery手记">jquery手记</a>
+              <a href="http://Husbin.github.io/2018/04/07/js-11/" title="jquery手记">jquery手记</a>
             </li>
 
             <li class="post-copyright-link">
               <strong>本文链接：</strong>
-              <a href="http://easywork.xin/2018/04/07/js-11/" title="jquery手记">http://easywork.xin/2018/04/07/js-11/</a>
+              <a href="http://Husbin.github.io/2018/04/07/js-11/" title="jquery手记">http://Husbin.github.io/2018/04/07/js-11/</a>
             </li>
 
             <li class="post-copyright-date">
